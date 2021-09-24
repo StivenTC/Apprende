@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Register } from '../register/Register';
+import { Exploration } from './exploration/Exploration';
 import { Launcher } from './Launcher';
 
 function Caster() {
@@ -14,7 +15,7 @@ function Caster() {
         case 0:
           return userData ? <Launcher goView={setActualView} /> : <Register saveUser={saveUserData} />;
         case 1:
-          return <div><h1>jaja</h1></div>;
+          return <Exploration />;
         default:
           return 'foo';
       }

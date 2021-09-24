@@ -1,8 +1,13 @@
+import { Header } from "../../../components/layout/Header/Header"
+
 export const Exploration = () => {
 
   return (
-    <div>
-      <h1>explo</h1>
+    <div className="exploration">
+      <Header />
+      <div className="exploration-content">
+        <h1>Fracciones</h1>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,23 @@
+header {
+  border-bottom: 8px solid #FFE69B;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin: 0 20px;
+    padding: 0 8px;
+
+    svg {
+      color: $bkg-blue;
+      font-size: 26px;
+    }
+
+    >div {
+      color: $bkg-blue;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

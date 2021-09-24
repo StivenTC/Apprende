@@ -1,8 +1,13 @@
+import { IoArrowBackOutline } from "react-icons/io5";
+
 export const Header = () => {
 
   return (
     <header>
-      <h1>Header</h1>
+      <div className="header-content">
+        <IoArrowBackOutline />
+        <div>Inicio</div>
+      </div>
     </header>
   )
 }
