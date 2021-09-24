@@ -15,7 +15,7 @@ function Caster() {
         case 0:
           return userData ? <Launcher goView={setActualView} /> : <Register saveUser={saveUserData} />;
         case 1:
-          return <Exploration />;
+          return <Exploration goView={setActualView} />;
         default:
           return 'foo';
       }

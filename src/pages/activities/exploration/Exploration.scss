@@ -1,0 +1,115 @@
+.exploration {
+  background-color: #F7FAFF;
+  height: 100%;
+
+  &-text {
+    text-align: center;
+    margin: 25px 0;
+
+    h1 {
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-weight: 800;
+      font-size: 15px;
+      line-height: 19px;
+      color: #073B4C;
+    }
+
+  }
+
+  &-content {
+    margin: 0 25px;
+  }
+
+  &-activity {
+    margin-bottom: 32px;
+
+    svg {
+      position: relative;
+
+      path {
+        fill: #D9D9ED;
+        stroke: #F7FAFF;
+        stroke-width: 4;
+      }
+    }
+
+    &-svg {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #F7FAFF;
+        z-index: 1;
+        top: 37px;
+        left: 37px;
+      }
+    }
+
+    .activity {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .activity-circle {
+      width: fit-content;
+
+      >div {
+        &:first-child {
+          transform: rotate(180deg);
+        }
+
+        svg {
+          transition: all 1s ease;
+
+        }
+
+        path {
+          fill: #D9D9ED;
+          transition: all 1s ease;
+        }
+
+        &.colorete {
+          &:nth-child(odd) {
+            path {
+              fill: #68C4D3;
+            }
+          }
+
+          &:nth-child(even) {
+            path {
+              fill: #FFBC0F;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  button {
+    transition: all .5s ease;
+  }
+
+  .disabled {
+    cursor: pointer;
+    width: 100%;
+    height: 62px;
+    border: none;
+    background: #EDEDFB;
+    box-shadow: 0px 5px 0px #9F9FB5;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #9F9FB5;
+  }
+}
