@@ -8,8 +8,8 @@ export const Launcher = ({ goView }) => {
       <img src={robot} alt='robot' />
       <div className="launcher-activities">
         <div onClick={() => goView(1)}>Actividad 1</div>
-        <div>Actividad 2</div>
+        <div onClick={() => goView(2)} > Actividad 2</div>
       </div>
-    </div>
+    </div >
   )
 }

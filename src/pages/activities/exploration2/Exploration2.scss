@@ -107,4 +107,28 @@
     line-height: 30px;
     color: #9F9FB5;
   }
+
+  .conclusion {
+    p {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #073B4C;
+    }
+
+    textarea {
+      resize: none;
+      font-size: 16px;
+      line-height: 25px;
+      color: #073B4C;
+      background: #FFFFFF;
+      border: 2px solid #9F9FB5;
+      box-sizing: border-box;
+      border-radius: 8px;
+      width: 100%;
+      padding: 12px 25px;
+      margin: 25px 0;
+    }
+  }
 }
