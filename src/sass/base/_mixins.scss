@@ -1,4 +1,13 @@
 //Any mixins (style snippets) that will be used over and over
+
+/**
+ * flex-center
+ * =================================
+ * Center any element.
+ * Usage:
+ * @include flex-center;
+ */
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
