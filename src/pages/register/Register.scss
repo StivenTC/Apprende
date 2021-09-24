@@ -1,0 +1,29 @@
+.register {
+  margin: 120px 25px 0 25px;
+  text-align: center;
+
+  form {
+    width: 100%;
+    margin-top: 5rem;
+
+    input:not([type="submit"]) {
+      width: 100%;
+      border: 3px solid #EDEDFB;
+      border-radius: 12px;
+      height: 72px;
+      padding: 0 24px;
+      margin-bottom: 1rem;
+      color: #6D6E7C;
+      font-weight: bold;
+      font-size: 18px;
+
+      &::placeholder {
+        color: #EDEDFB;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 2rem;
+    }
+  }
+}

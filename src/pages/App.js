@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -6,7 +7,9 @@ function App() {
       <div>
         <h1>Apprende</h1>
         <h3>Bienvenido</h3>
-        <button>Continuar</button>
+        <Link to="/activities">
+          <button>Empezar</button>
+        </Link>
       </div>
     </div>
 
