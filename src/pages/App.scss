@@ -1,0 +1,18 @@
+.App {
+  background: $bkg-blue;
+  height: 100%;
+  overflow: auto;
+
+  >div {
+    margin: 90px;
+    text-align: center;
+  }
+
+  h3 {
+    margin-top: 20px;
+  }
+
+  button {
+    margin-top: 60px;
+  }
+}
