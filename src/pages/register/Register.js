@@ -1,15 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router';
 
-export const Register = ({ goView, saveUser }) => {
-  const history = useHistory();
+export const Register = ({ saveUser }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = data => {
     console.log(data);
     saveUser(data)
-    goView(1)
   }
   console.log("Errores: ", errors);
 
