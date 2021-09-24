@@ -108,7 +108,7 @@ export const Exploration = ({ goView }) => {
           </div>
         </div>
 
-        <button className={`${validate() ? "" : "disabled"}`}>Siguiente</button>
+        <button className={`${validate() ? "" : "disabled"}`} onClick={() => validate() ? goView(2) : console.log("no posible")}>Siguiente</button>
       </div>
     </div >
   )
