@@ -57,12 +57,18 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
+      max-width: 360PX;
+      margin: auto;
     }
 
     .activity-circle {
       width: fit-content;
+      flex: 0 45%;
+      justify-content: center;
 
       >div {
+        text-align: center;
+
         &:first-child {
           transform: rotate(180deg);
         }
@@ -73,27 +79,61 @@
         }
 
         path {
+          cursor: pointer;
           fill: #D9D9ED;
           transition: all 1s ease;
+
+          &.color-path {
+            fill: #FFBC0F;
+          }
+
+          &.color-path4 {
+            fill: #37BCDA;
+          }
         }
 
         &.colorete {
-          &:nth-child(odd) {
-            path {
-              fill: #68C4D3;
-            }
+          path {
+            fill: #68C4D3;
+          }
+        }
+      }
+
+      &.circle-2 {
+        display: flex;
+        flex: 0 50%;
+        flex-wrap: wrap;
+        height: fit-content;
+
+        .colorete {
+          path {
+            fill: #A1C74D;
+          }
+        }
+
+        >div {
+          height: 73px;
+
+          &:first-child {
+            transform: none;
           }
 
-          &:nth-child(even) {
-            path {
-              fill: #FFBC0F;
-            }
+          &:nth-child(2) {
+            transform: rotate(90deg);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(270deg);
+          }
+
+          &:nth-child(4) {
+            transform: rotate(180deg);
           }
         }
       }
     }
-
   }
+
 
   button {
     transition: all .5s ease;
