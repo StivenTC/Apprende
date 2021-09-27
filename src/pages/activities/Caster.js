@@ -16,9 +16,9 @@ function Caster() {
         case 0:
           return userData ? <Launcher goView={setActualView} /> : <Register saveUser={saveUserData} />;
         case 1:
-          return <Exploration goView={setActualView} />;
+          return <Exploration goView={setActualView} saveUser={saveUserData} />;
         case 2:
-          return <Exploration2 goView={setActualView} />;
+          return <Exploration2 goView={setActualView} userData={userData} />;
         default:
           return 'foo';
       }
@@ -27,7 +27,6 @@ function Caster() {
     setRenderView(changeView(actualView))
 
   }, [actualView, userData])
-
 
   return (
     <div className="caster">

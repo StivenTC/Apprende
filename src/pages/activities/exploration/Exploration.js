@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "../../../components/layout/header/Header"
 
-export const Exploration = ({ goView }) => {
+export const Exploration = ({ goView, saveUser }) => {
   //const [play, setPlay] = useState(false);
 
   const defaultColor = {
@@ -91,10 +91,15 @@ export const Exploration = ({ goView }) => {
     let a = colors.circle1.includes(1) && colors.circle2.includes(1) && colors.circle3.includes(1) && colors.circle4.includes(1)
     return a
   }
-  console.log(colors.circle2)
+
+  const nextActivity = () => {
+    saveUser(colors)
+    goView(2)
+  }
+
   return (
     <div className="exploration">
-      <Header goView={goView} />
+      <Header goView={goView} actualView={1} />
       <div className="exploration-content">
         <div className="exploration-text">
           <h1>Fracciones</h1>
@@ -140,7 +145,7 @@ export const Exploration = ({ goView }) => {
           </div>
         </div>
 
-        <button className={`${validate() ? "" : "disabled"}`} onClick={() => validate() ? goView(2) : console.log("no posible")}>Siguiente</button>
+        <button className={`${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>Siguiente</button>
       </div>
     </div >
   )

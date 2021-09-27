@@ -2,6 +2,12 @@
   background-color: #F7FAFF;
   height: 100%;
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   &-text {
     text-align: center;
     margin: 25px 0;
@@ -25,6 +31,8 @@
 
   &-activity {
     margin-bottom: 32px;
+    max-width: 360PX;
+    margin: auto;
 
     svg {
       position: relative;
@@ -58,6 +66,15 @@
       width: fit-content;
       display: flex;
       margin-bottom: 75px;
+
+      svg {
+        width: 85px;
+        height: 85px;
+      }
+
+      .colorete {
+        fill: #D9D9ED
+      }
 
       &-quarter {
         margin-left: 15px;
@@ -109,12 +126,25 @@
   }
 
   .conclusion {
+
     p {
       font-weight: bold;
       font-size: 18px;
       line-height: 25px;
       text-align: center;
       color: #073B4C;
+    }
+
+    &-answer {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: 1rem;
+        bottom: 2rem;
+        font-size: x-small;
+        color: #9F9FB5;
+      }
     }
 
     textarea {
