@@ -7,7 +7,7 @@ import { Launcher } from './Launcher';
 function Caster() {
   const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
-  const [userData, saveUserData] = useState({})
+  const [userData, saveUserData] = useState()
   //const [examen, setExam] = useState()
 
   useEffect(() => {
