@@ -1,0 +1,71 @@
+.scales {
+  &-content {
+    margin: 17px 35px;
+
+    &-text {
+      max-width: 300px;
+      margin: auto;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #073B4C;
+    }
+  }
+
+  &-activity {
+    &-fraction {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 60px 70px 25px;
+
+      .complete {
+        background: #68C4D3;
+        color: #ffffff;
+        opacity: 1;
+
+        &:before {
+          background-color: #ffffff;
+        }
+      }
+
+      .selected {
+        border: 2px dashed #68C4D3;
+        opacity: 1
+      }
+    }
+  }
+
+  &-fractions {
+    position: relative;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 42px;
+    height: 76px;
+    color: #6D6E7C;
+    cursor: pointer;
+
+    span {
+      font-size: 15px;
+      font-weight: bolder;
+      line-height: 19px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50%-2px);
+      background-color: #9F9FB5;
+      height: 3px;
+      width: 25px;
+      border-radius: 10px;
+    }
+  }
+}

@@ -57,7 +57,7 @@ export const Exploration2 = ({ goView, userData }) => {
     let a = value1.length > 0 && value2.length > 0 && value3.length > 0 && value4.length > 0
     return a
   }
-  console.log(userData)
+
   return (
     <div className="exploration2">
       <Header goView={goView} actualView={2} />
