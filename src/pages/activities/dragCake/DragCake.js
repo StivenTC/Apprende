@@ -4,6 +4,7 @@ import { useState } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { TouchBackend } from "react-dnd-touch-backend";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 export const DragCake = ({ goView, saveUser, userData }) => {
 
@@ -85,7 +86,7 @@ export const DragCake = ({ goView, saveUser, userData }) => {
 
   return (
     <div className="drag-cake">
-      <Header goView={goView} actualView={1} />
+      <Header goView={goView} actualView={4} />
       <div className="drag-cake-content">
         <div className="drag-cake-content-text">
           <h2>¿Qué observas?</h2>
@@ -121,7 +122,10 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxlength="500" />
               {textArea.length > 450 && <span>{textArea.length}/500</span>}
             </div>
-            <button className={`${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(5) : console.log("no posible")}>Siguiente</button>
+            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(5) : console.log("no posible")}>
+              Siguiente
+              <BiRightArrowAlt />
+            </button>
           </div>}
         </div>
       </div>

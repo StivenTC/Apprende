@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Header } from "../../../components/layout/header/Header"
+import { BiRightArrowAlt } from "react-icons/bi";
 
 export const Exploration = ({ goView, saveUser }) => {
   //const [play, setPlay] = useState(false);
@@ -145,7 +146,10 @@ export const Exploration = ({ goView, saveUser }) => {
           </div>
         </div>
 
-        <button className={`${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>Siguiente</button>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+          Siguiente
+          <BiRightArrowAlt />
+        </button>
       </div>
     </div >
   )

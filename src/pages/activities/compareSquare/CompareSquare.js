@@ -1,6 +1,7 @@
 import { Header } from "../../../components/layout/header/Header"
 
 import { useState } from "react";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 export const CompareSquares = ({ goView, saveUser, userData }) => {
 
@@ -34,7 +35,7 @@ export const CompareSquares = ({ goView, saveUser, userData }) => {
 
   return (
     <div className="compare-cake">
-      <Header goView={goView} actualView={1} />
+      <Header goView={goView} actualView={7} />
       <div className="compare-cake-content">
         <div className="fill-square-content-text">
           <h2>Compara</h2>
@@ -53,7 +54,10 @@ export const CompareSquares = ({ goView, saveUser, userData }) => {
               onClick={() => selectOption("B")}>B</div>
           </div>
         </div>
-        <button className={`${answer.length > 0 ? "" : "disabled"}`} onClick={() => answer.length > 0 ? goView(6) : console.log("no posible")}>Siguiente</button>
+        <button className={`btn-next ${answer.length > 0 ? "" : "disabled"}`} onClick={() => answer.length > 0 ? goView(8) : console.log("no posible")}>
+          Siguiente
+          <BiRightArrowAlt />
+        </button>
       </div>
     </div>
   )

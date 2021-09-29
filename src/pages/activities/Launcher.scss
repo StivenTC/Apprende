@@ -11,7 +11,9 @@
 
   h1 {
     margin-top: 72px;
-    margin-bottom: 26PX;
+    margin-bottom: 47PX;
+    font-size: 31px;
+    color: #ffffff;
   }
 
   &-activities {
@@ -24,9 +26,16 @@
       border: 2px solid #37BCDA;
       border-radius: 12px;
       @include flex-center;
+      justify-content: space-between;
       font-weight: bold;
       font-size: 18px;
       line-height: 25px;
+      padding: 0 15px;
+
+      svg {
+        font-size: 36px;
+        font-weight: bolder;
+      }
     }
 
   }

@@ -4,11 +4,24 @@ button {
   width: 100%;
   height: 62px;
   border: none;
-  background: $menta-green;
-  box-shadow: 0px 5px 0px $dark-green;
+  background: #37BCDA;
+  box-shadow: 0px 5px 0px #054E8B;
+  color: #ffffff;
   border-radius: 20px;
-
+  transition: all .5s ease;
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
+}
+
+.btn-next {
+  @include flex-center;
+  max-width: 225px;
+  margin: auto;
+
+  svg {
+    font-size: 36px;
+    font-weight: bolder;
+    margin-left: 8px;
+  }
 }

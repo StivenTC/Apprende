@@ -8,10 +8,11 @@ import { Exploration } from './exploration/Exploration';
 import { Exploration2 } from './exploration2/Exploration2';
 import { FillSquares } from './fillSquares/FillSquares';
 import { Launcher } from './Launcher';
+import { Presentation } from './presentation/Presentation';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(8)
+  const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
   //const [examen, setExam] = useState()
@@ -38,7 +39,7 @@ function Caster() {
         case 8:
           return <CompareCharts goView={setActualView} userData={userData} saveUser={saveUserData} />;
         default:
-          return 'foo';
+          return <Presentation goView={setActualView} />;
       }
     }
 

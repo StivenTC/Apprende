@@ -1,6 +1,8 @@
 import { Header } from "../../../components/layout/header/Header"
 
 import { useState } from "react";
+import { BiRightArrowAlt } from "react-icons/bi";
+
 
 export const FillSquares = ({ goView, saveUser, userData }) => {
 
@@ -48,7 +50,7 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
 
   return (
     <div className="fill-square">
-      <Header goView={goView} actualView={1} />
+      <Header goView={goView} actualView={6} />
       <div className="fill-square-content">
         <div className="fill-square-content-text">
           <h2>¿Qué observas?</h2>
@@ -72,7 +74,10 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
               </div>
             </div>)}
         </div>
-        <button className={`${answer.data.includes(0) ? "disabled" : ""}`} onClick={() => !answer.data.includes(0) ? goView(6) : console.log("no posible")}>Siguiente</button>
+        <button className={`btn-next ${answer.data.includes(0) ? "disabled" : ""}`} onClick={() => !answer.data.includes(0) ? goView(7) : console.log("no posible")}>
+          Siguiente
+          <BiRightArrowAlt />
+        </button>
       </div>
     </div>
   )

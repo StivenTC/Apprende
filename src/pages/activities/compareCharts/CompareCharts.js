@@ -3,6 +3,8 @@ import { Header } from "../../../components/layout/header/Header"
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useState } from "react";
+import { BiRightArrowAlt } from "react-icons/bi";
+
 
 export const CompareCharts = ({ goView, saveUser, userData }) => {
   const [currentView, setCurrentView] = useState(0);
@@ -193,13 +195,13 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
       setCurrentView(currentView + 1)
       setCurrentScale()
     } else if (textArea.length > 5) {
-      goView(9)
+      goView(0)
     }
   }
 
   return (
     <div className="scales compare-charts">
-      <Header goView={goView} actualView={1} />
+      <Header goView={goView} actualView={8} />
       <div className="scales-content">
         <div className="scales-content-text">
           <br />
@@ -233,7 +235,10 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
             }
           </div>
         </div>
-        <button className={`${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>Siguiente</button>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+          Siguiente
+          <BiRightArrowAlt />
+        </button>
       </div>
     </div >
   )
