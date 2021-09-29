@@ -8,7 +8,7 @@ function App() {
         <h1>Apprende</h1>
         <h3>Bienvenido</h3>
         <Link to="/activities">
-          <button>Empezar</button>
+          <button className="go-btn">Empezar</button>
         </Link>
       </div>
     </div>
