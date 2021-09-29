@@ -1,0 +1,89 @@
+.fill-square {
+  &-content {
+    margin: 17px 25px;
+    text-align: center;
+
+    &-text {
+      max-width: 300px;
+      margin: 25px auto 15px;
+      text-align: center;
+
+      h2 {
+        margin: auto;
+        margin-bottom: 12px;
+        font-weight: 900;
+        font-size: 31px;
+        letter-spacing: -0.01em;
+        line-height: 42px;
+        color: #073B4C;
+      }
+
+      p {
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 19px;
+        text-align: center;
+        color: #073B4C;
+      }
+    }
+  }
+
+  &-activity {
+    margin: 70px 0 84px;
+
+    &-item {
+      display: flex;
+      justify-content: space-evenly;
+      position: relative;
+
+      >p {
+        position: absolute;
+        top: -30px;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 19px;
+        color: #073B4C;
+      }
+
+      &:last-child p {
+        top: auto;
+        bottom: -30px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 55px;
+      }
+
+      &:nth-child(even) {
+        .painted {
+          background-color: #37BCDA;
+
+        }
+      }
+    }
+
+  }
+
+  &-fraction {
+    width: 205px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 0;
+
+    .tile {
+      height: 100%;
+      cursor: pointer;
+      background-color: #D9D9ED;
+      transition: all 1s ease;
+    }
+
+    .painted {
+      background-color: #FFBC0F;
+    }
+  }
+
+  button {
+    max-width: 225px;
+  }
+
+}

@@ -4,11 +4,12 @@ import { CompareCake } from './compareCake/CompareCake';
 import { DragCake } from './dragCake/DragCake';
 import { Exploration } from './exploration/Exploration';
 import { Exploration2 } from './exploration2/Exploration2';
+import { FillSquares } from './fillSquares/FillSquares';
 import { Launcher } from './Launcher';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(5)
+  const [actualView, setActualView] = useState(6)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
   //const [examen, setExam] = useState()
@@ -28,6 +29,8 @@ function Caster() {
           return <DragCake goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 5:
           return <CompareCake goView={setActualView} userData={userData} saveUser={saveUserData} />;
+        case 6:
+          return <FillSquares goView={setActualView} userData={userData} saveUser={saveUserData} />;
         default:
           return 'foo';
       }
