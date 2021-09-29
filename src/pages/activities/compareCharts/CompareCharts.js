@@ -195,6 +195,7 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
       setCurrentView(currentView + 1)
       setCurrentScale()
     } else if (textArea.length > 5) {
+      saveUser({ ...userData, complete: 2 })
       goView(0)
     }
   }

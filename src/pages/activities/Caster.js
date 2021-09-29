@@ -14,14 +14,14 @@ import { Scales } from './scales/Scales';
 function Caster() {
   const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
-  const [userData, saveUserData] = useState({})
+  const [userData, saveUserData] = useState({ complete: 0 })
   //const [examen, setExam] = useState()
 
   useEffect(() => {
     const changeView = (view) => {
       switch (view) {
         case 0:
-          return userData ? <Launcher goView={setActualView} /> : <Register saveUser={saveUserData} />;
+          return userData ? <Launcher goView={setActualView} userData={userData} /> : <Register saveUser={saveUserData} />;
         case 1:
           return <Exploration goView={setActualView} saveUser={saveUserData} />;
         case 2:

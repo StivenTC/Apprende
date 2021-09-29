@@ -106,7 +106,8 @@ export const Scales = ({ goView, saveUser, userData }) => {
   }
 
   const nextActivity = () => {
-    saveUser({ ...userData, scales: answers })
+    saveUser({ ...userData, scales: answers, complete: 1 })
+
     if (conclusion) {
       goView(4)
     } else {
