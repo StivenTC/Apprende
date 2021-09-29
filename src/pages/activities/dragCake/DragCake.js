@@ -11,17 +11,6 @@ export const DragCake = ({ goView, saveUser, userData }) => {
   const isMobile = window.innerWidth < 700;
   const [textArea, setTextArea] = useState("");
 
-  const validate = () => {
-    // let a = answers.filter((ans) => ans.answer.length > 0)
-    // return a.length === answers.length
-  }
-
-  const nextActivity = () => {
-    //saveUser({ ...userData, scales: answers })
-    console.log('lala')
-    //goView(4)
-  }
-
   const FractionA = () => {
     return <svg width="145" height="145" viewBox="0 0 145 145" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.8">
@@ -132,7 +121,7 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxlength="500" />
               {textArea.length > 450 && <span>{textArea.length}/500</span>}
             </div>
-            <button className={`${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(0) : console.log("no posible")}>Siguiente</button>
+            <button className={`${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(5) : console.log("no posible")}>Siguiente</button>
           </div>}
         </div>
       </div>
