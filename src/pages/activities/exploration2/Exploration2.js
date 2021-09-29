@@ -145,7 +145,7 @@ export const Exploration2 = ({ goView, userData }) => {
             <p>¿Identificas algo particular frente a las gráficas de estas fracciones? Escribe abajo tu respuesta</p>
             <div className="conclusion-answer">
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxlength="500" />
-              <span>{textArea.length}/500</span>
+              {textArea.length > 450 && <span>{textArea.length}/500</span>}
             </div>
             <button className={`${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(0) : console.log("no posible")}>Siguiente</button>
           </div>

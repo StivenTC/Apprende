@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Register } from '../register/Register';
+import { DragCake } from './dragCake/DragCake';
 import { Exploration } from './exploration/Exploration';
 import { Exploration2 } from './exploration2/Exploration2';
 import { Launcher } from './Launcher';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(3)
+  const [actualView, setActualView] = useState(4)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
   //const [examen, setExam] = useState()
@@ -22,6 +23,8 @@ function Caster() {
           return <Exploration2 goView={setActualView} userData={userData} />;
         case 3:
           return <Scales goView={setActualView} userData={userData} saveUser={saveUserData} />;
+        case 4:
+          return <DragCake goView={setActualView} userData={userData} saveUser={saveUserData} />;
         default:
           return 'foo';
       }

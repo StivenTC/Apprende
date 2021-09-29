@@ -1,0 +1,135 @@
+.drag-cake {
+  &-content {
+    margin: 17px 25px;
+
+    &-text {
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+
+      h2 {
+        font-weight: 900;
+        font-size: 31px;
+        letter-spacing: -0.01em;
+        line-height: 42px;
+        color: #073B4C;
+      }
+
+      p {
+        margin-top: 18px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #6D6E7C;
+      }
+    }
+  }
+
+  &-activity {
+    display: flex;
+    margin-top: 38px;
+    flex-direction: column;
+
+    .column-header {
+      display: flex;
+      justify-content: space-evenly;
+
+      >div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        font-size: 15px;
+        line-height: 19px;
+        color: #073B4C;
+
+        >span {
+          display: block;
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          background: #FFBC0F;
+          margin-bottom: 8px;
+        }
+
+        &:first-child {
+          >span {
+            background: #37BCDA;
+          }
+        }
+      }
+    }
+
+    &-task {
+      display: flex;
+      justify-content: center;
+      margin: 45px 0 64px;
+
+      .first-column {
+        z-index: 1;
+      }
+
+      .second-column {
+        justify-content: center;
+        display: flex;
+        transition: all .5s ease;
+        margin-left: 25px;
+
+        >div {
+          width: 145px;
+          height: 145px;
+          position: relative;
+
+          >svg {
+            z-index: 0;
+            position: absolute;
+            inset: 0;
+          }
+        }
+
+        .movable-item {
+          position: relative;
+        }
+      }
+    }
+
+    &-conclusion {
+      .conclusion-answer {
+        position: relative;
+
+        span {
+          position: absolute;
+          right: 1rem;
+          bottom: 2rem;
+          font-size: x-small;
+          color: #9F9FB5;
+        }
+      }
+
+      p {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #073B4C;
+      }
+
+      textarea {
+        resize: none;
+        font-size: 16px;
+        line-height: 25px;
+        color: #073B4C;
+        background: #FFFFFF;
+        border: 2px solid #9F9FB5;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 100%;
+        padding: 12px 25px;
+        margin: 25px 0;
+      }
+
+    }
+  }
+}
