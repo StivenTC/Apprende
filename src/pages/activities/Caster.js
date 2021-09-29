@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Register } from '../register/Register';
 import { CompareCake } from './compareCake/CompareCake';
+import { CompareCharts } from './compareCharts/CompareCharts';
 import { CompareSquares } from './compareSquare/CompareSquare';
 import { DragCake } from './dragCake/DragCake';
 import { Exploration } from './exploration/Exploration';
@@ -10,7 +11,7 @@ import { Launcher } from './Launcher';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(7)
+  const [actualView, setActualView] = useState(8)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
   //const [examen, setExam] = useState()
@@ -34,6 +35,8 @@ function Caster() {
           return <FillSquares goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 7:
           return <CompareSquares goView={setActualView} userData={userData} saveUser={saveUserData} />;
+        case 8:
+          return <CompareCharts goView={setActualView} userData={userData} saveUser={saveUserData} />;
         default:
           return 'foo';
       }
