@@ -21,7 +21,7 @@ function Caster() {
         case 2:
           return <Exploration2 goView={setActualView} userData={userData} />;
         case 3:
-          return <Scales goView={setActualView} userData={userData} />;
+          return <Scales goView={setActualView} userData={userData} saveUser={saveUserData} />;
         default:
           return 'foo';
       }
