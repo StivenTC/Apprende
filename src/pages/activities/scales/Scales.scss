@@ -1,6 +1,6 @@
 .scales {
   &-content {
-    margin: 17px 35px;
+    margin: 32px 35px;
 
     &-text {
       max-width: 300px;
@@ -10,10 +10,23 @@
       line-height: 25px;
       text-align: center;
       color: #073B4C;
+
+      .dot-blue {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        background: #37BCDA;
+        border: 2px solid #FFFFFF;
+      }
     }
   }
 
   &-activity {
+    max-width: 320px;
+    margin: auto;
+
     &-fraction {
       display: flex;
       justify-content: space-evenly;
@@ -73,6 +86,16 @@
           background-color: #c8101000;
           top: calc(50% - 1px);
           border-top: 2px dashed #9F9FB5;
+
+          &::before {
+            content: "\279C";
+            position: absolute;
+            font-size: 10px;
+            font-weight: 900;
+            color: #9F9FB5;
+            right: -3%;
+            top: -6px;
+          }
         }
 
         &-dot {
@@ -93,8 +116,11 @@
         }
 
         &-handle {
+          width: 22px;
+          height: 22px;
           background: #37BCDA;
           border: 2px solid #FFFFFF;
+          margin-top: -10px;
         }
 
         &-mark {
@@ -107,18 +133,18 @@
             display: flex;
             flex-direction: column;
             font-weight: bold;
-            font-size: 9px;
+            font-size: 14px;
             line-height: 19px;
             text-align: center;
 
             &:before {
               content: "";
               position: absolute;
-              top: calc(50% - 2px);
-              left: -100%;
+              top: calc(50% - 1px);
+              left: -50%;
               background-color: #9F9FB5;
               height: 2px;
-              width: 15px;
+              width: 16px;
               border-radius: 10px;
             }
 

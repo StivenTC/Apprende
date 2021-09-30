@@ -35,45 +35,45 @@ export const Scales = ({ goView, saveUser, userData }) => {
     {
       steps: 0.5,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
-        0.5: <strong className="rc-strong-mark"><span>1</span><span>2</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>,
+        0: <strong>0</strong>,
+        0.5: <strong><span>1</span><span>2</span></strong>,
+        1: <strong>1</strong>,
       }
     },
     {
       steps: 0.25,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
+        0: <strong>0</strong>,
         0.25: <strong><span>1</span><span>4</span></strong>,
-        0.5: <strong className="rc-strong-mark"><span>2</span><span>4</span></strong>,
+        0.5: <strong><span>2</span><span>4</span></strong>,
         0.75: <strong><span>3</span><span>4</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>
+        1: <strong>1</strong>
       }
     },
     {
       steps: 0.16,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
+        0: <strong>0</strong>,
         0.16: <strong><span>1</span><span>6</span></strong>,
         0.33: <strong><span>2</span><span>6</span></strong>,
-        0.5: <strong className="rc-strong-mark"><span>3</span><span>6</span></strong>,
+        0.5: <strong><span>3</span><span>6</span></strong>,
         0.66: <strong><span>4</span><span>6</span></strong>,
         0.83: <strong><span>5</span><span>6</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>
+        1: <strong>1</strong>
       }
     },
     {
       steps: 0.125,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
+        0: <strong>0</strong>,
         0.125: <strong><span>1</span><span>8</span></strong>,
         0.25: <strong><span>2</span><span>8</span></strong>,
         0.375: <strong><span>3</span><span>8</span></strong>,
-        0.5: <strong className="rc-strong-mark"><span>4</span><span>8</span></strong>,
+        0.5: <strong><span>4</span><span>8</span></strong>,
         0.625: <strong><span>5</span><span>8</span></strong>,
         0.75: <strong><span>6</span><span>8</span></strong>,
         0.875: <strong><span>7</span><span>8</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>
+        1: <strong>1</strong>
       }
     },
   ]
@@ -120,12 +120,12 @@ export const Scales = ({ goView, saveUser, userData }) => {
       <Header goView={goView} actualView={3} />
       <div className="scales-content">
         {!conclusion && <div className="scales-content-text">
-          <p>Ubica el punto azul que representa cada fracción en cada una de las rectas numéricas</p>
+          <p>Ubica el punto azul <span className="dot-blue" /> que representa cada fracción en cada una de las rectas numéricas</p>
         </div>}
         {!conclusion ? <div className="scales-activity">
           <div className="scales-activity-fraction">
             {answers.map((item, i) =>
-              <div role="button"
+              <div key={item.quest} role="button"
                 onClick={() => setCurrentScale(i)}
                 className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "selected" : ""}`}>
                 <span>{item.quest.charAt()}</span>
@@ -136,6 +136,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
           <div className="scales-activity-items">
             {scales.map((scale, i) =>
               <div
+                key={scale.steps}
                 role="button"
                 className="content-slider"
                 onClick={() => setCurrentScale(i)}>
@@ -165,7 +166,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
               <path d="M150.053 11.752C150.533 11.752 150.773 11.956 150.773 12.364C150.773 12.788 150.533 13 150.053 13H145.997C145.509 13 145.265 12.788 145.265 12.364C145.265 11.956 145.509 11.752 145.997 11.752H147.245V6.28L146.093 6.988C145.981 7.052 145.881 7.084 145.793 7.084C145.625 7.084 145.481 7.012 145.361 6.868C145.249 6.724 145.193 6.564 145.193 6.388C145.193 6.156 145.297 5.976 145.505 5.848L147.365 4.696C147.605 4.552 147.833 4.48 148.049 4.48C148.273 4.48 148.453 4.548 148.589 4.684C148.725 4.82 148.793 5.008 148.793 5.248V11.752H150.053Z" fill="#68C4D3" />
               <line x1="143.062" y1="16.8899" x2="152.215" y2="16.8899" stroke="#68C4D3" stroke-linecap="round" />
               <path d="M150.011 29.076C150.491 29.076 150.731 29.28 150.731 29.688C150.731 30.112 150.491 30.324 150.011 30.324H145.451C145.243 30.324 145.079 30.264 144.959 30.144C144.839 30.016 144.779 29.86 144.779 29.676C144.779 29.436 144.871 29.22 145.055 29.028L147.791 26.088C148.127 25.72 148.371 25.384 148.523 25.08C148.683 24.768 148.763 24.46 148.763 24.156C148.763 23.78 148.655 23.492 148.439 23.292C148.223 23.092 147.915 22.992 147.515 22.992C147.187 22.992 146.867 23.056 146.555 23.184C146.251 23.304 145.943 23.472 145.631 23.688C145.551 23.744 145.471 23.792 145.391 23.832C145.311 23.864 145.231 23.88 145.151 23.88C145.015 23.88 144.895 23.816 144.791 23.688C144.695 23.56 144.647 23.408 144.647 23.232C144.647 23.112 144.667 23.008 144.707 22.92C144.755 22.832 144.827 22.748 144.923 22.668C145.275 22.388 145.687 22.168 146.159 22.008C146.631 21.84 147.103 21.756 147.575 21.756C148.399 21.756 149.055 21.964 149.543 22.38C150.039 22.796 150.287 23.356 150.287 24.06C150.287 24.548 150.183 25.008 149.975 25.44C149.767 25.864 149.415 26.34 148.919 26.868L146.843 29.076H150.011Z" fill="#68C4D3" />
-              <circle cx="148" cy="45.8557" r="7" fill="#37BCDA" stroke="white" stroke-width="2" />
+              <circle cx="148" cy="45.8557" r="7" fill="#37BCDA" stroke="white" strokeWidth="2" />
               <path d="M294.669 139.358L297.174 141.612C297.615 142.01 297.615 142.702 297.174 143.099L294.669 145.354C294.025 145.933 293 145.476 293 144.61V140.101C293 139.235 294.025 138.779 294.669 139.358Z" fill="#9F9FB5" />
               <line x1="7" y1="142.356" x2="294" y2="142.356" stroke="#9F9FB5" stroke-dasharray="2 2" />
               <line x1="147.5" y1="145.856" x2="147.5" y2="137.856" stroke="#9F9FB5" />
@@ -244,9 +245,9 @@ export const Scales = ({ goView, saveUser, userData }) => {
               <path d="M246.996 276.655C247.152 276.655 247.272 276.7 247.356 276.79C247.44 276.874 247.482 276.985 247.482 277.123C247.482 277.261 247.44 277.405 247.356 277.555L244.485 282.766C244.365 282.97 244.2 283.072 243.99 283.072C243.846 283.072 243.717 283.024 243.603 282.928C243.495 282.826 243.441 282.703 243.441 282.559C243.441 282.457 243.471 282.355 243.531 282.253L246.114 277.591H243.396C243.036 277.591 242.856 277.438 242.856 277.132C242.856 276.814 243.036 276.655 243.396 276.655H246.996Z" fill="#9F9FB5" />
               <line x1="240.591" y1="287.89" x2="249.743" y2="287.89" stroke="#9F9FB5" stroke-linecap="round" />
               <path d="M246.384 297.066C246.756 297.168 247.041 297.354 247.239 297.624C247.443 297.894 247.545 298.224 247.545 298.614C247.545 299.172 247.335 299.61 246.915 299.928C246.495 300.24 245.913 300.396 245.169 300.396C244.425 300.396 243.843 300.24 243.423 299.928C243.003 299.61 242.793 299.172 242.793 298.614C242.793 298.224 242.895 297.894 243.099 297.624C243.303 297.348 243.591 297.162 243.963 297.066C243.645 296.946 243.396 296.76 243.216 296.508C243.036 296.25 242.946 295.95 242.946 295.608C242.946 295.08 243.144 294.663 243.54 294.357C243.936 294.051 244.479 293.898 245.169 293.898C245.859 293.898 246.402 294.051 246.798 294.357C247.194 294.663 247.392 295.08 247.392 295.608C247.392 295.956 247.302 296.259 247.122 296.517C246.942 296.775 246.696 296.958 246.384 297.066ZM245.169 294.807C244.419 294.807 244.044 295.113 244.044 295.725C244.044 296.031 244.137 296.265 244.323 296.427C244.515 296.583 244.797 296.661 245.169 296.661C245.541 296.661 245.82 296.583 246.006 296.427C246.198 296.265 246.294 296.031 246.294 295.725C246.294 295.113 245.919 294.807 245.169 294.807ZM245.169 299.487C246.027 299.487 246.456 299.166 246.456 298.524C246.456 297.882 246.027 297.561 245.169 297.561C244.311 297.561 243.882 297.882 243.882 298.524C243.882 299.166 244.311 299.487 245.169 299.487Z" fill="#9F9FB5" />
-              <circle cx="148" cy="141.856" r="7" fill="#37BCDA" stroke="white" stroke-width="2" />
-              <circle cx="148" cy="230.856" r="7" fill="#37BCDA" stroke="white" stroke-width="2" />
-              <circle cx="148" cy="320.856" r="7" fill="#37BCDA" stroke="white" stroke-width="2" />
+              <circle cx="148" cy="141.856" r="7" fill="#37BCDA" stroke="white" strokeWidth="2" />
+              <circle cx="148" cy="230.856" r="7" fill="#37BCDA" stroke="white" strokeWidth="2" />
+              <circle cx="148" cy="320.856" r="7" fill="#37BCDA" stroke="white" strokeWidth="2" />
             </svg>
 
             <div className="compare-charts-answer">

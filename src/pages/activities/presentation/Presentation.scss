@@ -2,18 +2,19 @@
   overflow: auto;
   height: 100%;
   text-align: center;
-  padding: 112px 46px;
+  padding: 32px 46px;
 
   h1 {
     font-weight: 900;
     font-size: 31px;
     line-height: 42px;
     color: #073B4C;
+    margin-bottom: 32px;
   }
 
   p {
-    max-width: 300px;
-    margin: 43px auto;
+    max-width: 270px;
+    margin: 28px auto;
     font-weight: normal;
     font-size: 18px;
     line-height: 25px;
@@ -26,6 +27,7 @@
   }
 
   button {
+    margin-top: 42px;
     color: #082927;
     background: #06D6A0;
     border: 3px solid #27DCAD;

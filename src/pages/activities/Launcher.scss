@@ -10,7 +10,7 @@
   overflow: auto;
 
   h1 {
-    margin-top: 72px;
+    margin-top: 92px;
     margin-bottom: 47PX;
     font-size: 31px;
     color: #ffffff;
@@ -20,13 +20,14 @@
     margin-top: 30px;
 
     >div {
-      margin: 20px;
+      @include flex-center;
+      justify-content: space-between;
+      max-width: 320px;
       height: 72px;
+      margin: 20px auto;
       background: #F7FAFF;
       border: 2px solid #37BCDA;
       border-radius: 12px;
-      @include flex-center;
-      justify-content: space-between;
       font-weight: bold;
       font-size: 18px;
       line-height: 25px;
