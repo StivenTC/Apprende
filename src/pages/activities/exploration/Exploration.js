@@ -118,7 +118,7 @@ export const Exploration = ({ goView, saveUser }) => {
           <div className="activity">
             <div className="activity-circle">
               {defaultColor.circle1.map((item, i) =>
-                <div onClick={() => setColors({ ...colors, circle1: colorette(colors.circle1, i) })} className={`${colors.circle1[i] ? "colorete" : ""}`}>
+                <div key={item + i} onClick={() => setColors({ ...colors, circle1: colorette(colors.circle1, i) })} className={`${colors.circle1[i] ? "colorete" : ""}`}>
                   <VectorSvg />
                 </div>
               )}
@@ -126,7 +126,7 @@ export const Exploration = ({ goView, saveUser }) => {
 
             <div className="activity-circle circle-2">
               {defaultColor.circle2.map((item, i) =>
-                <div onClick={() => setColors({ ...colors, circle2: colorette(colors.circle2, i) })} className={`${colors.circle2[i] ? "colorete" : ""}`}>
+                <div key={item + i} onClick={() => setColors({ ...colors, circle2: colorette(colors.circle2, i) })} className={`${colors.circle2[i] ? "colorete" : ""}`}>
                   <VectorSvg2 />
                 </div>
               )}

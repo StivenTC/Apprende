@@ -148,8 +148,8 @@ export const Exploration2 = ({ goView, userData }) => {
           <div className="exploration2-activity">
             <p>¿Identificas algo particular frente a las gráficas de estas fracciones? Escribe abajo tu respuesta</p>
             <div className="conclusion-answer">
-              <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxlength="500" />
-              {textArea.length > 450 && <span>{textArea.length}/500</span>}
+              <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
+              {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
             <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(9) : console.log("no posible")}>
               Siguiente

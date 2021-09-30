@@ -119,8 +119,8 @@ export const DragCake = ({ goView, saveUser, userData }) => {
           {!isFirstColumn && <div className="drag-cake-activity-conclusion">
             <p>¿Cómo podrías comparar estas dos fracciones representadas?</p>
             <div className="conclusion-answer">
-              <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxlength="500" />
-              {textArea.length > 450 && <span>{textArea.length}/500</span>}
+              <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
+              {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
             <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(5) : console.log("no posible")}>
               Siguiente
