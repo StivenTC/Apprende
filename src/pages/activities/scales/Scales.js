@@ -109,7 +109,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
     saveUser({ ...userData, scales: answers, complete: 1 })
 
     if (conclusion) {
-      goView(4)
+      goView(0)
     } else {
       goConclusion(true)
     }

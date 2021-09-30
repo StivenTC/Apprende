@@ -66,9 +66,13 @@
 
   &-fraction {
     width: 205px;
+    height: 90px;
     display: grid;
-    grid-column-gap: 5px;
+    grid-column-gap: 4px;
     grid-row-gap: 0;
+    border: 1px solid #EDEDFB;
+    padding: 4px;
+    background-color: #ffffff;
 
     .tile {
       height: 100%;

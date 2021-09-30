@@ -147,27 +147,27 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
     {
       steps: 0.16,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
+        0: <strong>0</strong>,
         0.16: <strong><span>1</span><span>6</span></strong>,
         0.33: <strong><span>2</span><span>6</span></strong>,
-        0.5: <strong className="rc-strong-mark"><span>3</span><span>6</span></strong>,
+        0.5: <strong><span>3</span><span>6</span></strong>,
         0.66: <strong><span>4</span><span>6</span></strong>,
         0.83: <strong><span>5</span><span>6</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>
+        1: <strong>1</strong>
       }
     },
     {
       steps: 0.125,
       marks: {
-        0: <strong className="rc-strong-mark">0</strong>,
+        0: <strong>0</strong>,
         0.125: <strong><span>1</span><span>8</span></strong>,
         0.25: <strong><span>2</span><span>8</span></strong>,
         0.375: <strong><span>3</span><span>8</span></strong>,
-        0.5: <strong className="rc-strong-mark"><span>4</span><span>8</span></strong>,
+        0.5: <strong><span>4</span><span>8</span></strong>,
         0.625: <strong><span>5</span><span>8</span></strong>,
         0.75: <strong><span>6</span><span>8</span></strong>,
         0.875: <strong><span>7</span><span>8</span></strong>,
-        1: <strong className="rc-strong-mark">1</strong>
+        1: <strong>1</strong>
       }
     },
   ]
@@ -216,7 +216,7 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
           </div>
           <div className="scales-activity-items">
             {currentView < quests.length - 1 ? scales.map((scale, i) =>
-              <div
+              currentView === i && <div
                 role="button"
                 className="content-slider"
                 onClick={() => setCurrentScale(i)}>

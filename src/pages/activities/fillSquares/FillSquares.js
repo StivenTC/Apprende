@@ -53,8 +53,8 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
       <Header goView={goView} actualView={6} />
       <div className="fill-square-content">
         <div className="fill-square-content-text">
-          <h2>¿Qué observas?</h2>
-          <p>Arrastra la fracción B sobre la A y observa las dos fracciones</p>
+          <h2>Compara</h2>
+          <p>Colorea en los rectángulos las fracciones A y B</p>
         </div>
 
         <div className="fill-square-activity">

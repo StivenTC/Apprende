@@ -90,7 +90,11 @@ export const DragCake = ({ goView, saveUser, userData }) => {
       <div className="drag-cake-content">
         <div className="drag-cake-content-text">
           <h2>¿Qué observas?</h2>
-          <p>Arrastra la fracción B sobre la A y observa las dos fracciones</p>
+          {isFirstColumn ?
+            <p>Arrastra la fracción A sobre la B y observa las dos fracciones</p>
+            :
+            <p>Escribe acá lo que hiciste y lo que observas</p>
+          }
         </div>
         <div className="drag-cake-activity">
           <div className="column-header">

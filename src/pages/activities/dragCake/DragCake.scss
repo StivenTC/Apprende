@@ -91,6 +91,12 @@
 
         .movable-item {
           position: relative;
+
+          g {
+            path:not(:last-child) {
+              fill: transparent;
+            }
+          }
         }
       }
     }
