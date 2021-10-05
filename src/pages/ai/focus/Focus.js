@@ -4,11 +4,13 @@ import { Header } from "../../../components/layout/header/Header";
 import createPie from "../../../components/shapes/CeatePie";
 import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
+import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 export const Focus = ({ goView }) => {
   const [selectedCard, setSelectedCard] = useState();
   const [selectedOption, setSelectedOption] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+  const [showFeedback, setFeedback] = useState("");
   const [answers, setAnswers] = useState([]);
 
   const pieColors = ['#FFE69B', '#EDEDFB']
@@ -94,7 +96,15 @@ export const Focus = ({ goView }) => {
     }
     return clases
   }
-  console.log(answers)
+
+  const nextView = () => {
+    let completeQuest = answers.every(Boolean)
+    if (completeQuest) {
+      setFeedback('correct')
+    }
+
+  }
+
   return (
     <div className="focus">
       <Header goView={goView} actualView={2} />
@@ -112,10 +122,12 @@ export const Focus = ({ goView }) => {
         </div>
         <button
           className={`btn-next ${answers.length > 2 ? "" : "disabled"}`}
-          onClick={() => answers.length > 2 ? goView(3) : console.log("no posible")}>
+          onClick={() => answers.length > 2 ? nextView() : console.log("no posible")}>
           Enviar
           <BiRightArrowAlt />
         </button>
+
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} />}
       </div>
     </div>
   )

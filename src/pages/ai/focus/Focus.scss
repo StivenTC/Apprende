@@ -1,4 +1,6 @@
 .focus {
+  position: relative;
+
   &-body {
     max-width: 310px;
     margin: 16px auto;
@@ -10,6 +12,17 @@
       text-align: center;
       color: #53536E;
       margin-bottom: 24px;
+    }
+
+    .btn-next {
+      margin-top: 25px;
+      width: 190px;
+      background: #0079DE;
+      border: 0px 5px 0px #054E8B;
+    }
+
+    .disabled {
+      background: #EDEDFB;
     }
   }
 
@@ -104,10 +117,4 @@
     }
   }
 
-  .btn-next {
-    margin-top: 25px;
-    width: 190px;
-    background-color: #0079DE;
-    border-color: 0px 5px 0px #054E8B;
-  }
 }
