@@ -69,7 +69,7 @@
       >div {
         text-align: center;
 
-        &:first-child {
+        &:last-child {
           transform: rotate(180deg);
         }
 
@@ -96,6 +96,12 @@
           path {
             fill: #68C4D3;
           }
+        }
+      }
+
+      &.circle-1 {
+        >div:last-child {
+          margin-top: -6px;
         }
       }
 

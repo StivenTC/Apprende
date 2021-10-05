@@ -1,6 +1,12 @@
 .compare-charts {
   .content-slider {
     margin: 120px auto;
+
+    &.slider-yellow {
+      .rc-slider-handle {
+        background-color: #FFBC0F;
+      }
+    }
   }
 
   &-answer {

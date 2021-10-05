@@ -10,7 +10,8 @@
 
   &-text {
     text-align: center;
-    margin: 25px 0;
+    margin: 25px auto;
+    max-width: 300px;
 
     h1 {
       margin-bottom: 12px;
@@ -70,6 +71,12 @@
       svg {
         width: 85px;
         height: 85px;
+      }
+
+      &:last-child {
+        svg {
+          transform: scale(1.2);
+        }
       }
 
       .colorete {

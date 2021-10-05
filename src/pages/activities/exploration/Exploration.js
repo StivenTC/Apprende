@@ -44,42 +44,42 @@ export const Exploration = ({ goView, saveUser }) => {
   }
 
   const VectorSvg = () => {
-    return <svg width="146" height="74" viewBox="0 0 146 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M72.9886 29.4255C56.9217 29.4255 43.888 16.534 43.6036 0.514404H0C0.236976 40.6108 32.8449 73.0292 72.9886 73.0292C113.132 73.0292 145.693 40.6108 145.977 0.514404H102.374C102.089 16.534 89.0556 29.4255 72.9886 29.4255Z" fill="#D9D9ED" />
+    return <svg width="146" height="73" viewBox="0 0 146 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M146 73C146 63.4135 144.112 53.9209 140.443 45.0641C136.775 36.2073 131.397 28.1599 124.619 21.3812C117.84 14.6025 109.793 9.22539 100.936 5.55679C92.0791 1.8882 82.5865 -4.19039e-07 73 0C63.4135 4.19039e-07 53.9209 1.8882 45.0641 5.5568C36.2073 9.22539 28.1599 14.6025 21.3812 21.3812C14.6025 28.1599 9.22538 36.2073 5.55679 45.0641C1.8882 53.9209 -8.38078e-07 63.4135 0 73L73 73H146Z" fill="#D9D9ED" stroke="#D9D9ED" />
     </svg>
   }
 
   const VectorSvg2 = () => {
-    return <svg width="74" height="73" viewBox="0 0 74 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M43.8673 72.2778C44.2465 56.2108 57.1854 43.2719 73.2523 42.8927V0C33.4877 0.379162 1.35377 32.5131 0.974609 72.2778H43.8673Z" fill="#D9D9ED" />
+    return <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <mask id="path-1-inside-1" fill="white">
+        <path d="M73 -3.19093e-06C63.4135 -2.77189e-06 53.9209 1.8882 45.0641 5.55679C36.2073 9.22539 28.1599 14.6025 21.3812 21.3812C14.6025 28.1599 9.22538 36.2073 5.55679 45.0641C1.8882 53.9209 -4.02901e-06 63.4135 -3.19093e-06 73L73 73L73 -3.19093e-06Z" />
+      </mask>
+      <path d="M73 -3.19093e-06C63.4135 -2.77189e-06 53.9209 1.8882 45.0641 5.55679C36.2073 9.22539 28.1599 14.6025 21.3812 21.3812C14.6025 28.1599 9.22538 36.2073 5.55679 45.0641C1.8882 53.9209 -4.02901e-06 63.4135 -3.19093e-06 73L73 73L73 -3.19093e-06Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" mask="url(#path-1-inside-1)" />
     </svg>
-
   }
 
   const VectorSvg3 = () => {
-    return <svg width="147" height="147" viewBox="0 0 147 147" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 0) })} className={`${colors.circle3[0] ? "color-path" : ""}`} d="M55.273 49.7749L32.1245 13.4932C12.7081 26.6264 0 48.7829 0 73.9628C0 74.5769 0 75.2383 0.0472418 75.8525H43.0846C43.0373 75.2383 43.0373 74.5769 43.0373 73.9628C42.9901 64.042 47.8087 55.2077 55.273 49.7749Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 1) })} className={`${colors.circle3[1] ? "color-path" : ""}`} d="M102.987 73.9626C102.987 74.5768 102.94 75.2382 102.94 75.8523H145.977C145.977 75.2382 146.024 74.5768 146.024 73.9626C146.024 48.9717 133.458 26.8625 114.278 13.7292L91.082 50.011C98.31 55.4911 102.987 64.1836 102.987 73.9626Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 2) })} className={`${colors.circle3[2] ? "color-path" : ""}`} d="M89.9018 49.1608L113.05 12.9263C101.523 5.36762 87.7759 0.974121 72.9892 0.974121C58.3442 0.974121 44.6913 5.27313 33.2588 12.7373L56.4073 48.9719C61.1315 45.8067 66.8477 43.9642 72.9892 43.9642C79.2723 43.9642 85.0831 45.9011 89.9018 49.1608Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 3) })} className={`${colors.circle3[3] ? "color-path" : ""}`} d="M88.7207 99.5205L111.869 135.755C131.475 123.378 144.797 101.93 145.883 77.2695H102.799C101.759 86.6707 96.3739 94.749 88.7207 99.5205Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 4) })} className={`${colors.circle3[4] ? "color-path" : ""}`} d="M58.8159 100.418L35.6201 136.7C46.533 143.219 59.3355 146.952 72.9412 146.952C86.7358 146.952 99.6328 143.125 110.64 136.464L87.4917 100.182C83.1926 102.544 78.2323 103.914 72.9884 103.914C67.8863 103.961 63.0676 102.686 58.8159 100.418Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 5) })} className={`${colors.circle3[5] ? "color-path" : ""}`} d="M43.1793 77.2695H0.0947266C1.18129 102.024 14.6452 123.614 34.4396 135.944L57.5881 99.7094C49.7459 94.9852 44.2186 86.8124 43.1793 77.2695Z" fill="#D9D9ED" />
+    return <svg width="177" height="169" viewBox="0 0 177 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 0) })} className={`${colors.circle3[0] ? "color-path" : ""}`} d="M161.238 84.2376C161.238 71.4234 157.865 58.835 151.457 47.7375C145.05 36.6401 135.835 27.4248 124.738 21.0177L88.2376 84.2375L161.238 84.2376Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 1) })} className={`${colors.circle3[1] ? "color-path" : ""}`} d="M51.7377 21.0177C40.6403 27.4248 31.4249 36.6401 25.0178 47.7375C18.6107 58.8349 15.2377 71.4234 15.2377 84.2375L88.2377 84.2375L51.7377 21.0177Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 2) })} className={`${colors.circle3[2] ? "color-path" : ""}`} d="M124.738 21.0177C113.641 14.6106 101.052 11.2375 88.2379 11.2375C75.4238 11.2375 62.8353 14.6106 51.7379 21.0177L88.2379 84.2375L124.738 21.0177Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 3) })} className={`${colors.circle3[3] ? "color-path" : ""}`} d="M15.238 84.2375C15.238 97.0517 18.6111 109.64 25.0181 120.738C31.4252 131.835 40.6406 141.05 51.738 147.457L88.238 84.2375L15.238 84.2375Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 4) })} className={`${colors.circle3[4] ? "color-path" : ""}`} d="M124.738 147.457C135.835 141.05 145.051 131.835 151.458 120.738C157.865 109.64 161.238 97.0518 161.238 84.2376L88.2379 84.2376L124.738 147.457Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle3: colorette(colors.circle3, 5) })} className={`${colors.circle3[5] ? "color-path" : ""}`} d="M51.7376 147.457C62.835 153.865 75.4235 157.238 88.2376 157.238C101.052 157.238 113.64 153.865 124.738 147.457L88.2376 84.2376L51.7376 147.457Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
     </svg>
-
   }
 
   const VectorSvg4 = () => {
-    return <svg width="147" height="147" viewBox="0 0 147 147" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 0) })} className={`${colors.circle4[0] ? "color-path4" : ""}`} d="M22.6162 22.0932C36.1248 8.67973 54.0094 1.21195 73.0356 0.974121V43.783C65.4251 44.0209 58.2903 47.065 52.8678 52.3448L22.6162 22.0932Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 1) })} className={`${colors.circle4[1] ? "color-path4" : ""}`} d="M95.344 52.6302C90.0166 47.3029 82.977 44.1636 75.4141 43.8306V0.974121C94.3927 1.35464 112.182 8.91755 125.596 22.331L95.344 52.6302Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 2) })} className={`${colors.circle4[2] ? "color-path4" : ""}`} d="M104.191 74.2251C104.191 74.1299 104.191 74.0824 104.191 73.9872C104.191 66.8049 101.622 59.8603 96.9609 54.3903L127.26 24.0911C140.008 37.6472 147 55.3891 147 74.0348C147 74.1299 147 74.1775 147 74.2726H104.191V74.2251Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 3) })} className={`${colors.circle4[3] ? "color-path4" : ""}`} d="M95.582 95.106C100.481 90.1116 103.478 83.5951 104.049 76.603H146.953C146.287 95.0109 138.819 112.277 125.881 125.358L95.582 95.106Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 4) })} className={`${colors.circle4[4] ? "color-path4" : ""}`} d="M75.4141 104.144C82.2159 103.811 88.7324 101.195 93.8694 96.7234L124.169 127.023C110.945 139.532 93.6316 146.62 75.4141 146.953V104.144Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 5) })} className={`${colors.circle4[5] ? "color-path4" : ""}`} d="M73.0363 147C54.7712 146.762 37.4098 139.77 24.0439 127.26L54.3431 96.9612C59.5753 101.432 66.1393 103.953 72.9888 104.191V147H73.0363Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 6) })} className={`${colors.circle4[6] ? "color-path4" : ""}`} d="M22.3318 125.595C9.25128 112.467 1.68838 95.106 1.02246 76.603H43.9265C44.5448 83.6903 47.6366 90.3019 52.6309 95.3438L22.3318 125.595Z" fill="#D9D9ED" />
-      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 7) })} className={`${colors.circle4[7] ? "color-path4" : ""}`} d="M0.974609 74.2248C0.974609 74.1297 0.974609 74.0821 0.974609 73.987C0.974609 55.1986 8.06186 37.4091 20.9521 23.8054L51.2513 54.1046C46.4471 59.6222 43.7835 66.6619 43.7835 73.987C43.7835 74.0821 43.7835 74.1297 43.7835 74.2248H0.974609Z" fill="#D9D9ED" />
+    return <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 0) })} className={`${colors.circle4[0] ? "color-path4" : ""}`} d="M88.2373 15.2378C78.6508 15.2378 69.1582 17.126 60.3014 20.7946C51.4446 24.4632 43.3972 29.8403 36.6185 36.619L88.2373 88.2378L88.2373 15.2378Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 1) })} className={`${colors.circle4[1] ? "color-path4" : ""}`} d="M139.856 36.619C133.078 29.8403 125.03 24.4632 116.173 20.7946C107.317 17.126 97.8241 15.2378 88.2376 15.2378L88.2376 88.2378L139.856 36.619Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 2) })} className={`${colors.circle4[2] ? "color-path4" : ""}`} d="M161.238 88.2373C161.238 78.6508 159.35 69.1582 155.681 60.3014C152.013 51.4446 146.636 43.3972 139.857 36.6185L88.2383 88.2373L161.238 88.2373Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 3) })} className={`${colors.circle4[3] ? "color-path4" : ""}`} d="M139.857 139.856C146.636 133.078 152.013 125.03 155.681 116.173C159.35 107.317 161.238 97.8241 161.238 88.2376L88.2383 88.2376L139.857 139.856Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 4) })} className={`${colors.circle4[4] ? "color-path4" : ""}`} d="M88.2383 161.237C97.8248 161.237 107.317 159.349 116.174 155.681C125.031 152.012 133.078 146.635 139.857 139.856L88.2383 88.2374L88.2383 161.237Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 5) })} className={`${colors.circle4[5] ? "color-path4" : ""}`} d="M36.6192 139.857C43.3979 146.636 51.4453 152.013 60.3021 155.681C69.1589 159.35 78.6515 161.238 88.238 161.238L88.238 88.2383L36.6192 139.857Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 6) })} className={`${colors.circle4[6] ? "color-path4" : ""}`} d="M15.2373 88.238C15.2373 97.8245 17.1255 107.317 20.7941 116.174C24.4627 125.031 29.8398 133.078 36.6185 139.857L88.2373 88.238L15.2373 88.238Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
+      <path onClick={() => setColors({ ...colors, circle4: colorette(colors.circle4, 7) })} className={`${colors.circle4[7] ? "color-path4" : ""}`} d="M36.6185 36.6192C29.8398 43.3979 24.4627 51.4453 20.7941 60.3021C17.1255 69.1589 15.2373 78.6515 15.2373 88.238L88.2373 88.238L36.6185 36.6192Z" fill="#D9D9ED" stroke="#F7FAFF" stroke-width="4" />
     </svg>
-
   }
 
   const colorette = (array, index) => {
@@ -116,7 +116,7 @@ export const Exploration = ({ goView, saveUser }) => {
             </>)}
 
           <div className="activity">
-            <div className="activity-circle">
+            <div className="activity-circle circle-1">
               {defaultColor.circle1.map((item, i) =>
                 <div key={item + i} onClick={() => setColors({ ...colors, circle1: colorette(colors.circle1, i) })} className={`${colors.circle1[i] ? "colorete" : ""}`}>
                   <VectorSvg />
