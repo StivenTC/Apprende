@@ -1,6 +1,6 @@
 import { BiRightArrowAlt } from "react-icons/bi";
 import Robot from "../../../assets/robot.svg"
-export const FeedbackCorrect = ({ goView }) => {
+export const FeedbackCorrect = ({ goView, view }) => {
 
   return (
     <div className="feedback">
@@ -12,7 +12,7 @@ export const FeedbackCorrect = ({ goView }) => {
 
         <button
           className="btn-next"
-          onClick={() => goView(4)}>
+          onClick={() => goView(view)}>
           Siguiente
           <BiRightArrowAlt />
         </button>

@@ -114,7 +114,6 @@ export const Focus = ({ goView }) => {
       console.log(attempts, "conclude")
       goView(3)
     }
-
   }
 
   return (
@@ -139,7 +138,7 @@ export const Focus = ({ goView }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={4} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
       </div>
     </div>

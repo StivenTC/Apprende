@@ -5,6 +5,7 @@ import { Focus } from './focus/Focus';
 import { FocusConclusion } from './focus/Conclusion';
 import { SelectQuarterPresentation } from './selectQuarter/Presentation';
 import { SelectQuarter } from './selectQuarter/SelectQuarter';
+import { SelectQuarterConclusion } from './selectQuarter/Conclusion';
 
 
 function CasterAI() {
@@ -27,6 +28,8 @@ function CasterAI() {
           return <SelectQuarterPresentation goView={setActualView} saveUser={saveUserData} />;
         case 5:
           return <SelectQuarter goView={setActualView} saveUser={saveUserData} />;
+        case 6:
+          return <SelectQuarterConclusion goView={setActualView} saveUser={saveUserData} />;
         default:
           return <h1>Gotas</h1>;
       }

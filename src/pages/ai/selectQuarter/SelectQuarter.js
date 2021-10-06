@@ -1,7 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Header } from "../../../components/layout/header/Header";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useState } from "react";
+import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
+import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
+
 export const SelectQuarter = ({ goView }) => {
+
+  const [selectOption, setSelectOption] = useState('');
+  const [showFeedback, setFeedback] = useState("");
+  const [attempts, setAttempts] = useState(1);
 
   const FraccionA = () => {
     return <svg width="117" height="84" viewBox="0 0 117 84" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,13 +66,37 @@ export const SelectQuarter = ({ goView }) => {
 
   }
 
-  const nextView = () => {
+  const selectCard = (id) => {
+    setSelectOption(id)
   }
+
+  const getClasses = (index) => {
+    let style = ""
+
+    if (selectOption === index) {
+      style += " selected"
+    } else if (String(selectOption).length > 0) {
+      style += " no-selected"
+    }
+    return style
+  }
+
   const validate = () => {
-    return false
+    return String(selectOption).length > 0
   }
+
   const nextActivity = () => {
 
+    if (selectOption === 2) {
+      setFeedback('correct')
+    } else if (attempts < 3) {
+      setSelectOption('')
+      setFeedback('clue')
+      setAttempts(attempts + 1)
+    } else {
+      console.log(attempts, "conclude")
+      goView(6)
+    }
   }
 
   return (
@@ -76,16 +108,20 @@ export const SelectQuarter = ({ goView }) => {
           <span>4</span>
         </div>
         <div className="select-quarter-list">
-          <div className="select-quarter-card">
+          <div className={`select-quarter-card ${getClasses(0)}`}
+            onClick={() => selectCard(0)}>
             <FraccionA />
           </div>
-          <div className="select-quarter-card">
+          <div className={`select-quarter-card ${getClasses(1)}`}
+            onClick={() => selectCard(1)}>
             <FraccionB />
           </div>
-          <div className="select-quarter-card">
+          <div className={`select-quarter-card ${getClasses(2)}`}
+            onClick={() => selectCard(2)}>
             <FraccionC />
           </div>
-          <div className="select-quarter-card">
+          <div className={`select-quarter-card ${getClasses(3)}`}
+            onClick={() => selectCard(3)}>
             <FraccionD />
           </div>
         </div>
@@ -93,6 +129,9 @@ export const SelectQuarter = ({ goView }) => {
           Siguiente
           <BiRightArrowAlt />
         </button>
+
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={7} />}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
       </div>
     </div>
   )
