@@ -1,0 +1,19 @@
+.slide-in-top {
+  animation: slide-in-top 5s linear infinite both;
+  //transform: translateY(-700px)
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-top
+ * ----------------------------------------
+ */
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-700px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

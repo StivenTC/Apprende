@@ -1,7 +1,8 @@
 .rain-drop {
-  height: 100vh;
   background-color: #0079DE;
   height: 100%;
+  overflow: hidden;
+  position: relative;
 
   &-body {
     position: relative;
@@ -9,9 +10,156 @@
   }
 
   &-header {
+    position: relative;
+    z-index: 1;
+
     img {
       width: 100%;
-      margin-top: -80px;
+      max-height: 355px;
+      margin-top: -100px;
+    }
+
+    >p {
+      position: absolute;
+      top: 36px;
+      left: calc(50% - 160px);
+      font-size: 21px;
+      line-height: 25px;
+      text-align: center;
+      width: 320px;
+      margin: auto;
+      color: #FFFFFF;
+    }
+
+    &-quest {
+      position: relative;
+      margin-top: -65px;
+
+      .scales-fractions {
+        opacity: 1;
+        margin: auto;
+        background: #83B836;
+        border: 2px dashed #EDEDFB;
+        border-radius: 8px;
+        width: 64px;
+        height: 106px;
+
+        &:before {
+          width: 30px;
+          background: #ffffff;
+        }
+
+        span {
+          font-size: 28px;
+          color: #ffffff;
+        }
+      }
+
+      &-drops {
+        position: absolute;
+        right: calc(50% - 110px);
+        top: calc(50% - 20px);
+        width: 85px;
+        height: 42px;
+        background: #F7FAFF;
+        border-radius: 8px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        svg {
+          fill: #37BCDA;
+          font-size: 21px;
+        }
+      }
+
+      .fill-mini-drop {
+        svg {
+          fill: #83B836;
+        }
+      }
+    }
+  }
+
+  &-activity {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 280px;
+    margin: auto;
+    margin-bottom: 120px;
+
+    &-drop {
+      cursor: pointer;
+      position: relative;
+      height: fit-content;
+      @include flex-center;
+
+      &:not(:first-child) {
+        &:nth-child(even) {
+          margin-top: 80px;
+        }
+
+      }
+
+      &:focus {
+        background-color: red;
+      }
+
+      .drop-splash {
+        position: absolute;
+        top: -25px;
+        display: none;
+      }
+
+      .scales-fractions {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 44px;
+        margin: auto;
+        opacity: 1;
+        background: transparent;
+
+        &:before {
+          background-color: #ffffff;
+          width: 45px;
+        }
+
+        span {
+          font-size: 32px;
+          color: #ffffff;
+          text-shadow: -1px 0 #37BCDA,
+            0 1px #37BCDA,
+            1px 0 #37BCDA,
+            0 -1px #37BCDA;
+        }
+      }
+
+      &.answered {
+        .water-drop {
+          path {
+            &:first-child {
+              fill: #A1C74D;
+            }
+
+            &:nth-child(2) {
+              fill: #FFFFFF;
+              opacity: 0.2;
+            }
+          }
+
+          circle {
+            fill: #FFFFFF;
+            opacity: 0.2;
+          }
+        }
+
+        .scales-fractions span {
+          text-shadow: none;
+        }
+      }
     }
   }
 }

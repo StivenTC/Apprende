@@ -12,7 +12,7 @@ export const Focus = ({ goView }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [showFeedback, setFeedback] = useState("");
-  const [attempts, setAttempts] = useState(0);
+  const [attempts, setAttempts] = useState(1);
   const [answers, setAnswers] = useState([]);
 
   const pieColors = ['#FFE69B', '#EDEDFB']
