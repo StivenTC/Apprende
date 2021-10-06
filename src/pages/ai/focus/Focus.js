@@ -5,12 +5,14 @@ import createPie from "../../../components/shapes/CeatePie";
 import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
+import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 export const Focus = ({ goView }) => {
   const [selectedCard, setSelectedCard] = useState();
   const [selectedOption, setSelectedOption] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [showFeedback, setFeedback] = useState("");
+  const [attempts, setAttempts] = useState(0);
   const [answers, setAnswers] = useState([]);
 
   const pieColors = ['#FFE69B', '#EDEDFB']
@@ -101,6 +103,16 @@ export const Focus = ({ goView }) => {
     let completeQuest = answers.every(Boolean)
     if (completeQuest) {
       setFeedback('correct')
+    } else if (attempts < 3) {
+      console.log(attempts, "sii")
+      setSelectedAnswers([])
+      setAnswers([])
+      setShowOptions(false)
+      setFeedback('clue')
+      setAttempts(attempts + 1)
+    } else {
+      console.log(attempts, "conclude")
+      goView(3)
     }
 
   }
@@ -128,6 +140,7 @@ export const Focus = ({ goView }) => {
         </button>
 
         {showFeedback === 'correct' && <FeedbackCorrect goView={goView} />}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
       </div>
     </div>
   )

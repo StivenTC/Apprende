@@ -4,9 +4,6 @@ export const Header = ({ goView, actualView }) => {
 
   const goBack = () => {
     let go = actualView > 0 ? actualView - 1 : 0
-    if (actualView === 3) {
-      go = 1
-    }
     goView(go)
   }
 

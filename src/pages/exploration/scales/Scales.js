@@ -114,7 +114,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
       goConclusion(true)
     }
   }
-
+  console.log(userData)
   return (
     <div className="scales">
       <Header goView={goView} actualView={3} />

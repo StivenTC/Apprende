@@ -22,6 +22,43 @@
     }
   }
 
+  &-clue {
+    background: #F6FAFF;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    &-content {
+      width: 287px;
+      height: 493px;
+      background: #FF4F5B;
+      border-radius: 20px;
+      color: #ffffff;
+      margin: 56px auto 40px;
+
+      h2 {
+        margin: 19px auto;
+        font-size: 32px;
+      }
+
+      p {
+        max-width: 260px;
+        margin: 26px auto;
+        font-size: 25px;
+        font-weight: normal;
+        line-height: 30px;
+        color: #ffffff;
+      }
+    }
+
+    .btn-next {
+      max-width: 260px;
+      font-size: 21px;
+    }
+  }
+
   .btn-next {
     background-color: #37BCDA;
     width: 100%;

@@ -117,4 +117,23 @@
     }
   }
 
+  &-conclusion {
+    margin-bottom: 35px;
+
+    &-content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 35px;
+
+      h2 {
+        font-size: 31px;
+        line-height: 42px;
+        text-align: center;
+        margin: 25px 0;
+      }
+    }
+  }
+
 }

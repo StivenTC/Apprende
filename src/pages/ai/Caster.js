@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
 import { Presentation } from './focus/Presentation';
 import { Focus } from './focus/Focus';
+import { FocusConclusion } from './focus/Conclusion';
+import { SelectQuarterPresentation } from './selectQuarter/Presentation';
+import { SelectQuarter } from './selectQuarter/SelectQuarter';
 
 
 function CasterAI() {
@@ -18,8 +21,14 @@ function CasterAI() {
           return <Presentation goView={setActualView} saveUser={saveUserData} />;
         case 2:
           return <Focus goView={setActualView} saveUser={saveUserData} />;
+        case 3:
+          return <FocusConclusion goView={setActualView} saveUser={saveUserData} />;
+        case 4:
+          return <SelectQuarterPresentation goView={setActualView} saveUser={saveUserData} />;
+        case 5:
+          return <SelectQuarter goView={setActualView} saveUser={saveUserData} />;
         default:
-          return <h1>jajaj</h1>;
+          return <h1>Gotas</h1>;
       }
     }
 
