@@ -1,6 +1,6 @@
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../../assets/altavoz.png"
-import { Header } from "../../../components/layout/header/Header";
+import { Header } from "../../../components/layout/Header/Header";
 
 export const FocusConclusion = ({ goView }) => {
 

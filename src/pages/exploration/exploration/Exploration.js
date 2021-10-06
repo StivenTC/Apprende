@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "../../../components/layout/header/Header"
+import { Header } from "../../../components/layout/Header/Header"
 import { BiRightArrowAlt } from "react-icons/bi";
 
 export const Exploration = ({ goView, saveUser }) => {

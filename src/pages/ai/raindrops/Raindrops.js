@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Header } from "../../../components/layout/header/Header";
+import { Header } from "../../../components/layout/Header/Header";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";

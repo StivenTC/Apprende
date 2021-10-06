@@ -1,4 +1,4 @@
-import { Header } from "../../../components/layout/header/Header"
+import { Header } from "../../../components/layout/Header/Header"
 
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';

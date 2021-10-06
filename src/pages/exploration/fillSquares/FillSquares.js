@@ -1,4 +1,4 @@
-import { Header } from "../../../components/layout/header/Header"
+import { Header } from "../../../components/layout/Header/Header"
 
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";

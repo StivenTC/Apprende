@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Header } from "../../../components/layout/header/Header";
+import { Header } from "../../../components/layout/Header/Header";
 import createPie from "../../../components/shapes/CeatePie";
 import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
