@@ -33,7 +33,7 @@ export const SelectQuarterConclusion = ({ goView }) => {
       </div>
       <button
         className="btn-next"
-        onClick={() => goView(7)}>
+        onClick={() => goView(0)}>
         Siguiente
         <BiRightArrowAlt />
       </button>

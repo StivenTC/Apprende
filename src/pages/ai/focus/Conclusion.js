@@ -66,7 +66,7 @@ export const FocusConclusion = ({ goView }) => {
       </div>
       <button
         className="btn-next"
-        onClick={() => goView(4)}>
+        onClick={() => goView(0)}>
         Siguiente
         <BiRightArrowAlt />
       </button>
