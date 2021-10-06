@@ -6,6 +6,9 @@ import { FocusConclusion } from './focus/Conclusion';
 import { SelectQuarterPresentation } from './selectQuarter/Presentation';
 import { SelectQuarter } from './selectQuarter/SelectQuarter';
 import { SelectQuarterConclusion } from './selectQuarter/Conclusion';
+import { RaindropPresentation } from './raindrops/Presentation';
+import { Raindrops } from './raindrops/Raindrops';
+import { RaindropConclusion } from './raindrops/Conclusion';
 
 
 function CasterAI() {
@@ -30,6 +33,12 @@ function CasterAI() {
           return <SelectQuarter goView={setActualView} saveUser={saveUserData} />;
         case 6:
           return <SelectQuarterConclusion goView={setActualView} saveUser={saveUserData} />;
+        case 7:
+          return <RaindropPresentation goView={setActualView} saveUser={saveUserData} />;
+        case 8:
+          return <Raindrops goView={setActualView} saveUser={saveUserData} />;
+        case 9:
+          return <RaindropConclusion goView={setActualView} saveUser={saveUserData} />;
         default:
           return <h1>Gotas</h1>;
       }

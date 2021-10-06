@@ -14,7 +14,7 @@ export const Launcher = ({ goView, userData }) => {
         <div role="button" className={`${userData.complete >= 2 ? "completed" : ''}`} onClick={() => goView(4)}>Reto 2
           <RiArrowRightLine />
         </div>
-        <div role="button" className={`${userData.complete >= 2 ? "completed" : ''}`} onClick={() => goView(4)}>Reto 3
+        <div role="button" className={`${userData.complete >= 2 ? "completed" : ''}`} onClick={() => goView(7)}>Reto 3
           <RiArrowRightLine />
         </div>
       </div>
