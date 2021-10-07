@@ -14,35 +14,6 @@ export const Exploration = ({ goView, saveUser }) => {
 
   const [colors, setColors] = useState(defaultColor);
 
-  const createPie = (cx, cy, r, slices) => {
-    var fromAngle, toAngle,
-      fromCoordX, fromCoordY,
-      toCoordX, toCoordY,
-      path, d;
-
-    for (var i = 0; i < slices; i++) {
-      path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      fromAngle = i * 360 / slices;
-      toAngle = (i + 1) * 360 / slices;
-      //console.log(fromAngle + ' ' + toAngle);
-      fromCoordX = cx + (r * Math.cos(fromAngle * Math.PI / 180));
-      fromCoordY = cy + (r * Math.sin(fromAngle * Math.PI / 180));
-      toCoordX = cx + (r * Math.cos(toAngle * Math.PI / 180));
-      toCoordY = cy + (r * Math.sin(toAngle * Math.PI / 180));
-      //console.log(fromCoord + ' ' + toCoord);
-      d = 'M' + cx + ',' + cy + ' L' + fromCoordX + ',' + fromCoordY + ' A' + r + ',' + r + ' 0 0,1 ' + toCoordX + ',' + toCoordY + 'z';
-      //console.log(d);
-      path.setAttributeNS(null, "d", d);
-      path.setAttribute('id', 'perro' + i);
-      document.getElementById('pie').appendChild(path);
-    }
-  }
-
-  const renderActivity = () => {
-    //setPlay(true)
-    createPie(60, 60, 60, 2)
-  }
-
   const VectorSvg = () => {
     return <svg width="146" height="73" viewBox="0 0 146 73" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M146 73C146 63.4135 144.112 53.9209 140.443 45.0641C136.775 36.2073 131.397 28.1599 124.619 21.3812C117.84 14.6025 109.793 9.22539 100.936 5.55679C92.0791 1.8882 82.5865 -4.19039e-07 73 0C63.4135 4.19039e-07 53.9209 1.8882 45.0641 5.5568C36.2073 9.22539 28.1599 14.6025 21.3812 21.3812C14.6025 28.1599 9.22538 36.2073 5.55679 45.0641C1.8882 53.9209 -8.38078e-07 63.4135 0 73L73 73H146Z" fill="#D9D9ED" stroke="#D9D9ED" />
@@ -107,14 +78,6 @@ export const Exploration = ({ goView, saveUser }) => {
           <p>Colorea la mitad de cada una de las 4 figuras representadas</p>
         </div>
         <div className="exploration-activity">
-          {false && (
-            <>
-              <div onClick={() => renderActivity()}>laala</div>
-              <div className="exploration-activity-svg">
-                <svg id="pie"></svg>
-              </div>
-            </>)}
-
           <div className="activity">
             <div className="activity-circle circle-1">
               {defaultColor.circle1.map((item, i) =>

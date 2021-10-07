@@ -81,16 +81,11 @@ export const Scales = ({ goView, saveUser, userData }) => {
 
   function handle(value) {
     let currentAnswer = answers;
-    let nextScale = 0;
-
+    let nextScale = currentScale;
     currentAnswer[currentScale].answer = String(value);
-
     setAnswers(currentAnswer)
-
-    nextScale = currentScale + 1
-
+    nextScale += 1
     setCurrentScale(nextScale)
-
   }
 
   const validate = () => {
@@ -114,7 +109,6 @@ export const Scales = ({ goView, saveUser, userData }) => {
       goConclusion(true)
     }
   }
-  console.log(userData)
   return (
     <div className="scales">
       <Header goView={goView} actualView={3} />
@@ -154,7 +148,8 @@ export const Scales = ({ goView, saveUser, userData }) => {
         </div>
           :
           <div className="scales-conclusion">
-            <p>¿Qué te llama la atención sobre la ubicación de las fracciones en las rectas numéricas?</p>
+            <p>¿Identificas algo particular frente a la ubicación de las fracciones en las rectas numéricas?
+              <br />Escribe lo que observas:</p>
             <svg width="298" height="341" viewBox="0 0 298 341" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M294.669 42.3578L297.174 44.6124C297.615 45.0097 297.615 45.7018 297.174 46.099L294.669 48.3536C294.025 48.9328 293 48.4761 293 47.6104V43.1011C293 42.2353 294.025 41.7786 294.669 42.3578Z" fill="#9F9FB5" />
               <line x1="6" y1="45.5" x2="293" y2="45.5" stroke="#9F9FB5" strokeDasharray="2 2" />

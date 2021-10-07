@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Header } from "../../../components/layout/Header/Header";
-import { BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
@@ -119,7 +118,7 @@ export const Raindrops = ({ goView }) => {
 
         </div>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={7} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={9} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
     </div>
   )
