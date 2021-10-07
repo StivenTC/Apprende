@@ -14,6 +14,11 @@ button {
   line-height: 30px;
 }
 
+[role="button"],
+[type="button"] {
+  cursor: pointer
+}
+
 .btn-next {
   @include flex-center;
   max-width: 225px;

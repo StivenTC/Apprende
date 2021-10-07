@@ -145,7 +145,7 @@ export const Exploration2 = ({ goView, userData }) => {
 
           </div>
           <div className="exploration2-activity">
-            <p>¿Qué identificas frente a las gráficas de estas fracciones? Escribe abajo tu respuesta</p>
+            <p>¿Identificas algo particular frente a las gráficas de estas fracciones? <br />Escribe abajo tu respuesta</p>
             <div className="conclusion-answer">
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}

@@ -8,10 +8,10 @@ export const Launcher = ({ goView, userData }) => {
       <h1>Exploración</h1>
       <img src={robot} alt='robot' />
       <div className="launcher-activities">
-        <div role="button" className={`${userData.complete >= 1 ? "completed" : ''}`} onClick={() => goView(1)}>Actividad 1
+        <div role="button" className={`${userData.complete >= 1 ? "completed" : ""}`} onClick={() => (userData.complete === 1 ? '' : goView(1))}>Actividad 1
           <RiArrowRightLine />
         </div>
-        <div role="button" className={`${userData.complete >= 2 ? "completed" : ''}`} onClick={() => goView(4)}>Actividad 2
+        <div role="button" className={`${userData.complete >= 2 ? "completed" : userData.complete === 1 ? "" : "disabled"}`} onClick={() => goView(4)}>Actividad 2
           <RiArrowRightLine />
         </div>
       </div>

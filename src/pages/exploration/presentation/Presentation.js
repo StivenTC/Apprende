@@ -30,11 +30,11 @@ export const Presentation = ({ goView }) => {
     <div className="presentation">
       <h1>Actividad 1.2</h1>
       <CakesPic />
-      <p>Ubica cada una de las 4 fracciones representadas anteriormente en las gráficas,  en una de las rectas numéricas que verás en la siguiente actividad. </p>
-      <p>Identifica cuál recta  es la que mejor que te permite representar cada fracción.
+      <p>Ubica cada una de las 4 fracciones representadas anteriormente en las gráficas, en una de las rectas numéricas que verás a continuación.</p>
+      <p>Identifica <strong>cuál recta  es la que mejor que te permite representar cada fracción.</strong>
         <br />
         <br />
-        <strong>Nota: cada recta corresponde mejor a una fracción.</strong>
+        Nota: cada recta corresponde mejor a <strong>una</strong> fracción.
       </p>
       <button
         className="btn-next"
