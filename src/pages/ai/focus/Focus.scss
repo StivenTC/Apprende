@@ -133,7 +133,45 @@
         text-align: center;
         margin: 25px 0;
       }
+
+      .rain-drop {
+        &-body {
+          margin-bottom: 60px;
+        }
+
+        &-header {
+          width: 100%;
+          margin-bottom: 36px;
+
+          img {
+            margin-top: -80px;
+          }
+
+          >p {
+            top: 92px;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+          }
+
+          >h2 {
+            position: absolute;
+            top: 36px;
+            left: calc(50% - 160px);
+            font-size: 31px;
+            line-height: 42px;
+            text-align: center;
+            width: 320px;
+            margin: auto;
+            color: #FFFFFF;
+          }
+        }
+      }
     }
   }
+}
 
+.rain-drop.focus-conclusion {
+  margin-bottom: 0;
 }
