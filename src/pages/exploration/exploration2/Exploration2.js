@@ -150,7 +150,7 @@ export const Exploration2 = ({ goView, userData }) => {
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
-            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(9) : console.log("no posible")}>
+            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(15) : console.log("no posible")}>
               Siguiente
               <BiRightArrowAlt />
             </button>
