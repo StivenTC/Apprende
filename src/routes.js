@@ -14,7 +14,7 @@ export default function AppRoutes() {
         <Route exact path="/" component={App} />
         <Route exact path="/exploracion" component={Caster} />
         <Route exact path="/actividades-interactivas" component={CasterAI} />
-        <Route exact path="/video-fracciones" component={VideoFraccion} />
+        <Route exact path="/video-fraccion" component={VideoFraccion} />
       </Switch>
     </Router>
   );
