@@ -28,10 +28,10 @@ export const Presentation = ({ goView }) => {
 
   return (
     <div className="presentation">
-      <h1>Actividad 1.2</h1>
+      <h1>Ubica en la recta</h1>
       <CakesPic />
       <p>Ubica cada una de las 4 fracciones representadas anteriormente en las gráficas, en una de las rectas numéricas que verás a continuación.</p>
-      <p>Identifica <strong>cuál recta  es la que mejor que te permite representar cada fracción.</strong>
+      <p>Identifica <strong>cuál recta  es la que mejor te permite representar cada fracción.</strong>
         <br />
         <br />
         Nota: cada recta corresponde mejor a <strong>una</strong> fracción.

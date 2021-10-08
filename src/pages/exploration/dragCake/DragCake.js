@@ -9,6 +9,7 @@ import { BiRightArrowAlt } from "react-icons/bi";
 export const DragCake = ({ goView, saveUser, userData }) => {
 
   const [isFirstColumn, setIsFirstColumn] = useState(true);
+  const [questionSolved, setQuestionSolved] = useState(false);
   const isMobile = window.innerWidth < 700;
   const [textArea, setTextArea] = useState("");
 
@@ -77,16 +78,33 @@ export const DragCake = ({ goView, saveUser, userData }) => {
 
   const Item = <MovableItem setIsFirstColumn={setIsFirstColumn} />;
 
+  const validate = () => {
+    let res = false
+    if (textArea.length > 5 && !questionSolved) {
+      res = true
+    } else if (questionSolved && !isFirstColumn) {
+      res = true
+    }
+    return res
+  }
+
+  const nextView = () => {
+    if (questionSolved) {
+      goView(5)
+    } else if (textArea.length > 5) {
+      setQuestionSolved(true)
+    }
+  }
   return (
     <div className="drag-cake">
       <Header goView={goView} actualView={4} />
       <div className="drag-cake-content">
         <div className="drag-cake-content-text">
-          <h2>¿Qué observas?</h2>
-          {isFirstColumn ?
+          {!questionSolved && <h2>¿Qué observas?</h2>}
+          {questionSolved ?
             <p>Arrastra la fracción A sobre la B y observa las dos fracciones</p>
             :
-            <p></p>
+            <p>¿Cómo podrías comparar estas dos fracciones representadas?</p>
           }
         </div>
         <div className="drag-cake-activity">
@@ -100,7 +118,7 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               Fracción B
             </div>
           </div>
-          <div className="drag-cake-activity-task">
+          <div className={`${questionSolved ? '' : 'no-action'} drag-cake-activity-task`}>
             <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
               <Column title="Fracción A" className='column first-column'>
                 {isFirstColumn && Item}
@@ -113,17 +131,16 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               </Column>
             </DndProvider>
           </div>
-          {!isFirstColumn && <div className="drag-cake-activity-conclusion">
-            <p>¿Cómo podrías comparar estas dos fracciones representadas?</p>
+          {!questionSolved && <div className="drag-cake-activity-conclusion">
             <div className="conclusion-answer">
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
-            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(5) : console.log("no posible")}>
-              Siguiente
-              <BiRightArrowAlt />
-            </button>
           </div>}
+          <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => nextView()}>
+            Siguiente
+            <BiRightArrowAlt />
+          </button>
         </div>
       </div>
     </div>

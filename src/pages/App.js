@@ -13,6 +13,9 @@ function App() {
         <Link to="/actividades-interactivas">
           <button className="go-btn">Actividades interactivas</button>
         </Link>
+        <Link to="/video-fraccion">
+          <button className="go-btn">Video fracciones equivalentes</button>
+        </Link>
       </div>
     </div>
 

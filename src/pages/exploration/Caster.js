@@ -10,20 +10,18 @@ import { FillSquares } from './fillSquares/FillSquares';
 import { Launcher } from './Launcher';
 import { Presentation } from './presentation/Presentation';
 import { Scales } from './scales/Scales';
-import { Video } from './Video';
 
 function Caster() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(9)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
-  const [sign, setSign] = useState(false)
   //const [examen, setExam] = useState()
 
   useEffect(() => {
     const changeView = (view) => {
       switch (view) {
         case 0:
-          return sign ? <Launcher goView={setActualView} userData={userData} /> : <Register saveUser={saveUserData} saveSign={setSign} />;
+          return <Launcher goView={setActualView} userData={userData} />;
         case 1:
           return <Exploration goView={setActualView} saveUser={saveUserData} />;
         case 2:
@@ -41,7 +39,7 @@ function Caster() {
         case 8:
           return <CompareCharts goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 9:
-          return <Video goView={setActualView} userData={userData} saveUser={saveUserData} />;
+          return <Register saveUser={saveUserData} goView={setActualView} />;
         default:
           return <Presentation goView={setActualView} />;
       }

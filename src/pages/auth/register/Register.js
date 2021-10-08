@@ -1,13 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-export const Register = ({ saveUser, saveSign }) => {
+export const Register = ({ saveUser, goView }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = data => {
     console.log(data);
     saveUser(data)
-    saveSign(true)
+    goView(0)
   }
   console.log("Errores: ", errors);
 

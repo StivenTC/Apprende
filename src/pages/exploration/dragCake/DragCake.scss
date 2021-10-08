@@ -26,6 +26,10 @@
     }
   }
 
+  .no-action {
+    pointer-events: none;
+  }
+
   &-activity {
     display: flex;
     margin-top: 38px;
@@ -63,9 +67,10 @@
     }
 
     &-task {
+      width: 320px;
       display: flex;
       justify-content: center;
-      margin: 45px 0;
+      margin: 45px auto;
 
       .column {
         svg {
@@ -83,7 +88,7 @@
         justify-content: center;
         display: flex;
         transition: all .5s ease;
-        margin-left: 25px;
+        margin-left: auto;
 
         >div {
           width: 145px;

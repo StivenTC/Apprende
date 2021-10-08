@@ -139,8 +139,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
                   step={scale.steps}
                   defaultValue={0}
                   onAfterChange={handle}
-                  className={`${currentScale === i ? "selected" : ""}`}
-                  disabled={currentScale !== i} />
+                  className={`selected`} />
               </div>
             )
             }
