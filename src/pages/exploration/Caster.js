@@ -12,7 +12,7 @@ import { Presentation } from './presentation/Presentation';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(9)
+  const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
   //const [examen, setExam] = useState()
@@ -38,8 +38,6 @@ function Caster() {
           return <CompareSquares goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 8:
           return <CompareCharts goView={setActualView} userData={userData} saveUser={saveUserData} />;
-        case 9:
-          return <Register saveUser={saveUserData} goView={setActualView} />;
         default:
           return <Presentation goView={setActualView} />;
       }

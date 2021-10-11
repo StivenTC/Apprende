@@ -1,7 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 function App() {
+  let history = useHistory();
+
+  const [name] = useState(() => {
+    const lsData = "userData";
+    // getting stored value
+    const saved = localStorage.getItem(lsData);
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+  useEffect(() => {
+    if (name.length <= 0) {
+      history.push("/registro");
+    }
+  }, [history, name.length])
+
   return (
     <div className="App">
       <div>
