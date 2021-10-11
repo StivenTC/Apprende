@@ -32,13 +32,46 @@
     grid-gap: 10px;
 
     &.show-options {
-      .focus-card:nth-child(even) {
-        img {
-          display: none;
+      .focus-card {
+        transition: all .5s ease;
+
+        &:nth-child(even) {
+          background-color: #504F81;
+
+          img {
+            display: none;
+          }
+
+          svg {
+            display: block;
+          }
         }
 
-        svg {
-          display: block;
+        &.selected-green {
+          background-color: #1FCBAB;
+          border-color: #1FCBAB;
+
+          svg {
+            stroke: #1FCBAB;
+          }
+        }
+
+        &.selected-orange {
+          background-color: #FF820F;
+          border-color: #FF820F;
+
+          svg {
+            stroke: #FF820F;
+          }
+        }
+
+        &.selected-blue {
+          background-color: #28D2EE;
+          border-color: #28D2EE;
+
+          svg {
+            stroke: #28D2EE;
+          }
         }
       }
     }
@@ -59,11 +92,10 @@
       display: none;
       width: 90px;
       stroke: #31323D;
-      strokeWidth: 2;
+      stroke-width: 2;
     }
 
     &:nth-child(even) {
-      background: #504F81;
       border: 4px solid #D9D9ED;
 
       svg {
@@ -80,39 +112,6 @@
 
       svg {
         display: block;
-      }
-    }
-
-    &.answered-0,
-    &.answered-1,
-    &.selected-1 {
-      background-color: #1FCBAB;
-      border-color: #1FCBAB;
-
-      svg {
-        stroke: #1FCBAB;
-      }
-    }
-
-    &.answered-2,
-    &.answered-3,
-    &.selected-2 {
-      background-color: #FF820F;
-      border-color: #FF820F;
-
-      svg {
-        stroke: #FF820F;
-      }
-    }
-
-    &.answered-4,
-    &.answered-5,
-    &.selected-3 {
-      background-color: #28D2EE;
-      border-color: #28D2EE;
-
-      svg {
-        stroke: #28D2EE;
       }
     }
   }

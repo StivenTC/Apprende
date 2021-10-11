@@ -130,7 +130,7 @@ export const SelectQuarter = ({ goView }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={7} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
       </div>
     </div>

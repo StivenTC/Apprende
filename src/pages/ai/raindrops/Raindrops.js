@@ -118,7 +118,7 @@ export const Raindrops = ({ goView }) => {
 
         </div>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={9} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
     </div>
   )

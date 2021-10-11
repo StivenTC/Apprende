@@ -8,7 +8,6 @@ import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 export const Focus = ({ goView }) => {
   const [selectedCard, setSelectedCard] = useState();
-  const [selectedOption, setSelectedOption] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [showFeedback, setFeedback] = useState("");
@@ -65,33 +64,45 @@ export const Focus = ({ goView }) => {
   const selectCard = (id) => {
     let currentAnswer = answers
     let currentSelection = selectedAnswers
-    let index = answers.length
-
+    let index = 0
+    let repeatIndex
     if (id % 2 === 0) {
       setSelectedCard(id)
       if (!showOptions) {
         setShowOptions(true)
       }
     } else {
-      setSelectedOption(id)
+      index = parseInt(selectedCard / 2)
       if (selectedCard !== undefined) {
+        repeatIndex = currentSelection.findIndex(element => element && element.includes(id))
+        console.log(repeatIndex)
+        if (repeatIndex >= 0) {
+          currentSelection[repeatIndex] = []
+        }
         currentAnswer[index] = cards[selectedCard].value === cards[id].value
-        currentSelection.push(selectedCard, id)
+        currentSelection[index] = [selectedCard, id]
         setAnswers(currentAnswer)
         setSelectedAnswers(currentSelection)
-        setSelectedCard('')
-        setSelectedOption('')
+        setSelectedCard()
       }
     }
   }
+  console.log(selectedAnswers)
+  console.log(answers)
 
   const getClasses = (index) => {
     let clases = ""
     if (selectedCard === index) {
       clases += " open-card"
     }
-    if (selectedOption === index) {
-      clases += ` selected-${answers.length}`
+    if (selectedAnswers?.length > 0) {
+      if (selectedAnswers[0]?.includes(index)) {
+        clases += ` open-card selected-green`
+      } else if (selectedAnswers[1]?.includes(index)) {
+        clases += ` open-card selected-orange`
+      } else if (selectedAnswers[2]?.includes(index)) {
+        clases += ` open-card selected-blue`
+      }
     }
     if (selectedAnswers.includes(index)) {
       clases += ` open-card answered-${selectedAnswers.findIndex((e) => e === index)}`
@@ -104,18 +115,16 @@ export const Focus = ({ goView }) => {
     if (completeQuest) {
       setFeedback('correct')
     } else if (attempts < 3) {
-      console.log(attempts, "sii")
       setSelectedAnswers([])
       setAnswers([])
       setShowOptions(false)
       setFeedback('clue')
+      setSelectedCard()
       setAttempts(attempts + 1)
     } else {
-      console.log(attempts, "conclude")
       goView(3)
     }
   }
-
   return (
     <div className="focus">
       <Header goView={goView} actualView={2} />
@@ -138,7 +147,7 @@ export const Focus = ({ goView }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={4} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
       </div>
     </div>
