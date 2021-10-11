@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Register } from '../auth/register/Register';
 import { CompareCake } from './compareCake/CompareCake';
 import { CompareCharts } from './compareCharts/CompareCharts';
 import { CompareSquares } from './compareSquare/CompareSquare';
