@@ -1,12 +1,22 @@
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../../assets/altavoz.png"
+import Advertencia from "../../../assets/advertencia.png"
 export const FeedbackClue = ({ goView, attempt }) => {
   return (
     <div className="feedback">
       <div className="feedback-clue">
         <div className="feedback-clue-content">
-          <img src={Altavoz} alt="Una pista" />
-          <h2>¡Una pista!</h2>
+          {attempt < 3 ?
+            <>
+              <img src={Altavoz} alt="Una pista" />
+              <h2>¡Una pista!</h2>
+            </> :
+            <>
+              <img src={Advertencia} alt="Advertencia" />
+              <h2>¡Pilas!</h2>
+            </>
+
+          }
           <div className="feedback-clue-data">
             {attempt < 3 ?
               <p>Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.</p>
