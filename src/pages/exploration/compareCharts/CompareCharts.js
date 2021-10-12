@@ -59,8 +59,6 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
       <path d="M19.7703 67.4997C19.7703 73.7676 21.0049 79.9741 23.4035 85.7649C25.8021 91.5557 29.3179 96.8173 33.7499 101.249L67.4997 67.4997L19.7703 67.4997Z" fill="#D9D9ED" stroke="#F7FAFF" strokeWidth="4" />
       <path d="M33.7498 33.7501C29.3177 38.1821 25.802 43.4438 23.4034 49.2346C21.0047 55.0254 19.7702 61.2319 19.7702 67.4998L67.4995 67.4998L33.7498 33.7501Z" fill="#37BCDA" stroke="#F7FAFF" strokeWidth="4" />
     </svg>
-
-
   }
   const ImgScales = () => {
     return <svg width="299" height="225" viewBox="0 0 299 225" fill="none" xmlns="http://www.w3.org/2000/svg">

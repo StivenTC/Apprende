@@ -79,7 +79,6 @@ export const Focus = ({ goView, saveUser, userData }) => {
       index = parseInt(selectedCard / 2)
       if (selectedCard !== undefined) {
         repeatIndex = currentSelection.findIndex(element => element && element.includes(id))
-        console.log(repeatIndex)
         if (repeatIndex >= 0) {
           currentSelection[repeatIndex] = []
         }
@@ -96,6 +95,17 @@ export const Focus = ({ goView, saveUser, userData }) => {
     let clases = ""
     if (selectedCard === index) {
       clases += " open-card"
+      switch (index) {
+        default:
+        case 0:
+          clases += " selected-green"
+          break;
+        case 2:
+          clases += " selected-orange"
+          break;
+        case 4:
+          clases += " selected-blue"
+      }
     }
     if (selectedAnswers?.length > 0) {
       if (selectedAnswers[0]?.includes(index)) {
