@@ -5,6 +5,7 @@ import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { BsDropletFill } from "react-icons/bs";
 import TopCloud from "../../../assets/top-clouds.svg";
+import BottomWater from "../../../assets/bottom-water.svg";
 
 export const Raindrops = ({ goView }) => {
 
@@ -14,7 +15,10 @@ export const Raindrops = ({ goView }) => {
   const [corrects, setCorrects] = useState([]);
 
   const quarters = ["3/4", "12/16", "3/8", "6/4", "18/24"]
-
+  const clueTexts = [
+    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
+    "Para encontrar una fracción equivalente a 6/8 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
+  ]
   const Drop = () => {
     return <svg className="water-drop" width="101" height="139" viewBox="0 0 101 139" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M47.1459 3.31289C52.346 -2.687 57.6459 0.812887 59.6459 3.31289C92.0459 42.5128 100.146 78.9796 100.146 92.313C100.946 132.313 63.8125 139.98 45.1458 138.813C8.74584 137.213 -0.0208066 109.813 0.145867 96.313C-2.85413 56.313 41.3505 9.99951 47.1459 3.31289Z" fill="#00D7F0" />
@@ -44,7 +48,6 @@ export const Raindrops = ({ goView }) => {
       </defs>
     </svg>
   }
-
   const selectDrop = (id) => {
     let correctAnswers = [0, 1, 4]
     let okAnswers = corrects;
@@ -120,11 +123,11 @@ export const Raindrops = ({ goView }) => {
                 </div>
               )}
             </div>)}
-
         </div>
       </div>
+      <img src={BottomWater} alt="Piso de agua" className="bottom-water" />
       {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
-      {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
+      {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   )
 }

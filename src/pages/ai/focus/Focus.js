@@ -53,7 +53,10 @@ export const Focus = ({ goView }) => {
       value: 3
     }
   ]
-
+  const clueTexts = [
+    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
+    "Para encontrar una fracción equivalente debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
+  ]
 
   useEffect(() => {
     for (let card of cards) {
@@ -125,6 +128,15 @@ export const Focus = ({ goView }) => {
       goView(3)
     }
   }
+
+  const validate = () => {
+    let r = false
+    let ans = answers.filter(n => n !== undefined)
+    if (ans.length > 2) {
+      r = true
+    }
+    return r
+  }
   return (
     <div className="focus">
       <Header goView={goView} actualView={2} />
@@ -141,14 +153,14 @@ export const Focus = ({ goView }) => {
           )}
         </div>
         <button
-          className={`btn-next ${answers.length > 2 ? "" : "disabled"}`}
-          onClick={() => answers.length > 2 ? nextView() : console.log("no posible")}>
+          className={`btn-next ${validate() ? "" : "disabled"}`}
+          onClick={() => validate() ? nextView() : console.log("no posible")}>
           Enviar
           <BiRightArrowAlt />
         </button>
 
         {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>
   )

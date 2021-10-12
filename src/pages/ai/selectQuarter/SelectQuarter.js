@@ -10,7 +10,10 @@ export const SelectQuarter = ({ goView }) => {
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
-
+  const clueTexts = [
+    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
+    "Para encontrar una fracción equivalente a 3/4 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
+  ]
   const FraccionA = () => {
     return <svg width="117" height="84" viewBox="0 0 117 84" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="37.6552" height="41" fill="#28D2EE" />
@@ -131,7 +134,7 @@ export const SelectQuarter = ({ goView }) => {
         </button>
 
         {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>
   )

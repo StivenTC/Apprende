@@ -1,7 +1,7 @@
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../../assets/altavoz.png"
 import Advertencia from "../../../assets/advertencia.png"
-export const FeedbackClue = ({ goView, attempt }) => {
+export const FeedbackClue = ({ goView, attempt, message }) => {
   return (
     <div className="feedback">
       <div className="feedback-clue">
@@ -18,11 +18,7 @@ export const FeedbackClue = ({ goView, attempt }) => {
 
           }
           <div className="feedback-clue-data">
-            {attempt < 3 ?
-              <p>Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.</p>
-              :
-              <p>Para encontrar una fracción equivalente debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número.</p>
-            }
+            <p>{message[attempt < 3 ? 0 : 1]}</p>
           </div>
         </div>
         <button
