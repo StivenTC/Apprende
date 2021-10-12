@@ -100,7 +100,7 @@ export const DragCake = ({ goView, saveUser, userData }) => {
       <Header goView={goView} actualView={4} />
       <div className="drag-cake-content">
         <div className="drag-cake-content-text">
-          {!questionSolved && <h2>¿Qué observas?</h2>}
+          {!questionSolved && <h2>Compara</h2>}
           {questionSolved ?
             <p>Arrastra la fracción A sobre la B y observa las dos fracciones</p>
             :

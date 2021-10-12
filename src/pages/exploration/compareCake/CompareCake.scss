@@ -50,8 +50,16 @@
   }
 
   &-question {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     margin-top: 32px;
+    max-width: 310px;
+    margin: auto;
+
+    >svg {
+      margin-left: auto;
+      margin-right: -25px;
+    }
 
     p {
       margin: auto;
@@ -66,7 +74,7 @@
     &-options {
       position: relative;
       margin: 15px auto 25px;
-      max-width: 150px;
+      width: 150px;
       display: flex;
       justify-content: space-between;
 
@@ -84,6 +92,7 @@
         font-size: 25px;
         line-height: 30px;
         color: #6D6E7C;
+        transition: all .5s ease;
       }
 
       &:before {
@@ -98,7 +107,7 @@
       }
 
       .selected {
-        background: #FFBC0F;
+        background: #FF820F;
         color: #ffffff;
       }
     }

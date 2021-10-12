@@ -19,10 +19,10 @@ export const Exploration2 = ({ goView, userData }) => {
 
   const Vector2 = () => {
     return <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path className={`${!userData.circle2[1] ? "colorete" : ""}`} d="M83.9999 41.7143C83.9999 36.2363 82.9209 30.8119 80.8245 25.7509C78.7282 20.6899 75.6556 16.0914 71.782 12.2178C67.9085 8.3443 63.3099 5.27165 58.2489 3.17531C53.1879 1.07897 47.7636 -2.39451e-07 42.2856 0V41.7143H83.9999Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
-      <path className={`${!userData.circle2[2] ? "colorete" : ""}`} d="M41.7144 83.4286C47.1924 83.4286 52.6168 82.3496 57.6778 80.2533C62.7388 78.1569 67.3373 75.0843 71.2109 71.2107C75.0844 67.3372 78.1571 62.7387 80.2534 57.6776C82.3497 52.6166 83.4287 47.1923 83.4287 41.7143L41.7144 41.7143L41.7144 83.4286Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
-      <path className={`${!userData.circle2[3] ? "colorete" : ""}`} d="M0.571438 41.7143C0.571437 47.1923 1.65041 52.6167 3.74674 57.6777C5.84309 62.7387 8.91573 67.3372 12.7893 71.2108C16.6628 75.0843 21.2613 78.1569 26.3224 80.2533C31.3834 82.3496 36.8077 83.4286 42.2857 83.4286L42.2857 41.7143L0.571438 41.7143Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
       <path className={`${!userData.circle2[0] ? "colorete" : ""}`} d="M42.2856 2.10648e-05C36.8076 2.13042e-05 31.3832 1.07899 26.3222 3.17533C21.2612 5.27167 16.6626 8.34432 12.7891 12.2179C8.91559 16.0914 5.84294 20.6899 3.7466 25.7509C1.65026 30.812 0.571287 36.2363 0.571287 41.7143L42.2856 41.7143L42.2856 2.10648e-05Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
+      <path className={`${!userData.circle2[1] ? "colorete" : ""}`} d="M83.9999 41.7143C83.9999 36.2363 82.9209 30.8119 80.8245 25.7509C78.7282 20.6899 75.6556 16.0914 71.782 12.2178C67.9085 8.3443 63.3099 5.27165 58.2489 3.17531C53.1879 1.07897 47.7636 -2.39451e-07 42.2856 0V41.7143H83.9999Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
+      <path className={`${!userData.circle2[2] ? "colorete" : ""}`} d="M0.571438 41.7143C0.571437 47.1923 1.65041 52.6167 3.74674 57.6777C5.84309 62.7387 8.91573 67.3372 12.7893 71.2108C16.6628 75.0843 21.2613 78.1569 26.3224 80.2533C31.3834 82.3496 36.8077 83.4286 42.2857 83.4286L42.2857 41.7143L0.571438 41.7143Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
+      <path className={`${!userData.circle2[3] ? "colorete" : ""}`} d="M41.7144 83.4286C47.1924 83.4286 52.6168 82.3496 57.6778 80.2533C62.7388 78.1569 67.3373 75.0843 71.2109 71.2107C75.0844 67.3372 78.1571 62.7387 80.2534 57.6776C82.3497 52.6166 83.4287 47.1923 83.4287 41.7143L41.7144 41.7143L41.7144 83.4286Z" fill="#A1C74D" stroke="#F7FAFF" strokeWidth="4" />
     </svg>
   }
 
@@ -40,14 +40,14 @@ export const Exploration2 = ({ goView, userData }) => {
 
   const Vector4 = () => {
     return <svg width="105" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path id="0" className={`${!userData.circle4[7] ? "colorete" : ""}`} d="M21.7501 21.7501C17.712 25.7882 14.5088 30.5822 12.3234 35.8582C10.138 41.1343 9.01314 46.7891 9.01314 52.4999L52.5 52.4999L21.7501 21.7501Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="1" className={`${!userData.circle4[0] ? "colorete" : ""}`} d="M52.4996 9.01297C46.7888 9.01297 41.1339 10.1378 35.8579 12.3232C30.5818 14.5086 25.7878 17.7118 21.7497 21.75L52.4996 52.4998L52.4996 9.01297Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="2" className={`${!userData.circle4[1] ? "colorete" : ""}`} d="M83.2496 21.75C79.2114 17.7119 74.4175 14.5087 69.1414 12.3233C63.8653 10.1378 58.2105 9.01301 52.4997 9.01302L52.4997 52.4999L83.2496 21.75Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="3" className={`${!userData.circle4[2] ? "colorete" : ""}`} d="M95.9874 52.4996C95.9874 46.7888 94.8626 41.1339 92.6772 35.8579C90.4917 30.5818 87.2885 25.7878 83.2504 21.7497L52.5005 52.4996L95.9874 52.4996Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="4" className={`${!userData.circle4[3] ? "colorete" : ""}`} d="M83.2498 83.2496C87.288 79.2114 90.4912 74.4175 92.6766 69.1414C94.862 63.8653 95.9869 58.2105 95.9869 52.4997L52.5 52.4997L83.2498 83.2496Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="5" className={`${!userData.circle4[4] ? "colorete" : ""}`} d="M52.5004 95.9864C58.2112 95.9864 63.8661 94.8616 69.1421 92.6762C74.4182 90.4908 79.2122 87.2875 83.2503 83.2494L52.5004 52.4996L52.5004 95.9864Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="6" className={`${!userData.circle4[5] ? "colorete" : ""}`} d="M21.7504 83.25C25.7886 87.2881 30.5825 90.4913 35.8586 92.6767C41.1347 94.8622 46.7895 95.987 52.5003 95.987L52.5003 52.5001L21.7504 83.25Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
-      <path id="7" className={`${!userData.circle4[6] ? "colorete" : ""}`} d="M9.01261 52.4999C9.01261 58.2107 10.1374 63.8656 12.3228 69.1416C14.5083 74.4177 17.7115 79.2117 21.7496 83.2498L52.4995 52.5L9.01261 52.4999Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="0" className={`${!userData.circle4[3] ? "colorete" : ""}`} d="M21.7501 21.7501C17.712 25.7882 14.5088 30.5822 12.3234 35.8582C10.138 41.1343 9.01314 46.7891 9.01314 52.4999L52.5 52.4999L21.7501 21.7501Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="1" className={`${!userData.circle4[4] ? "colorete" : ""}`} d="M52.4996 9.01297C46.7888 9.01297 41.1339 10.1378 35.8579 12.3232C30.5818 14.5086 25.7878 17.7118 21.7497 21.75L52.4996 52.4998L52.4996 9.01297Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="2" className={`${!userData.circle4[5] ? "colorete" : ""}`} d="M83.2496 21.75C79.2114 17.7119 74.4175 14.5087 69.1414 12.3233C63.8653 10.1378 58.2105 9.01301 52.4997 9.01302L52.4997 52.4999L83.2496 21.75Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="3" className={`${!userData.circle4[6] ? "colorete" : ""}`} d="M95.9874 52.4996C95.9874 46.7888 94.8626 41.1339 92.6772 35.8579C90.4917 30.5818 87.2885 25.7878 83.2504 21.7497L52.5005 52.4996L95.9874 52.4996Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="4" className={`${!userData.circle4[7] ? "colorete" : ""}`} d="M83.2498 83.2496C87.288 79.2114 90.4912 74.4175 92.6766 69.1414C94.862 63.8653 95.9869 58.2105 95.9869 52.4997L52.5 52.4997L83.2498 83.2496Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="5" className={`${!userData.circle4[0] ? "colorete" : ""}`} d="M52.5004 95.9864C58.2112 95.9864 63.8661 94.8616 69.1421 92.6762C74.4182 90.4908 79.2122 87.2875 83.2503 83.2494L52.5004 52.4996L52.5004 95.9864Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="7" className={`${!userData.circle4[2] ? "colorete" : ""}`} d="M9.01261 52.4999C9.01261 58.2107 10.1374 63.8656 12.3228 69.1416C14.5083 74.4177 17.7115 79.2117 21.7496 83.2498L52.4995 52.5L9.01261 52.4999Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
+      <path id="6" className={`${!userData.circle4[1] ? "colorete" : ""}`} d="M21.7504 83.25C25.7886 87.2881 30.5825 90.4913 35.8586 92.6767C41.1347 94.8622 46.7895 95.987 52.5003 95.987L52.5003 52.5001L21.7504 83.25Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
     </svg>
   }
 
@@ -56,6 +56,9 @@ export const Exploration2 = ({ goView, userData }) => {
     let a = value1.length > 0 && value2.length > 0 && value3.length > 0 && value4.length > 0
     return a
   }
+  console.log(userData.circle1)
+  console.log(userData.circle2)
+  console.log(userData.circle3)
   console.log(userData.circle4)
   return (
     <div className="exploration2">

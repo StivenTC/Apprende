@@ -34,12 +34,12 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
   const activities = [{
     title: "Fracción A",
     cake: <FractionA />,
-    squares: 6
+    squares: 8
   },
   {
     title: "Fracción B",
     cake: <FractionB />,
-    squares: 8
+    squares: 6
   }]
 
   const paintTile = (index, tile) => {
