@@ -44,4 +44,61 @@
     }
 
   }
+
+  .ai-button {
+    &.disabled {
+      box-shadow: none;
+    }
+
+    span,
+    .img-failed,
+    .img-complete {
+      display: none;
+    }
+
+    &.challenge {
+      &-complete {
+        color: #ffffff;
+        background-color: #A1C74D;
+        border: 2px solid #A1C74D;
+
+        svg {
+          display: none;
+        }
+
+        .img-complete {
+          display: block;
+        }
+      }
+
+      &-failed {
+        color: #ffffff;
+        background: #FF4F5B;
+        border: 2px solid #FF4F5B;
+        justify-content: flex-start;
+
+        p {
+          order: 2;
+          text-align: left;
+          margin-left: 10px;
+
+          span {
+            display: inline;
+            font-weight: normal;
+          }
+        }
+
+        svg {
+          transform: rotate(180deg);
+          order: 1;
+        }
+
+        .img-failed {
+          margin-left: auto;
+          order: 3;
+          display: block;
+        }
+      }
+    }
+  }
 }

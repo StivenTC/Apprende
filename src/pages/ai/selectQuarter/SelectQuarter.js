@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectQuarter = ({ goView }) => {
+export const SelectQuarter = ({ goView, saveUser, userData }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState("");
@@ -89,15 +89,15 @@ export const SelectQuarter = ({ goView }) => {
   }
 
   const nextActivity = () => {
-
     if (selectOption === 2) {
       setFeedback('correct')
+      saveUser({ ...userData, selectQuarter: true })
     } else if (attempts < 3) {
       setSelectOption('')
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      console.log(attempts, "conclude")
+      saveUser({ ...userData, selectQuarter: false })
       goView(6)
     }
   }

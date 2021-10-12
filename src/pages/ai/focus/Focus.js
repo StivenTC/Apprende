@@ -6,7 +6,8 @@ import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
-export const Focus = ({ goView }) => {
+
+export const Focus = ({ goView, saveUser, userData }) => {
   const [selectedCard, setSelectedCard] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -90,8 +91,6 @@ export const Focus = ({ goView }) => {
       }
     }
   }
-  console.log(selectedAnswers)
-  console.log(answers)
 
   const getClasses = (index) => {
     let clases = ""
@@ -117,6 +116,7 @@ export const Focus = ({ goView }) => {
     let completeQuest = answers.every(Boolean)
     if (completeQuest) {
       setFeedback('correct')
+      saveUser({ ...userData, focus: true })
     } else if (attempts < 3) {
       setSelectedAnswers([])
       setAnswers([])
@@ -125,6 +125,7 @@ export const Focus = ({ goView }) => {
       setSelectedCard()
       setAttempts(attempts + 1)
     } else {
+      saveUser({ ...userData, focus: false })
       goView(3)
     }
   }
