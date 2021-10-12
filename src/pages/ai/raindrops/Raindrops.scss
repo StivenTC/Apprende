@@ -96,6 +96,10 @@
       height: fit-content;
       @include flex-center;
 
+      path {
+        transition: all .5s ease;
+      }
+
       &:not(:first-child) {
         &:nth-child(even) {
           margin-top: 80px;
@@ -145,6 +149,8 @@
       }
 
       &.answered {
+        pointer-events: none;
+
         .water-drop {
           path {
             &:first-child {
@@ -161,6 +167,10 @@
             fill: #FFFFFF;
             opacity: 0.2;
           }
+        }
+
+        .drop-splash {
+          display: none;
         }
 
         .scales-fractions span {

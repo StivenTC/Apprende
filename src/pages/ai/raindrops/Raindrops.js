@@ -49,7 +49,7 @@ export const Raindrops = ({ goView }) => {
     let correctAnswers = [0, 1, 4]
     let okAnswers = corrects;
     setSelectedDrop(id)
-    console.log(id)
+    console.log("entro", id)
     if (correctAnswers.includes(id)) {
       okAnswers.push(id)
       setCorrects(okAnswers)
@@ -61,14 +61,17 @@ export const Raindrops = ({ goView }) => {
         setSelectedDrop('')
         setFeedback('clue')
         setAttempts(attempts + 1)
-      }, 1000);
+      }, 500);
+    } else {
+      setTimeout(function () {
+        goView(9)
+      }, 500);
     }
   }
+  console.log(attempts)
 
   const getClasses = (index) => {
     let style = ""
-    console.log(corrects)
-
     if (selectedDrop === index) {
       style += " show-splash"
     }

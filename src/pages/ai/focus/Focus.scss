@@ -117,6 +117,7 @@
   }
 
   &-conclusion {
+    @extend .slide-in-bottom;
     margin-bottom: 35px;
 
     &-content {
