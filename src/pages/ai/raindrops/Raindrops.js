@@ -23,7 +23,7 @@ export const Raindrops = ({ goView }) => {
     </svg>
   }
   const Splash = () => {
-    return <svg className="drop-splash" width="198" height="92" viewBox="0 0 198 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return <svg className="drop-splash scale-in-center" width="198" height="92" viewBox="0 0 198 92" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0)">
         <path d="M60.0303 49.7923C60.0303 49.7923 67.3408 36.3087 64.3282 25.1858C61.3157 14.0629 53.0741 13.4255 48.4972 15.6792C43.9202 17.933 39.9431 27.2845 47.0489 32.7042C54.1792 38.1191 59.022 41.0595 60.0303 49.7923Z" fill="#00D7F0" />
         <path d="M56.7326 61.514C56.7326 61.514 48.7374 30.1644 26.8109 29.115C6.20441 28.1252 5.95705 47.8498 18.8386 50.8449C30.2595 53.5158 43.3631 47.0549 56.7326 61.514Z" fill="#00D7F0" />
@@ -57,9 +57,11 @@ export const Raindrops = ({ goView }) => {
         setFeedback('correct')
       }
     } else if (attempts < 3) {
-      setSelectedDrop('')
-      setFeedback('clue')
-      setAttempts(attempts + 1)
+      setTimeout(function () {
+        setSelectedDrop('')
+        setFeedback('clue')
+        setAttempts(attempts + 1)
+      }, 1000);
     }
   }
 
@@ -81,7 +83,7 @@ export const Raindrops = ({ goView }) => {
       <Header goView={goView} actualView={2} />
       <div className="rain-drop-body">
         <div className="rain-drop-header">
-          <img src={TopCloud} alt="Nuebs altas" />
+          <img src={TopCloud} alt="Nubes altas" />
           <p>Selecciona las <strong>tres</strong> gotas con <strong>fracciones equivalentes</strong> a 6/8</p>
           <div className="rain-drop-header-quest">
             <div className="rain-drop-header-quest-drops">

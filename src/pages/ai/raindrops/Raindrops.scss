@@ -111,6 +111,13 @@
         position: absolute;
         top: -25px;
         display: none;
+        transition: all .5s ease;
+      }
+
+      &.show-splash {
+        .drop-splash {
+          display: block;
+        }
       }
 
       .scales-fractions {
