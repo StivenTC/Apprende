@@ -122,7 +122,7 @@ export function Raindrops({ goView, saveUser, userData }) {
         </div>
       </div>
       <img src={BottomWater} alt="Piso de agua" className="bottom-water" />
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={10} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );

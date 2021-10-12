@@ -9,6 +9,7 @@ import { SelectQuarterConclusion } from './selectQuarter/Conclusion';
 import { RaindropPresentation } from './raindrops/Presentation';
 import { Raindrops } from './raindrops/Raindrops';
 import { RaindropConclusion } from './raindrops/Conclusion';
+import { RaindropQuestion } from './raindrops/Question';
 
 
 function CasterAI() {
@@ -39,6 +40,8 @@ function CasterAI() {
           return <Raindrops goView={setActualView} saveUser={saveUserData} userData={userData} />;
         case 9:
           return <RaindropConclusion goView={setActualView} saveUser={saveUserData} />;
+        case 10:
+          return <RaindropQuestion goView={setActualView} userData={userData} />;
         default:
           return <h1>Gotas</h1>;
       }

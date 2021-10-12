@@ -51,7 +51,7 @@ export const RaindropConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(0)
+      goView(10)
     } else {
       setShowSolution(true)
     }
