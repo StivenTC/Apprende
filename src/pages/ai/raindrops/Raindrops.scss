@@ -4,6 +4,13 @@
   overflow: hidden;
   position: relative;
 
+  .bottom-water {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    z-index: 1;
+  }
+
   &-body {
     position: relative;
     overflow: hidden;
