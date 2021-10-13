@@ -37,7 +37,6 @@ export const Exploration2 = ({ goView, userData }) => {
     </svg>
   }
 
-
   const Vector4 = () => {
     return <svg width="105" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path id="0" className={`${!userData.circle4[3] ? "colorete" : ""}`} d="M21.7501 21.7501C17.712 25.7882 14.5088 30.5822 12.3234 35.8582C10.138 41.1343 9.01314 46.7891 9.01314 52.4999L52.5 52.4999L21.7501 21.7501Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
@@ -50,16 +49,10 @@ export const Exploration2 = ({ goView, userData }) => {
       <path id="6" className={`${!userData.circle4[1] ? "colorete" : ""}`} d="M21.7504 83.25C25.7886 87.2881 30.5825 90.4913 35.8586 92.6767C41.1347 94.8622 46.7895 95.987 52.5003 95.987L52.5003 52.5001L21.7504 83.25Z" fill="#06D6A0" stroke="#F7FAFF" strokeWidth="4" />
     </svg>
   }
-
-
   const validate = () => {
     let a = value1.length > 0 && value2.length > 0 && value3.length > 0 && value4.length > 0
     return a
   }
-  console.log(userData.circle1)
-  console.log(userData.circle2)
-  console.log(userData.circle3)
-  console.log(userData.circle4)
   return (
     <div className="exploration2">
       <Header goView={goView} actualView={2} />

@@ -33,10 +33,21 @@
       line-height: 25px;
       padding: 0 15px;
 
+      &.disabled {
+        box-shadow: none;
+      }
+
       svg {
         font-size: 36px;
         font-weight: bolder;
       }
+    }
+
+    .btn-next {
+      background: #06D6A0;
+      border: 3px solid #27DCAD;
+      box-shadow: 0px 5px 0px #06A67C;
+      color: #082927;
     }
 
     .completed {
@@ -45,10 +56,11 @@
 
   }
 
+  &-metacognition {
+    margin-top: 70px;
+  }
+
   .ai-button {
-    &.disabled {
-      box-shadow: none;
-    }
 
     span,
     .img-failed,
