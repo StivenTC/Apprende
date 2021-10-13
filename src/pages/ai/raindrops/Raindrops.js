@@ -99,8 +99,8 @@ export function Raindrops({ goView, saveUser, userData }) {
               </div>
               )}
             </div>
-            <div className="scales-fractions"><span>3</span>
-              <span>4</span>
+            <div className="scales-fractions"><span>6</span>
+              <span>8</span>
             </div>
           </div>
         </div>
