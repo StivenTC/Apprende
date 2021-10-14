@@ -82,10 +82,18 @@ export const Scales = ({ goView, saveUser, userData }) => {
   function handle(value) {
     let currentAnswer = answers;
     let nextScale = currentScale;
-    currentAnswer[currentScale].answer = String(value);
+    currentAnswer[currentScale < 4 ? currentScale : 0].answer = String(value);
     setAnswers(currentAnswer)
-    nextScale += 1
-    setCurrentScale(nextScale)
+    console.log(nextScale)
+    console.log(currentAnswer)
+    console.log("===============")
+    if (nextScale < 4) {
+      nextScale += 1
+      setCurrentScale(nextScale)
+    } else {
+      setCurrentScale(0)
+    }
+    console.log(nextScale)
   }
 
   const validate = () => {
@@ -114,7 +122,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
       <Header goView={goView} actualView={3} />
       <div className="scales-content">
         {!conclusion && <div className="scales-content-text">
-          <p>Ubica el punto azul <span className="dot-blue" /> que representa cada fracción en cada una de las rectas numéricas</p>
+          <p>Ubica el punto azul <span className="dot-blue" /> que representa sfaffas cada fracción en cada una de las rectas numéricas</p>
         </div>}
         {!conclusion ? <div className="scales-activity">
           <div className="scales-activity-fraction">
@@ -132,8 +140,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
               <div
                 key={scale.steps}
                 role="button"
-                className="content-slider"
-                onClick={() => setCurrentScale(i)}>
+                className="content-slider">
                 <Slider min={0} max={1}
                   marks={scale.marks}
                   step={scale.steps}
