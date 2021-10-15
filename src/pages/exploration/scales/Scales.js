@@ -122,14 +122,14 @@ export const Scales = ({ goView, saveUser, userData }) => {
       <Header goView={goView} actualView={3} />
       <div className="scales-content">
         {!conclusion && <div className="scales-content-text">
-          <p>Ubica el punto azul <span className="dot-blue" /> que representa sfaffas cada fracción en cada una de las rectas numéricas</p>
+          <p>Ubica el punto azul <span className="dot-blue" /> que representa cada fracción en cada una de las rectas numéricas</p>
         </div>}
         {!conclusion ? <div className="scales-activity">
           <div className="scales-activity-fraction">
             {answers.map((item, i) =>
               <div key={item.quest} role="button"
                 onClick={() => setCurrentScale(i)}
-                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "selected" : ""}`}>
+                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "" : ""}`}>
                 <span>{item.quest.charAt()}</span>
                 <span>{item.quest.charAt(2)}</span>
               </div>
