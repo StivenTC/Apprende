@@ -29,6 +29,9 @@ function App() {
         <Link to="/actividades-interactivas">
           <button className="go-btn">Actividades interactivas</button>
         </Link>
+        <Link to="/actividades-interactivas-2">
+          <button className="go-btn">Actividades interactivas 2</button>
+        </Link>
         <Link to="/metacognicion">
           <button className="go-btn">Metacognición</button>
         </Link>

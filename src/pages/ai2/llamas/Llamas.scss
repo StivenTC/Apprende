@@ -1,0 +1,154 @@
+.llamas {
+  position: relative;
+  background: #35BFA5;
+  height: 100%;
+
+  &-body {
+    max-width: 320px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+
+    p {
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #ffffff;
+      margin: 36px auto 28px;
+
+      strong {
+        font-weight: 900;
+      }
+    }
+  }
+
+  &-activity {
+
+    &-card-content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      .card-llama {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+      }
+    }
+
+    &-list {
+      position: relative;
+      width: 320px;
+      height: 164px;
+    }
+
+    &-cards {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+      height: 164px;
+    }
+
+    &-card {
+      position: absolute;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      width: 96px;
+      height: 164px;
+      cursor: pointer;
+      border: 2px solid #EDEDFB;
+      box-sizing: border-box;
+      border-radius: 8px;
+      z-index: 1;
+
+      &.card-ghost {
+        position: relative;
+        opacity: .5;
+      }
+    }
+
+    .card {
+
+      &-02 {
+        left: 112px;
+      }
+
+      &-03 {
+        left: 224px;
+      }
+    }
+
+    &-scale {
+      margin-top: 46px;
+      width: 328px;
+      height: 200px;
+
+      &-droppable {
+        position: relative;
+        width: 328px;
+        height: 200px;
+      }
+
+      .llamas-activity-card {
+        width: 56px;
+        height: 72px;
+        filter: none;
+        @include flex-center;
+
+        .llamas-quarter {
+          font-size: 28px;
+          line-height: 32px;
+          margin: auto;
+        }
+
+        &:first-child {
+          left: 28px;
+        }
+
+        &:nth-child(2) {
+          left: 96px;
+        }
+
+        &:nth-child(3) {
+          right: 41px;
+        }
+      }
+
+      >img {
+        position: absolute;
+      }
+    }
+  }
+
+  &-quarter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 25px;
+    margin-right: 8px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50%-2px);
+      background-color: #ffffff;
+      height: 2px;
+      width: 32px;
+      border-radius: 10px;
+    }
+  }
+
+  .bottom-bkg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
