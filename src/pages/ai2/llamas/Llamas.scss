@@ -2,6 +2,8 @@
   position: relative;
   background: #35BFA5;
   height: 100%;
+  overflow: auto;
+  padding-bottom: 64px;
 
   &-body {
     max-width: 320px;
@@ -147,8 +149,27 @@
   }
 
   .bottom-bkg {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
+  }
+
+  &.focus-conclusion {
+    height: 100vh;
+    margin-bottom: 0;
+
+    h2 {
+      color: #ffffff;
+    }
+
+    .btn-next {
+      margin-top: 20%;
+    }
+
+    .focus-conclusion-content,
+    .btn-next {
+      z-index: 1;
+      position: relative;
+    }
   }
 }

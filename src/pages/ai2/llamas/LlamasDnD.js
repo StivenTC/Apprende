@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Llama from "../../../assets/llama.svg";
 import LlamaGhost from "../../../assets/llamaGhost.svg";
 import LlamaScale from "../../../assets/llamaScale.svg";
 
-export function LlamasDnD({ cards }) {
-
+export function LlamasDnD({ cards, answer }) {
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -46,6 +45,10 @@ export function LlamasDnD({ cards }) {
   };
 
   const [listItems, setListItems] = useState(initalState);
+
+  useEffect(() => {
+    answer(listItems.selected)
+  }, [listItems]);
 
   const id2List = {
     droppable: 'items',

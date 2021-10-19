@@ -9,13 +9,6 @@ import { LlamasDnD } from "./LlamasDnD";
 
 export const Llamas = ({ goView, saveUser, userData }) => {
 
-  const [selectOption, setSelectOption] = useState('');
-  const [showFeedback, setFeedback] = useState("");
-  const [attempts, setAttempts] = useState(1);
-  const clueTexts = [
-    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
-    "Para encontrar una fracción equivalente a 3/4 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
-  ]
   const llamasCards = [
     {
       id: "card-01",
@@ -33,56 +26,51 @@ export const Llamas = ({ goView, saveUser, userData }) => {
       color: "#FF820F"
     }
   ]
-
-  const selectCard = (id) => {
-    setSelectOption(id)
-  }
-
-  const getClasses = (index) => {
-    let style = ""
-
-    if (selectOption === index) {
-      style += " selected"
-    } else if (String(selectOption).length > 0) {
-      style += " no-selected"
-    }
-    return style
-  }
+  const [selectCards, setSelecCards] = useState([]);
+  const [llamaCards, setLlamaCards] = useState(llamasCards);
+  const [showFeedback, setFeedback] = useState("");
+  const [attempts, setAttempts] = useState(1);
+  const clueTexts = [
+    "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
+    "Para ordenar fracciones que tienen el mismo denominador(en este caso 8), ordena los numeradores de menor a mayor."
+  ]
 
   const validate = () => {
-    return String(selectOption).length > 0
+    return selectCards.length >= 3
   }
 
   const nextActivity = () => {
-    if (selectOption === 2) {
+    let corrects = ['1/8', '3/8', '7/8']
+    let answered = selectCards.map((t) => t.quarter)
+
+    if (JSON.stringify(corrects) === JSON.stringify(answered)) {
       setFeedback('correct')
-      saveUser({ ...userData, selectQuarter: true })
+      saveUser({ ...userData, llamas: true })
     } else if (attempts < 3) {
-      setSelectOption('')
+      setSelecCards([])
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      saveUser({ ...userData, selectQuarter: false })
-      goView(6)
+      saveUser({ ...userData, llamas: false })
+      goView(3)
     }
   }
-
   return (
     <div className="llamas">
       <Header goView={goView} actualView={2} />
       <div className="llamas-body">
         <p>Arrastra y <strong>organiza</strong> las tres alpacas sobre la recta numérica de acuerdo con las fracciones.</p>
         <div className="llamas-activity">
-          <LlamasDnD cards={llamasCards} />
+          <LlamasDnD cards={llamaCards} answer={setSelecCards} />
         </div>
         <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
           Enviar
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       <img className="bottom-bkg" src={LlamasBkg} alt="landscape green" />
     </div>
   )

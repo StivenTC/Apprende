@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
+import { LlamasConclusion } from './llamas/Conclusion';
 import { Llamas } from './llamas/Llamas';
 import { LlamasPresentation } from './llamas/Presentation';
 
@@ -18,7 +19,10 @@ function CasterAI2() {
         case 1:
           return <LlamasPresentation goView={setActualView} userData={userData} />;
         case 2:
-          return <Llamas goView={setActualView} userData={userData} />;
+          return <Llamas goView={setActualView} userData={userData} saveUser={saveUserData} />;
+        case 3:
+          return <LlamasConclusion goView={setActualView} />;
+
       }
     }
 
