@@ -30,11 +30,14 @@
       position: relative;
       height: 100%;
       width: 100%;
+      user-select: none;
+      pointer-events: none;
       overflow: hidden;
 
       .card-llama {
         position: absolute;
         bottom: 8px;
+        user-select: none;
         right: 8px;
       }
     }
