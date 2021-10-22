@@ -4,7 +4,8 @@
   overflow: auto;
 
   >div {
-    margin: 90px;
+    margin: 90px auto;
+    max-width: 320px;
     text-align: center;
   }
 
