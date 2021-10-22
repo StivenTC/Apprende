@@ -15,7 +15,7 @@ export default function Infography() {
     history.push("/")
   }
 
-  const [currentInfo, setcurrentInfo] = useState(query.get("fracciones"))
+  const [currentInfo] = useState(query.get("fracciones"))
 
   const returnInfoUrl = () => {
     let src = ""
@@ -26,9 +26,6 @@ export default function Infography() {
     }
     return src
   }
-
-
-
   return (
     <div className="infography">
       <button className="close-btn" onClick={goBack} />

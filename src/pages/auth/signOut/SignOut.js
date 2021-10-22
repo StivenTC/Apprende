@@ -7,7 +7,7 @@ export const SignOut = () => {
   let history = useHistory();
 
   const goView = () => {
-    localStorage.removeItem("userData");
+    localStorage.clear();
     history.push("/");
   }
 

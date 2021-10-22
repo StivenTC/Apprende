@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import Logo from "../assets/Apprende blanco.png";
 
 function App() {
   let history = useHistory();
-  const [actualCombo, setActualCombo] = useState()
-
   const combos = [
     {
       combo: "Combo 1",
@@ -16,10 +15,55 @@ function App() {
         {
           name: "Fracciones equivalentes",
           route: "/infografia?fracciones=equivalentes"
+        },
+        {
+          name: "Entrenamiento 1",
+          route: "/actividades-interactivas"
+        },
+        {
+          name: " ¿Cómo llegué tan lejos?",
+          route: "/metacognicion"
         }
       ]
-
-    }
+    },
+    {
+      combo: "Combo 2",
+      activities: [
+        {
+          name: "Exploración Fracciones",
+          route: "/exploracion"
+        },
+        {
+          name: "Entrenamiento 1",
+          route: "/actividades-interactivas"
+        },
+        {
+          name: "Comparar fracciones",
+          route: "/infografia?fracciones=equivalentes"
+        },
+        {
+          name: "Entrenamiento 2",
+          route: "/actividades-interactivas-2"
+        },
+      ]
+    },
+    {
+      combo: "Combo 3",
+      activities: [
+        {
+          name: "Video 1",
+          route: "/video?media=exploracion"
+        },
+        {
+          name: "Video 2",
+          route: "/video?media=comparar"
+        },
+        {
+          name: " ¿Cómo llegué tan lejos?",
+          route: "/metacognicion"
+        }
+      ]
+    },
   ]
 
   const [name] = useState(() => {
@@ -29,6 +73,13 @@ function App() {
     const initialValue = JSON.parse(saved);
     return initialValue || "";
   });
+  const [actualCombo, setActualCombo] = useState(() => {
+    const lsData = "combo";
+    // getting stored value
+    const saved = localStorage.getItem(lsData);
+    const initialValue = JSON.parse(saved);
+    return initialValue || { combo: "" };
+  });
 
   useEffect(() => {
     if (name.length <= 0) {
@@ -36,29 +87,32 @@ function App() {
     }
   }, [history, name.length])
 
+  const selectCombo = (name) => {
+    let currentCombo = combos.find(el => el.combo === name)
+    localStorage.setItem("combo", JSON.stringify(currentCombo));
+    console.log(currentCombo)
+    setActualCombo(currentCombo)
+  }
+  console.log(actualCombo)
   return (
     <div className="App">
       <div>
-        <h1>Apprende</h1>
-        <h3>Bienvenido</h3>
-        <Link to="/exploracion">
-          <button className="go-btn">Exploración</button>
-        </Link>
-        <Link to="/actividades-interactivas">
-          <button className="go-btn">Actividades interactivas</button>
-        </Link>
-        <Link to="/actividades-interactivas-2">
-          <button className="go-btn">Actividades interactivas 2</button>
-        </Link>
-        <Link to="/metacognicion">
-          <button className="go-btn">Metacognición</button>
-        </Link>
-        <Link to="/infografia">
-          <button className="go-btn">infografia</button>
-        </Link>
-        <Link to="/video-fraccion">
-          <button className="go-btn">Video fracciones equivalentes</button>
-        </Link>
+        <img src={Logo} alt='Apprende' />
+        <h1>{actualCombo?.combo?.length > 1 ? actualCombo.combo : "Bienvenido"}</h1>
+        {
+          actualCombo.combo.length > 1 ?
+            actualCombo.activities.map((combo) =>
+              <Link key={combo.name} to={combo.route}>
+                <button className="go-btn">{combo.name}</button>
+              </Link>
+            ) :
+            combos.map((combo) =>
+              <button
+                onClick={() => selectCombo(combo.combo)}
+                key={combo.combo}
+                className="go-btn">{combo.combo}</button>
+            )
+        }
       </div>
     </div>
 
