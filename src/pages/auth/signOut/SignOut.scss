@@ -1,0 +1,16 @@
+.sign-out {
+  @include flex-center;
+
+  .presentation {
+    margin-top: 20%;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    .btn-next {
+      max-width: 100%;
+      padding: 0 12px;
+    }
+  }
+}

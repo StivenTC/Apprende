@@ -1,10 +1,13 @@
 import robot from "../../assets/Ensenando.png";
 import HappyEmoji from "../../assets/happyEmoji.png";
 import SadEmoji from "../../assets/sadEmoji.png";
+import { useHistory } from 'react-router';
 import { RiArrowRightLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 export function Launcher({ goView, userData }) {
+  let history = useHistory();
 
   const getClasses = (challenge) => {
     let clases = "";
@@ -33,6 +36,16 @@ export function Launcher({ goView, userData }) {
     }
     return clases;
   };
+
+  const validateSesion = () => {
+    let r = false
+    let arrData = [userData.llamas, userData.aiComparations, userData.aiSort]
+
+    if (!(arrData.some(el => typeof el === 'undefined'))) {
+      r = true
+    }
+    return r
+  }
   return (
     <div className="launcher">
       <h1>Entrenamiento 2</h1>
@@ -64,6 +77,13 @@ export function Launcher({ goView, userData }) {
           <img className="img-failed" src={SadEmoji} alt='Challenge failed' />
           <RiArrowRightLine />
         </div>
+
+        {validateSesion() && <button
+          className="btn-next"
+          onClick={() => history.push("/gracias")}>
+          Finalizar
+          <BiRightArrowAlt />
+        </button>}
       </div>
     </div>
   );

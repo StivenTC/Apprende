@@ -7,6 +7,7 @@ import VideoFraccion from './pages/Media/Video';
 import { Register } from './pages/auth/register/Register';
 import CasterMetacognicion from './pages/metacognition/Caster';
 import CasterAI2 from './pages/ai2/Caster';
+import { SignOut } from './pages/auth/signOut/SignOut';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -16,6 +17,7 @@ export default function AppRoutes() {
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/registro" component={Register} />
+        <Route exact path="/gracias" component={SignOut} />
         <Route exact path="/exploracion" component={Caster} />
         <Route exact path="/actividades-interactivas" component={CasterAI} />
         <Route exact path="/actividades-interactivas-2" component={CasterAI2} />
