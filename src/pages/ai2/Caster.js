@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { AISort } from './aiSort/AISort';
+import { AISortConclusion } from './aiSort/Conclusion';
+import { AISortPresentation } from './aiSort/Presentation';
 import { AIComparations } from './comparations/AIComparations';
 import { AIConclusion } from './comparations/Conclusion';
 import { AIComparationsPresentation } from './comparations/Presentation';
@@ -31,6 +34,12 @@ function CasterAI2() {
           return <AIComparations goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 6:
           return <AIConclusion goView={setActualView} />;
+        case 7:
+          return <AISortPresentation goView={setActualView} userData={userData} />;
+        case 8:
+          return <AISort goView={setActualView} userData={userData} saveUser={saveUserData} />;
+        case 9:
+          return <AISortConclusion goView={setActualView} />;
       }
     }
 
