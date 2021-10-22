@@ -52,7 +52,7 @@ export const LlamasPresentation = ({ goView }) => {
   return (
     <div className="presentation">
       <h1>Reto 1</h1>
-      <p>Arrastra y organiza las tres alpacas sobre la recta numérica de acuerdo con las fracciones.</p>
+      <p>Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.</p>
       <InfoPic />
       <button
         className="btn-next"

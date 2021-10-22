@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AISort } from './aiSort/AISort';
 import { AISortConclusion } from './aiSort/Conclusion';
 import { AISortPresentation } from './aiSort/Presentation';
+import { AISortQuestion } from './aiSort/Question';
 import { AIComparations } from './comparations/AIComparations';
 import { AIConclusion } from './comparations/Conclusion';
 import { AIComparationsPresentation } from './comparations/Presentation';
@@ -12,7 +13,7 @@ import { LlamasPresentation } from './llamas/Presentation';
 
 
 function CasterAI2() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(8)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
 
@@ -40,6 +41,8 @@ function CasterAI2() {
           return <AISort goView={setActualView} userData={userData} saveUser={saveUserData} />;
         case 9:
           return <AISortConclusion goView={setActualView} />;
+        case 10:
+          return <AISortQuestion goView={setActualView} userData={userData} />;
       }
     }
 

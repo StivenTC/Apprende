@@ -59,7 +59,7 @@ export const Llamas = ({ goView, saveUser, userData }) => {
     <div className="llamas">
       <Header goView={goView} actualView={2} />
       <div className="llamas-body">
-        <p>Arrastra y <strong>organiza</strong> las tres alpacas sobre la recta numérica de acuerdo con las fracciones.</p>
+        <p>Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.</p>
         <div className="llamas-activity">
           <LlamasDnD cards={llamaCards} answer={setSelecCards} />
         </div>

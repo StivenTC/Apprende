@@ -7,7 +7,7 @@ import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { AISortDnD } from "./AISortDnD";
 
-export const AISort = ({ goView, saveUser, userData }) => {
+export function AISort({ goView, saveUser, userData }) {
   const QuarterA = () => {
     return <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M33.0988 0.0898438C25.4697 0.252575 18.4808 3.01669 12.9834 7.53083L33.0988 31.9159L33.0988 0.0898438Z" fill="#D9D9ED" />
@@ -20,8 +20,8 @@ export const AISort = ({ goView, saveUser, userData }) => {
       <path d="M66.3213 28.199L37.0078 33.0851L56.6282 9.30008C61.7418 14.239 65.2568 20.8226 66.3213 28.199Z" fill="#D9D9ED" />
       <path d="M55.0381 7.86107C49.6519 3.29561 42.7751 0.435067 35.241 0.112727L35.241 31.8604L55.0381 7.86107Z" fill="#D9D9ED" />
       <path fill-rule="evenodd" clip-rule="evenodd" d="M5.19531 49.0702L32.2204 36.3834L20.6347 63.0337C14.102 60.1688 8.68038 55.2391 5.19531 49.0702ZM33.8132 65.7846C29.8844 65.7846 26.1167 65.0947 22.6246 63.8296L34.4019 36.7386L44.1053 64.1397C40.868 65.2071 37.408 65.7846 33.8132 65.7846ZM46.1168 63.4024L36.6253 36.5996L61.7547 50.2129C58.0985 56.114 52.6255 60.7709 46.1168 63.4024ZM66.6602 32.9338C66.6602 38.5074 65.2723 43.7569 62.8233 48.3553L38.2608 35.049L66.5587 30.3321C66.626 31.1905 66.6602 32.0581 66.6602 32.9338ZM66.3217 28.1997L37.0082 33.0858L56.6286 9.30078C61.7421 14.2397 65.2572 20.8233 66.3217 28.1997Z" fill="#28D2EE" />
-    </svg>
-  }
+    </svg>;
+  };
   const QuarterB = () => {
     return <svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M32.6066 0.742188C24.9775 0.904918 17.9886 3.66903 12.4912 8.18317L32.6066 32.5683L32.6066 0.742188Z" fill="#D9D9ED" />
@@ -34,9 +34,9 @@ export const AISort = ({ goView, saveUser, userData }) => {
       <path d="M65.8291 28.8513L36.5157 33.7374L56.136 9.95243C61.2496 14.8913 64.7646 21.475 65.8291 28.8513Z" fill="#D9D9ED" />
       <path d="M54.5459 8.51341C49.1597 3.94796 42.2829 1.08741 34.7488 0.76507L34.7488 32.5127L54.5459 8.51341Z" fill="#D9D9ED" />
       <path fill-rule="evenodd" clip-rule="evenodd" d="M32.6073 0.742188C24.9782 0.904918 17.9893 3.66903 12.4919 8.18317L32.6073 32.5683L32.6073 0.742188ZM1.09277 27.2085C2.44717 20.3228 5.95275 14.209 10.8805 9.59633L30.8008 33.745L1.09277 27.2085ZM4.70345 49.7218L31.7285 37.0351L20.1428 63.6854C13.6101 60.8204 8.18851 55.8907 4.70345 49.7218ZM33.3214 66.4362C29.3925 66.4362 25.6248 65.7464 22.1327 64.4812L33.91 37.3902L43.6135 64.7913C40.3761 65.8587 36.9162 66.4362 33.3214 66.4362ZM45.6249 64.054L36.1334 37.2512L61.2628 50.8646C57.6066 56.7657 52.1336 61.4226 45.6249 64.054ZM66.1684 33.5854C66.1684 39.1591 64.7805 44.4085 62.3315 49.0069L37.7689 35.7007L66.0669 30.9838C66.1341 31.8421 66.1684 32.7098 66.1684 33.5854ZM65.8298 28.8513L36.5163 33.7374L56.1367 9.95243C61.2503 14.8913 64.7653 21.475 65.8298 28.8513ZM34.7495 0.76507C42.2836 1.08741 49.1604 3.94796 54.5466 8.51341L34.7495 32.5127L34.7495 0.76507Z" fill="#28D2EE" />
-    </svg>
+    </svg>;
 
-  }
+  };
   const QuarterC = () => {
     return <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M32.1896 0.0390625C24.5605 0.201793 17.5716 2.96591 12.0742 7.48005L32.1896 31.8652L32.1896 0.0390625Z" fill="#D9D9ED" />
@@ -49,8 +49,8 @@ export const AISort = ({ goView, saveUser, userData }) => {
       <path d="M65.4121 28.1482L36.0987 33.0343L55.719 9.2493C60.8326 14.1882 64.3476 20.7718 65.4121 28.1482Z" fill="#D9D9ED" />
       <path d="M54.129 7.81029C48.7427 3.24483 41.8659 0.384285 34.3318 0.0619453L34.3318 31.8096L54.129 7.81029Z" fill="#D9D9ED" />
       <path fill-rule="evenodd" clip-rule="evenodd" d="M32.1896 0.0390625C24.5605 0.201793 17.5716 2.96591 12.0742 7.48005L32.1896 31.8652L32.1896 0.0390625ZM0.675092 26.5053C2.02948 19.6196 5.53506 13.5059 10.4628 8.89321L30.3831 33.0419L0.675092 26.5053ZM0.0566406 32.8823C0.0566406 31.4389 0.149714 30.0173 0.330186 28.6231L29.1724 34.9691L3.29267 47.1182C1.21878 42.8113 0.0566406 37.9825 0.0566406 32.8823ZM4.28576 49.0187L31.3108 36.332L19.7251 62.9822C13.1924 60.1173 7.77083 55.1876 4.28576 49.0187ZM32.9037 65.7331C28.9749 65.7331 25.2071 65.0433 21.715 63.7781L33.4924 36.6871L43.1958 64.0882C39.9584 65.1556 36.4985 65.7331 32.9037 65.7331ZM45.2073 63.3509L35.7157 36.5481L60.8451 50.1614C57.1889 56.0625 51.7159 60.7195 45.2073 63.3509ZM65.7507 32.8823C65.7507 38.4559 64.3628 43.7054 61.9138 48.3038L37.3512 34.9975L65.6492 30.2807C65.7164 31.139 65.7507 32.0067 65.7507 32.8823ZM65.4121 28.1482L36.0987 33.0343L55.719 9.2493C60.8326 14.1882 64.3476 20.7718 65.4121 28.1482ZM34.3318 0.0619453C41.8659 0.384285 48.7427 3.24483 54.129 7.81029L34.3318 31.8096L34.3318 0.0619453Z" fill="#28D2EE" />
-    </svg>
-  }
+    </svg>;
+  };
 
 
   const AISortCards = [
@@ -69,37 +69,36 @@ export const AISort = ({ goView, saveUser, userData }) => {
       chart: <QuarterB />,
       quarter: "8/9"
     }
-  ]
+  ];
 
   const [selectCards, setSelecCards] = useState([]);
-  const [llamaCards, setLlamaCards] = useState(AISortCards);
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
   const clueTexts = [
     "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
     "Recuerda que para ordenar fracciones que tienen el mismo denominador (en este caso 9), ordenas los numeradores de menor a mayor."
-  ]
+  ];
 
   const validate = () => {
-    return selectCards.length >= 3
-  }
+    return selectCards.length >= 3;
+  };
 
   const nextActivity = () => {
-    let corrects = ['5/9', '8/9', '9/9']
-    let answered = selectCards.map((t) => t.quarter)
-
+    let corrects = ['5/9', '8/9', '9/9'];
+    let answered = selectCards.map((t) => t.quarter);
+    saveUser(AISortCards)
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
-      setFeedback('correct')
+      setFeedback('correct');
       saveUser({ ...userData, aiSort: true })
     } else if (attempts < 3) {
-      setSelecCards([])
-      setFeedback('clue')
-      setAttempts(attempts + 1)
+      setSelecCards([]);
+      setFeedback('clue');
+      setAttempts(attempts + 1);
     } else {
-      saveUser({ ...userData, aiSort: false })
-      goView(9)
+      saveUser({ ...userData, aiSort: true })
+      goView(9);
     }
-  }
+  };
   return (
     <div className="ai-sort">
       <Header goView={goView} actualView={2} />
@@ -113,8 +112,8 @@ export const AISort = ({ goView, saveUser, userData }) => {
           <BiRightArrowAlt />
         </button>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={10} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
-  )
+  );
 }
