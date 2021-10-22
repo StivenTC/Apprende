@@ -28,6 +28,8 @@ export default function VideoFraccion() {
   return (
     <div className="launcher">
       <Header />
+      <br />
+      <br />
       <Link to="/">
         <img src={robot} alt='robot' />
       </Link>

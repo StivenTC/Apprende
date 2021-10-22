@@ -96,8 +96,13 @@
         margin: 25px 0;
       }
     }
-
-
   }
+
+  &.launcher {
+    >h1 {
+      line-height: 42px;
+    }
+  }
+
 
 }

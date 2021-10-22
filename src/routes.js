@@ -23,7 +23,7 @@ export default function AppRoutes() {
         <Route exact path="/actividades-interactivas" component={CasterAI} />
         <Route exact path="/actividades-interactivas-2" component={CasterAI2} />
         <Route exact path="/metacognicion" component={CasterMetacognicion} />
-        <Route exact path="/video-fraccion" component={VideoFraccion} />
+        <Route exact path="/video" component={VideoFraccion} />
         <Route exact path="/infografia" component={Infography} />
       </Switch>
     </Router>

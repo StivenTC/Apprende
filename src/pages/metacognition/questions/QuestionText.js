@@ -9,11 +9,11 @@ export function QuestionText({ goView }) {
 
   const questions = [
     {
-      quest: "Escribe tus 2 aprendizajes más grandes sobre comparar fracciones y fracciones equivalentes",
+      quest: "<strong>¿Qué aprendiste con estas actividades?<br/>Escribe tus 2 aprendizajes más grandes  </strong>",
       fields: ["Aprendizaje 1", "Aprendizaje 2"]
     },
     {
-      quest: "Escribe un ejemplo de cómo podrías utilizar lo que sabes sobre comparar fracciones y fracciones equivalentes en un ejemplo de tu vida.",
+      quest: "<strong>Escribe un ejemplo de cómo podrías utilizar lo que sabes sobre comparar fracciones y fracciones equivalentes en un ejemplo de tu vida.</strong>",
       fields: ["Respuesta", ""]
     }
   ]
@@ -43,7 +43,7 @@ export function QuestionText({ goView }) {
       <div className="question-text">
         <div className="question-text-header">
           <h2>Reflexión</h2>
-          <p>{questions[actualView].quest}</p>
+          <p dangerouslySetInnerHTML={{ __html: questions[actualView].quest }} />
         </div>
         <div className="question-text-activity">
           <div className="question-answer">

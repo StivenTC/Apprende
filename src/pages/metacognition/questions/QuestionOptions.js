@@ -9,8 +9,8 @@ export function QuestionOptions({ goView, saveUser, userData }) {
   const questions = [
     "<strong>1. Utilizo distintas estrategias para encontrar fracciones equivalentes</strong>",
     "<strong>2. Comparo fracciones utilizando la recta numérica</strong>",
-    "<strong>3.</strong> Comparo y ordeno fracciones que tienen el <strong>mismo denominador</strong>",
-    "<strong>4.</strong> Comparo y ordeno fracciones que tienen <strong>diferentes denominadores</strong>",
+    "<strong>3. Comparo y ordeno fracciones que tienen el mismo denominador</strong>",
+    "<strong>4. Comparo y ordeno fracciones que tienen diferentes denominadores</strong>",
   ];
   const options = [
     "Puedo hacer esto si veo un ejemplo",
