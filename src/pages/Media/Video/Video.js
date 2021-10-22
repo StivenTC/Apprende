@@ -1,6 +1,6 @@
-import robot from "../../assets/robot.svg";
-import { Header } from "../../components/layout/Header/Header";
-import VideoAngela from '../../assets/video-explo.mp4';
+import robot from "../../../assets/robot.svg";
+import { Header } from "../../../components/layout/Header/Header";
+import VideoAngela from '../../../assets/video-explo.mp4';
 import { Link } from "react-router-dom";
 
 export default function VideoFraccion() {

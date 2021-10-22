@@ -3,6 +3,24 @@ import { Link, useHistory } from 'react-router-dom';
 
 function App() {
   let history = useHistory();
+  const [actualCombo, setActualCombo] = useState()
+
+  const combos = [
+    {
+      combo: "Combo 1",
+      activities: [
+        {
+          name: "Exploración Fracciones",
+          route: "/exploracion"
+        },
+        {
+          name: "Fracciones equivalentes",
+          route: "/infografia?fracciones=equivalentes"
+        }
+      ]
+
+    }
+  ]
 
   const [name] = useState(() => {
     const lsData = "userData";
@@ -34,6 +52,9 @@ function App() {
         </Link>
         <Link to="/metacognicion">
           <button className="go-btn">Metacognición</button>
+        </Link>
+        <Link to="/infografia">
+          <button className="go-btn">infografia</button>
         </Link>
         <Link to="/video-fraccion">
           <button className="go-btn">Video fracciones equivalentes</button>
