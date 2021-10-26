@@ -101,7 +101,7 @@ export const Exploration = ({ goView, saveUser }) => {
               </div>
             </div>
 
-            <div className="activity-circle">
+            <div className="activity-circle circle-4">
               <div>
                 <VectorSvg4 />
               </div>

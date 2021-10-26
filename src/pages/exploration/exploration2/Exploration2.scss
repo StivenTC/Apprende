@@ -172,4 +172,26 @@
       margin: 25px 0;
     }
   }
+
+  @media (max-width: $mobile) {
+    &-activity {
+      margin-left: -6px
+    }
+
+    .activity-circle {
+      justify-content: space-evenly;
+
+      svg {
+        transform: scale(0.8);
+      }
+
+      &:last-child svg {
+        transform: none;
+      }
+
+      &-quarter {
+        margin-left: 6px;
+      }
+    }
+  }
 }

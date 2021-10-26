@@ -117,4 +117,20 @@
       }
     }
   }
+
+  @media (max-width: $mobile) {
+    h1 {
+      margin-top: 60px;
+      margin-bottom: 28px;
+    }
+
+    img {
+      width: 120px;
+    }
+
+    div[role="button"] {
+      max-width: 260px;
+      height: 64px;
+    }
+  }
 }
