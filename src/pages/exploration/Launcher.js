@@ -14,9 +14,14 @@ export const Launcher = ({ goView, userData }) => {
         <div role="button" className={`${userData.complete >= 1 ? "completed" : ""}`} onClick={() => (userData.complete === 1 ? '' : goView(1))}>Actividad 1
           <RiArrowRightLine />
         </div>
-        <div role="button" className={`${userData.complete >= 2 ? "completed" : userData.complete === 1 ? "" : "disabled"}`} onClick={() => goView(4)}>Actividad 2
+        <div role="button" className={`${userData.complete >= 2 ? "completed" : userData.complete === 1 ? "" : "disabled"}`} onClick={() => userData.complete === 2 ? '' : goView(4)}>Actividad 2
           <RiArrowRightLine />
         </div>
+
+        {userData.complete === 2 && <Link to="/" className="launcher-btn-back">
+          Volver
+        </Link>}
+
       </div>
     </div >
   )
