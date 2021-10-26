@@ -8,6 +8,7 @@ import { BiRightArrowAlt } from "react-icons/bi";
 
 export const Scales = ({ goView, saveUser, userData }) => {
   const [currentScale, setCurrentScale] = useState(0);
+  const [lastScale, setLastScale] = useState();
   const [conclusion, goConclusion] = useState(false);
   const [textArea, setTextArea] = useState("");
 
@@ -79,21 +80,16 @@ export const Scales = ({ goView, saveUser, userData }) => {
   ]
 
 
-  function handle(value) {
+  function handle(value, scale) {
     let currentAnswer = answers;
-    let nextScale = currentScale;
-    currentAnswer[currentScale < 4 ? currentScale : 0].answer = String(value);
-    setAnswers(currentAnswer)
-    console.log(nextScale)
-    console.log(currentAnswer)
-    console.log("===============")
-    if (nextScale < 4) {
-      nextScale += 1
-      setCurrentScale(nextScale)
-    } else {
-      setCurrentScale(0)
+    currentAnswer[scale < 4 ? scale : 0].answer = String(value);
+    if (currentScale < 4 && lastScale != scale) {
+      console.log(value, scale)
+      console.log(currentScale, "lo")
+      setLastScale(scale)
+      setCurrentScale(currentScale + 1)
     }
-    console.log(nextScale)
+    setAnswers(currentAnswer)
   }
 
   const validate = () => {
@@ -104,7 +100,6 @@ export const Scales = ({ goView, saveUser, userData }) => {
     } else {
       res = a.length === answers.length
     }
-
     return res
   }
 
@@ -129,7 +124,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
             {answers.map((item, i) =>
               <div key={item.quest} role="button"
                 onClick={() => setCurrentScale(i)}
-                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "" : ""}`}>
+                className={`scales-fractions ${(currentScale > i) ? "complete" : ""}`}>
                 <span>{item.quest.charAt()}</span>
                 <span>{item.quest.charAt(2)}</span>
               </div>
@@ -139,13 +134,12 @@ export const Scales = ({ goView, saveUser, userData }) => {
             {scales.map((scale, i) =>
               <div
                 key={scale.steps}
-                role="button"
                 className="content-slider">
                 <Slider min={0} max={1}
                   marks={scale.marks}
                   step={scale.steps}
                   defaultValue={0}
-                  onAfterChange={handle}
+                  onAfterChange={value => handle(value, i)}
                   className={`selected`} />
               </div>
             )
