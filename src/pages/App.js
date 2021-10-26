@@ -55,12 +55,16 @@ function App() {
           route: "/video?media=exploracion"
         },
         {
+          name: "Entrenamiento 1",
+          route: "/actividades-interactivas"
+        },
+        {
           name: "Video 2",
           route: "/video?media=comparar"
         },
         {
-          name: " ¿Cómo llegué tan lejos?",
-          route: "/metacognicion"
+          name: "Entrenamiento 2",
+          route: "/actividades-interactivas-2"
         }
       ]
     },
