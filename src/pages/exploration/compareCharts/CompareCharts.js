@@ -229,6 +229,7 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
             {currentView < quests.length - 1 ? scales.map((scale, i) =>
               currentView === i && <div
                 role="button"
+                key={scale.steps}
                 className={`content-slider ${currentView === 1 ? "slider-yellow" : ""}`}
                 onClick={() => setCurrentScale(i)}>
                 <Slider min={0} max={1}

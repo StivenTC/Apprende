@@ -66,7 +66,7 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
                 className="fill-square-fraction"
                 style={{ gridTemplateColumns: `repeat(${activity.squares}, 1fr)` }}>
                 {[...Array(activity.squares)].map((item, j) =>
-                  <div key={item}
+                  <div key={j}
                     role="button"
                     onClick={() => paintTile(i, j)}
                     className={`tile ${j < answer.data[i] ? "painted" : ""}`} />

@@ -36,4 +36,14 @@
     padding: 12px 25px;
     margin: 25px 0;
   }
+
+  @media (max-width: $mobile) {
+    .scales-activity-fraction {
+      margin-bottom: 0;
+    }
+
+    .content-slider {
+      margin: 48px auto;
+    }
+  }
 }

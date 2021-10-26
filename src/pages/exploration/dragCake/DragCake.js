@@ -131,12 +131,15 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               </Column>
             </DndProvider>
           </div>
-          {!questionSolved && <div className="drag-cake-activity-conclusion">
+
+          {!questionSolved ? <div className="drag-cake-activity-conclusion">
             <div className="conclusion-answer">
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
-          </div>}
+          </div> :
+            <><br /><br /></>
+          }
           <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => nextView()}>
             Siguiente
             <BiRightArrowAlt />

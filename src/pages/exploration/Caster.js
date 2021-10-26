@@ -11,7 +11,7 @@ import { Presentation } from './presentation/Presentation';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(8)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
   //const [examen, setExam] = useState()
