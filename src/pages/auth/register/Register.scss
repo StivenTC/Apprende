@@ -7,6 +7,22 @@
     width: 100%;
     margin-top: 5rem;
 
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        width: 100%;
+        text-align: start;
+        padding-left: 8px;
+        padding-bottom: 4px;
+        color: #6D6E7C;
+        font-weight: bold;
+      }
+    }
+
     input:not([type="submit"]) {
       width: 100%;
       border: 3px solid #EDEDFB;
@@ -27,5 +43,29 @@
       max-width: 225px;
       margin-top: 2rem;
     }
+  }
+
+  .form-error {
+    color: #F81F1F;
+    //font-weight: normal;
+    font-size: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 36px auto;
+
+    form {
+      margin-top: 2rem;
+
+      span {
+        max-width: 260px;
+      }
+
+      input:not([type="submit"]) {
+        max-width: 260px;
+        height: 56px;
+      }
+    }
+
   }
 }
