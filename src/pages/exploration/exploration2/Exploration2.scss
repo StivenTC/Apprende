@@ -193,5 +193,31 @@
         margin-left: 6px;
       }
     }
+
+    &-text {
+      margin-bottom: 8px;
+    }
+
+    .conclusion {
+      h1 {
+        margin-top: 24px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: medium;
+      }
+
+      textarea {
+        margin: 18px 0;
+        font-size: medium;
+      }
+
+      &-answer,
+      p {
+        margin: auto;
+        max-width: 280px;
+      }
+    }
   }
 }
