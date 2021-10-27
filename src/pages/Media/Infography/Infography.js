@@ -22,7 +22,7 @@ export default function Infography() {
     if (currentInfo === "equivalentes") {
       src = "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FOSUC1wNQLvXoeYbR9lH7b6%2FApprende%3Fpage-id%3D566%253A17689%26node-id%3D1145%253A38104%26viewport%3D263%252C48%252C0.35%26scaling%3Dmin-zoom%26starting-point-node-id%3D1145%253A38104"
     } else {
-      src = "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FOSUC1wNQLvXoeYbR9lH7b6%2FApprende%3Fpage-id%3D566%253A17689%26node-id%3D1145%253A38104%26viewport%3D263%252C48%252C0.35%26scaling%3Dmin-zoom%26starting-point-node-id%3D1145%253A38104"
+      src = "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FOSUC1wNQLvXoeYbR9lH7b6%2FApprende%3Fpage-id%3D566%253A17689%26node-id%3D2305%253A36876%26viewport%3D263%252C48%252C0.37%26scaling%3Dmin-zoom%26starting-point-node-id%3D2305%253A36876%26show-proto-sidebar%3D1"
     }
     return src
   }

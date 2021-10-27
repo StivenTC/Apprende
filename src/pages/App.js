@@ -39,7 +39,7 @@ function App() {
         },
         {
           name: "Comparar fracciones",
-          route: "/infografia?fracciones=equivalentes"
+          route: "/infografia?fracciones=comparar"
         },
         {
           name: "Entrenamiento 2",
