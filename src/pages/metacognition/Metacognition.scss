@@ -104,5 +104,45 @@
     }
   }
 
+  @media (max-width: $mobile) {
+    .question {
+      &-text {
+        &-header {
+          max-width: 302px;
 
+          >p {
+            margin-top: 12px;
+            font-size: medium;
+          }
+        }
+
+        &-activity {
+          max-width: 260px;
+          margin: auto;
+          margin-bottom: 12px;
+
+          textarea {
+            margin: 12px 0;
+          }
+        }
+      }
+
+      &-options {
+        margin-bottom: 24px;
+
+        &-activity {
+          max-width: 260px;
+          margin: -28px auto 28px;
+
+          &-option {
+            padding-bottom: 16px;
+
+            >div p {
+              width: 190px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

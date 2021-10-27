@@ -56,7 +56,7 @@ export function QuestionOptions({ goView, saveUser, userData }) {
           {actualView ?
             <br />
             :
-            <p>Para cada una de las opciones <strong>seleciona la opción</strong> en la casilla que consideres más apropiada.</p>
+            <p>Para cada una de las opciones <strong>selecciona la opción</strong> en la casilla que consideres más apropiada.</p>
           }
           <p dangerouslySetInnerHTML={{ __html: questions[actualView] }} />
         </div>
