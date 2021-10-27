@@ -2,6 +2,7 @@ import { Header } from "../../../components/layout/Header/Header"
 
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 
 export const FillSquares = ({ goView, saveUser, userData }) => {
@@ -48,6 +49,18 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
     setAnswer({ data: a })
   }
 
+  const nextView = () => {
+    let data = {
+      'EXPLOR-P2.3': [
+        `${answer.data[0]}/8`,
+        `${answer.data[1]}/6`
+      ],
+    }
+    if (!answer.data.includes(0)) {
+      saveActivity(data)
+      goView(7)
+    }
+  }
   return (
     <div className="fill-square">
       <Header goView={goView} actualView={6} />
@@ -74,7 +87,7 @@ export const FillSquares = ({ goView, saveUser, userData }) => {
               </div>
             </div>)}
         </div>
-        <button className={`btn-next ${answer.data.includes(0) ? "disabled" : ""}`} onClick={() => !answer.data.includes(0) ? goView(7) : console.log("no posible")}>
+        <button className={`btn-next ${answer.data.includes(0) ? "disabled" : ""}`} onClick={() => nextView()}>
           Siguiente
           <BiRightArrowAlt />
         </button>

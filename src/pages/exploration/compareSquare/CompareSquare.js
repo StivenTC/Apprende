@@ -2,6 +2,7 @@ import { Header } from "../../../components/layout/Header/Header"
 
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const CompareSquares = ({ goView, saveUser, userData }) => {
 
@@ -35,6 +36,16 @@ export const CompareSquares = ({ goView, saveUser, userData }) => {
     setAnswer(a)
   }
 
+  const nextView = () => {
+    let data = {
+      'EXPLOR-P2.4': answer,
+    }
+    if (answer.length > 0) {
+      saveActivity(data)
+      goView(8)
+    }
+  }
+
   return (
     <div className="compare-cake compare-square">
       <Header goView={goView} actualView={7} />
@@ -56,7 +67,7 @@ export const CompareSquares = ({ goView, saveUser, userData }) => {
               onClick={() => selectOption("B")}>B</div>
           </div>
         </div>
-        <button className={`btn-next ${answer.length > 0 ? "" : "disabled"}`} onClick={() => answer.length > 0 ? goView(8) : console.log("no posible")}>
+        <button className={`btn-next ${answer.length > 0 ? "" : "disabled"}`} onClick={() => nextView()}>
           Siguiente
           <BiRightArrowAlt />
         </button>
