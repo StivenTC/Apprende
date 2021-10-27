@@ -7,7 +7,7 @@ export const FeedbackCorrect = ({ goView, view }) => {
       <div className="feedback-correct">
         <div className="feedback-correct-content">
           <img src={Robot} alt="Robot" />
-          <h2>Muy bien</h2>
+          <h2>¡Muy bien!</h2>
         </div>
 
         <button

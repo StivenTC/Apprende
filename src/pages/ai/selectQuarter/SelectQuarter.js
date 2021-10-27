@@ -5,12 +5,15 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectQuarter = ({ goView }) => {
+export const SelectQuarter = ({ goView, saveUser, userData }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
-
+  const clueTexts = [
+    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
+    "Para encontrar una fracción equivalente a 3/4 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
+  ]
   const FraccionA = () => {
     return <svg width="117" height="84" viewBox="0 0 117 84" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="37.6552" height="41" fill="#28D2EE" />
@@ -86,15 +89,15 @@ export const SelectQuarter = ({ goView }) => {
   }
 
   const nextActivity = () => {
-
     if (selectOption === 2) {
       setFeedback('correct')
+      saveUser({ ...userData, selectQuarter: true })
     } else if (attempts < 3) {
       setSelectOption('')
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      console.log(attempts, "conclude")
+      saveUser({ ...userData, selectQuarter: false })
       goView(6)
     }
   }
@@ -130,8 +133,8 @@ export const SelectQuarter = ({ goView }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={7} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>
   )

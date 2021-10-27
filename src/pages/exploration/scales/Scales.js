@@ -82,10 +82,18 @@ export const Scales = ({ goView, saveUser, userData }) => {
   function handle(value) {
     let currentAnswer = answers;
     let nextScale = currentScale;
-    currentAnswer[currentScale].answer = String(value);
+    currentAnswer[currentScale < 4 ? currentScale : 0].answer = String(value);
     setAnswers(currentAnswer)
-    nextScale += 1
-    setCurrentScale(nextScale)
+    console.log(nextScale)
+    console.log(currentAnswer)
+    console.log("===============")
+    if (nextScale < 4) {
+      nextScale += 1
+      setCurrentScale(nextScale)
+    } else {
+      setCurrentScale(0)
+    }
+    console.log(nextScale)
   }
 
   const validate = () => {
@@ -121,7 +129,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
             {answers.map((item, i) =>
               <div key={item.quest} role="button"
                 onClick={() => setCurrentScale(i)}
-                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "selected" : ""}`}>
+                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "" : ""}`}>
                 <span>{item.quest.charAt()}</span>
                 <span>{item.quest.charAt(2)}</span>
               </div>
@@ -132,15 +140,13 @@ export const Scales = ({ goView, saveUser, userData }) => {
               <div
                 key={scale.steps}
                 role="button"
-                className="content-slider"
-                onClick={() => setCurrentScale(i)}>
+                className="content-slider">
                 <Slider min={0} max={1}
                   marks={scale.marks}
                   step={scale.steps}
                   defaultValue={0}
                   onAfterChange={handle}
-                  className={`${currentScale === i ? "selected" : ""}`}
-                  disabled={currentScale !== i} />
+                  className={`selected`} />
               </div>
             )
             }

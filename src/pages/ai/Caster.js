@@ -9,6 +9,7 @@ import { SelectQuarterConclusion } from './selectQuarter/Conclusion';
 import { RaindropPresentation } from './raindrops/Presentation';
 import { Raindrops } from './raindrops/Raindrops';
 import { RaindropConclusion } from './raindrops/Conclusion';
+import { RaindropQuestion } from './raindrops/Question';
 
 
 function CasterAI() {
@@ -24,21 +25,23 @@ function CasterAI() {
         case 1:
           return <Presentation goView={setActualView} saveUser={saveUserData} />;
         case 2:
-          return <Focus goView={setActualView} saveUser={saveUserData} />;
+          return <Focus goView={setActualView} saveUser={saveUserData} userData={userData} />;
         case 3:
           return <FocusConclusion goView={setActualView} saveUser={saveUserData} />;
         case 4:
           return <SelectQuarterPresentation goView={setActualView} saveUser={saveUserData} />;
         case 5:
-          return <SelectQuarter goView={setActualView} saveUser={saveUserData} />;
+          return <SelectQuarter goView={setActualView} saveUser={saveUserData} userData={userData} />;
         case 6:
           return <SelectQuarterConclusion goView={setActualView} saveUser={saveUserData} />;
         case 7:
           return <RaindropPresentation goView={setActualView} saveUser={saveUserData} />;
         case 8:
-          return <Raindrops goView={setActualView} saveUser={saveUserData} />;
+          return <Raindrops goView={setActualView} saveUser={saveUserData} userData={userData} />;
         case 9:
           return <RaindropConclusion goView={setActualView} saveUser={saveUserData} />;
+        case 10:
+          return <RaindropQuestion goView={setActualView} userData={userData} />;
         default:
           return <h1>Gotas</h1>;
       }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Register } from '../auth/register/Register';
 import { CompareCake } from './compareCake/CompareCake';
 import { CompareCharts } from './compareCharts/CompareCharts';
 import { CompareSquares } from './compareSquare/CompareSquare';
@@ -12,7 +11,7 @@ import { Presentation } from './presentation/Presentation';
 import { Scales } from './scales/Scales';
 
 function Caster() {
-  const [actualView, setActualView] = useState(8)
+  const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
   //const [examen, setExam] = useState()
@@ -21,7 +20,7 @@ function Caster() {
     const changeView = (view) => {
       switch (view) {
         case 0:
-          return userData ? <Launcher goView={setActualView} userData={userData} /> : <Register saveUser={saveUserData} />;
+          return <Launcher goView={setActualView} userData={userData} />;
         case 1:
           return <Exploration goView={setActualView} saveUser={saveUserData} />;
         case 2:
