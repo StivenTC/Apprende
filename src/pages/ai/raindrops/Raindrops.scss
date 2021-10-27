@@ -246,4 +246,12 @@
       width: 100%;
     }
   }
+
+  @media (max-width: $mobile) {
+    &-question-content {
+      max-width: 280px;
+      z-index: 1;
+      position: relative;
+    }
+  }
 }
