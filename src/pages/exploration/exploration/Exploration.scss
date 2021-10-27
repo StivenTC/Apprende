@@ -139,6 +139,16 @@
           }
         }
       }
+
+      &.circle-3,
+      &.circle-4 {
+        transform: scale(1.1);
+
+        svg {
+          width: 160px;
+          height: 160px;
+        }
+      }
     }
   }
 
@@ -193,9 +203,11 @@
 
         &.circle-3 {
           margin-left: -12px;
+          transform: scale(0.9);
         }
 
         &.circle-4 {
+          transform: scale(0.9);
           margin-right: 22px;
         }
 

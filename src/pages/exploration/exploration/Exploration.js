@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "../../../components/layout/Header/Header"
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const Exploration = ({ goView, saveUser }) => {
   //const [play, setPlay] = useState(false);
@@ -65,6 +66,15 @@ export const Exploration = ({ goView, saveUser }) => {
   }
 
   const nextActivity = () => {
+    let data = {
+      'EXPLOR-P1.1': [
+        `${colors.circle1.filter(e => e).length}/2`,
+        `${colors.circle2.filter(e => e).length}/4`,
+        `${colors.circle3.filter(e => e).length}/6`,
+        `${colors.circle4.filter(e => e).length}/8`,
+      ]
+    }
+    saveActivity(data)
     saveUser(colors)
     goView(2)
   }

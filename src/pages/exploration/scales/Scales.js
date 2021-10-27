@@ -4,6 +4,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 
 export const Scales = ({ goView, saveUser, userData }) => {
@@ -104,9 +105,19 @@ export const Scales = ({ goView, saveUser, userData }) => {
   }
 
   const nextActivity = () => {
-    saveUser({ ...userData, scales: answers, complete: 1 })
+    let data = {
+      'EXPLOR-P1.4': [
+        `${Math.round(answers[0].answer * 2)}/2`,
+        `${Math.round(answers[1].answer * 4)}/4`,
+        `${Math.round(answers[2].answer * 6)}/6`,
+        `${Math.round(answers[3].answer * 8)}/8`,
+      ],
+      'EXPLOR-P1.5': textArea
+    }
 
     if (conclusion) {
+      saveUser({ ...userData, scales: answers, complete: 1 })
+      saveActivity(data)
       goView(0)
     } else {
       goConclusion(true)

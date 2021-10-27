@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "../../../components/layout/Header/Header"
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const Exploration2 = ({ goView, userData }) => {
   const [conclusion, goConclusion] = useState(false);
@@ -53,6 +54,23 @@ export const Exploration2 = ({ goView, userData }) => {
     let a = value1.length > 0 && value2.length > 0 && value3.length > 0 && value4.length > 0
     return a
   }
+
+  const nextActivity = () => {
+    let data = {
+      'EXPLOR-P1.2': [
+        `${value1}/2`,
+        `${value2}/4`,
+        `${value3}/6`,
+        `${value4}/8`,
+      ],
+      'EXPLOR-P1.3': textArea
+    }
+    if (textArea.length > 5) {
+      saveActivity(data)
+      goView(15)
+    }
+  }
+
   return (
     <div className="exploration2">
       <Header goView={goView} actualView={2} />
@@ -146,7 +164,7 @@ export const Exploration2 = ({ goView, userData }) => {
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
-            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(15) : console.log("no posible")}>
+            <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => nextActivity()}>
               Siguiente
               <BiRightArrowAlt />
             </button>
