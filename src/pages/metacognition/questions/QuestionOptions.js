@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { Header } from "../../../components/layout/Header/Header";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function QuestionOptions({ goView, saveUser, userData }) {
   const [actualView, setActualView] = useState(0);
   const [selectedOption, setSelectedOption] = useState();
+  const [answers, setAnswers] = useState([]);
 
   const questions = [
     "<strong>1. Utilizo distintas estrategias para encontrar fracciones equivalentes</strong>",
@@ -33,13 +35,22 @@ export function QuestionOptions({ goView, saveUser, userData }) {
     }
     return r;
   };
-
   const nextView = () => {
+    let ans = answers
+    ans.push(String.fromCharCode(65 + selectedOption))
+    setAnswers(ans)
     if (validate) {
       if (actualView < (questions.length - 1)) {
         setSelectedOption();
         setActualView(actualView + 1);
       } else {
+        let data = {
+          'META-P1': answers[0],
+          'META-P2': answers[1],
+          'META-P3': answers[2],
+          'META-P4': answers[3],
+        }
+        saveActivity(data)
         saveUser({ ...userData, metacognition: true })
         goView(0);
       }

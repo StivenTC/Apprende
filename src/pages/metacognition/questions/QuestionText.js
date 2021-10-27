@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { Header } from "../../../components/layout/Header/Header";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function QuestionText({ goView }) {
   const [actualView, setActualView] = useState(0)
   const [textArea, setTextArea] = useState("");
   const [textArea2, setTextArea2] = useState("");
+  const [oldTextArea, setOldTextArea] = useState("");
 
   const questions = [
     {
@@ -28,10 +30,17 @@ export function QuestionText({ goView }) {
   }
 
   const nextView = () => {
+    let data = {
+      'META-Aprendizaje 1': oldTextArea,
+      'META-Aprendizaje 2': textArea2,
+      'META-Reflexión': textArea,
+    }
     if (validate) {
       if (actualView) {
+        saveActivity(data)
         goView(2)
       } else {
+        setOldTextArea(textArea)
         setActualView(1)
         setTextArea("")
       }
