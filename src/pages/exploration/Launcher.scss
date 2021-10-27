@@ -83,6 +83,7 @@
 
     &.challenge {
       &-complete {
+        pointer-events: none;
         color: #ffffff;
         background-color: #A1C74D;
         border: 2px solid #A1C74D;
@@ -97,6 +98,7 @@
       }
 
       &-failed {
+        pointer-events: none;
         color: #ffffff;
         background: #FF4F5B;
         border: 2px solid #FF4F5B;
@@ -133,13 +135,24 @@
       margin-bottom: 28px;
     }
 
-    img {
+    a>img {
       width: 120px;
     }
 
     div[role="button"] {
       max-width: 260px;
       height: 64px;
+    }
+
+    .ai-button.challenge-failed {
+      p {
+        margin-left: 0;
+      }
+
+      svg,
+      p span {
+        display: none;
+      }
     }
   }
 }

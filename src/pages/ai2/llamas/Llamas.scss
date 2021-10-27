@@ -176,4 +176,72 @@
       position: relative;
     }
   }
+
+  @media (max-width: $mobile) {
+    &-presentation {
+      padding: 32px 16px;
+
+      >h1 {
+        margin-bottom: 18px;
+      }
+
+      >p {
+        margin: 0 auto 16px;
+      }
+    }
+
+    &-body {
+      p {
+        margin: 18px auto 16px;
+      }
+    }
+
+    &-activity {
+      &-card {
+        transform: scale(0.8);
+      }
+
+      &-scale {
+        width: 320px;
+
+        .llamas-activity-card {
+          transform: none;
+
+          &:first-child {
+            left: 28px;
+          }
+
+          &:nth-child(2) {
+            left: 93px;
+          }
+
+          &:nth-child(3) {
+            right: 38px;
+          }
+        }
+
+        &-droppable,
+        >img {
+          width: 320px;
+        }
+      }
+    }
+
+    &-conclusion {
+      .focus-conclusion-content {
+        h2 {
+          margin: 16px 0 0;
+        }
+
+        svg {
+          margin: auto;
+          max-width: 280px;
+        }
+      }
+
+      .bottom-bkg {
+        bottom: -32px;
+      }
+    }
+  }
 }

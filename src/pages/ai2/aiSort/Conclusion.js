@@ -72,7 +72,7 @@ export const AISortConclusion = ({ goView }) => {
     }
   }
   return (
-    <div className={`focus-conclusion`}>
+    <div className={`focus-conclusion llamas-conclusion`}>
       <Header goView={goView} actualView={3} />
       {showSolution ?
         <Solution /> : <div className="focus-conclusion-content">

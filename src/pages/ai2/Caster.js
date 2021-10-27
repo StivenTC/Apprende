@@ -13,7 +13,7 @@ import { LlamasPresentation } from './llamas/Presentation';
 
 
 function CasterAI2() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(8)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
 

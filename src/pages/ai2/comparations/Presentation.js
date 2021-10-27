@@ -32,7 +32,7 @@ export const AIComparationsPresentation = ({ goView }) => {
   }
 
   return (
-    <div className="presentation">
+    <div className="llamas-presentation presentation">
       <h1>Reto 2</h1>
       <p><strong>Compara</strong> las dos fracciones representadas en los siguientes gráficos usando el símbolo correcto.</p>
       <InfoPic />

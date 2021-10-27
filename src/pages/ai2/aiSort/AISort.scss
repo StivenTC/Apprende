@@ -167,4 +167,44 @@
       position: relative;
     }
   }
+
+  @media (max-width: $mobile) {
+    &::before {
+      height: 380px;
+    }
+
+    &-body {
+      max-width: 310px;
+    }
+
+    &-activity {
+
+      &-cards {
+        width: 310px;
+      }
+
+      &-list {
+
+        &,
+        &-bkg {
+          width: 310px;
+
+        }
+      }
+
+      &-scale {
+        margin-top: 28px;
+
+        img,
+        &-droppable {
+          width: 310px;
+        }
+
+        .ai-sort-activity-card:nth-child(2) {
+          left: 108px;
+        }
+      }
+
+    }
+  }
 }

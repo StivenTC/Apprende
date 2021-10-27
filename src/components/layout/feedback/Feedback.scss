@@ -97,4 +97,29 @@
     background-color: #37BCDA;
     width: 100%;
   }
+
+  @media (max-width: $mobile) {
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+
+    &-correct,
+    &-clue {
+      overflow: auto;
+      width: 100vw;
+      height: auto;
+      padding-bottom: 20px;
+    }
+
+    &-correct {
+      //height: calc(100vh - 45px);
+      height: 100%;
+
+      &-content {
+        margin-top: 60px;
+        margin-bottom: 80px;
+      }
+    }
+  }
 }

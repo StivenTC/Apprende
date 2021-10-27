@@ -50,7 +50,7 @@ export const LlamasPresentation = ({ goView }) => {
   }
 
   return (
-    <div className="presentation">
+    <div className="llamas-presentation presentation">
       <h1>Reto 1</h1>
       <p>Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.</p>
       <InfoPic />

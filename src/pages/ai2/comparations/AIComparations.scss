@@ -99,4 +99,26 @@
       }
     }
   }
+
+  @media (max-width: $mobile) {
+    &-body {
+      max-width: 290px;
+
+      p {
+        margin-bottom: 28px;
+      }
+    }
+
+    &-activity {
+      margin-bottom: 16px;
+
+      &-items {
+        margin-bottom: 0;
+      }
+
+      &-cake {
+        transform: scale(0.9);
+      }
+    }
+  }
 }

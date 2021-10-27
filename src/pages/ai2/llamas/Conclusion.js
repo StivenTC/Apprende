@@ -57,7 +57,7 @@ export const LlamasConclusion = ({ goView }) => {
     }
   }
   return (
-    <div className={`focus-conclusion ${showSolution && 'llamas'}`}>
+    <div className={`focus-conclusion llamas-conclusion ${showSolution && 'llamas'}`}>
       <Header goView={goView} actualView={3} />
       {showSolution ?
         <Solution /> : <div className="focus-conclusion-content">
