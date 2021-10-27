@@ -4,10 +4,24 @@ import VideoAngela from '../../../assets/video-explo.mp4';
 import VideoComparacion from '../../../assets/video-comparar.mp4';
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function VideoFraccion() {
+
+  useEffect(() => {
+    let elem = document.getElementById("Appvideo");
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  }, [])
+
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -34,9 +48,14 @@ export default function VideoFraccion() {
         <img src={robot} alt='robot' />
       </Link>
       <div className="launcher-activities">
-        <video autoPlay controls width="360">
+        <video autoPlay controls id="Appvideo">
           <source src={returnVideo()} type='video/mp4' />
         </video>
+        <br />
+        <br />
+        <Link to="/" className="launcher-btn-back">
+          Volver
+        </Link>
       </div>
     </div >
   )
