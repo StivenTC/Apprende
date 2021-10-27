@@ -21,9 +21,7 @@ export function RaindropQuestion({ goView, userData }) {
           <textarea placeholder="Respuesta:" rows="5" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
           {textArea.length > 250 && <span>{textArea.length}/300</span>}
         </div>
-        <button
-          className="btn-next"
-          onClick={() => goView(0)}>
+        <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(0) : console.log("no posible")}>
           ¡Siguiente!
           <BiRightArrowAlt />
         </button>

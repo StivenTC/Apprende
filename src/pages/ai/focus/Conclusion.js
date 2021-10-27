@@ -171,11 +171,11 @@ export const FocusConclusion = ({ goView }) => {
   }
 
   return (
-    <div className="focus-conclusion">
+    <div className="focus-conclusion llamas-conclusion">
       <Header goView={goView} actualView={3} />
       {showSolution ?
         <Solution /> :
-        <div className="focus-conclusion-content">
+        <div className="focus-conclusion-content responsive-negative-top">
           <img src={Altavoz} alt="Una pista" />
           <h2>Ten en cuenta</h2>
           <svg width="321" height="1262" viewBox="0 0 321 1262" fill="none" xmlns="http://www.w3.org/2000/svg">

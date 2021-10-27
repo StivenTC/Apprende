@@ -248,10 +248,40 @@
   }
 
   @media (max-width: $mobile) {
+    &-header {
+      >p {
+        top: 18px;
+      }
+    }
+
+    .bottom-water {
+      bottom: -40px;
+    }
+
     &-question-content {
       max-width: 280px;
       z-index: 1;
       position: relative;
+    }
+
+    &.llamas-conclusion {
+      overflow: auto;
+      padding-bottom: 20px;
+
+      &.focus-conclusion {
+        p {
+          top: 48px;
+        }
+
+        h2 {
+          top: 12px;
+          margin-top: 0;
+        }
+
+        .rain-drop-header-quest {
+          margin-top: -36px;
+        }
+      }
     }
   }
 }

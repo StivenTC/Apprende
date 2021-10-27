@@ -8,7 +8,7 @@ export function Launcher({ goView, userData }) {
 
   const getClasses = (challenge) => {
     let clases = "";
-    if (typeof userData.focus === 'undefined') {
+    if (!validateUndefined(userData.focus)) {
       if (challenge !== "focus") {
         clases += " disabled"
       }
@@ -17,22 +17,29 @@ export function Launcher({ goView, userData }) {
         clases += userData.focus ? " challenge-complete" : " challenge-failed"
       }
       if (challenge === "selectQuarter") {
-        if (typeof userData.selectQuarter !== 'undefined') {
+        if (validateUndefined(userData.selectQuarter)) {
           clases += userData.selectQuarter ? " challenge-complete" : " challenge-failed"
-        } else if (typeof userData.focus === 'undefined') {
+        } else if (!validateUndefined(userData.focus)) {
           clases += " disabled"
         }
       }
       if (challenge === "rainDrop") {
-        if (typeof userData.rainDrop !== 'undefined') {
+        if (validateUndefined(userData.rainDrop)) {
           clases += userData.rainDrop ? " challenge-complete" : " challenge-failed"
-        } else if (typeof userData.selectQuarter === 'undefined') {
+        } else if (!validateUndefined(userData.selectQuarter)) {
           clases += " disabled"
         }
       }
     }
     return clases;
   };
+  const validateUndefined = (value) => {
+    return (typeof value !== 'undefined')
+  }
+  const validateActivities = () => {
+    let activities = validateUndefined(userData.focus) && validateUndefined(userData.selectQuarter) && validateUndefined(userData.rainDrop);
+    return activities
+  }
   return (
     <div className="launcher">
       <h1>Entrenamiento</h1>
@@ -64,6 +71,10 @@ export function Launcher({ goView, userData }) {
           <img className="img-failed" src={SadEmoji} alt='Challenge failed' />
           <RiArrowRightLine />
         </div>
+
+        {validateActivities() && <Link to="/" className="launcher-btn-back">
+          Volver
+        </Link>}
       </div>
     </div>
   );

@@ -170,6 +170,23 @@
       }
     }
   }
+
+  @media (max-width: $mobile) {
+    &-body {
+      p {
+        margin-bottom: 0;
+      }
+
+      .btn-next {
+        margin-top: 0;
+      }
+    }
+
+    &-list {
+      transform: scale(0.8);
+      margin-top: -20px;
+    }
+  }
 }
 
 .rain-drop.focus-conclusion {
