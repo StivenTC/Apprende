@@ -6,6 +6,15 @@ import llama from "../../../assets/llama-view.png";
 
 export function AISortQuestion({ goView, userData }) {
   const [textArea, setTextArea] = useState("");
+  const nextView = () => {
+    let data = {
+      'ENTRE2-Reto 3 - MI2': textArea,
+    }
+    if (textArea.length > 5) {
+      saveActivity(data)
+      goView(0)
+    }
+  }
   return (
     <div className="rain-drop-question">
       <Header goView={goView} actualView={10} />
@@ -20,7 +29,7 @@ export function AISortQuestion({ goView, userData }) {
           <textarea placeholder="Respuesta:" rows="5" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
           {textArea.length > 250 && <span>{textArea.length}/300</span>}
         </div>
-        <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => textArea.length > 5 ? goView(0) : console.log("no posible")}>
+        <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => nextView()}>
           ¡Siguiente!
           <BiRightArrowAlt />
         </button>

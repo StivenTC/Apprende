@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { AISortDnD } from "./AISortDnD";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function AISort({ goView, saveUser, userData }) {
   const QuarterA = () => {
@@ -73,6 +74,7 @@ export function AISort({ goView, saveUser, userData }) {
 
   const [selectCards, setSelecCards] = useState([]);
   const [showFeedback, setFeedback] = useState("");
+  const [dataAnswers, setDataAnswers] = useState([]);
   const [attempts, setAttempts] = useState(1);
   const clueTexts = [
     "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
@@ -86,8 +88,21 @@ export function AISort({ goView, saveUser, userData }) {
   const nextActivity = () => {
     let corrects = ['5/9', '8/9', '9/9'];
     let answered = selectCards.map((t) => t.quarter);
-    saveUser(AISortCards)
+    //saveUser(AISortCards)
+
+    let ans = dataAnswers;
+    ans.push(answered.join(';'))
+    setDataAnswers(ans)
+
+    let data = {
+      'ENTRE2-Reto 3- Intento 1': dataAnswers[0],
+      'ENTRE2-Reto 3- Intento 2': dataAnswers[1],
+      'ENTRE2-Reto 3- Intento 3': dataAnswers[2],
+      'ENTRE2-Reto 3 Veces': attempts - 1,
+    }
+
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
+      saveActivity(data)
       setFeedback('correct');
       saveUser({ ...userData, aiSort: true })
     } else if (attempts < 3) {
@@ -95,6 +110,8 @@ export function AISort({ goView, saveUser, userData }) {
       setFeedback('clue');
       setAttempts(attempts + 1);
     } else {
+      data['ENTRE2-Reto 3 Veces'] = attempts
+      saveActivity(data)
       saveUser({ ...userData, aiSort: true })
       goView(9);
     }

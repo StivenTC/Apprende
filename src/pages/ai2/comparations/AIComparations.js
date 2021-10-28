@@ -6,11 +6,13 @@ import { useEffect, useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import createPie from "../../../components/shapes/CeatePie";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const AIComparations = ({ goView, saveUser, userData }) => {
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
+  const [dataAnswers, setDataAnswers] = useState([]);
   const clueTexts = [
     "¿Las fracciones representadas tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para compararlas.",
     "Recuerda que cuando comparas fracciones que tienen el mismo denominador (en este caso 6), la fracción con el numerador más grande es la mayor."
@@ -53,8 +55,18 @@ export const AIComparations = ({ goView, saveUser, userData }) => {
   }
 
   const nextActivity = () => {
-    console.log(selectOption)
+    let ans = dataAnswers;
+    ans.push(String.fromCharCode(65 + selectOption))
+    setDataAnswers(ans)
+
+    let data = {
+      'ENTRE2-Reto 2- Intento 1': dataAnswers[0],
+      'ENTRE2-Reto 2- Intento 2': dataAnswers[1],
+      'ENTRE2-Reto 2- Intento 3': dataAnswers[2],
+      'ENTRE2-Reto 2 Veces': attempts - 1,
+    }
     if (selectOption === 1) {
+      saveActivity(data)
       setFeedback('correct')
       saveUser({ ...userData, aiComparations: true })
     } else if (attempts < 3) {
@@ -62,6 +74,8 @@ export const AIComparations = ({ goView, saveUser, userData }) => {
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
+      data['ENTRE2-Reto 2 Veces'] = attempts
+      saveActivity(data)
       saveUser({ ...userData, aiComparations: false })
       goView(6)
     }

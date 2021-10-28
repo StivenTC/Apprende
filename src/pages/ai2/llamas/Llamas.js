@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { LlamasDnD } from "./LlamasDnD";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const Llamas = ({ goView, saveUser, userData }) => {
 
@@ -29,6 +30,7 @@ export const Llamas = ({ goView, saveUser, userData }) => {
   const [selectCards, setSelecCards] = useState([]);
   const [llamaCards, setLlamaCards] = useState(llamasCards);
   const [showFeedback, setFeedback] = useState("");
+  const [dataAnswers, setDataAnswers] = useState([]);
   const [attempts, setAttempts] = useState(1);
   const clueTexts = [
     "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
@@ -43,7 +45,19 @@ export const Llamas = ({ goView, saveUser, userData }) => {
     let corrects = ['1/8', '3/8', '7/8']
     let answered = selectCards.map((t) => t.quarter)
 
+    let ans = dataAnswers;
+    ans.push(answered.join(';'))
+    setDataAnswers(ans)
+
+    let data = {
+      'ENTRE2-Reto 1- Intento 1': dataAnswers[0],
+      'ENTRE2-Reto 1- Intento 2': dataAnswers[1],
+      'ENTRE2-Reto 1- Intento 3': dataAnswers[2],
+      'ENTRE2-Reto 1 Veces': attempts - 1,
+    }
+
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
+      saveActivity(data)
       setFeedback('correct')
       saveUser({ ...userData, llamas: true })
     } else if (attempts < 3) {
@@ -51,6 +65,8 @@ export const Llamas = ({ goView, saveUser, userData }) => {
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
+      data['ENTRE2-Reto 1 Veces'] = attempts
+      saveActivity(data)
       saveUser({ ...userData, llamas: false })
       goView(3)
     }
