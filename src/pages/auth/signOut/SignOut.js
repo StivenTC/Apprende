@@ -14,7 +14,6 @@ export const SignOut = () => {
     let combo = JSON.parse(localStorage.getItem('combo'));
     let dataOrganized = { ...appData, ...userData, Combo: combo.combo }
 
-    console.log(dataOrganized)
     saveDatainSheets(dataOrganized).then(() => {
       localStorage.clear();
       history.push("/");
