@@ -3,6 +3,7 @@ import { BiRightArrowAlt } from "react-icons/bi"
 import { Header } from "../../../components/layout/Header/Header";
 import robot from "../../../assets/Saludo.png";
 import llama from "../../../assets/llama-view.png";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function AISortQuestion({ goView, userData }) {
   const [textArea, setTextArea] = useState("");

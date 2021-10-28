@@ -6,17 +6,20 @@ import saveDatainSheets from '../../../helpers/saveData';
 
 export const SignOut = () => {
   let history = useHistory();
-  let dataR = {
-    "Nombre": "perro",
-    "Edad": "22",
-    "Colegio": "Unidad Pedagógica",
-    "Curso": "22"
-  }
+
   const goView = () => {
-    //localStorage.clear();
-    //history.push("/");
-    saveDatainSheets(dataR).then(
-      console.log('ñistoo')
+
+    let appData = JSON.parse(localStorage.getItem('appData'));
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    let combo = JSON.parse(localStorage.getItem('combo'));
+    let dataOrganized = { ...appData, ...userData, Combo: combo.combo }
+
+    console.log(dataOrganized)
+    saveDatainSheets(dataOrganized).then(() => {
+      localStorage.clear();
+      history.push("/");
+      console.log("listo")
+    }
     )
   }
 
