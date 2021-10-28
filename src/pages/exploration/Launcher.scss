@@ -127,6 +127,17 @@
         }
       }
     }
+
+    &.challenge-failed {
+      p {
+        margin-left: 0;
+      }
+
+      svg,
+      p span {
+        display: none;
+      }
+    }
   }
 
   @media (max-width: $mobile) {
@@ -142,17 +153,6 @@
     div[role="button"] {
       max-width: 260px;
       height: 64px;
-    }
-
-    .ai-button.challenge-failed {
-      p {
-        margin-left: 0;
-      }
-
-      svg,
-      p span {
-        display: none;
-      }
     }
   }
 }

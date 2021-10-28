@@ -6,6 +6,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { BsDropletFill } from "react-icons/bs";
 import TopCloud from "../../../assets/top-clouds.svg";
 import BottomWater from "../../../assets/bottom-water.svg";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function Raindrops({ goView, saveUser, userData }) {
 
@@ -13,6 +14,7 @@ export function Raindrops({ goView, saveUser, userData }) {
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
   const [corrects, setCorrects] = useState([]);
+  const [dataAnswers, setDataAnswers] = useState([]);
 
   const quarters = ["3/4", "12/16", "3/8", "6/4", "18/24"];
   const clueTexts = [
@@ -51,11 +53,23 @@ export function Raindrops({ goView, saveUser, userData }) {
   const selectDrop = (id) => {
     let correctAnswers = [0, 1, 4];
     let okAnswers = corrects;
+    let ans = dataAnswers;
+    ans.push(quarters[id])
+    setDataAnswers(ans)
+
+    let data = {
+      'ENTRE1-Reto 3- Gotas': dataAnswers,
+      'ENTRE1-Reto 3 Veces': attempts - 1,
+    }
+
+    console.log()
+
     setSelectedDrop(id);
     if (correctAnswers.includes(id)) {
       okAnswers.push(id);
       setCorrects(okAnswers);
       if (okAnswers.length >= 3) {
+        saveActivity(data)
         setFeedback('correct');
         saveUser({ ...userData, rainDrop: true });
       }
@@ -67,6 +81,8 @@ export function Raindrops({ goView, saveUser, userData }) {
       }, 500);
     } else {
       saveUser({ ...userData, rainDrop: false });
+      data['ENTRE1-Reto 3 Veces'] = attempts
+      saveActivity(data)
       setTimeout(function () {
         goView(9);
       }, 500);

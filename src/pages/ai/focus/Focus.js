@@ -6,6 +6,7 @@ import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const Focus = ({ goView, saveUser, userData }) => {
   const [selectedCard, setSelectedCard] = useState();
@@ -14,6 +15,7 @@ export const Focus = ({ goView, saveUser, userData }) => {
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
   const [answers, setAnswers] = useState([]);
+  const [dataAnswers, setDataAnswers] = useState([]);
 
   const pieColors = ['#FFE69B', '#EDEDFB']
   const cards = [
@@ -123,8 +125,18 @@ export const Focus = ({ goView, saveUser, userData }) => {
   }
 
   const nextView = () => {
+    let ans = dataAnswers;
+    ans.push(selectedAnswers.join(';'))
+    setDataAnswers(ans)
+    let data = {
+      'ENTRE1-Reto 1- Intento 1': dataAnswers[0],
+      'ENTRE1-Reto 1- Intento 2': dataAnswers[1],
+      'ENTRE1-Reto 1- Intento 3': dataAnswers[2],
+      'ENTRE1-Reto 1 Veces': attempts - 1,
+    }
     let completeQuest = answers.every(Boolean)
     if (completeQuest) {
+      saveActivity(data)
       setFeedback('correct')
       saveUser({ ...userData, focus: true })
     } else if (attempts < 3) {
@@ -135,6 +147,8 @@ export const Focus = ({ goView, saveUser, userData }) => {
       setSelectedCard()
       setAttempts(attempts + 1)
     } else {
+      data['ENTRE1-Reto 1 Veces'] = attempts
+      saveActivity(data)
       saveUser({ ...userData, focus: false })
       goView(3)
     }
