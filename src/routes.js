@@ -8,6 +8,7 @@ import { Register } from './pages/auth/register/Register';
 import CasterMetacognicion from './pages/metacognition/Caster';
 import { Question3 } from './pages/efda/question-3/Question3';
 import { Question7 } from './pages/efda/question-7/Question7';
+import { Question8 } from './pages/efda/question-8/Question8';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -23,6 +24,7 @@ export default function AppRoutes() {
         <Route exact path="/video-fraccion" component={VideoFraccion} />
         <Route exact path="/efda" component={Question3} />
         <Route exact path="/efda2" component={Question7} />
+        <Route exact path="/efda3" component={Question8} />
       </Switch>
     </Router>
   );

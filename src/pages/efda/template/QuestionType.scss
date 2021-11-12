@@ -28,11 +28,8 @@
   &-label {
     display: flex;
     flex-direction: column;
-    text-align: center;
     font-weight: 800;
     font-size: 32px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     border: 2px dashed #EDEDFB;
     box-sizing: border-box;
@@ -49,10 +46,6 @@
     align-items: center;
     &:last-child {
       margin-right: 0;
-    }
-
-    > img {
-      //height: 100px;
     }
   }
 }

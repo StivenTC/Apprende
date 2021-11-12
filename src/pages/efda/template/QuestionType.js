@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { Header } from "../../../components/layout/Header/Header";
 import classNames from "classnames";
@@ -25,6 +25,14 @@ export const QuestionType = ({ question }) => {
     return selectedOption === index ? image.states.activated : image.states.default;
   };
 
+  const ImageQuestion = ({ image, index }) => {
+    return (
+    <div className="efda-question-image">
+      <img src={assignImageFromState(image, index)} style={image.styles} alt={image.alt}/>
+    </div>
+    );
+  };
+
   return (
     <div className="efda-question-container" style={question.styles.general}>
       <Header />
@@ -37,9 +45,7 @@ export const QuestionType = ({ question }) => {
           {question.options.map(({ button, label, image }, index) =>
             <div className="efda-question-column">
               { question.imagePosition === 'TOP' &&
-                <div className="efda-question-image">
-                  <img src={assignImageFromState(image, index)} style={image.styles} alt={image.alt}/>
-                </div>
+                <ImageQuestion image={image} index={index}/>
               }
 
               <div
@@ -50,9 +56,7 @@ export const QuestionType = ({ question }) => {
               </div>
 
               { question.imagePosition === 'MIDDLE' &&
-                <div className="efda-question-image">
-                  <img src={assignImageFromState(image, index)} style={image.styles} alt={image.alt}/>
-                </div>
+                <ImageQuestion image={image} index={index}/>
               }
 
               <button
