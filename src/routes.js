@@ -9,6 +9,10 @@ import CasterMetacognicion from './pages/metacognition/Caster';
 import { Question3 } from './pages/efda/question-3/Question3';
 import { Question7 } from './pages/efda/question-7/Question7';
 import { Question8 } from './pages/efda/question-8/Question8';
+import { Question3 as Q3 } from './pages/ai/question3/Question3';
+import { Question6 as Q6 } from './pages/ai/question6/Question6';
+import { Question7 as Q7 } from './pages/ai/question7/Question7';
+import { Question8 as Q8 } from './pages/ai/question8/Question8';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -25,6 +29,10 @@ export default function AppRoutes() {
         <Route exact path="/efda" component={Question3} />
         <Route exact path="/efda2" component={Question7} />
         <Route exact path="/efda3" component={Question8} />
+        <Route exact path="/question-3" component={Q3} />
+        <Route exact path="/question-6" component={Q6} />
+        <Route exact path="/question-7" component={Q7} />
+        <Route exact path="/question-8" component={Q8} />
       </Switch>
     </Router>
   );
