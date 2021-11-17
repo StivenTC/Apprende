@@ -9,13 +9,6 @@ import CasterMetacognicion from './pages/metacognition/Caster';
 import CasterAI2 from './pages/ai2/Caster';
 import { SignOut } from './pages/auth/signOut/SignOut';
 import Infography from './pages/Media/Infography/Infography';
-import { Question3 } from './pages/efda/question-3/Question3';
-import { Question7 } from './pages/efda/question-7/Question7';
-import { Question8 } from './pages/efda/question-8/Question8';
-import { Question3 as Q3 } from './pages/ai/question3/Question3';
-import { Question6 as Q6 } from './pages/ai/question6/Question6';
-import { Question7 as Q7 } from './pages/ai/question7/Question7';
-import { Question8 as Q8 } from './pages/ai/question8/Question8';
 import CasterEFDA from './pages/efda/Caster';
 // import { Header } from './components/layout/Header/header';
 

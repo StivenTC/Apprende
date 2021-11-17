@@ -2,6 +2,8 @@ import { QuestionType } from "../template/QuestionType";
 import templateBackground from "../../../assets/question-efda-background.png";
 import road from "../../../assets/road.png";
 import roadActivated from "../../../assets/road_activated.png";
+import React from "react";
+import { Header } from "../../../components/layout/Header/Header";
 
 export const Question3 = () => {
   const styleLine = '<div style="border: none;border-top: 2px solid white;width: 20px;"></div>';
@@ -94,5 +96,10 @@ export const Question3 = () => {
     ],
   };
 
-  return <QuestionType question={questionTemplate} />;
+  return (
+    <React.Fragment>
+      <Header/>
+      <QuestionType question={questionTemplate} />
+    </React.Fragment>
+  );
 };

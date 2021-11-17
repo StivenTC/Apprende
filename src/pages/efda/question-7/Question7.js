@@ -2,6 +2,8 @@ import { QuestionType } from "../template/QuestionType";
 import byke from "../../../assets/byke.png";
 import alpaca from "../../../assets/alpaca.png";
 import skeboard from "../../../assets/skeboard.png";
+import { Header } from "../../../components/layout/Header/Header";
+import React from "react";
 
 export const Question7 = () => {
   const styleLine = '<div style="border: none;border-top: 2px solid #073B4C;width: 20px;"></div>';
@@ -98,5 +100,10 @@ export const Question7 = () => {
     ],
   };
 
-  return <QuestionType question={questionTemplate} />;
+  return (
+    <React.Fragment>
+      <Header/>
+      <QuestionType question={questionTemplate} />
+    </React.Fragment>
+  );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import templateBackground from "../../../assets/background_pregunta7.png";
 import { PresentationTemplate } from "../template/PresentationTemplate";
+import { Header } from "../../../components/layout/Header/Header";
 
 export const Presentation = ({ goView }) => {
 
@@ -16,5 +17,10 @@ export const Presentation = ({ goView }) => {
     }
   };
 
-  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={1}/>
+  return (
+    <React.Fragment>
+      <Header/>
+      <PresentationTemplate goView={goView} presentation={presentation} nextPage={4}/>
+    </React.Fragment>
+  )
 };

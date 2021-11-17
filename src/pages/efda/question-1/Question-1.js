@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Barril from "../../../assets/EFDA/barril.png";
 import OptionA from "../../../assets/EFDA/q1-a.png";
 import OptionB from "../../../assets/EFDA/q1-b.png";
 import OptionC from "../../../assets/EFDA/q1-c.png";
 import OptionD from "../../../assets/EFDA/q1-d.png";
 import { Header } from "../../../components/layout/Header/Header";
-import { PresentationTemplate } from "../../../components/templates/presentation/Presentation";
 import { Select4Options } from "../../../components/templates/Select4Options/Select4Options";
 
 export const Question1 = ({ goView, saveUser, userData }) => {
@@ -48,25 +47,6 @@ export const Question1 = ({ goView, saveUser, userData }) => {
       }
     ]
   };
-
-  const presentationTemplate = {
-
-  }
-
-  useEffect(() => {
-    const changeView = (view) => {
-      switch (view) {
-        default:
-        case 'presentation':
-          return <PresentationTemplate data={presentationTemplate} />;
-        case 'activity':
-          return <Question1 userData={userData} />;
-      }
-    }
-
-    setRenderView(changeView(showView))
-
-  }, [showView])
 
   return (
     <section className="efda efda-question-1">

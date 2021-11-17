@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { Header } from "../../../components/layout/Header/Header";
 import classNames from "classnames";
 import './QuestionType.scss';
 
@@ -35,7 +34,6 @@ export const QuestionType = ({ question }) => {
 
   return (
     <div className="efda-question-container" style={question.styles.general}>
-      <Header />
       <div className="efda-question">
         <div className="efda-question-header" style={question.styles.header}>
           <strong>{ question.title }</strong>

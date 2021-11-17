@@ -68,6 +68,15 @@ function App() {
         }
       ]
     },
+    {
+      combo: "Combo 4",
+      activities: [
+        {
+          name: "Evaluación formal",
+          route: "/evaluacion-formal"
+        },
+      ]
+    },
   ]
 
   const [name] = useState(() => {
