@@ -57,7 +57,7 @@ export const SelectItemTemplate = ({ goView, saveUser, userData, question }) => 
   };
 
   return (
-    <div className="select-item" style={{background: `url("/images/fondo_p.png") no-repeat center/cover`}}>
+    <div className="select-item" style={{background: `url("/images/fondo_p.png") no-repeat center/100% 100%`}}>
       <Header goView={goView} actualView={2} />
       <div className="select-item-body">
         <p className="select-item-title">{question.title}</p>

@@ -1,0 +1,40 @@
+.presentation-efda {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &-intro {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 15px;
+    width: 320px;
+    height: 350px;
+    position: relative;
+    margin: 20px auto 100px;
+  }
+
+  &-title {
+    line-height: 42px;
+    font-weight: 800;
+    font-size: 31px;
+    letter-spacing: -0.01em;
+    color: #073B4C;
+    margin-bottom: 30px;
+  }
+
+  &-description {
+    font-size: 18px;
+    line-height: 25px;
+    color: #53536E;
+
+    .justify {
+      text-align: justify;
+    }
+  }
+
+  &-person {
+    position: absolute;
+    right: -70px;
+    bottom: -50px;
+  }
+}
