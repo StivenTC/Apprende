@@ -35,13 +35,6 @@ export default function AppRoutes() {
         <Route exact path="/video" component={VideoFraccion} />
         <Route exact path="/infografia" component={Infography} />
         <Route exact path="/video-fraccion" component={VideoFraccion} />
-        <Route exact path="/efda" component={Question3} />
-        <Route exact path="/efda2" component={Question7} />
-        <Route exact path="/efda3" component={Question8} />
-        <Route exact path="/question-3" component={Q3} />
-        <Route exact path="/question-6" component={Q6} />
-        <Route exact path="/question-7" component={Q7} />
-        <Route exact path="/question-8" component={Q8} />
       </Switch>
     </Router>
   );

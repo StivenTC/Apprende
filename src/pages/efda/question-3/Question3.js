@@ -26,7 +26,7 @@ export const Question3 = () => {
     },
     styles: {
       general: {
-        background: `top/cover no-repeat url("${templateBackground}")`,
+        background: `top/100% 100% no-repeat url("${templateBackground}")`,
       },
       options: {
         display: "flex",

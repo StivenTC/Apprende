@@ -8,7 +8,7 @@ export const QuestionType = ({ question }) => {
   const [selectedOption, setSelectedOption] = useState(-1);
 
   const validate = () => {
-    return true;
+    return selectedOption !== -1;
   };
 
   const assignState = (baseClass, key, index) => {
