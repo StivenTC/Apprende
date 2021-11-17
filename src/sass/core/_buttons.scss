@@ -21,6 +21,10 @@ button {
     border-radius: 20px;
     color: #9F9FB5;
   }
+
+  &.btn-secondary {
+    background: #0079DE;
+  }
 }
 
 [role="button"],

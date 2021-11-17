@@ -18,7 +18,7 @@ export const FeedbackClue = ({ goView, attempt, message }) => {
 
           }
           <div className="feedback-clue-data">
-            <p>{message[attempt < 3 ? 0 : 1]}</p>
+            <p dangerouslySetInnerHTML={{ __html: message[attempt < 3 ? 0 : 1] }}/>
           </div>
         </div>
         <button
