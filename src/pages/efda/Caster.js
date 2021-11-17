@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
+import { Question1 } from './question-1/Question-1';
 import { Question3 } from './question-3/Question3';
 
 
@@ -15,7 +16,7 @@ function CasterEFDA() {
         case 0:
           return <Launcher goView={setActualView} userData={userData} />;
         case 1:
-          return <Question3 goView={setActualView} userData={userData} />;
+          return <Question1 goView={setActualView} userData={userData} />;
       }
     }
 

@@ -1,0 +1,15 @@
+.efda {
+  &-question-1 {
+    background: #F6FAFF;
+    display: block;
+    height: 100%;
+
+    .select-4-options-card {
+      img:not(.card-bkg) {
+        margin-top: 12px;
+        margin-left: 6px;
+        position: relative;
+      }
+    }
+  }
+}
