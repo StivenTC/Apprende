@@ -1,5 +1,5 @@
 import React from "react";
-import templateBackground from "../../../assets/question-efda-background.png";
+import templateBackground from "../../../assets/background_pregunta8.png";
 import { PresentationTemplate } from "../template/PresentationTemplate";
 
 export const Presentation = ({ goView }) => {
