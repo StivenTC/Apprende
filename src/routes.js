@@ -10,6 +10,7 @@ import CasterAI2 from './pages/ai2/Caster';
 import { SignOut } from './pages/auth/signOut/SignOut';
 import Infography from './pages/Media/Infography/Infography';
 import CasterEFDA from './pages/efda/Caster';
+import { Question9 } from './pages/ai/question9/Question9';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -28,6 +29,7 @@ export default function AppRoutes() {
         <Route exact path="/video" component={VideoFraccion} />
         <Route exact path="/infografia" component={Infography} />
         <Route exact path="/video-fraccion" component={VideoFraccion} />
+        <Route exact path="/question-9" component={Question9} />
       </Switch>
     </Router>
   );
