@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import classNames from "classnames";
-import './QuestionType.scss';
+import saveActivity from "../../../helpers/saveActivity";
 
-export const QuestionType = ({ question }) => {
+export const QuestionType = ({ question, goView }) => {
   const [selectedOption, setSelectedOption] = useState(-1);
 
   const validate = () => {
@@ -31,6 +31,16 @@ export const QuestionType = ({ question }) => {
       </div>
     );
   };
+
+  const nextActivity = () => {
+    let data = {
+      [question.id]: String.fromCharCode(65 + selectedOption),
+    }
+    if (validate()) {
+      saveActivity(data)
+      goView()
+    }
+  }
 
   return (
     <div className="efda-question-container" style={question.styles.general}>
@@ -68,7 +78,10 @@ export const QuestionType = ({ question }) => {
           )}
         </div>
 
-        <button className={`btn-next btn-secondary`} disabled={!validate()}>
+        <button
+          className={`btn-next btn-secondary`}
+          disabled={!validate()}
+          onClick={() => validate() ? nextActivity() : console.log("no posible")}>
           {question.submit.label}
           <BiRightArrowAlt />
         </button>

@@ -1,5 +1,6 @@
 .presentation-efda {
   height: 100%;
+  max-height: calc(#{$max-height} - 60px);
   position: relative;
   overflow: hidden;
 

@@ -5,7 +5,6 @@ import saveActivity from "../../../helpers/saveActivity";
 export const Select4Options = ({ goView, question }) => {
 
   const [selectOption, setSelectOption] = useState('');
-  const [attempts, setAttempts] = useState(1);
 
   const selectCard = (id) => {
     setSelectOption(id)

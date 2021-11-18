@@ -1,6 +1,5 @@
 import React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import './PresentationTemplate.scss';
 import classNames from "classnames";
 
 export const PresentationTemplate = ({ goView, presentation }) => {
