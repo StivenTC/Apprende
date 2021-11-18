@@ -40,8 +40,13 @@ export const Select4Options = ({ goView, question }) => {
   return (
     <div className="select-4-options">
       <div className="select-4-options-body">
-        <p className="select-4-options-title">{question.title}</p>
-        <p className="select-4-options-description" dangerouslySetInnerHTML={{ __html: question.description }} />
+        <div className="select-4-options-data">
+          <p className="select-4-options-title">{question.title}</p>
+          <p className="select-4-options-description" dangerouslySetInnerHTML={{ __html: question.description }} />
+          <div className="select-4-options-explication">
+            {question.explication}
+          </div>
+        </div>
         <div className="select-4-options-list">
           {
             question.options.map((option, index) =>
@@ -50,7 +55,7 @@ export const Select4Options = ({ goView, question }) => {
                 key={index}
                 className={`select-4-options-card ${getClasses(index)}`}
                 onClick={() => selectCard(index)}>
-                <img className="card-bkg" src={option.optionBkg} alt="imagen de fondo" />
+                {option.optionBkg && <img className="card-bkg" src={option.optionBkg} alt="imagen de fondo" />}
                 {option.option}
                 <label>{String.fromCharCode(65 + index)}</label>
               </div>)
