@@ -3,6 +3,7 @@ import { Launcher } from './Launcher';
 import { Question1 } from './question-1/Question-1';
 import { Question10 } from './question-10/Question-10';
 import { Question11 } from './question-11/Question-11';
+import { Question12 } from './question-12/Question-12';
 import { Question2 } from './question-2/Question-2';
 import { Question3 } from './question-3/Question3';
 import { Question4 } from './question-4/Question-4';
@@ -12,7 +13,7 @@ import { Question7 } from './question-7/Question7';
 import { Question8 } from './question-8/Question8';
 
 function CasterEFDA() {
-  const [actualView, setActualView] = useState(11)
+  const [actualView, setActualView] = useState(12)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
 
@@ -43,6 +44,8 @@ function CasterEFDA() {
           return <Question10 goView={setActualView} />;
         case 11:
           return <Question11 goView={setActualView} />;
+        case 12:
+          return <Question12 goView={setActualView} />;
       }
     }
     setRenderView(changeView(actualView))

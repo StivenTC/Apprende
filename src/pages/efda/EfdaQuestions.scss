@@ -173,4 +173,30 @@
     }
   }
 
+  &-question-12 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        align-items: flex-start;
+        border-color: #EDEDFB;
+
+        img:not(.card-bkg) {
+          width: 87px;
+          height: 70px;
+          margin-top: 1em;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+
+        label {
+          bottom: 9px;
+        }
+      }
+    }
+  }
+
 }
