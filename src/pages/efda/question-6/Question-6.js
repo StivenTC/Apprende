@@ -1,16 +1,16 @@
 import { useState } from "react";
-import Boat from "../../../assets/EFDA/q5-boat.png";
-import RiverBoatBKG from "../../../assets/EFDA/river-boat.png";
+import Nuts from "../../../assets/EFDA/q6-nuts.png";
+import NutsBKG from "../../../assets/EFDA/night-nuts.png";
 import { Header } from "../../../components/layout/Header/Header";
 import { Select4Options } from "../../../components/templates/Select4Options/Select4Options";
 import { PresentationTemplate } from "../template/PresentationTemplate";
 
-export const Question5 = ({ goView }) => {
+export const Question6 = ({ goView }) => {
   const [showView, setView] = useState(true);
 
   const questionTemplate = {
-    id: "EFDA-5",
-    title: "Pregunta 5",
+    id: "EFDA-6",
+    title: "Pregunta 6",
     description:
       `Selecciona la barca que tenga una <strong>fracción que puedes usar para encontrar una fracción equivalente a</strong> <span class="highlighted-blue">3/8</span>.<br/>¿Cuál de las barcas debes escoger para cruzar el río?`,
     submit: {
@@ -18,28 +18,28 @@ export const Question5 = ({ goView }) => {
     },
     options: [
       {
-        optionBkg: Boat,
+        optionBkg: Nuts,
         option: <div className="scales-fractions"><span>3</span><span>8</span></div>
       },
       {
-        optionBkg: Boat,
+        optionBkg: Nuts,
         option: <div className="scales-fractions"><span>3</span><span>1</span></div>
       },
       {
-        optionBkg: Boat,
+        optionBkg: Nuts,
         option: <div className="scales-fractions"><span>1</span><span>3</span></div>
       },
       {
-        optionBkg: Boat,
+        optionBkg: Nuts,
         option: <div className="scales-fractions"><span>8</span><span>8</span></div>
       }
     ]
   };
   const presentation = {
-    backgroundImage: RiverBoatBKG,
-    title: 'Pregunta 5',
+    backgroundImage: NutsBKG,
+    title: 'Pregunta 6',
     description: {
-      value: `Cada vez estás más cerca del objetivo. Ahora te encuentras frente a un gran río. Hay <strong>4 barcas</strong> y cada una tiene una fracción. Shaia te da el siguiente mensaje: “Selecciona la barca que tenga una <strong>fracción que puedes usar para encontrar una fracción equivalente a 3/8</strong>“.<br/>¿Cuál de las barcas debes escoger para cruzar el río?`
+      value: `La noche se acerca y tú y Loki deben cenar algo. Tú recogiste 4/3 kilos de fruta y le pides a Loki que él recolecte una <strong>fracción equivalente de nueces</strong>. ¿Cuánto debe recoger Loki?`
     },
     image: '',
     submit: {
@@ -49,13 +49,13 @@ export const Question5 = ({ goView }) => {
 
   return (
     <section className="efda efda-question-5">
-      <Header goView={goView} actualView={5} />
+      <Header goView={goView} actualView={6} />
       {showView ?
         <PresentationTemplate goView={setView} presentation={presentation} />
         :
         <Select4Options
           question={questionTemplate}
-          goView={() => goView(6)} />
+          goView={() => goView(7)} />
       }
     </section>
   );
