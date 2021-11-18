@@ -26,6 +26,9 @@ export const Question2 = ({ goView, saveUser, userData }) => {
           image: {
             position: 'initial',
             marginTop: '5px'
+          },
+          position: {
+            left: '30px'
           }
         }
       },
@@ -44,6 +47,9 @@ export const Question2 = ({ goView, saveUser, userData }) => {
           image: {
             position: 'initial',
             marginTop: '5px'
+          },
+          position: {
+            left: '106px'
           }
         }
       },
@@ -62,6 +68,9 @@ export const Question2 = ({ goView, saveUser, userData }) => {
           image: {
             position: 'initial',
             marginTop: '5px'
+          },
+          position: {
+            right: '52px'
           }
         }
       }

@@ -180,11 +180,11 @@ export const NumberLineDnD = ({ cards, answer, scale }) => {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
-                      style={getItemStyle(
+                      style={{...getItemStyle(
                         snapshot.isDragging,
                         provided.draggableProps.style,
                         item.color
-                      )}>
+                      ), ...item.styles.position }}>
                       <div className="llamas-quarter">
                         <span>{item.quarter.split(/\//)[0]}</span>
                         <span>{item.quarter.split(/\//)[1]}</span>
