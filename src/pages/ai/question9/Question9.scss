@@ -1,0 +1,74 @@
+.ai-question9 {
+  position: relative;
+
+  &-fraction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    margin: 38px auto 20px;
+
+    input {
+      box-shadow: 0px 0px 12px 1px rgba(122, 150, 185, 0.24);
+      border-radius: 8px;
+      border: none;
+      height: 40.5px;
+      text-align: center;
+      color: #9F9FB5;
+      width: 100%;
+      margin: 15px;
+    }
+
+    span {
+      border-top: 3px solid #9F9FB5;
+      width: 100%;
+    }
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #53536E;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &-description {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #53536E;
+    margin: 5px auto 28px;
+
+    strong {
+      font-weight: 900;
+    }
+  }
+
+  &-body {
+    max-width: 320px;
+    margin: auto;
+
+    .scales-fractions {
+      opacity: 1;
+      margin: auto;
+      background: #07A9F0;
+      border: 2px dashed #EDEDFB;
+      border-radius: 8px;
+      width: 64px;
+      height: 106px;
+
+      &:before {
+        width: 30px;
+        background: #ffffff;
+      }
+
+      span {
+        font-size: 28px;
+        color: #ffffff;
+      }
+    }
+  }
+}
