@@ -1,11 +1,14 @@
-import { QuestionType } from "../template/QuestionType";
+import React, { useState } from "react";
 import byke from "../../../assets/byke.png";
 import alpaca from "../../../assets/alpaca.png";
 import skeboard from "../../../assets/skeboard.png";
+import templateBackground from "../../../assets/background_pregunta7.png";
 import { Header } from "../../../components/layout/Header/Header";
-import React from "react";
+import { QuestionType } from "../template/QuestionType";
+import { PresentationTemplate } from "../template/PresentationTemplate";
 
-export const Question7 = () => {
+export const Question7 = ({ goView }) => {
+  const [showView, setView] = useState(true);
   const styleLine = '<div style="border: none;border-top: 2px solid #073B4C;width: 20px;"></div>';
 
   const questionTemplate = {
@@ -99,11 +102,26 @@ export const Question7 = () => {
       },
     ],
   };
-
+  const presentation = {
+    backgroundImage: templateBackground,
+    title: 'Pregunta 7',
+    description: {
+      value: 'Al amanecer tú y Loki están listos para seguir su marcha. En un pueblo cercano les ofrecen bicicletas, alpacas o patinetas para continuar su recorrido. Deben llegar a la cueva <strong>lo más rápido posible</strong>. La vendedora les dice cuántas horas les tomaría cada opción. ¿Con cuál de los tres medios de transporte se <strong>demoran menos</strong> para llegar a la cueva?',
+      classAdded: 'justify'
+    },
+    submit: {
+      label: '¡Vamos!'
+    }
+  };
   return (
-    <React.Fragment>
-      <Header/>
-      <QuestionType question={questionTemplate} />
-    </React.Fragment>
+    <section className="efda efda-question-2">
+      <Header goView={goView} actualView={7} />
+      {showView ?
+        <PresentationTemplate goView={setView} presentation={presentation} />
+        :
+        <QuestionType question={questionTemplate}
+          goView={() => goView(8)} />
+      }
+    </section>
   );
 };
