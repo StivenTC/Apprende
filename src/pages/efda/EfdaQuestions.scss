@@ -199,4 +199,24 @@
     }
   }
 
+  &-finish {
+    height: 100%;
+    text-align: center;
+
+    img {
+      margin: 84px auto 32px;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 31px;
+      line-height: 42px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .btn-next {
+      margin-top: 62px;
+    }
+  }
 }

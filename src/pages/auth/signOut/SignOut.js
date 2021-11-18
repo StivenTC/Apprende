@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { useHistory } from 'react-router';
 import Robot from "../../../assets/Riendo.png"
 import saveDatainSheets from '../../../helpers/saveData';
 
 export const SignOut = () => {
+  const [savingData, setSavingData] = useState(false);
   let history = useHistory();
 
   const goView = () => {
-
+    setSavingData(true)
     let appData = JSON.parse(localStorage.getItem('appData'));
     let userData = JSON.parse(localStorage.getItem('userData'));
     let combo = JSON.parse(localStorage.getItem('combo'));
@@ -17,7 +18,7 @@ export const SignOut = () => {
     saveDatainSheets(dataOrganized).then(() => {
       localStorage.clear();
       history.push("/");
-      console.log("listo")
+      setSavingData(false)
     }
     )
   }
@@ -30,12 +31,15 @@ export const SignOut = () => {
           <h2>¡Gracias!</h2>
         </div>
 
-        <button
-          className="btn-next"
-          onClick={() => goView()}>
-          Reiniciar sesión
-          <BiRightArrowAlt />
-        </button>
+        {savingData ?
+          <h2>Guardando...</h2> :
+          <button
+            className="btn-next"
+            onClick={() => goView()}>
+            Reiniciar sesión
+            <BiRightArrowAlt />
+          </button>
+        }
       </div>
     </div>
   );

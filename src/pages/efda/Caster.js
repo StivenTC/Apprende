@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Finish } from './Finish';
 import { Launcher } from './Launcher';
 import { Question1 } from './question-1/Question-1';
 import { Question10 } from './question-10/Question-10';
@@ -13,7 +14,7 @@ import { Question7 } from './question-7/Question7';
 import { Question8 } from './question-8/Question8';
 
 function CasterEFDA() {
-  const [actualView, setActualView] = useState(12)
+  const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
 
@@ -46,6 +47,8 @@ function CasterEFDA() {
           return <Question11 goView={setActualView} />;
         case 12:
           return <Question12 goView={setActualView} />;
+        case 13:
+          return <Finish goView={setActualView} />;
       }
     }
     setRenderView(changeView(actualView))
