@@ -1,7 +1,8 @@
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
+import saveActivity from "../../../helpers/saveActivity";
 
-export const Select4Options = ({ goView, saveUser, userData, question }) => {
+export const Select4Options = ({ goView, question }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [attempts, setAttempts] = useState(1);
@@ -26,6 +27,15 @@ export const Select4Options = ({ goView, saveUser, userData, question }) => {
   }
 
   const nextActivity = () => {
+    let data = {
+      'EFDA-1': String.fromCharCode(65 + selectOption),
+    }
+
+    if (validate()) {
+      console.log(data)
+      saveActivity(data)
+      goView()
+    }
   }
 
   return (
@@ -47,7 +57,10 @@ export const Select4Options = ({ goView, saveUser, userData, question }) => {
               </div>)
           }
         </div>
-        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+        <button
+          className={`btn-next`}
+          disabled={!validate()}
+          onClick={() => validate() ? nextActivity() : console.log("no posible")}>
           {question.submit.label}
           <BiRightArrowAlt />
         </button>

@@ -6,20 +6,15 @@
   &-intro {
     background: #FFFFFF;
     border-radius: 12px;
-    padding: 15px;
-    width: 320px;
-    height: 350px;
+    padding: 22px 15px;
+    max-width: 320px;
+    height: auto;
     position: relative;
     margin: 20px auto 100px;
   }
 
   &-title {
-    line-height: 42px;
-    font-weight: 800;
-    font-size: 31px;
-    letter-spacing: -0.01em;
-    color: #073B4C;
-    margin-bottom: 30px;
+    margin-bottom: .5em;
   }
 
   &-description {
