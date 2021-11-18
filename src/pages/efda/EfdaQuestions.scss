@@ -149,4 +149,28 @@
     }
   }
 
+  &-question-11 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        width: 127px;
+        height: 135px;
+        align-items: flex-start;
+        border-color: #EDEDFB;
+
+        img:not(.card-bkg) {
+          margin-top: 1em;
+          width: 110px;
+          max-height: 94px;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+      }
+    }
+  }
+
 }
