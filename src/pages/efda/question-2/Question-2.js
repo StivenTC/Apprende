@@ -20,16 +20,6 @@ export const Question2 = ({ goView }) => {
     submit: {
       label: "Enviar",
     },
-    states: {
-      buttons: {
-        activated: "bg-orange color-white",
-        default: "bg-white",
-      },
-      labels: {
-        activated: "bg-orange color-white",
-        default: "bg-green color-white",
-      },
-    },
     options: [
       {
         optionBkg: OptionA,

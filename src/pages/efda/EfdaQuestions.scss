@@ -82,4 +82,42 @@
       }
     }
   }
+
+  &-question-5 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .card-bkg {
+          position: relative;
+        }
+
+        label {
+          bottom: 8px;
+        }
+
+        .scales-fractions {
+          opacity: 1;
+          background: transparent;
+          height: auto;
+
+          span {
+            color: #073B4C;
+            font-size: 24px;
+            line-height: normal;
+          }
+
+          &:before {
+            background-color: #073B4C;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
 }

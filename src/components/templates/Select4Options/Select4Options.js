@@ -55,8 +55,8 @@ export const Select4Options = ({ goView, question }) => {
                 key={index}
                 className={`select-4-options-card ${getClasses(index)}`}
                 onClick={() => selectCard(index)}>
-                {option.optionBkg && <img className="card-bkg" src={option.optionBkg} alt="imagen de fondo" />}
                 {option.option}
+                {option.optionBkg && <img className="card-bkg" src={option.optionBkg} alt="imagen de fondo" />}
                 <label>{String.fromCharCode(65 + index)}</label>
               </div>)
           }
