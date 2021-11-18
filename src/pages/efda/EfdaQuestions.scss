@@ -95,6 +95,7 @@
 
         .card-bkg {
           position: relative;
+          order: 2;
         }
 
         label {
@@ -102,6 +103,7 @@
         }
 
         .scales-fractions {
+          order: 1;
           opacity: 1;
           background: transparent;
           height: auto;

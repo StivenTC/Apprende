@@ -10,7 +10,7 @@ import { Question7 } from './question-7/Question7';
 import { Question8 } from './question-8/Question8';
 
 function CasterEFDA() {
-  const [actualView, setActualView] = useState(8)
+  const [actualView, setActualView] = useState(5)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({})
 
