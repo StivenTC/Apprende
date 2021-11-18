@@ -12,6 +12,7 @@ export const Question7 = ({ goView }) => {
   const styleLine = '<div style="border: none;border-top: 2px solid #073B4C;width: 20px;"></div>';
 
   const questionTemplate = {
+    id: "EFDA-7",
     title: "Pregunta 7",
     description: 'Cada opción muestra la fracción en horas que te demoras en llegar a la cueva. ¿Con cuál de los tres medios de transporte <span class="text-bold">te demoras menos</span>?',
     imagePosition: "TOP",
