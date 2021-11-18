@@ -5,42 +5,39 @@ import ScaleImg from "../../../assets/llamaScale.svg";
 import Llama from "../../../assets/llama.svg";
 import LlamaGhost from "../../../assets/llamaGhost.svg";
 
-export const Llamas = ({ goView, saveUser, userData }) => {
+export const Question3 = ({ goView, saveUser, userData }) => {
 
   const question = {
-    description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
-    answer: ['1/8', '3/8', '7/8'],
+    description: '<strong>Arrastra la figura de los tres atletas</strong> y ubícalos sobre la línea de salida según la fracción que les fue asignada:',
+    answer: ['1/8', '4/8', '6/8'],
     options: [
       {
         id: 'card-01',
-        quarter: '7/8',
-        color: '#43D8BC',
+        quarter: '6/8',
+        color: '#FF820F',
         image1: LlamaGhost,
-        image2: Llama,
-        styles: {}
+        image2: Llama
       },
       {
         id: 'card-02',
-        quarter: '1/8',
+        quarter: '4/8',
         color: '#28D2EE',
         image1: LlamaGhost,
-        image2: Llama,
-        styles: {}
+        image2: Llama
       },
       {
         id: 'card-03',
-        quarter: '3/8',
-        color: '#FF820F',
+        quarter: '1/8',
+        color: '#43D8BC',
         image1: LlamaGhost,
-        image2: Llama,
-        styles: {}
+        image2: Llama
       }
     ],
     scaleImage: ScaleImg,
     backgroundImage: '/images/AI/llama-bkg.png',
     clueTexts: [
-      "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
-      "Para ordenar fracciones que tienen el mismo denominador(en este caso 8), ordena los numeradores de menor a mayor."
+      "¿Las fracciones de los tres atletas tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para organizarlos en la recta numérica.",
+      "Recuerda que cuando comparamos fracciones que tienen el mismo denominador, en este caso 8, la fracción con el numerador más grande es la mayor."
     ]
   };
 

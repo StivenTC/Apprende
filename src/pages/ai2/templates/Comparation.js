@@ -89,7 +89,6 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
     <div className="ai-comparations">
       <div className="ai-comparations-body">
         <p dangerouslySetInnerHTML={{ __html: question.description }} />
-
         <div className="ai-comparations-activity">
           <div className="ai-comparations-activity-items">
             {options.map((option, index) =>

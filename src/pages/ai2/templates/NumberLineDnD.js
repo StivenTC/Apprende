@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import Llama from "../../../assets/llama.svg";
-import LlamaGhost from "../../../assets/llamaGhost.svg";
-import LlamaScale from "../../../assets/llamaScale.svg";
 
-export function LlamasDnD({ cards, answer }) {
+export const NumberLineDnD = ({ cards, answer, scale }) => {
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -26,8 +23,6 @@ export function LlamasDnD({ cards, answer }) {
 
     return result;
   };
-
-  const grid = 8;
 
   const getItemStyle = (isDragging, draggableStyle, colorBkg) => ({
     userSelect: 'none',
@@ -101,7 +96,8 @@ export function LlamasDnD({ cards, answer }) {
   };
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="droppable"
+      <Droppable
+        droppableId="droppable"
         direction="horizontal"
         isDropDisabled={false}>
         {(provided, snapshot) => (
@@ -114,12 +110,13 @@ export function LlamasDnD({ cards, answer }) {
                   key={card.id}
                   className="llamas-activity-card card-ghost">
                   <div
-                    className="llamas-activity-card-content" >
+                    className="llamas-activity-card-content"
+                    style={card.styles.card}>
                     <div className="llamas-quarter">
                       <span>{card.quarter.split(/\//)[0]}</span>
                       <span>{card.quarter.split(/\//)[1]}</span>
                     </div>
-                    <img className="card-llama" src={LlamaGhost} alt="llama" />
+                    <img className="card-llama" src={card.image1} style={card.styles.image} alt="llama" />
                   </div>
                 </div>)}
             </div>
@@ -146,12 +143,13 @@ export function LlamasDnD({ cards, answer }) {
                       )}
                     >
                       <div
-                        className="llamas-activity-card-content" >
+                        className="llamas-activity-card-content"
+                        style={item.styles.card}>
                         <div className="llamas-quarter">
                           <span>{item.quarter.split(/\//)[0]}</span>
                           <span>{item.quarter.split(/\//)[1]}</span>
                         </div>
-                        <img className="card-llama" src={Llama} alt="llama" />
+                        <img className="card-llama" src={item.image2} style={item.styles.image} alt="llama" />
                       </div>
                     </div>
                   )}
@@ -163,7 +161,7 @@ export function LlamasDnD({ cards, answer }) {
         )}
       </Droppable>
       <div className="llamas-activity-scale">
-        <img src={LlamaScale} alt="llama" />
+        <img src={scale} alt="llama" />
         <Droppable droppableId="droppable2"
           direction='horizontal'>
           {(provided, snapshot) => (
