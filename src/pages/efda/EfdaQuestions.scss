@@ -15,6 +15,7 @@
       img:not(.card-bkg) {
         margin-top: 12px;
         margin-left: 6px;
+        z-index: 1;
         position: relative;
       }
     }
@@ -122,4 +123,30 @@
       }
     }
   }
+
+  &-question-10 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        align-items: flex-start;
+
+        img:not(.card-bkg) {
+          margin-top: 1em;
+          width: 80px;
+          max-height: 84px;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+
+        label {
+          bottom: 8px;
+        }
+      }
+    }
+  }
+
 }
