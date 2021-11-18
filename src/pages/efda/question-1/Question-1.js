@@ -13,21 +13,12 @@ export const Question1 = ({ goView }) => {
   const [showView, setView] = useState(true);
 
   const questionTemplate = {
+    id: "EFDA-1",
     title: "Pregunta 1",
     description:
       'Si necesitas llevarte el barril con agua que tiene una figura de una <strong>fracción equivalente</strong> a <span class="highlight-blue">3/4</span> km<br/>¿cúal barril deberás elegir?',
     submit: {
       label: "Enviar",
-    },
-    states: {
-      buttons: {
-        activated: "bg-orange color-white",
-        default: "bg-white",
-      },
-      labels: {
-        activated: "bg-orange color-white",
-        default: "bg-green color-white",
-      },
     },
     options: [
       {

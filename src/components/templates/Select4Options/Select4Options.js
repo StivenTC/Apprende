@@ -28,7 +28,7 @@ export const Select4Options = ({ goView, question }) => {
 
   const nextActivity = () => {
     let data = {
-      'EFDA-1': String.fromCharCode(65 + selectOption),
+      [question.id]: String.fromCharCode(65 + selectOption),
     }
 
     if (validate()) {
@@ -58,7 +58,7 @@ export const Select4Options = ({ goView, question }) => {
           }
         </div>
         <button
-          className={`btn-next`}
+          className={`btn-next btn-secondary`}
           disabled={!validate()}
           onClick={() => validate() ? nextActivity() : console.log("no posible")}>
           {question.submit.label}

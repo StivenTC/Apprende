@@ -61,9 +61,6 @@ export function Raindrops({ goView, saveUser, userData }) {
       'ENTRE1-Reto 3- Gotas': dataAnswers,
       'ENTRE1-Reto 3 Veces': attempts - 1,
     }
-
-    console.log()
-
     setSelectedDrop(id);
     if (correctAnswers.includes(id)) {
       okAnswers.push(id);

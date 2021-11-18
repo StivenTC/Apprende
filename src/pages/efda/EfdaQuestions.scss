@@ -1,19 +1,63 @@
 .efda {
+  height: 100%;
+
   .highlight-blue {
     color: #0079DE;
     font-weight: bold;
   }
 
   &-question-1 {
-    background: #F6FAFF;
     display: block;
     height: 100%;
+    background: #F6FAFF;
 
     .select-4-options-card {
       img:not(.card-bkg) {
         margin-top: 12px;
         margin-left: 6px;
         position: relative;
+      }
+    }
+  }
+
+  &-question-2 {
+    display: block;
+    height: 100%;
+    background: #F6FAFF;
+
+    .select-4-options-list {
+      justify-content: space-between;
+    }
+
+    .select-4-options-card {
+      background: transparent;
+      border: none;
+
+      .card-bkg {
+        top: auto;
+        width: 130px;
+        height: 130px;
+      }
+
+      .scales-fractions {
+        opacity: 1;
+        background: transparent;
+        height: auto;
+
+        span {
+          color: #073B4C;
+          font-size: 24px;
+          line-height: normal;
+        }
+
+        &:before {
+          background-color: #073B4C;
+          width: 32px;
+        }
+      }
+
+      &.selected {
+        border: none;
       }
     }
   }

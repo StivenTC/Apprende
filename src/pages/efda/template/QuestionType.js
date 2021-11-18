@@ -26,9 +26,9 @@ export const QuestionType = ({ question }) => {
 
   const ImageQuestion = ({ image, index }) => {
     return (
-    <div className="efda-question-image">
-      <img src={assignImageFromState(image, index)} style={image.styles} alt={image.alt}/>
-    </div>
+      <div className="efda-question-image">
+        <img src={assignImageFromState(image, index)} style={image.styles} alt={image.alt} />
+      </div>
     );
   };
 
@@ -36,25 +36,25 @@ export const QuestionType = ({ question }) => {
     <div className="efda-question-container" style={question.styles.general}>
       <div className="efda-question">
         <div className="efda-question-header" style={question.styles.header}>
-          <strong>{ question.title }</strong>
+          <strong>{question.title}</strong>
           <p dangerouslySetInnerHTML={{ __html: question.description }} />
         </div>
         <div className="efda-question-options" style={question.styles.options}>
           {question.options.map(({ button, label, image }, index) =>
-            <div className="efda-question-column">
-              { question.imagePosition === 'TOP' &&
-                <ImageQuestion image={image} index={index}/>
+            <div className="efda-question-column" key={index}>
+              {question.imagePosition === 'TOP' &&
+                <ImageQuestion image={image} index={index} />
               }
 
               <div
                 key={`${button}-label`}
                 className={assignState(`efda-question-label`, `labels`, index)}
                 style={question.styles.labels}>
-                {label.value.map((value, i) => <span dangerouslySetInnerHTML={{ __html: value }} />)}
+                {label.value.map((value, i) => <span key={i} dangerouslySetInnerHTML={{ __html: value }} />)}
               </div>
 
-              { question.imagePosition === 'MIDDLE' &&
-                <ImageQuestion image={image} index={index}/>
+              {question.imagePosition === 'MIDDLE' &&
+                <ImageQuestion image={image} index={index} />
               }
 
               <button
@@ -67,8 +67,8 @@ export const QuestionType = ({ question }) => {
             </div>
           )}
         </div>
-  
-        <button className={`btn-secondary btn-next ${validate() ? "" : "disabled"}`}>
+
+        <button className={`btn-next btn-secondary`} disabled={!validate()}>
           {question.submit.label}
           <BiRightArrowAlt />
         </button>
