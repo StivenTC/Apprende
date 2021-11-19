@@ -112,7 +112,7 @@ export const NumberLineDnD = ({ cards, answer, scale }) => {
                   <div
                     className="llamas-activity-card-content"
                     style={card.styles.card}>
-                    <div className="llamas-quarter">
+                    <div className="llamas-quarter" style={card.styles.fraction}>
                       <span>{card.quarter.split(/\//)[0]}</span>
                       <span>{card.quarter.split(/\//)[1]}</span>
                     </div>
@@ -145,7 +145,7 @@ export const NumberLineDnD = ({ cards, answer, scale }) => {
                       <div
                         className="llamas-activity-card-content"
                         style={item.styles.card}>
-                        <div className="llamas-quarter">
+                        <div className="llamas-quarter" style={item.styles.fraction}>
                           <span>{item.quarter.split(/\//)[0]}</span>
                           <span>{item.quarter.split(/\//)[1]}</span>
                         </div>

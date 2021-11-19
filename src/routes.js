@@ -11,6 +11,7 @@ import { SignOut } from './pages/auth/signOut/SignOut';
 import Infography from './pages/Media/Infography/Infography';
 import CasterEFDA from './pages/efda/Caster';
 import { Question2 } from './pages/ai2/question2/Question2';
+import { Question3 } from './pages/ai2/question3/Question3';
 import { Llamas } from './pages/ai2/llamas/Llamas';
 // import { Header } from './components/layout/Header/header';
 
@@ -32,6 +33,7 @@ export default function AppRoutes() {
         <Route exact path="/video-fraccion" component={VideoFraccion} />
         <Route exact path="/llamas" component={Question2} />
         <Route exact path="/llamas-2" component={Llamas} />
+        <Route exact path="/llamas-3" component={Question3} />
       </Switch>
     </Router>
   );
