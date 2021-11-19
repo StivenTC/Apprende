@@ -62,7 +62,7 @@ export const Question3 = ({ goView, saveUser, userData }) => {
       }
     ],
     scaleImage: ScaleImg,
-    backgroundImage: '/images/AI/llama-bkg.png',
+    backgroundImage: '/images/AI/atletas_bkg.png',
     clueTexts: [
       "¿Las fracciones de los tres atletas tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para organizarlos en la recta numérica.",
       "Recuerda que cuando comparamos fracciones que tienen el mismo denominador, en este caso 8, la fracción con el numerador más grande es la mayor."
