@@ -4,7 +4,7 @@ import { PresentationTemplate } from "../../templates/PresentationTemplate";
 export const Presentation = ({ goView }) => {
 
   const presentation = {
-    title: 'Reto 2',
+    title: 'Reto 6',
     description: 'Selecciona el gráfico que representa una fracción equivalente a la fracción que encuentras en la tarjeta:',
     image: '',
     submit: {
