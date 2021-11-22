@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Header } from "../../../components/layout/Header/Header";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectQuarterTemplate = ({ goView, saveUser, userData, question }) => {
+export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState('');
@@ -30,17 +29,19 @@ export const SelectQuarterTemplate = ({ goView, saveUser, userData, question }) 
     return String(selectOption).length > 0
   }
 
-  const nextActivity = () => {
+  const nextActivityAction = () => {
     if (selectOption === question.answer) {
       setFeedback('correct')
-      saveUser({ ...userData, selectQuarter: true })
+      //saveUser({ ...userData, selectQuarter: true })
+      setResult(true);
     } else if (attempts < 3) {
       setSelectOption('')
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      saveUser({ ...userData, selectQuarter: false })
-      goView(6)
+      //saveUser({ ...userData, selectQuarter: false })
+      setResult(false);
+      goView(2)
     }
   }
 
@@ -50,7 +51,6 @@ export const SelectQuarterTemplate = ({ goView, saveUser, userData, question }) 
 
   return (
     <div className="select-quarter">
-      <Header goView={goView} actualView={2} />
       <div className="select-quarter-body">
         <p className="select-quarter-title">{question.title}</p>
         <p className="select-quarter-description" dangerouslySetInnerHTML={{ __html: question.description }}></p>
@@ -66,12 +66,12 @@ export const SelectQuarterTemplate = ({ goView, saveUser, userData, question }) 
           </div>)
           }
         </div>
-        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           {question.submit.label}
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
     </div>

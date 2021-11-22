@@ -14,7 +14,7 @@ function App() {
         },
         {
           name: "Fracciones equivalentes",
-          route: "/infografia?fracciones=equivalentes"
+          route: "/infografia?fracciones=comparar"
         },
         {
           name: "Entrenamiento 1",
@@ -65,7 +65,11 @@ function App() {
         {
           name: "Entrenamiento 2",
           route: "/actividades-interactivas-2"
-        }
+        },
+        {
+          name: "Video 3",
+          route: "/video?media=equivalente"
+        },
       ]
     },
     {
@@ -86,6 +90,10 @@ function App() {
         {
           name: "Entrenamiento 3",
           route: "/actividades-interactivas-3"
+        },
+        {
+          name: "Video 3",
+          route: "/video?media=equivalente"
         },
       ]
     },

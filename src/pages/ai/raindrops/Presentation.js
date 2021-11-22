@@ -20,12 +20,12 @@ export const RaindropPresentation = ({ goView }) => {
 
   return (
     <div className="presentation">
-      <h1>Reto 3</h1>
+      <h1>Reto 4</h1>
       <p>Selecciona las <strong>tres</strong> gotas con <strong>fracciones equivalentes</strong> a <sup>6</sup>/<sub>8</sub></p>
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(8)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>

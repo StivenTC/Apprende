@@ -8,7 +8,7 @@ import TopCloud from "../../../assets/top-clouds.svg";
 import BottomWater from "../../../assets/bottom-water.svg";
 import saveActivity from "../../../helpers/saveActivity";
 
-export function Raindrops({ goView, saveUser, userData }) {
+export function Raindrops({ goView, setResult }) {
 
   const [selectedDrop, setSelectedDrop] = useState('');
   const [showFeedback, setFeedback] = useState("");
@@ -68,7 +68,8 @@ export function Raindrops({ goView, saveUser, userData }) {
       if (okAnswers.length >= 3) {
         saveActivity(data)
         setFeedback('correct');
-        saveUser({ ...userData, rainDrop: true });
+        //saveUser({ ...userData, rainDrop: true });
+        setResult(true);
       }
     } else if (attempts < 3) {
       setTimeout(function () {
@@ -77,7 +78,8 @@ export function Raindrops({ goView, saveUser, userData }) {
         setAttempts(attempts + 1);
       }, 500);
     } else {
-      saveUser({ ...userData, rainDrop: false });
+      //saveUser({ ...userData, rainDrop: false });
+      setResult(false);
       data['ENTRE1-Reto 3 Veces'] = attempts
       saveActivity(data)
       setTimeout(function () {
@@ -135,7 +137,7 @@ export function Raindrops({ goView, saveUser, userData }) {
         </div>
       </div>
       <img src={BottomWater} alt="Piso de agua" className="bottom-water" />
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={10} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={3} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );

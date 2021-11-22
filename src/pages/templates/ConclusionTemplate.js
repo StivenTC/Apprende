@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../assets/altavoz.png"
-import { Header } from "../../components/layout/Header/Header";
 
 export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, nextIDView }) => {
   const [showSolution, setShowSolution] = useState(false);
