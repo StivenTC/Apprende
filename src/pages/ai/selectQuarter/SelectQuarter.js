@@ -44,6 +44,7 @@ export const SelectQuarter = ({ goView, setResult, nextActivity }) => {
         goView={goView}
         setResult={setResult}
         nextActivity={nextActivity}
+        currentView={2}
         question={question} />
     </div>
   )

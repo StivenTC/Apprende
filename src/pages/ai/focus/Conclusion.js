@@ -163,7 +163,7 @@ export const FocusConclusion = ({ nextActivity }) => {
 
   const nextView = () => {
     if (showSolution) {
-      nextActivity(0)
+      nextActivity(2)
     } else {
       setShowSolution(true)
     }

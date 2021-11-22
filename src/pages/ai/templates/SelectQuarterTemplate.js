@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question }) => {
+export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question, currentView }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState('');
@@ -59,11 +59,11 @@ export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, questio
         </div>
         <div className="select-quarter-list">
           {
-            question.options.map((option, index) => 
-            <div className={`select-quarter-card ${getClasses(index)}`}
-            onClick={() => selectCard(index)}>
-            <img src={assignImageFromState(option, index)} alt=""/>
-          </div>)
+            question.options.map((option, index) =>
+              <div className={`select-quarter-card ${getClasses(index)}`}
+                onClick={() => selectCard(index)}>
+                <img src={assignImageFromState(option, index)} alt="" />
+              </div>)
           }
         </div>
         <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
@@ -71,7 +71,7 @@ export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, questio
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={currentView + 1} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
     </div>
