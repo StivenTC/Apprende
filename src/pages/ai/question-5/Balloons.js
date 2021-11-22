@@ -16,10 +16,10 @@ export function Ballons({ goView, setResult }) {
   const [corrects, setCorrects] = useState([]);
   const [dataAnswers, setDataAnswers] = useState([]);
 
-  const quarters = ["3/20", "3/5", "12/20", "12/10", "60/100", "0/0"];
+  const quarters = ["3/20", "3/5", "12/20", "12/10", "60/100", "6/20"];
   const clueTexts = [
-    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
-    "Para encontrar una fracción equivalente a 6/8 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número."
+    "¿Cómo encuentras una fracción equivalente a otra? ¿Qué operaciones puedes hacer tanto en el numerador como en el denominador para encontrar fracciones equivalentes?",
+    "Recuerda que dos fracciones son equivalentes si representan la misma cantidad aunque sus numeradores y denominadores sean diferentes."
   ];
   const Drop = () => {
     return <svg className="water-drop" width="105" height="224" viewBox="0 0 105 224" fill="none" xmlns="http://www.w3.org/2000/svg">
