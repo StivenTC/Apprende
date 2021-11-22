@@ -83,7 +83,7 @@ export function Raindrops({ goView, setResult }) {
       data['ENTRE1-Reto 3 Veces'] = attempts
       saveActivity(data)
       setTimeout(function () {
-        goView(9);
+        goView(2);
       }, 500);
     }
   };
@@ -101,7 +101,6 @@ export function Raindrops({ goView, setResult }) {
 
   return (
     <div className="rain-drop">
-      <Header goView={goView} actualView={2} />
       <div className="rain-drop-body">
         <div className="rain-drop-header">
           <img src={TopCloud} alt="Nubes altas" />

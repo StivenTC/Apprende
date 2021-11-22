@@ -4,7 +4,7 @@ import { SelectQuarterConclusion } from './Conclusion';
 import { SelectQuarterPresentation } from './Presentation';
 import { SelectQuarter } from './SelectQuarter';
 
-function Question9Caster({ setActualView, saveUserData, userData }) {
+function SelectQuarterCaster({ setActualView, saveUserData, userData }) {
   const [actualView, goView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [result, setResult] = useState(false)
@@ -33,4 +33,4 @@ function Question9Caster({ setActualView, saveUserData, userData }) {
   );
 }
 
-export default Question9Caster;
+export default SelectQuarterCaster;

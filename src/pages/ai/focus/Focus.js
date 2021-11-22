@@ -184,7 +184,7 @@ export const Focus = ({ goView, nextActivity, setResult }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={2} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>

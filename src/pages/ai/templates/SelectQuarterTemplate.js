@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question }) => {
+export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question, nextQuestion }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState('');
@@ -71,7 +71,7 @@ export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, questio
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={nextQuestion} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
     </div>
