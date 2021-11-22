@@ -22,23 +22,23 @@ function CasterAI() {
         case 0:
           return <Launcher goView={setActualView} userData={userData} />;
         case 1:
-          return <FocusCaster setActualView={setActualView} userData={userData}/>;
+          return <FocusCaster setActualView={setActualView} userData={userData} />;
         case 2:
-          return <SelectQuarterCaster setActualView={setActualView} userData={userData}/>;
+          return <SelectQuarterCaster setActualView={setActualView} userData={userData} />;
         case 3:
-          return <Question3Caster setActualView={setActualView} />;
+          return <Question3Caster setActualView={setActualView} userData={userData} />;
         case 4:
-          return <RaindropsCaster setActualView={setActualView} />;
+          return <RaindropsCaster setActualView={setActualView} userData={userData} />;
         case 5:
-          return <Question5Caster setActualView={setActualView} />;
+          return <Question5Caster setActualView={setActualView} userData={userData} />;
         case 6:
-          return <Question6Caster setActualView={setActualView} />;
+          return <Question6Caster setActualView={setActualView} userData={userData} />;
         case 7:
-          return <Question7Caster setActualView={setActualView} />;
+          return <Question7Caster setActualView={setActualView} userData={userData} />;
         case 8:
-          return <Question8Caster setActualView={setActualView} />;
+          return <Question8Caster setActualView={setActualView} userData={userData} />;
         case 9:
-          return <Question9Caster setActualView={setActualView} />;
+          return <Question9Caster setActualView={setActualView} userData={userData} />;
       }
     }
 
