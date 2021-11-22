@@ -6,7 +6,6 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import saveActivity from "../../../helpers/saveActivity";
 
 export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, question, nextQuestion }) => {
-
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState('');
   const [attempts, setAttempts] = useState(1);
