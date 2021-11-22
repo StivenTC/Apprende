@@ -32,7 +32,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
     } else {
       setResult(false)
       //saveUser({ ...userData, selectQuarter: false })
-      goView(6)
+      goView(2)
     }
   }
 
@@ -106,7 +106,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={10} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts}/>}
       </div>
     </div>

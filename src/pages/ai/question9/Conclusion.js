@@ -9,6 +9,6 @@ export const Conclusion = ({ nextActivity }) => {
       goView={nextActivity}
       ImgConclusion={ImgConclusion}
       skipSolution={true}
-      nextIDView={9}/>
+      nextIDView={10}/>
     )
 }

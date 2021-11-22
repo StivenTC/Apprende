@@ -12,7 +12,7 @@ export const SignOut = () => {
     setSavingData(true)
     let appData = JSON.parse(localStorage.getItem('appData'));
     let userData = JSON.parse(localStorage.getItem('userData'));
-    let combo = JSON.parse(localStorage.getItem('combo'));
+    let combo = JSON.parse(localStorage.getItem('combo')) || {};
     let dataOrganized = { ...appData, ...userData, Combo: combo.combo }
 
     saveDatainSheets(dataOrganized).then(() => {
