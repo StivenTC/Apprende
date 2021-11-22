@@ -58,8 +58,8 @@ export function Raindrops({ goView, setResult }) {
     setDataAnswers(ans)
 
     let data = {
-      'ENTRE1-Reto 3- Gotas': dataAnswers,
-      'ENTRE1-Reto 3 Veces': attempts - 1,
+      'ENTRE1-Reto 4- Gotas': dataAnswers,
+      'ENTRE1-Reto 4 Veces': attempts - 1,
     }
     setSelectedDrop(id);
     if (correctAnswers.includes(id)) {
@@ -80,7 +80,7 @@ export function Raindrops({ goView, setResult }) {
     } else {
       //saveUser({ ...userData, rainDrop: false });
       setResult(false);
-      data['ENTRE1-Reto 3 Veces'] = attempts
+      data['ENTRE1-Reto 4 Veces'] = attempts
       saveActivity(data)
       setTimeout(function () {
         goView(2);

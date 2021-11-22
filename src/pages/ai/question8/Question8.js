@@ -3,11 +3,12 @@ import { SelectItemTemplate } from "../templates/SelectItemTemplate";
 export const Question8 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE1-Reto 7',
     title: "Reto 8",
     description: "Dispara a la fracción que <strong>usarías para encontrar una fracción equivalente</strong> a la que aparece abajo",
     fraction: {
-     num1: 5,
-     num2: 9
+      num1: 5,
+      num2: 9
     },
     submit: {
       label: "Enviar"
@@ -60,7 +61,7 @@ export const Question8 = ({ goView, setResult, nextActivity }) => {
         goView={goView}
         setResult={setResult}
         nextActivity={nextActivity}
-        question={question}/>
+        question={question} />
     </div>
   )
 }

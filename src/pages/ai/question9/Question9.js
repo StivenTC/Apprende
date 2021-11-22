@@ -43,9 +43,9 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
     if (value > 0 && value < 100) {
       field.onChange(value);
       isValid = true;
-    } else if (value === 0 || !value){
+    } else if (value === 0 || !value) {
       field.onChange('');
-    } else if (value >= 100){
+    } else if (value >= 100) {
       const valueStr = value.toString();
       field.onChange(parseInt(valueStr.substr(0, 2)));
       isValid = true;
@@ -76,7 +76,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
             name="numerator"
             render={({ field }) => (
               <input
-                { ...field }
+                {...field}
                 type="number"
                 onChange={e => {
                   const isValid = preventFromLength(e.target.value, field);
@@ -91,8 +91,8 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
             control={control}
             name="denominator"
             render={({ field }) => (
-              <input 
-                { ...field }
+              <input
+                {...field}
                 type="number"
                 onChange={e => {
                   const isValid = preventFromLength(e.target.value, field);

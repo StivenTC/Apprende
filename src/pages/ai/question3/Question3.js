@@ -4,11 +4,12 @@ import { SelectQuarterTemplate } from "../templates/SelectQuarterTemplate";
 export const Question3 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE1-Reto 3',
     title: "Reto 3",
     description: "Selecciona el gráfico que representa una <strong>fracción equivalente</strong> a la fracción que encuentras en la tarjeta",
     fraction: {
-     num1: 25,
-     num2: 40
+      num1: 25,
+      num2: 40
     },
     submit: {
       label: "Enviar"
@@ -45,7 +46,7 @@ export const Question3 = ({ goView, setResult, nextActivity }) => {
         nextActivity={nextActivity}
         goView={goView}
         setResult={setResult}
-        question={question}/>
+        question={question} />
     </div>
   )
 }
