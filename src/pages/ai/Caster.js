@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
-import { Focus } from './focus/Focus';
-import { SelectQuarter } from './selectQuarter/SelectQuarter';
-import { Question3 } from './question3/Question3';
-import { Raindrops } from './raindrops/Raindrops';
-import { Question6 } from './question6/Question6';
-import { Question7 } from './question7/Question7';
-import { Question8 } from './question8/Question8';
-import { Question9 } from './question9/Question9';
 import Question5 from './question-5/Caster';
 import FocusCaster from './focus/Caster';
 import SelectQuarterCaster from './selectQuarter/Caster';
