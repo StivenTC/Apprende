@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
-import Question5 from './question-5/Caster';
 import FocusCaster from './focus/Caster';
 import SelectQuarterCaster from './selectQuarter/Caster';
 import Question3Caster from './question3/Caster';
@@ -9,7 +8,7 @@ import Question6Caster from './question6/Caster';
 import Question7Caster from './question7/Caster';
 import Question8Caster from './question8/Caster';
 import Question9Caster from './question9/Caster';
-
+import Question5Caster from './question-5/Caster';
 
 function CasterAI() {
   const [actualView, setActualView] = useState(0)
@@ -31,7 +30,7 @@ function CasterAI() {
         case 4:
           return <RaindropsCaster setActualView={setActualView} userData={userData} />;
         case 5:
-          return <Question5 setActualView={setActualView} userData={userData} />;
+          return <Question5Caster setActualView={setActualView} userData={userData} />;
         case 6:
           return <Question6Caster setActualView={setActualView} userData={userData} />;
         case 7:

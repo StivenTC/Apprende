@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 
-export const SelectItemTemplate = ({ goView, setResult, question, nextActivity }) => {
+export const SelectItemTemplate = ({ goView, setResult, question, nextActivity, nextQuestion }) => {
 
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState('');
@@ -86,7 +86,7 @@ export const SelectItemTemplate = ({ goView, setResult, question, nextActivity }
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={nextQuestion} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
     </div>

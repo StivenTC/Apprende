@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '../../../components/layout/Header/Header';
 import { Conclusion } from './Conclusion';
-import { Presentation } from './Presentation';
 import { Question3 } from './Question3';
 
 function Question3Caster({ setActualView, saveUserData, userData }) {
@@ -14,7 +13,6 @@ function Question3Caster({ setActualView, saveUserData, userData }) {
       switch (view) {
         default:
         case 0:
-          return <Presentation goView={goView} userData={userData} />;
         case 1:
           return <Question3 goView={goView} setResult={setResult} nextActivity={setActualView} />;
         case 2:

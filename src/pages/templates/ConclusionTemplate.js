@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../assets/altavoz.png"
 
-export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, nextIDView }) => {
+export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, nextIDView, skipSolution = false }) => {
   const [showSolution, setShowSolution] = useState(false);
 
   const Solution = () => {
@@ -13,7 +13,7 @@ export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, nextIDV
   }
 
   const nextView = () => {
-    if (showSolution) {
+    if (showSolution || skipSolution) {
       goView(nextIDView)
     } else {
       setShowSolution(true)

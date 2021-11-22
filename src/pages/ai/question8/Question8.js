@@ -56,6 +56,7 @@ export const Question8 = ({ goView, setResult, nextActivity }) => {
   return (
     <div className="select-quarter">
       <SelectItemTemplate
+        nextQuestion={9}
         goView={goView}
         setResult={setResult}
         nextActivity={nextActivity}
