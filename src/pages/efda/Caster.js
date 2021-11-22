@@ -12,6 +12,7 @@ import { Question5 } from './question-5/Question-5';
 import { Question6 } from './question-6/Question-6';
 import { Question7 } from './question-7/Question7';
 import { Question8 } from './question-8/Question8';
+import { Question9 } from './question-9/Question-9';
 
 function CasterEFDA() {
   const [actualView, setActualView] = useState(0)
@@ -41,6 +42,7 @@ function CasterEFDA() {
         case 8:
           return <Question8 goView={setActualView} />;
         case 9:
+          return <Question9 goView={setActualView} />;
         case 10:
           return <Question10 goView={setActualView} />;
         case 11:
