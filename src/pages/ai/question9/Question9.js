@@ -7,7 +7,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { useForm, Controller } from "react-hook-form";
 import "./Question9.scss"
 
-export const Question9 = ({ goView, saveUser, userData }) => {
+export const Question9 = ({ goView, setResult, nextActivity }) => {
 
   const [showFeedback, setFeedback] = useState('');
   const [attempts, setAttempts] = useState(1);
@@ -18,18 +18,20 @@ export const Question9 = ({ goView, saveUser, userData }) => {
     return isValid.numerator && isValid.denominator;
   };
 
-  const nextActivity = () => {
+  const nextActivityAction = () => {
     const numerator = getValues('numerator');
     const denominator = getValues('denominator');
 
     if (numerator === denominator) {
       setFeedback('correct')
-      saveUser({ ...userData, selectQuarter: true })
+      setResult(true)
+      //saveUser({ ...userData, selectQuarter: true })
     } else if (attempts < 3) {
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      saveUser({ ...userData, selectQuarter: false })
+      setResult(false)
+      //saveUser({ ...userData, selectQuarter: false })
       goView(6)
     }
   }
@@ -61,7 +63,6 @@ export const Question9 = ({ goView, saveUser, userData }) => {
 
   return (
     <div className="ai-question9">
-      <Header goView={goView} actualView={2} />
       <div className="ai-question9-body">
         <p className="ai-question9-title">Reto 9</p>
         <p className="ai-question9-description">Ingresa en el recuadro de abajo una fracción <strong>por la que multiplicarías 3/8</strong> para encontrar una <strong>fracción equivalente.</strong></p>
@@ -100,12 +101,12 @@ export const Question9 = ({ goView, saveUser, userData }) => {
             )}
           />
         </div>
-        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           Enviar
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts}/>}
       </div>
     </div>

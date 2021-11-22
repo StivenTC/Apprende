@@ -1,6 +1,6 @@
 import { SelectItemTemplate } from "../templates/SelectItemTemplate";
 
-export const Question6 = ({ goView, saveUser, userData }) => {
+export const Question6 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     title: "Reto 6",
@@ -57,8 +57,8 @@ export const Question6 = ({ goView, saveUser, userData }) => {
     <div className="select-quarter">
       <SelectItemTemplate
         goView={goView}
-        saveUser={saveUser}
-        userData={userData}
+        setResult={setResult}
+        nextActivity={nextActivity}
         question={question}/>
     </div>
   )

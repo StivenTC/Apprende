@@ -30,7 +30,7 @@ export const SelectQuarterPresentation = ({ goView }) => {
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(5)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>

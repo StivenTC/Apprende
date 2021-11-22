@@ -5,7 +5,7 @@ import robot from "../../../assets/Saludo.png";
 import llama from "../../../assets/llama-view.png";
 import saveActivity from "../../../helpers/saveActivity";
 
-export function RaindropQuestion({ goView, userData }) {
+export function RaindropQuestion({ nextActivity, result }) {
   const [textArea, setTextArea] = useState("");
 
   const nextView = () => {
@@ -14,15 +14,14 @@ export function RaindropQuestion({ goView, userData }) {
     }
     if (textArea.length > 5) {
       saveActivity(data)
-      goView(0)
+      nextActivity(5)
     }
   }
   return (
     <div className="rain-drop-question">
-      <Header goView={goView} actualView={10} />
       <div className="rain-drop-question-content">
         <img src={robot} alt="robot" />
-        <p>{userData.rainDrop ?
+        <p>{result ?
           "Cuéntale al Robot cómo llegaste a la respuesta correcta."
           :
           "¿Qué puedes hacer para encontrar la respuesta correcta?"

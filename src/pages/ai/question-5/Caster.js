@@ -19,7 +19,7 @@ function Question5({ setActualView, saveUserData, userData }) {
         case 1:
           return <Ballons goView={goView} setResult={setResult} />;
         case 2:
-          return <BalloonsConclusion goView={goView} goView={goView} />;
+          return <BalloonsConclusion goView={goView} />;
         case 3:
           return <BalloonsQuestion nextActivity={setActualView} result={result} />;
       }

@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Header } from "../../../components/layout/Header/Header";
 import createPie from "../../../components/shapes/CeatePie";
 import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
@@ -8,7 +7,7 @@ import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import saveActivity from "../../../helpers/saveActivity";
 
-export const Focus = ({ goView, saveUser, userData }) => {
+export const Focus = ({ goView, nextActivity, setResult }) => {
   const [selectedCard, setSelectedCard] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -138,7 +137,8 @@ export const Focus = ({ goView, saveUser, userData }) => {
     if (completeQuest) {
       saveActivity(data)
       setFeedback('correct')
-      saveUser({ ...userData, focus: true })
+      setResult(true)
+      //saveUser({ ...userData, focus: true })
     } else if (attempts < 3) {
       setSelectedAnswers([])
       setAnswers([])
@@ -149,8 +149,9 @@ export const Focus = ({ goView, saveUser, userData }) => {
     } else {
       data['ENTRE1-Reto 1 Veces'] = attempts
       saveActivity(data)
-      saveUser({ ...userData, focus: false })
-      goView(3)
+      setResult(false)
+      //saveUser({ ...userData, focus: false })
+      goView(2)
     }
   }
 
@@ -164,7 +165,6 @@ export const Focus = ({ goView, saveUser, userData }) => {
   }
   return (
     <div className="focus">
-      <Header goView={goView} actualView={2} />
       <div className="focus-body">
         <p>Arma 3 parejas de gráficos de fracciones equivalentes.</p>
         <div className={`focus-list ${showOptions ? "show-options" : ""}`}>
@@ -184,7 +184,7 @@ export const Focus = ({ goView, saveUser, userData }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={0} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>

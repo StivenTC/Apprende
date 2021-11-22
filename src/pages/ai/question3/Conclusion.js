@@ -1,6 +1,6 @@
 import { ConclusionTemplate } from "../../templates/ConclusionTemplate";
 
-export const Conclusion = ({ goView }) => {
+export const Conclusion = ({ nextActivity }) => {
 
-  return <ConclusionTemplate/>
+  return <ConclusionTemplate goView={nextActivity}/>
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { SelectQuarterTemplate } from "../templates/SelectQuarterTemplate";
 
-export const SelectQuarter = ({ goView, saveUser, userData }) => {
+export const SelectQuarter = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     title: "Reto 2",
@@ -42,8 +42,8 @@ export const SelectQuarter = ({ goView, saveUser, userData }) => {
     <div className="select-quarter">
       <SelectQuarterTemplate
         goView={goView}
-        saveUser={saveUser}
-        userData={userData}
+        setResult={setResult}
+        nextActivity={nextActivity}
         question={question} />
     </div>
   )
