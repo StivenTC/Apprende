@@ -75,6 +75,18 @@ function App() {
           name: "Evaluación formal",
           route: "/evaluacion-formal"
         },
+        {
+          name: "Entrenamiento 1",
+          route: "/actividades-interactivas"
+        },
+        {
+          name: "Entrenamiento 2",
+          route: "/actividades-interactivas-2"
+        },
+        {
+          name: "Entrenamiento 3",
+          route: "/actividades-interactivas-3"
+        },
       ]
     },
   ]

@@ -32,10 +32,10 @@ export const Question1 = ({ goView, saveUser, userData }) => {
     <React.Fragment>
       <Header goView={goView} actualView={2} />
       <Comparation
-        goView={goView}
+        goView={() => goView(3)}
         saveUser={saveUser}
         userData={userData}
-        question={question}/>
+        question={question} />
     </React.Fragment>
   )
 }

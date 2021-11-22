@@ -1,7 +1,7 @@
 import React from "react";
 import { PresentationTemplate } from "../../templates/PresentationTemplate";
 
-export const Presentation = ({ goView }) => {
+export const Presentation4 = ({ goView }) => {
 
   const presentation = {
     title: 'Reto 4',
@@ -12,5 +12,5 @@ export const Presentation = ({ goView }) => {
     }
   };
 
-  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={4}/>;
+  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={4} />;
 };

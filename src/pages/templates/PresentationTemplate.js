@@ -6,8 +6,8 @@ export const PresentationTemplate = ({ goView, presentation, nextPage }) => {
   return (
     <div className="presentation-ai">
       <h1>{presentation.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: presentation.description }}/>
-      <img src={presentation.image} alt=""/>
+      <p dangerouslySetInnerHTML={{ __html: presentation.description }} />
+      <img src={presentation.image} alt="" />
       <button
         className="btn-next"
         onClick={() => goView(nextPage)}>

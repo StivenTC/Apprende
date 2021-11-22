@@ -34,7 +34,7 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
         createPie(`pie${index + 1}`, 55, 55, 50, option.total, option.list, ['#28D2EE', '#EDEDFB']);
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [question]);
 
   const selectCard = (id) => {
@@ -141,10 +141,9 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
           {question.submit.label}
           <BiRightArrowAlt />
         </button>
-
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
     </div>
   )
 }

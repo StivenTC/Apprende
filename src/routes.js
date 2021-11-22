@@ -13,6 +13,7 @@ import CasterEFDA from './pages/efda/Caster';
 import { Question2 } from './pages/ai2/question2/Question2';
 import { Question3 } from './pages/ai2/question3/Question3';
 import { Llamas } from './pages/ai2/llamas/Llamas';
+import CasterAI3 from './pages/ai3/Caster';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -26,6 +27,7 @@ export default function AppRoutes() {
         <Route exact path="/exploracion" component={Caster} />
         <Route exact path="/actividades-interactivas" component={CasterAI} />
         <Route exact path="/actividades-interactivas-2" component={CasterAI2} />
+        <Route exact path="/actividades-interactivas-3" component={CasterAI3} />
         <Route exact path="/metacognicion" component={CasterMetacognicion} />
         <Route exact path="/evaluacion-formal" component={CasterEFDA} />
         <Route exact path="/video" component={VideoFraccion} />

@@ -4,6 +4,11 @@
   &-body {
     max-width: 320px;
     margin: auto;
+    overflow: auto;
+
+    .btn-next {
+      margin-bottom: 36px;
+    }
 
     >p {
       max-width: 290px;
