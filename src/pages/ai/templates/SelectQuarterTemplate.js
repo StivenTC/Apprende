@@ -59,11 +59,11 @@ export const SelectQuarterTemplate = ({ goView, setResult, nextActivity, questio
         </div>
         <div className="select-quarter-list">
           {
-            question.options.map((option, index) => 
-            <div className={`select-quarter-card ${getClasses(index)}`}
-            onClick={() => selectCard(index)}>
-            <img src={assignImageFromState(option, index)} alt=""/>
-          </div>)
+            question.options.map((option, index) =>
+              <div className={`select-quarter-card ${getClasses(index)}`}
+                onClick={() => selectCard(index)}>
+                <img src={assignImageFromState(option, index)} alt="" />
+              </div>)
           }
         </div>
         <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
