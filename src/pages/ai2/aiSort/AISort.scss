@@ -169,6 +169,24 @@
     }
   }
 
+  &.question8 {
+    .ai-sort-activity-list-bkg {
+      opacity: 0.9;
+    }
+
+    .ai-sort-activity-scale .ai-sort-activity-card {
+
+      line,
+      svg {
+        stroke: #28D2EE;
+      }
+
+      path {
+        fill: #28D2EE;
+      }
+    }
+  }
+
   @media (max-width: $mobile) {
     &::before {
       height: 320px;

@@ -7,9 +7,10 @@ import ComparationsCaster from './comparations/Caster';
 import Question5Caster from './question5/Caster';
 import Question7Caster from './question7/Caster';
 import AISortCaster from './aiSort/Caster';
+import Question8Caster from './question8/Caster';
 
 function CasterAI2() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(8)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
 
@@ -33,6 +34,8 @@ function CasterAI2() {
           return <AISortCaster setActualView={setActualView} userData={userData} />;
         case 7:
           return <Question7Caster setActualView={setActualView} userData={userData} />;
+        case 8:
+          return <Question8Caster setActualView={setActualView} userData={userData} />;
       }
     }
     setRenderView(changeView(actualView))
