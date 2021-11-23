@@ -243,6 +243,10 @@
       }
     }
 
+    &-question {
+      height: calc(100vh - 48px);
+    }
+
     .bottom-water {
       bottom: -40px;
     }
