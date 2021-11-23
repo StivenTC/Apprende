@@ -2,11 +2,11 @@ import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../assets/altavoz.png"
 
-export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, nextIDView, skipSolution = false }) => {
+export const ConclusionTemplate = ({ goView, ImgConclusion, ImgSolution, solutionStyle, nextIDView, skipSolution = false }) => {
   const [showSolution, setShowSolution] = useState(false);
 
   const Solution = () => {
-    return <div className="focus-conclusion-content">
+    return <div className="focus-conclusion-content" style={solutionStyle}>
       <h2>Solución</h2>
       <ImgSolution />
     </div>
