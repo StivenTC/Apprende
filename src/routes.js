@@ -15,6 +15,8 @@ import { Question3 } from './pages/ai2/question3/Question3';
 import { Llamas } from './pages/ai2/llamas/Llamas';
 import CasterAI3 from './pages/ai3/Caster';
 import { Question9 } from './pages/ai/question9/Question9';
+import { Ballons } from './pages/ai/question-5/Balloons';
+import { Question5 } from './pages/ai3/question5/Question5';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -38,6 +40,8 @@ export default function AppRoutes() {
         <Route exact path="/llamas-2" component={Llamas} />
         <Route exact path="/llamas-3" component={Question3} />
         <Route exact path="/question-9" component={Question9} />
+        <Route exact path="/question-5" component={Ballons} />
+        <Route exact path="/question-5-ai3" component={Question5} />
       </Switch>
     </Router>
   );
