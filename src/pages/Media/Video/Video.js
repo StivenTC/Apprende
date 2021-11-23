@@ -1,6 +1,7 @@
 import robot from "../../../assets/robot.svg";
 import { Header } from "../../../components/layout/Header/Header";
 import VideoAngela from '../../../assets/video-explo.mp4';
+import VideoComparar from '../../../assets/video-comparar.mp4';
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -9,15 +10,19 @@ import { useEffect, useState } from "react";
 export default function VideoFraccion() {
 
   useEffect(() => {
-    let elem = document.getElementById("Appvideo");
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen();
+    try {
+      let elem = document.getElementById("Appvideo");
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    } catch (error) {
+      console.log("no aceptó pantalla completa", error)
     }
   }, [])
 
@@ -35,6 +40,10 @@ export default function VideoFraccion() {
     switch (currentVideo) {
       default:
       case "exploracion":
+        src = VideoAngela
+      case "comparar":
+        src = VideoComparar
+      case "equivalente":
         src = VideoAngela
     }
     return src

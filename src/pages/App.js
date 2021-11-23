@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BiRightArrowAlt } from 'react-icons/bi';
 import { Link, useHistory } from 'react-router-dom';
 import Logo from "../assets/Apprende blanco.png";
 
@@ -99,41 +100,6 @@ function App() {
   //   },
   // ]
 
-  const combos = [
-    {
-      combo: "Día 1 / Míércoles",
-      activities: [
-        {
-          name: "1. ¿Qué tanto sabes de comparar fracciones?",
-          route: "https://www.surveys.online/jfe/form/SV_b8wHHerVDfK9dEW"
-        },
-        {
-          name: "break"
-        },
-        {
-          name: "2. ¿Qué tanto sabes de fracciones?",
-          route: "https://www.surveys.online/jfe/form/SV_24ukwgHNV2NYltc"
-        },
-        {
-          name: "3. Exploración",
-          route: "/exploracion"
-        },
-        {
-          name: "4. Video 1",
-          route: "/video?media=exploracion"
-        },
-        {
-          name: "5. Infografia 1",
-          route: "https://forms.gle/cCbNgCqT4yuzy2M26"
-        },
-        {
-          name: "6. Entrenamiento 1",
-          route: "/actividades-interactivas"
-        }
-      ]
-    }
-  ]
-
   const [name] = useState(() => {
     const lsData = "userData";
     // getting stored value
@@ -149,6 +115,43 @@ function App() {
     return initialValue || { combo: "" };
   });
 
+  const combos = [
+    {
+      combo: "Día 1 / Miércoles",
+      activities: [
+        {
+          name: "1. ¿Qué tanto sabes de comparar fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_b8wHHerVDfK9dEW" + `#${name.Nombre}`,
+          target: '_blank'
+        },
+        {
+          name: "break"
+        },
+        {
+          name: "2. Exploración",
+          route: "/exploracion" + `#${name.Nombre}`,
+        },
+        {
+          name: "3. Video 1",
+          route: "/video?media=exploracion" + `#${name.Nombre}`,
+        },
+        {
+          name: "4. Infografia 1",
+          route: "https://forms.gle/cCbNgCqT4yuzy2M26" + `#${name.Nombre}`,
+          target: '_blank'
+        },
+        {
+          name: "5. Entrenamiento 1",
+          route: "/actividades-interactivas" + `#${name.Nombre}`,
+        },
+        {
+          name: "6. ¿Qué tanto sabes de fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_24ukwgHNV2NYltc" + `#${name.Nombre}`,
+          target: '_blank'
+        }
+      ]
+    }
+  ]
   useEffect(() => {
     if (name.length <= 0) {
       history.push("/registro");
@@ -158,7 +161,6 @@ function App() {
   const selectCombo = (name) => {
     let currentCombo = combos.find(el => el.combo === name)
     localStorage.setItem("combo", JSON.stringify(currentCombo));
-    console.log(currentCombo)
     setActualCombo(currentCombo)
   }
   console.log(actualCombo)
@@ -186,17 +188,28 @@ function App() {
           actualCombo.combo.length > 1 ?
             actualCombo.activities.map((combo) =>
               combo.name !== "break" ?
-                <Link key={combo.name} to={combo.route}>
+                <a key={combo.name} href={combo.route} target={combo.target} className="link-activity">
                   <button className="go-btn">{combo.name}</button>
-                </Link> :
+                </a> :
                 <p className="break-text">¡Toma un descanso!</p>
             ) :
             combos.map((combo) =>
-              <button
-                onClick={() => selectCombo(combo.combo)}
-                key={combo.combo}
-                className="go-btn">{combo.combo}</button>
+              <a key={combo.combo} className="link-activity">
+                <button
+                  onClick={() => selectCombo(combo.combo)}
+                  className="go-btn">{combo.combo}</button>
+              </a>
             )
+        }
+        {
+          actualCombo.combo.length > 1 &&
+          <button
+            className="btn-next"
+            onClick={() => history.push("/gracias")}>
+            Guardar sesión
+            <BiRightArrowAlt />
+          </button>
+
         }
       </div>
     </div>

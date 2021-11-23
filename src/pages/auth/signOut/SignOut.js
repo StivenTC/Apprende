@@ -17,8 +17,9 @@ export const SignOut = () => {
 
     saveDatainSheets(dataOrganized).then(() => {
       localStorage.clear();
-      history.push("/");
+      window.open("https://www.surveys.online/jfe/form/SV_6lr4whbXDVfuaZ8", "_blank");
       setSavingData(false)
+      history.push("/");
     }
     )
   }
