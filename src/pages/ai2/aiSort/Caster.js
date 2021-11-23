@@ -6,7 +6,7 @@ import { AISortPresentation } from './Presentation';
 import { AISortQuestion } from './Question';
 
 function AISortCaster({ setActualView, saveUserData, userData }) {
-  const [actualView, goView] = useState(0)
+  const [actualView, goView] = useState(21212)
   const [renderView, setRenderView] = useState(0)
   const [result, setResult] = useState(false)
 
@@ -15,11 +15,11 @@ function AISortCaster({ setActualView, saveUserData, userData }) {
       switch (view) {
         default:
         case 0:
-          return <AISortPresentation goView={goView}/>;
+          return <AISortPresentation goView={goView} />;
         case 1:
-          return <AISort goView={goView} setResult={setResult} />;
+          return <AISort goView={goView} setResult={setResult} nextQuestion={setActualView} />;
         case 2:
-          return <AISortConclusion goView={goView} />;
+          return <AISortConclusion goView={setActualView} />;
         case 3:
           return <AISortQuestion nextActivity={setActualView} result={result} />;
       }
@@ -29,7 +29,7 @@ function AISortCaster({ setActualView, saveUserData, userData }) {
 
   return (
     <>
-      <Header goView={setActualView} actualView={1} />
+      <Header goView={setActualView} actualView={6} />
       {renderView}
     </>
 

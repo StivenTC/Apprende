@@ -8,6 +8,7 @@ import RockOff from "../../../assets/rock_off.png";
 export const Question2 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE2-Reto 2',
     description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
     answer: ['1/7', '3/7', '6/7'],
     options: [
@@ -89,6 +90,6 @@ export const Question2 = ({ goView, setResult, nextActivity }) => {
       setResult={setResult}
       nextActivity={nextActivity}
       nextQuestion={3}
-      question={question}/>
+      question={question} />
   )
 }

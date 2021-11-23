@@ -64,10 +64,10 @@ export const Comparation = ({ goView, nextActivity, setResult, question, nextQue
     setDataAnswers(ans)
 
     let data = {
-      'ENTRE2-Reto 2- Intento 1': dataAnswers[0],
-      'ENTRE2-Reto 2- Intento 2': dataAnswers[1],
-      'ENTRE2-Reto 2- Intento 3': dataAnswers[2],
-      'ENTRE2-Reto 2 Veces': attempts - 1,
+      [`${question.id}- Intento 1`]: dataAnswers[0],
+      [`${question.id}- Intento 2`]: dataAnswers[1],
+      [`${question.id}- Intento 3`]: dataAnswers[2],
+      [`${question.id} veces`]: attempts - 1,
     }
     if (selectOption === question.answer) {
       saveActivity(data)
@@ -79,14 +79,13 @@ export const Comparation = ({ goView, nextActivity, setResult, question, nextQue
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      data['ENTRE2-Reto 2 Veces'] = attempts
+      data[`${question.id} veces`] = attempts
       saveActivity(data)
       setResult(false)
       //saveUser({ ...userData, aiComparations: false })
       goView(2)
     }
   }
-  console.log(selectOption)
   return (
     <div className="ai-comparations">
       <div className="ai-comparations-body">

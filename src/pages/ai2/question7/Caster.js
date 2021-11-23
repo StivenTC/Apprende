@@ -14,9 +14,9 @@ function Question7Caster({ setActualView, saveUserData, userData }) {
       switch (view) {
         default:
         case 0:
-          return <Presentation goView={goView}/>;
+          return <Presentation goView={goView} />;
         case 1:
-          return <Question7 goView={goView} setResult={setResult} nextActivity={setActualView}/>;
+          return <Question7 goView={goView} setResult={setResult} nextActivity={setActualView} />;
         case 2:
           return <Conclusion nextActivity={setActualView} />;
       }
@@ -26,7 +26,7 @@ function Question7Caster({ setActualView, saveUserData, userData }) {
 
   return (
     <>
-      <Header goView={setActualView} actualView={1} />
+      <Header goView={setActualView} actualView={7} />
       {renderView}
     </>
 

@@ -107,7 +107,7 @@ export const AIConclusion = ({ nextActivity }) => {
 
   const nextView = () => {
     if (showSolution) {
-      nextActivity(3)
+      nextActivity(5)
     } else {
       setShowSolution(true)
     }

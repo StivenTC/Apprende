@@ -5,6 +5,7 @@ import { Comparation } from "../templates/Comparation";
 export const Question7 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE2-Reto 7',
     type: "FRACTION",
     title: "Reto 7",
     description: "<strong>Compara</strong> las dos fracciones usando el símbolo correcto.",
@@ -34,6 +35,6 @@ export const Question7 = ({ goView, setResult, nextActivity }) => {
       setResult={setResult}
       nextActivity={nextActivity}
       nextQuestion={8}
-      question={question}/>
+      question={question} />
   )
 }

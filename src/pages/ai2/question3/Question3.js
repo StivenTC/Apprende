@@ -12,6 +12,7 @@ import Atleta3Off from "../../../assets/atleta3_off.png";
 export const Question3 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE2-Reto 3',
     description: '<strong>Arrastra la figura de los tres atletas</strong> y ubícalos sobre la línea de salida según la fracción que les fue asignada:',
     answer: ['1/8', '4/8', '6/8'],
     options: [
@@ -75,6 +76,6 @@ export const Question3 = ({ goView, setResult, nextActivity }) => {
       setResult={setResult}
       nextActivity={nextActivity}
       nextQuestion={4}
-      question={question}/>
+      question={question} />
   )
 }

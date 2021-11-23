@@ -14,9 +14,9 @@ function ComparationsCaster({ setActualView, saveUserData, userData }) {
       switch (view) {
         default:
         case 0:
-          return <AIComparationsPresentation goView={goView}/>;
+          return <AIComparationsPresentation goView={goView} />;
         case 1:
-          return <AIComparations goView={goView} setResult={setResult} nextActivity={setActualView}/>;
+          return <AIComparations goView={goView} setResult={setResult} nextActivity={setActualView} />;
         case 2:
           return <AIConclusion nextActivity={setActualView} />;
       }
@@ -26,7 +26,7 @@ function ComparationsCaster({ setActualView, saveUserData, userData }) {
 
   return (
     <>
-      <Header goView={setActualView} actualView={2} />
+      <Header goView={setActualView} actualView={4} />
       {renderView}
     </>
 

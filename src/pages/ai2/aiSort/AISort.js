@@ -8,7 +8,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { AISortDnD } from "./AISortDnD";
 import saveActivity from "../../../helpers/saveActivity";
 
-export function AISort({ goView, setResult }) {
+export function AISort({ goView, setResult, nextQuestion }) {
   const QuarterA = () => {
     return <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M33.0988 0.0898438C25.4697 0.252575 18.4808 3.01669 12.9834 7.53083L33.0988 31.9159L33.0988 0.0898438Z" fill="#D9D9ED" />
@@ -95,10 +95,10 @@ export function AISort({ goView, setResult }) {
     setDataAnswers(ans)
 
     let data = {
-      'ENTRE2-Reto 3- Intento 1': dataAnswers[0],
-      'ENTRE2-Reto 3- Intento 2': dataAnswers[1],
-      'ENTRE2-Reto 3- Intento 3': dataAnswers[2],
-      'ENTRE2-Reto 3 Veces': attempts - 1,
+      'ENTRE2-Reto 6- Intento 1': dataAnswers[0],
+      'ENTRE2-Reto 6- Intento 2': dataAnswers[1],
+      'ENTRE2-Reto 6- Intento 3': dataAnswers[2],
+      'ENTRE2-Reto 6 Veces': attempts - 1,
     }
 
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
@@ -111,7 +111,7 @@ export function AISort({ goView, setResult }) {
       setFeedback('clue');
       setAttempts(attempts + 1);
     } else {
-      data['ENTRE2-Reto 3 Veces'] = attempts
+      data['ENTRE2-Reto 6 Veces'] = attempts
       saveActivity(data)
       setResult(false);
       //saveUser({ ...userData, aiSort: true })
@@ -130,7 +130,7 @@ export function AISort({ goView, setResult }) {
           <BiRightArrowAlt />
         </button>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={3} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={nextQuestion} view={7} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );

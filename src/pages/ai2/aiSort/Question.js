@@ -9,11 +9,11 @@ export function AISortQuestion({ nextActivity, result }) {
   const [textArea, setTextArea] = useState("");
   const nextView = () => {
     let data = {
-      'ENTRE2-Reto 3 - MI2': textArea,
+      'ENTRE2-Reto 6 - MI2': textArea,
     }
     if (textArea.length > 5) {
       saveActivity(data)
-      nextActivity(4)
+      nextActivity(7)
     }
   }
   return (

@@ -66,7 +66,7 @@ export const AISortConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(3)
+      goView(7)
     } else {
       setShowSolution(true)
     }

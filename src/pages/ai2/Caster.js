@@ -35,9 +35,7 @@ function CasterAI2() {
           return <Question7Caster setActualView={setActualView} userData={userData} />;
       }
     }
-
     setRenderView(changeView(actualView))
-
   }, [actualView, userData])
 
   return (
