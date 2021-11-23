@@ -19,7 +19,7 @@ export const Register = () => {
       <h1>Regístrate</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
-          <span>Nombre:
+          <span>Nombres y apellidos:
             {errors.Nombre && <span className="form-error">{errors.Nombre.message}</span>}
           </span>
           <input type="text" placeholder="Nombre" {...register("Nombre", { required: "Campo obligatorio", maxLength: { value: 36, message: 'Nombre demasiado largo' } })} />
