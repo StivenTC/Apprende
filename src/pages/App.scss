@@ -30,13 +30,34 @@
 
   button {
     user-select: none;
-    margin-top: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    margin-top: 26px;
+    font-size: 18px;
+    line-height: 18px;
     color: #082927;
     background: #06D6A0;
     border: 3px solid #27DCAD;
     box-shadow: 0px 5px 0px #06A67C;
+    box-shadow: none;
+  }
+
+  .btn-next {
+    font-size: 24px;
+    max-width: 260px;
+    margin-top: 32px;
+    box-shadow: 0px 5px 0px #06A67C;
+  }
+
+  .link-activity {
+    &:visited {
+      .go-btn {
+        background: #FFBC0F;
+        border: 3px solid #FFBC0F;
+      }
+
+      button {
+        box-shadow: 0px 5px 0px #FFBC0F;
+      }
+    }
   }
 
   @media (max-width: $mobile) {

@@ -41,7 +41,7 @@ function CasterAI() {
         case 9:
           return <Question9Caster setActualView={setActualView} userData={userData} />;
         case 10:
-          return <Redirect to='/gracias' />
+          return <Redirect to='/' />
       }
     }
 
