@@ -29,12 +29,12 @@ export const AISortPresentation = ({ goView }) => {
 
   return (
     <div className="presentation">
-      <h1>Reto 3</h1>
+      <h1>Reto 6</h1>
       <p>Utiliza los recuadros de abajo para ordenar de <strong>menor a mayor</strong> las fracciones representadas en los siguientes gráficos.</p>
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(8)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>

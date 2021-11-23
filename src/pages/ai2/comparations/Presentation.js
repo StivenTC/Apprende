@@ -33,12 +33,12 @@ export const AIComparationsPresentation = ({ goView }) => {
 
   return (
     <div className="llamas-presentation presentation">
-      <h1>Reto 2</h1>
+      <h1>Reto 4</h1>
       <p><strong>Compara</strong> las dos fracciones representadas en los siguientes gráficos usando el símbolo correcto.</p>
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(5)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>

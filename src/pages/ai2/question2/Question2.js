@@ -5,7 +5,7 @@ import ScaleImg from "../../../assets/recta_ai_2_pregunta_2.png";
 import Rock from "../../../assets/rock_on.png";
 import RockOff from "../../../assets/rock_off.png";
 
-export const Question2 = ({ goView, saveUser, userData }) => {
+export const Question2 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
@@ -84,13 +84,11 @@ export const Question2 = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <>
-      <Header goView={goView} actualView={2}/>
-      <NumberLine
-        goView={goView}
-        saveUser={saveUser}
-        userData={userData}
-        question={question}/>
-    </>
+    <NumberLine
+      goView={goView}
+      setResult={setResult}
+      nextActivity={nextActivity}
+      nextQuestion={3}
+      question={question}/>
   )
 }

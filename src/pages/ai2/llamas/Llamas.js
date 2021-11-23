@@ -5,7 +5,7 @@ import ScaleImg from "../../../assets/llamaScale.svg";
 import Llama from "../../../assets/llama.svg";
 import LlamaGhost from "../../../assets/llamaGhost.svg";
 
-export const Llamas = ({ goView, saveUser, userData }) => {
+export const Llamas = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
@@ -45,13 +45,11 @@ export const Llamas = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <>
-      <Header goView={goView} actualView={2}/>
-      <NumberLine
-        goView={goView}
-        saveUser={saveUser}
-        userData={userData}
-        question={question}/>
-    </>
+    <NumberLine
+      goView={goView}
+      nextActivity={nextActivity}
+      setResult={setResult}
+      nextQuestion={2}
+      question={question}/>
   )
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "../../../components/layout/Header/Header";
 import { Comparation } from "../templates/Comparation";
 
-export const AIComparations = ({ goView, saveUser, userData }) => {
+export const AIComparations = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     type: "PIE",
@@ -28,13 +28,11 @@ export const AIComparations = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <React.Fragment>
-      <Header goView={goView} actualView={2} />
-      <Comparation
-        goView={goView}
-        saveUser={saveUser}
-        userData={userData}
-        question={question}/>
-    </React.Fragment>
+    <Comparation
+      goView={goView}
+      nextActivity={nextActivity}
+      nextQuestion={3}
+      setResult={setResult}
+      question={question}/>
   )
 }

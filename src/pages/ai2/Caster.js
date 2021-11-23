@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { AISort } from './aiSort/AISort';
-import { AISortConclusion } from './aiSort/Conclusion';
-import { AISortPresentation } from './aiSort/Presentation';
-import { AISortQuestion } from './aiSort/Question';
-import { AIComparations } from './comparations/AIComparations';
-import { AIConclusion } from './comparations/Conclusion';
-import { AIComparationsPresentation } from './comparations/Presentation';
 import { Launcher } from './Launcher';
-import { LlamasConclusion } from './llamas/Conclusion';
-import { Llamas } from './llamas/Llamas';
-import { LlamasPresentation } from './llamas/Presentation';
-
+import LlamasCaster from './llamas/Caster';
+import Question2Caster from './question2/Caster';
+import Question3Caster from './question3/Caster';
+import ComparationsCaster from './comparations/Caster';
+import Question5Caster from './question5/Caster';
+import Question7Caster from './question7/Caster';
+import AISortCaster from './aiSort/Caster';
 
 function CasterAI2() {
   const [actualView, setActualView] = useState(0)
@@ -24,25 +20,19 @@ function CasterAI2() {
         case 0:
           return <Launcher goView={setActualView} userData={userData} />;
         case 1:
-          return <LlamasPresentation goView={setActualView} userData={userData} />;
+          return <LlamasCaster setActualView={setActualView} userData={userData} />;
         case 2:
-          return <Llamas goView={setActualView} userData={userData} saveUser={saveUserData} />;
+          return <Question2Caster setActualView={setActualView} userData={userData} />;
         case 3:
-          return <LlamasConclusion goView={setActualView} />;
+          return <Question3Caster setActualView={setActualView} userData={userData} />;
         case 4:
-          return <AIComparationsPresentation goView={setActualView} userData={userData} />;
+          return <ComparationsCaster setActualView={setActualView} userData={userData} />;
         case 5:
-          return <AIComparations goView={setActualView} userData={userData} saveUser={saveUserData} />;
+          return <Question5Caster setActualView={setActualView} userData={userData} />;
         case 6:
-          return <AIConclusion goView={setActualView} />;
+          return <AISortCaster setActualView={setActualView} userData={userData} />;
         case 7:
-          return <AISortPresentation goView={setActualView} userData={userData} />;
-        case 8:
-          return <AISort goView={setActualView} userData={userData} saveUser={saveUserData} />;
-        case 9:
-          return <AISortConclusion goView={setActualView} />;
-        case 10:
-          return <AISortQuestion goView={setActualView} userData={userData} />;
+          return <Question7Caster setActualView={setActualView} userData={userData} />;
       }
     }
 
