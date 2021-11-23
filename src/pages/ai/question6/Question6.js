@@ -49,7 +49,7 @@ export const Question6 = ({ goView, setResult, nextActivity }) => {
     ],
     clueTexts: [
       "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
-      "Para encontrar  fracciones equivalente a 6/10 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número"
+      "Para encontrar  fracciones equivalente a 5/7 debes multiplicar o dividir el numerador y el denominador de la fracción por el mismo número"
     ],
     answer: 3
   };

@@ -4,7 +4,6 @@
   overflow: hidden;
   position: relative;
   background: url("../../../assets/balloonsBkg.png") no-repeat center/100% 100%;
-  @include fix-height-header;
 
   &-body {
     position: relative;

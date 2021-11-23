@@ -54,14 +54,15 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
     value = parseInt(value);
     let isValid = false;
 
-    if (value > 0 && value < 100) {
+    if (value > -100 && value < 100 && value !== 0) {
       field.onChange(value);
       isValid = true;
     } else if (value === 0 || !value) {
       field.onChange('');
-    } else if (value >= 100) {
+      isValid = false;
+    } else if (value >= 100 || value <= -100) {
       const valueStr = value.toString();
-      field.onChange(parseInt(valueStr.substr(0, 2)));
+      field.onChange(parseInt(valueStr.substr(0, value > 0 ? 2 : 3)));
       isValid = true;
     }
 
@@ -94,7 +95,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
                 type="number"
                 onChange={e => {
                   const isValid = preventFromLength(e.target.value, field);
-                  if (isValid) { setIsValid((prevState) => ({ ...prevState, numerator: true })); }
+                  setIsValid((prevState) => ({ ...prevState, numerator: isValid }));
                 }} />
             )}
           />
@@ -110,7 +111,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
                 type="number"
                 onChange={e => {
                   const isValid = preventFromLength(e.target.value, field);
-                  if (isValid) { setIsValid((prevState) => ({ ...prevState, denominator: true })); }
+                  setIsValid((prevState) => ({ ...prevState, denominator: isValid }));
                 }} />
             )}
           />

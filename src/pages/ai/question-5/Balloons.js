@@ -8,7 +8,7 @@ import TopCloud from "../../../assets/top-clouds.svg";
 import BottomWater from "../../../assets/bottom-water.svg";
 import saveActivity from "../../../helpers/saveActivity";
 
-export function Ballons({ goView, setResult }) {
+export function Ballons({ goView, setResult, nextActivity }) {
 
   const [selectedDrop, setSelectedDrop] = useState('');
   const [showFeedback, setFeedback] = useState("");
@@ -137,7 +137,7 @@ export function Ballons({ goView, setResult }) {
           </div>
         </div>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={3} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={6} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );
