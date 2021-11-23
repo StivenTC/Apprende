@@ -71,7 +71,7 @@ export const BalloonsConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(3)
+      goView(6)
     } else {
       setShowSolution(true)
     }
