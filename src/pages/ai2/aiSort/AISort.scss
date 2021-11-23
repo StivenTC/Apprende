@@ -169,7 +169,7 @@
     }
   }
 
-  &.question8 {
+  &.question8, &.question5 {
     .ai-sort-activity-list-bkg {
       opacity: 0.9;
     }
@@ -184,6 +184,26 @@
       path {
         fill: #28D2EE;
       }
+    }
+  }
+
+  &.question5 {
+    .ai-sort-activity-card {
+      &.pie {
+        &-1 {
+          bottom: 9px;
+          left: 4px;
+        }
+  
+        &-2 {
+          left: 112px;
+        }
+  
+        &-3 {
+          top: 45px;
+          right: 4px;
+        }
+      } 
     }
   }
 
