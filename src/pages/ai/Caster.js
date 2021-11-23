@@ -9,7 +9,7 @@ import Question7Caster from './question7/Caster';
 import Question8Caster from './question8/Caster';
 import Question9Caster from './question9/Caster';
 import Question5Caster from './question-5/Caster';
-import  { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 function CasterAI() {
   const [actualView, setActualView] = useState(0)
@@ -41,7 +41,7 @@ function CasterAI() {
         case 9:
           return <Question9Caster setActualView={setActualView} userData={userData} />;
         case 10:
-          return <Redirect to='/gracias'/>
+          return <Redirect to='/gracias' />
       }
     }
 

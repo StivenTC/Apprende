@@ -6,6 +6,7 @@ import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { useForm, Controller } from "react-hook-form";
 import "./Question9.scss"
+import saveActivity from "../../../helpers/saveActivity";
 
 export const Question9 = ({ goView, setResult, nextActivity }) => {
 
@@ -13,6 +14,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
   const [attempts, setAttempts] = useState(1);
   const [isValid, setIsValid] = useState({ numerator: false, denominator: false });
   const { getValues, control } = useForm();
+  const [dataAnswers, setDataAnswers] = useState([]);
 
   const validate = () => {
     return isValid.numerator && isValid.denominator;
@@ -21,19 +23,32 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
   const nextActivityAction = () => {
     const numerator = getValues('numerator');
     const denominator = getValues('denominator');
+    let ans = dataAnswers;
+    ans.push(`${numerator}/${denominator}`)
+    setDataAnswers(ans)
 
+    let data = {
+      [`ENTRE1-Reto 9- Intento 1`]: dataAnswers[0],
+      [`ENTRE1-Reto 9- Intento 2`]: dataAnswers[1],
+      [`ENTRE1-Reto 9- Intento 3`]: dataAnswers[2],
+      [`ENTRE1-Reto 9 veces`]: attempts - 1,
+    }
     if (numerator === denominator) {
       setFeedback('correct')
+      saveActivity(data)
       setResult(true)
       //saveUser({ ...userData, selectQuarter: true })
     } else if (attempts < 3) {
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      setResult(false)
       //saveUser({ ...userData, selectQuarter: false })
+      data[`ENTRE1-Reto 9 veces`] = attempts;
+      setResult(false)
+      saveActivity(data)
       goView(2)
     }
+    console.log(data)
   }
 
   const preventFromLength = (value, field) => {
@@ -107,7 +122,7 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
         </button>
 
         {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={10} />}
-        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts}/>}
+        {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       </div>
     </div>
   )
