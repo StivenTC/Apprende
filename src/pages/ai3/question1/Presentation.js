@@ -6,7 +6,7 @@ export const Presentation1 = ({ goView }) => {
 
   const presentation = {
     title: 'Reto 1',
-    description: 'Selecciona el gráfico que representa una fracción equivalente a la fracción que encuentras en la tarjeta:',
+    description: '<strong>Compara</strong> las dos fracciones representadas en los siguientes gráficos usando el símbolo correcto.',
     image: PresentationImage,
     submit: {
       label: '¡Vamos!'
