@@ -56,7 +56,8 @@ export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActi
           <NumberLineDnD
             cards={question.options || []}
             answer={setSelecCards}
-            scale={question.scaleImage} />
+            scale={question.scaleImage}
+            classNameOptions={question.classNameOptions}/>
         </div>
         <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           Enviar

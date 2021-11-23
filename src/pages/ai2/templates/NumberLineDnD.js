@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-export const NumberLineDnD = ({ cards, answer, scale }) => {
+export const NumberLineDnD = ({ cards, answer, scale, classNameOptions }) => {
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -176,7 +176,7 @@ export const NumberLineDnD = ({ cards, answer, scale }) => {
                   index={index}>
                   {(provided, snapshot) => (
                     <div
-                      className={`llamas-activity-card`}
+                      className={`llamas-activity-card ${classNameOptions}`}
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
@@ -184,7 +184,7 @@ export const NumberLineDnD = ({ cards, answer, scale }) => {
                         snapshot.isDragging,
                         provided.draggableProps.style,
                         item.color
-                      ), ...item.styles.position }}>
+                      ) }}>
                       <div className="llamas-quarter">
                         <span>{item.quarter.split(/\//)[0]}</span>
                         <span>{item.quarter.split(/\//)[1]}</span>

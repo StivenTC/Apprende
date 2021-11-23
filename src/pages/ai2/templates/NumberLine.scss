@@ -117,6 +117,34 @@
         &:nth-child(3) {
           right: 41px;
         }
+
+        &.question-2-dad {
+          &:first-child {
+            left: 30px;
+          }
+  
+          &:nth-child(2) {
+            left: 106px;
+          }
+  
+          &:nth-child(3) {
+            right: 52px;
+          }
+        }
+
+        &.question-3-dad {
+          &:first-child {
+            left: 25px;
+          }
+  
+          &:nth-child(2) {
+            left: 133px;
+          }
+  
+          &:nth-child(3) {
+            right: 73px;
+          }
+        }
       }
 
       >img {
@@ -218,6 +246,34 @@
 
           &:nth-child(3) {
             right: 38px;
+          }
+
+          &.question-2-dad {
+            &:first-child {
+              left: 30px;
+            }
+  
+            &:nth-child(2) {
+              left: 106px;
+            }
+  
+            &:nth-child(3) {
+              right: 52px;
+            }
+          }
+
+          &.question-3-dad {
+            &:first-child {
+              left: 25px;
+            }
+    
+            &:nth-child(2) {
+              left: 133px;
+            }
+    
+            &:nth-child(3) {
+              right: 73px;
+            }
           }
         }
 
