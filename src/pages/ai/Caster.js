@@ -12,7 +12,7 @@ import Question5Caster from './question-5/Caster';
 import { Redirect } from 'react-router-dom'
 
 function CasterAI() {
-  const [actualView, setActualView] = useState(0)
+  const [actualView, setActualView] = useState(5)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
 

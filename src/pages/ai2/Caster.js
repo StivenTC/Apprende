@@ -8,9 +8,11 @@ import Question5Caster from './question5/Caster';
 import Question7Caster from './question7/Caster';
 import AISortCaster from './aiSort/Caster';
 import Question8Caster from './question8/Caster';
+import Question9Caster from './question9/Caster';
+import { Redirect } from 'react-router';
 
 function CasterAI2() {
-  const [actualView, setActualView] = useState(8)
+  const [actualView, setActualView] = useState(0)
   const [renderView, setRenderView] = useState(0)
   const [userData, saveUserData] = useState({ complete: 0 })
 
@@ -36,6 +38,10 @@ function CasterAI2() {
           return <Question7Caster setActualView={setActualView} userData={userData} />;
         case 8:
           return <Question8Caster setActualView={setActualView} userData={userData} />;
+        case 9:
+          return <Question9Caster setActualView={setActualView} userData={userData} />;
+        case 10:
+          return <Redirect to='/gracias' />
       }
     }
     setRenderView(changeView(actualView))

@@ -52,7 +52,7 @@ export function Ballons({ goView, setResult }) {
     </svg>;
   };
   const selectDrop = (id) => {
-    let correctAnswers = [0, 1, 4];
+    let correctAnswers = [1, 2, 4];
     let okAnswers = corrects;
     let ans = dataAnswers;
     ans.push(quarters[id])
