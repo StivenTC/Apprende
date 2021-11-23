@@ -34,7 +34,7 @@ export const Register = () => {
           <span>Colegio:
             {errors.Colegio && <span className="form-error">{errors.Colegio.message}</span>}
           </span>
-          <input type="text" readOnly placeholder="Colegio" {...register("Colegio", { required: "Campo obligatorio", maxLength: 200 })} value="Unidad Pedagógica" />
+          <input type="text" readOnly placeholder="Colegio" {...register("Colegio", { required: "Campo obligatorio", maxLength: 200 })} value="Colegio Argelia" />
         </label>
         <label>
           <span>Curso:
