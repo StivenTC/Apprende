@@ -4,7 +4,7 @@ import Altavoz from "../../../assets/altavoz.png"
 import { Header } from "../../../components/layout/Header/Header";
 import LlamasBkg from "../../../assets/llama-bkg.png";
 
-export const LlamasConclusion = ({ goView }) => {
+export const LlamasConclusion = ({ nextActivity }) => {
   const [showSolution, setShowSolution] = useState(false);
 
   const Solution = () => {
@@ -51,14 +51,13 @@ export const LlamasConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(0)
+      nextActivity(2)
     } else {
       setShowSolution(true)
     }
   }
   return (
     <div className={`focus-conclusion llamas-conclusion ${showSolution && 'llamas'}`}>
-      <Header goView={goView} actualView={3} />
       {showSolution ?
         <Solution /> : <div className="focus-conclusion-content">
           <img src={Altavoz} alt="Una pista" />

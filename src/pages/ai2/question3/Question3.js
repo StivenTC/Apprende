@@ -9,7 +9,7 @@ import Atleta2Off from "../../../assets/atleta2_off.png";
 import Atleta3 from "../../../assets/atleta3_on.png";
 import Atleta3Off from "../../../assets/atleta3_off.png";
 
-export const Question3 = ({ goView, saveUser, userData }) => {
+export const Question3 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     description: '<strong>Arrastra la figura de los tres atletas</strong> y ubícalos sobre la línea de salida según la fracción que les fue asignada:',
@@ -70,13 +70,11 @@ export const Question3 = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <>
-      <Header goView={goView} actualView={2}/>
-      <NumberLine
-        goView={goView}
-        saveUser={saveUser}
-        userData={userData}
-        question={question}/>
-    </>
+    <NumberLine
+      goView={goView}
+      setResult={setResult}
+      nextActivity={nextActivity}
+      nextQuestion={4}
+      question={question}/>
   )
 }

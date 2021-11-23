@@ -6,7 +6,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { NumberLineDnD } from "../templates/NumberLineDnD";
 import saveActivity from "../../../helpers/saveActivity";
 
-export const NumberLine = ({ goView, saveUser, userData, question }) => {
+export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActivity }) => {
 
   const [selectCards, setSelecCards] = useState([]);
   const [showFeedback, setFeedback] = useState("");
@@ -17,7 +17,7 @@ export const NumberLine = ({ goView, saveUser, userData, question }) => {
     return selectCards.length >= 3
   }
 
-  const nextActivity = () => {
+  const nextActivityAction = () => {
     let answered = selectCards.map((t) => t.quarter)
 
     let ans = dataAnswers;
@@ -34,7 +34,8 @@ export const NumberLine = ({ goView, saveUser, userData, question }) => {
     if (JSON.stringify(question.answer) === JSON.stringify(answered)) {
       saveActivity(data)
       setFeedback('correct')
-      saveUser({ ...userData, llamas: true })
+      setResult(true);
+      //saveUser({ ...userData, llamas: true })
     } else if (attempts < 3) {
       setSelecCards([])
       setFeedback('clue')
@@ -42,8 +43,9 @@ export const NumberLine = ({ goView, saveUser, userData, question }) => {
     } else {
       data['ENTRE2-Reto 1 Veces'] = attempts
       saveActivity(data)
-      saveUser({ ...userData, llamas: false })
-      goView(3)
+      setResult(false);
+      //saveUser({ ...userData, llamas: false })
+      goView(2)
     }
   }
   return (
@@ -56,13 +58,13 @@ export const NumberLine = ({ goView, saveUser, userData, question }) => {
             answer={setSelecCards}
             scale={question.scaleImage}/>
         </div>
-        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           Enviar
           <BiRightArrowAlt />
         </button>
 
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={nextQuestion} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
       <img className="bottom-bkg" src={question.backgroundImage} alt="landscape green" />
     </div>

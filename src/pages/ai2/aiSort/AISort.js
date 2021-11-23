@@ -8,7 +8,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { AISortDnD } from "./AISortDnD";
 import saveActivity from "../../../helpers/saveActivity";
 
-export function AISort({ goView, saveUser, userData }) {
+export function AISort({ goView, setResult }) {
   const QuarterA = () => {
     return <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M33.0988 0.0898438C25.4697 0.252575 18.4808 3.01669 12.9834 7.53083L33.0988 31.9159L33.0988 0.0898438Z" fill="#D9D9ED" />
@@ -104,7 +104,8 @@ export function AISort({ goView, saveUser, userData }) {
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
       saveActivity(data)
       setFeedback('correct');
-      saveUser({ ...userData, aiSort: true })
+      setResult(true);
+      //saveUser({ ...userData, aiSort: true })
     } else if (attempts < 3) {
       setSelecCards([]);
       setFeedback('clue');
@@ -112,13 +113,13 @@ export function AISort({ goView, saveUser, userData }) {
     } else {
       data['ENTRE2-Reto 3 Veces'] = attempts
       saveActivity(data)
-      saveUser({ ...userData, aiSort: true })
-      goView(9);
+      setResult(false);
+      //saveUser({ ...userData, aiSort: true })
+      goView(2);
     }
   };
   return (
     <div className="ai-sort">
-      <Header goView={goView} actualView={2} />
       <div className="ai-sort-body">
         <p>Utiliza los recuadros de abajo para ordenar de <strong>menor a mayor</strong> las fracciones representadas en los siguientes gráficos.</p>
         <div className="ai-sort-activity">
@@ -129,7 +130,7 @@ export function AISort({ goView, saveUser, userData }) {
           <BiRightArrowAlt />
         </button>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={10} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={3} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );

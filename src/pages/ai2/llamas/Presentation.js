@@ -56,7 +56,7 @@ export const LlamasPresentation = ({ goView }) => {
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(2)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>
