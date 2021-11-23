@@ -25,10 +25,10 @@ export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActi
     setDataAnswers(ans)
 
     let data = {
-      'ENTRE2-Reto 1- Intento 1': dataAnswers[0],
-      'ENTRE2-Reto 1- Intento 2': dataAnswers[1],
-      'ENTRE2-Reto 1- Intento 3': dataAnswers[2],
-      'ENTRE2-Reto 1 Veces': attempts - 1,
+      [`${question.id}- Intento 1`]: dataAnswers[0],
+      [`${question.id}- Intento 2`]: dataAnswers[1],
+      [`${question.id}- Intento 3`]: dataAnswers[2],
+      [`${question.id} veces`]: attempts - 1,
     }
 
     if (JSON.stringify(question.answer) === JSON.stringify(answered)) {
@@ -41,7 +41,7 @@ export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActi
       setFeedback('clue')
       setAttempts(attempts + 1)
     } else {
-      data['ENTRE2-Reto 1 Veces'] = attempts
+      data[`${question.id} veces`] = attempts
       saveActivity(data)
       setResult(false);
       //saveUser({ ...userData, llamas: false })
@@ -56,7 +56,7 @@ export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActi
           <NumberLineDnD
             cards={question.options || []}
             answer={setSelecCards}
-            scale={question.scaleImage}/>
+            scale={question.scaleImage} />
         </div>
         <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           Enviar

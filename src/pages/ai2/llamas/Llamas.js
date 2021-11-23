@@ -8,6 +8,7 @@ import LlamaGhost from "../../../assets/llamaGhost.svg";
 export const Llamas = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE2-Reto 1',
     description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
     answer: ['1/8', '3/8', '7/8'],
     options: [
@@ -50,6 +51,6 @@ export const Llamas = ({ goView, setResult, nextActivity }) => {
       nextActivity={nextActivity}
       setResult={setResult}
       nextQuestion={2}
-      question={question}/>
+      question={question} />
   )
 }
