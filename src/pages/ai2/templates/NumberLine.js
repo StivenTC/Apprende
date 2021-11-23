@@ -45,7 +45,7 @@ export const NumberLine = ({ goView, setResult, question, nextQuestion, nextActi
       saveActivity(data)
       setResult(false);
       //saveUser({ ...userData, llamas: false })
-      goView(3)
+      goView(2)
     }
   }
   return (
