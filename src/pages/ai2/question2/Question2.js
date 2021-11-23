@@ -10,6 +10,7 @@ export const Question2 = ({ goView, setResult, nextActivity }) => {
   const question = {
     id: 'ENTRE2-Reto 2',
     description: 'Arrastra y organiza las fracciones de <strong>menor a mayor</strong> sobre la recta numérica.',
+    classNameOptions: 'question-2-dad',
     answer: ['1/7', '3/7', '6/7'],
     options: [
       {
