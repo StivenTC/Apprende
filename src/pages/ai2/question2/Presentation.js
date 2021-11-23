@@ -1,16 +1,18 @@
 import React from "react";
-import { PresentationTemplate } from "../../templates/PresentationTemplate";
+import { PresentationBkgTemplate } from "../../templates/PresentationBkgTemplate";
 
 export const Presentation = ({ goView }) => {
 
   const presentation = {
     title: 'Reto 2',
-    description: 'Selecciona el gráfico que representa una fracción equivalente a la fracción que encuentras en la tarjeta:',
-    image: '',
+    description: 'Juliana es una exploradora que debe cruzar un río. Para eso, debe arrastrar y <strong>organizar las fracciones grabadas en las piedras de menor a mayor</strong>. ¡Ayuda a Juliana!',
+    image: '/images/AI/nina.png',
+    backgroundImage: '/images/AI/rock_bkg.png',
+    backgroundColor: '#35bfa5',
     submit: {
       label: '¡Vamos!'
     }
   };
 
-  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={1}/>;
+  return <PresentationBkgTemplate goView={goView} presentation={presentation} nextPage={1}/>;
 };
