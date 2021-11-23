@@ -34,7 +34,7 @@ export const Presentation3 = ({ goView }) => {
       <InfoPic />
       <button
         className="btn-next"
-        onClick={() => goView(8)}>
+        onClick={() => goView(1)}>
         ¡Vamos!
         <BiRightArrowAlt />
       </button>

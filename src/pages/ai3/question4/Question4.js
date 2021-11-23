@@ -1,8 +1,7 @@
 import React from "react";
-import { Header } from "../../../components/layout/Header/Header";
 import { Comparation } from "../../ai2/templates/Comparation";
 
-export const Question4 = ({ goView, saveUser, userData }) => {
+export const Question4 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     type: "FRACTION",
@@ -29,13 +28,11 @@ export const Question4 = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <React.Fragment>
-      <Header goView={goView} actualView={2} />
-      <Comparation
-        goView={goView}
-        saveUser={saveUser}
-        userData={userData}
-        question={question}/>
-    </React.Fragment>
+    <Comparation
+      goView={goView}
+      setResult={setResult}
+      nextActivity={nextActivity}
+      nextQuestion={5}
+      question={question}/>
   )
 }

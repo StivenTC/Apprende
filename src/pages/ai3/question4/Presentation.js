@@ -12,5 +12,5 @@ export const Presentation4 = ({ goView }) => {
     }
   };
 
-  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={4} />;
+  return <PresentationTemplate goView={goView} presentation={presentation} nextPage={1} />;
 };

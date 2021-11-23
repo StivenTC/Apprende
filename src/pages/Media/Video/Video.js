@@ -1,8 +1,6 @@
 import robot from "../../../assets/robot.svg";
 import { Header } from "../../../components/layout/Header/Header";
 import VideoAngela from '../../../assets/video-explo.mp4';
-import VideoComparacion from '../../../assets/video-comparar.mp4';
-import VideoEquivalentes from '../../../assets/U2-S2-V3-2 de junio.mp4';
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -38,10 +36,6 @@ export default function VideoFraccion() {
       default:
       case "exploracion":
         src = VideoAngela
-      case "comparar":
-        src = VideoComparacion
-      case "equivalentes":
-        src = VideoEquivalentes
     }
     return src
   }

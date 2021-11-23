@@ -1,7 +1,7 @@
 import { ConclusionTemplate } from "../../templates/ConclusionTemplate";
 import Conclusionimage from "../../../assets/Conclusions/ai3-q1.png";
 
-export const Conclusion1 = ({ goView }) => {
+export const Conclusion1 = ({ nextActivity }) => {
   const ImgConclusion = () => {
     return <svg width="319" height="311" viewBox="0 0 319 311" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="0.5" y="207.5" width="318" height="103" rx="7.5" fill="white" stroke="#EDEDFB" />
@@ -103,5 +103,5 @@ export const Conclusion1 = ({ goView }) => {
 
   }
 
-  return <ConclusionTemplate goView={goView} ImgConclusion={ImgConclusion} ImgSolution={ImgSolution} nextIDView={4} />
+  return <ConclusionTemplate goView={nextActivity} ImgConclusion={ImgConclusion} ImgSolution={ImgSolution} nextIDView={2} />
 }

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../../assets/altavoz.png"
-import { Header } from "../../../components/layout/Header/Header";
 import LlamasBkg from "../../../assets/llama-bkg.png";
 
 export const Conclusion3 = ({ goView }) => {
@@ -66,14 +65,13 @@ export const Conclusion3 = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(10)
+      goView(3)
     } else {
       setShowSolution(true)
     }
   }
   return (
     <div className={`focus-conclusion llamas-conclusion`}>
-      <Header goView={goView} actualView={3} />
       {showSolution ?
         <Solution /> : <div className="focus-conclusion-content">
           <img src={Altavoz} alt="Una pista" />

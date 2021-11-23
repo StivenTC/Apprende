@@ -6,7 +6,7 @@ export function Launcher({ goView, userData }) {
 
   return (
     <div className="launcher">
-      <h1>Entrenamiento 2</h1>
+      <h1>Entrenamiento 3</h1>
       <Link to="/">
         <img src={robot} alt='robot' />
       </Link>

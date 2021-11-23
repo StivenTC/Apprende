@@ -7,7 +7,7 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import createPie from "../../../components/shapes/CeatePie";
 import saveActivity from "../../../helpers/saveActivity";
 
-export const Comparation = ({ goView, saveUser, userData, question }) => {
+export const Comparation = ({ goView, nextActivity, setResult, question, nextQuestion }) => {
   const [selectOption, setSelectOption] = useState('');
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
@@ -58,7 +58,7 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
     return question.type === 'PIE';
   }
 
-  const nextActivity = () => {
+  const nextActivityAction = () => {
     let ans = dataAnswers;
     ans.push(String.fromCharCode(65 + selectOption))
     setDataAnswers(ans)
@@ -72,7 +72,8 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
     if (selectOption === question.answer) {
       saveActivity(data)
       setFeedback('correct')
-      saveUser({ ...userData, aiComparations: true })
+      setResult(true)
+      //saveUser({ ...userData, aiComparations: true })
     } else if (attempts < 3) {
       setSelectOption('')
       setFeedback('clue')
@@ -80,8 +81,9 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
     } else {
       data['ENTRE2-Reto 2 Veces'] = attempts
       saveActivity(data)
-      saveUser({ ...userData, aiComparations: false })
-      goView(6)
+      setResult(false)
+      //saveUser({ ...userData, aiComparations: false })
+      goView(2)
     }
   }
   console.log(selectOption)
@@ -137,12 +139,12 @@ export const Comparation = ({ goView, saveUser, userData, question }) => {
             </div>
           </div>
         </div>
-        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivity() : console.log("no posible")}>
+        <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => validate() ? nextActivityAction() : console.log("no posible")}>
           {question.submit.label}
           <BiRightArrowAlt />
         </button>
       </div>
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={nextQuestion} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={question.clueTexts} />}
     </div>
   )

@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "../../../components/layout/Header/Header";
 import { Comparation } from "../../ai2/templates/Comparation";
 
-export const Question2 = ({ goView, saveUser, userData }) => {
+export const Question2 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
     type: "PIE",
@@ -29,13 +29,11 @@ export const Question2 = ({ goView, saveUser, userData }) => {
   };
 
   return (
-    <React.Fragment>
-      <Header goView={goView} actualView={2} />
       <Comparation
         goView={goView}
-        saveUser={saveUser}
-        userData={userData}
+        nextActivity={nextActivity}
+        nextQuestion={3}
+        setResult={setResult}
         question={question}/>
-    </React.Fragment>
   )
 }
