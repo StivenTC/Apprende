@@ -1,9 +1,9 @@
-.balloons {
+.fishes {
   background-color: #0079DE;
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: url("../../../assets/balloonsBkg.png") no-repeat center/100% 100%;
+  background: url("../../../assets/fishesBkg.png") no-repeat center/100% 100%;
   @include fix-height-header;
 
   &-body {
@@ -15,13 +15,17 @@
     position: relative;
     z-index: 1;
 
+    h2 {
+      color: #ffffff;
+    }
+
     >p {
       margin: 24px auto;
       font-size: 21px;
       line-height: 25px;
       text-align: center;
       width: 320px;
-      color: #212121;
+      color: #ffffff;
     }
 
     &-quest {
@@ -86,28 +90,47 @@
     flex-wrap: wrap;
     max-width: 280px;
     margin: auto;
-    margin-bottom: 80px;
 
-    &:last-child {
-      margin-top: -80px;
-    }
 
     &-drop {
       cursor: pointer;
       position: relative;
       height: fit-content;
       @include flex-center;
+      height: 138px;
+      width: 100px;
+
+      &:first-child {
+        background-image: url("../../../assets/fishes/fish-a.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../../../assets/fishes/fish-b.png");
+      }
+
+      &:nth-child(3) {
+        background-image: url("../../../assets/fishes/fish-c.png");
+      }
+
+      &:nth-child(4) {
+        background-image: url("../../../assets/fishes/fish-d.png");
+      }
+
+      &:nth-child(5) {
+        background-image: url("../../../assets/fishes/fish-e.png");
+      }
+
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: auto;
 
       path {
         transition: all .5s ease;
       }
 
-      margin-bottom: -100px;
-
-
       &:not(:first-child) {
         &:nth-child(even) {
-          margin-top: 80px;
+          margin-top: 50px;
         }
 
       }
@@ -118,7 +141,8 @@
 
       .drop-splash {
         position: absolute;
-        top: -25px;
+        top: 38px;
+        right: 0;
         display: none;
         transition: all .5s ease;
       }
@@ -133,14 +157,14 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 22px;
+        top: 16px;
         margin: auto;
         opacity: 1;
         background: transparent;
 
         &:before {
+          width: 45px;
           background-color: #ffffff;
-          width: 65px;
         }
 
         span {
@@ -149,21 +173,17 @@
         }
       }
 
+      .water-drop {
+        display: none;
+        transition: all .5s ease-in;
+      }
+
       &.answered {
         pointer-events: none;
+        border: 1px dashed #68C4D3;
 
         .water-drop {
-          path {
-
-            &:nth-child(3),
-            &:first-child {
-              fill: #A1C74D;
-            }
-          }
-
-          g {
-            opacity: 0.4;
-          }
+          display: block;
         }
 
         .drop-splash {

@@ -6,6 +6,10 @@
   animation: slide-to-sky 15s linear infinite both;
 }
 
+.slide-to-waves {
+  animation: slide-to-waves 35s linear infinite both;
+}
+
 .scale-in-center {
   animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -41,6 +45,21 @@
 
   100% {
     transform: translateY(-610px);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-to-waves
+ * ----------------------------------------
+ */
+@keyframes slide-to-waves {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-1025px);
   }
 }
 
