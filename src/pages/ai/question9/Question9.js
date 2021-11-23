@@ -48,7 +48,6 @@ export const Question9 = ({ goView, setResult, nextActivity }) => {
       saveActivity(data)
       goView(2)
     }
-    console.log(data)
   }
 
   const preventFromLength = (value, field) => {

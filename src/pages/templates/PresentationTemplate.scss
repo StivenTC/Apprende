@@ -1,6 +1,7 @@
 .presentation-ai {
   overflow: auto;
   height: 100%;
+  @include fix-height-header;
   text-align: center;
   padding: 32px 46px;
 

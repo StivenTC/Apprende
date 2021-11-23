@@ -7,6 +7,7 @@
 
   &-correct {
     height: 100vh;
+    @include fix-height-header;
     background-color: #A1C74D;
     display: flex;
     align-items: center;
