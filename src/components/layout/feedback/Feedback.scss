@@ -6,10 +6,11 @@
   z-index: 1;
 
   &-correct {
-    height: 100vh;
-    @include fix-height-header;
+    height: 100%;
+    //@include fix-height-header;
     background-color: #A1C74D;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -102,6 +103,7 @@
 
   .btn-next {
     background-color: #37BCDA;
+    margin-top: 36px;
     width: 100%;
   }
 
