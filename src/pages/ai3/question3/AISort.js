@@ -95,10 +95,10 @@ export function Question3({ goView, setResult, nextActivity }) {
     setDataAnswers(ans)
 
     let data = {
-      'ENTRE2-Reto 3- Intento 1': dataAnswers[0],
-      'ENTRE2-Reto 3- Intento 2': dataAnswers[1],
-      'ENTRE2-Reto 3- Intento 3': dataAnswers[2],
-      'ENTRE2-Reto 3 Veces': attempts - 1,
+      'ENTRE3-Reto 3- Intento 1': dataAnswers[0],
+      'ENTRE3-Reto 3- Intento 2': dataAnswers[1],
+      'ENTRE3-Reto 3- Intento 3': dataAnswers[2],
+      'ENTRE3-Reto 3 Veces': attempts - 1,
     }
 
     if (JSON.stringify(corrects) === JSON.stringify(answered)) {
@@ -111,7 +111,7 @@ export function Question3({ goView, setResult, nextActivity }) {
       setFeedback('clue');
       setAttempts(attempts + 1);
     } else {
-      data['ENTRE2-Reto 3 Veces'] = attempts
+      data['ENTRE3-Reto 3 Veces'] = attempts
       saveActivity(data)
       setResult(false);
       //saveUser({ ...userData, aiSort: true })

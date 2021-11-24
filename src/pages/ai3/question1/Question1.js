@@ -5,6 +5,7 @@ import { Comparation } from "../../ai2/templates/Comparation";
 export const Question1 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE3-Reto 1',
     type: "PIE",
     title: "Reto 1",
     description: "<strong>Compara</strong> las dos fracciones representadas en los siguientes gráficos usando el símbolo correcto.",
@@ -29,11 +30,11 @@ export const Question1 = ({ goView, setResult, nextActivity }) => {
   };
 
   return (
-      <Comparation
-        goView={goView}
-        nextActivity={nextActivity}
-        nextQuestion={2}
-        setResult={setResult}
-        question={question} />
+    <Comparation
+      goView={goView}
+      nextActivity={nextActivity}
+      nextQuestion={2}
+      setResult={setResult}
+      question={question} />
   )
 }

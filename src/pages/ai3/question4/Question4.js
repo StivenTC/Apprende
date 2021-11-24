@@ -4,6 +4,7 @@ import { Comparation } from "../../ai2/templates/Comparation";
 export const Question4 = ({ goView, setResult, nextActivity }) => {
 
   const question = {
+    id: 'ENTRE3-Reto 4',
     type: "FRACTION",
     title: "Reto 4",
     description: "<strong>Compara</strong> las dos fracciones usando el símbolo correcto.",
@@ -33,6 +34,6 @@ export const Question4 = ({ goView, setResult, nextActivity }) => {
       setResult={setResult}
       nextActivity={nextActivity}
       nextQuestion={5}
-      question={question}/>
+      question={question} />
   )
 }
