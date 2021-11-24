@@ -16,7 +16,7 @@ function Question6Caster({ setActualView, saveUserData, userData }) {
         case 1:
           return <Question6 goView={goView} setResult={setResult} nextQuestion={setActualView} />;
         case 2:
-          return <Conclusion goView={setActualView} />;
+          return <Conclusion nextActivity={setActualView} />;
       }
     }
     setRenderView(changeView(actualView))

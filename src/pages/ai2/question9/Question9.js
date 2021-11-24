@@ -19,7 +19,7 @@ export function Question9({ goView, setResult }) {
 
   const quarters = ["3/7", "8/7", "5/7", "14/7", "7/7"];
   const clueTexts = [
-    "Las fracciones equivalentes representan la misma cantidad aunque el numerador y el denominador sean diferentes.",
+    "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para compararlas.",
     "Recuerda que para comparar fracciones que tienen el mismo denominador (en este caso 7), debes comparar los numeradores. Busca y selecciona los peces cuyo numerador es menor al numerador de 6/7."
   ];
   const Drop = () => {

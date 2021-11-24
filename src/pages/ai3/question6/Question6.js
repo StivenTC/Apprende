@@ -13,10 +13,19 @@ export function Question6({ goView, setResult, nextQuestion }) {
   const [corrects, setCorrects] = useState([]);
   const [dataAnswers, setDataAnswers] = useState([]);
 
+  const styleItem = "display: flex;flex-direction: row;justify-content: space-between;align-items: center;";
+
   const quarters = ["6/3", "1/5", "4/5", "1/3"];
   const clueTexts = [
     "¿Las fracciones de todas las aves tienen el mismo denominador? Si no es así, encuentra un denominador común entre todas ellas para poder compararlas.",
-    ""
+    `Las  fracciones de las aves tienen un mínimo común denominador: 45. Por eso la fracción del tablero se transforma en 20/45 y las de las aves quedan:
+     <div style="padding: 15px">
+      <div style="${styleItem}"><div>Ave 6/3</div><div>→</div><div style="width: 80px;">90/45</div></div>
+      <div style="${styleItem}"><div>Ave 1/5</div><div>→</div><div style="width: 80px;">9/45</div></div>
+      <div style="${styleItem}"><div>Ave 4/5</div><div>→</div><div style="width: 80px;">36/45</div></div>
+      <div style="${styleItem}"><div>Ave 1/3</div><div>→</div><div style="width: 80px;">15/45</div></div>
+     </div>
+     Como todas tienen el mismo denominador, selecciona las aves que tienen fracciones mayores a la del tablero, comparando los numeradores`
   ];
   const Drop = () => {
     return <svg className="water-drop" width="30" height="42" viewBox="0 0 44 42" fill="none" xmlns="http://www.w3.org/2000/svg">

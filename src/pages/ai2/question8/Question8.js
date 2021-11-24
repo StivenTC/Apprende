@@ -56,7 +56,7 @@ export function Question8({ goView, setResult, nextQuestion }) {
   const [attempts, setAttempts] = useState(1);
   const clueTexts = [
     "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
-    "Recuerda que para ordenar fracciones que tienen el mismo denominador (en este caso 7), ordenas los numeradores de menor a mayor."
+    "Recuerda que para ordenar fracciones que tienen el mismo denominador (en este caso 7), ordenas los numeradores de mayor a menor."
   ];
 
   const validate = () => {

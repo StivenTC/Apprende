@@ -1,11 +1,12 @@
 import { ConclusionTemplate } from "../../templates/ConclusionTemplate";
+import LlamasBkg from "../../../assets/birdsBkg.png";
 
 export const Conclusion = ({ nextActivity }) => {
 
   const ImgConclusion = () => <img src="/images/AI/conclusiones/3/p6_feedback.png" alt=""/>;
   const ImgSolucion = () => <img src="/images/AI/conclusiones/3/p6_solucion.png" alt=""/>;
-  const solutionStyle = {
-    background: `url("../../../assets/birdsBkg.png")no-repeat center/100% 100%`
+  const generalStyle = {
+    background: `url("${LlamasBkg}") no-repeat center/100% 100%`
   };
 
   return (
@@ -13,7 +14,7 @@ export const Conclusion = ({ nextActivity }) => {
       goView={nextActivity}
       ImgConclusion={ImgConclusion}
       ImgSolution={ImgSolucion}
-      solutionStyle={solutionStyle}
+      generalStyle={generalStyle}
       nextIDView={7}/>
     )
 }

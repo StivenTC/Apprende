@@ -38,7 +38,7 @@ export const Question8 = ({ goView, setResult, nextActivity }) => {
     scaleImage: ScaleImg,
     backgroundImage: '/images/AI/soccerBkg.png',
     clueTexts: [
-      `¿1. Entre más cerca estén el numerador y el denominador, más se acerca la fracción a uno.
+      `1. Entre más cerca estén el numerador y el denominador, más se acerca la fracción a uno.
         <br/>2. Si el denominador es aproximadamente el doble del numerador, la fracción se acerca a 1/2.
         <br/>3. Si el numerador es más grande que el denominador, divide el numerador entre el denominador para identificar el entero más cercano.`,
       `1. Entre más cerca estén el numerador y el denominador, más se acerca la fracción a uno (por ejemplo, 5/6)

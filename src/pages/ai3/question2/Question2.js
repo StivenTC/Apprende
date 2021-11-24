@@ -10,8 +10,8 @@ export const Question2 = ({ goView, setResult, nextActivity }) => {
     description: "<strong>Compara</strong> las dos fracciones representadas en los siguientes gráficos usando el símbolo correcto.",
     options: [
       {
-        total: 13,
-        list: [0, 1, 2, 3, 4, 5, 10, 11, 12]
+        total: 9,
+        list: [3, 4, 5, 6, 7]
       },
       {
         total: 7,

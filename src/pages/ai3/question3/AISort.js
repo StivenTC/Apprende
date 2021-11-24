@@ -77,8 +77,8 @@ export function Question3({ goView, setResult, nextActivity }) {
   const [dataAnswers, setDataAnswers] = useState([]);
   const [attempts, setAttempts] = useState(1);
   const clueTexts = [
-    "¿Las fracciones tienen el mismo denominador? Si la respuesta es sí, fíjate en los numeradores para ordenarlas.",
-    "Recuerda que para ordenar fracciones que tienen el mismo denominador (en este caso 9), ordenas los numeradores de menor a mayor."
+    "¿Puedes hacer que las tres fracciones que representan los gráficos tengan el mismo denominador? ¡Así es más fácil ordenarlas!",
+    "¿Cuál es el denominador común entre 4, 5 y 7? ¡Una pista! haz una lista de los múltiplos de 4, 5 y 7 y encuentra el número más pequeño en común. Este número es el denominador común. ¿Cómo utilizas este numero para convertir las tres fracciones originales 1/5, 2/4 y 3/7 en tres fracciones nuevas con el mismo denominador?"
   ];
 
   const validate = () => {
@@ -115,7 +115,7 @@ export function Question3({ goView, setResult, nextActivity }) {
       saveActivity(data)
       setResult(false);
       //saveUser({ ...userData, aiSort: true })
-      goView(9);
+      goView(2);
     }
   };
   return (
