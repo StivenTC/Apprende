@@ -41,7 +41,7 @@ export const Question7 = ({ goView, setResult, nextActivity }) => {
     clueTexts: [
       `¿A qué número natural se acerca 14/15? ¿Está más cerca del 0? ¿Está más cerca de 1? ¿Está más cerca de otro número?
         ¿A qué número se acerca 6/10?
-        ¿A qué número natural se acerca 15/2?`,
+        ¿A qué número se acerca 15/2?`,
       `1. Entre más cerca estén el numerador y el denominador, más se acerca la fracción a uno (por ejemplo, 5/6)
         <br/><br/>2. Si el denominador es aproximadamente el doble del numerador, la fracción se acerca a 1/2 (por ejemplo, 8/15)
         <br/><br/>3. Si el numerador es mucho más grande que el denominador, divide el numerador entre el denominador para identificar el entero más cercano (por ejemplo, 45/9).`
