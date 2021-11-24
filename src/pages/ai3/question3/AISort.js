@@ -44,17 +44,17 @@ export function Question3({ goView, setResult, nextActivity }) {
     {
       id: "pie-1",
       chart: <QuarterA />,
-      quarter: "3/7"
+      quarter: "1/5"
     },
     {
       id: "pie-2",
       chart: <QuarterB />,
-      quarter: "1/5"
+      quarter: "2/4"
     },
     {
       id: "pie-3",
       chart: <QuarterC />,
-      quarter: "2/4"
+      quarter: "3/7"
     }
   ];
 
