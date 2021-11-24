@@ -98,8 +98,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 280px;
+    height: 550px;
     margin: auto;
-
 
     &-drop {
       cursor: pointer;
@@ -212,8 +212,18 @@
           display: none;
         }
 
-        .scales-fractions span {
-          text-shadow: none;
+        &.correct {
+          .scales-fractions {
+            &:before {
+              width: 45px;
+              background-color: #FFE69B;
+            }
+  
+            span {
+              text-shadow: none;
+              color: #FFE69B;
+            }
+          }
         }
       }
     }
@@ -279,6 +289,10 @@
   }
 
   @media (max-width: $mobile) {
+    &-activity {
+      height: auto;
+    }
+
     &-header {
       >p {
         top: 18px;
