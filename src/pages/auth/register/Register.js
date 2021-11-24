@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
+import { formatDate } from '../../../helpers/dates';
 
 export const Register = () => {
   let history = useHistory();
@@ -8,7 +9,9 @@ export const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = data => {
+    let fecha = new Date();
     console.log(data);
+    data.Fecha = formatDate(fecha)
     localStorage.setItem("userData", JSON.stringify(data));
     history.push("/");
   }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import AISortSquares from "../../../assets/aisort-squares.svg";
-import AISortCardsBkg from "../../../assets/aiSortPies.png";
+import AISortCardsBkg from "../../../assets/aiSortPies2.png";
 
 export function AISortDnD({ cards, answer }) {
   const reorder = (list, startIndex, endIndex) => {

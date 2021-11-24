@@ -21,7 +21,7 @@ function Question3Caster({ setActualView, saveUserData, userData }) {
         case 2:
           return <Conclusion3 goView={setActualView} />;
         case 3:
-          return <AISortQuestion nextActivity={setActualView} result={result}/>;
+          return <AISortQuestion nextActivity={setActualView} result={result} />;
       }
     }
     setRenderView(changeView(actualView))
