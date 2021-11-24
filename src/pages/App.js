@@ -99,6 +99,43 @@ function App() {
   //     ]
   //   },
   // ]
+  /*
+    {
+      combo: "Día 1 / Miércoles",
+      activities: [
+        {
+          name: "1. ¿Qué tanto sabes de comparar fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_b8wHHerVDfK9dEW" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "break"
+        },
+        {
+          name: "2. Exploración",
+          route: "/exploracion" + `#${name.Nombre}.`,
+        },
+        {
+          name: "3. Video 1",
+          route: "/video?media=exploracion" + `#${name.Nombre}.`,
+        },
+        {
+          name: "4. Infografia 1",
+          route: "https://forms.gle/cCbNgCqT4yuzy2M26" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "5. Entrenamiento 1",
+          route: "/actividades-interactivas" + `#${name.Nombre}.`,
+        },
+        {
+          name: "6. ¿Qué tanto sabes de fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_24ukwgHNV2NYltc" + `#${name.Nombre}.`,
+          target: '_blank'
+        }
+      ]
+    },
+  */
 
   const [name] = useState(() => {
     const lsData = "userData";
@@ -117,37 +154,41 @@ function App() {
 
   const combos = [
     {
-      combo: "Día 1 / Miércoles",
+      combo: "Día 2 / Jueves",
       activities: [
         {
-          name: "1. ¿Qué tanto sabes de comparar fracciones?",
-          route: "https://www.surveys.online/jfe/form/SV_b8wHHerVDfK9dEW" + `#${name.Nombre}`,
+          name: "1. ¿Qué tanto sabes de operaciones?",
+          route: "https://www.surveys.online/jfe/form/SV_3QaQ55TA1wOnI7c" + `#${name.Nombre}.`,
           target: '_blank'
+        },
+        {
+          name: "2. Video 2",
+          route: "/video?media=comparar?video=2"
+        },
+        {
+          name: "3. Infografia 2",
+          route: "https://forms.gle/uaMPYvHwEohhKHCq7" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "4. Entrenamiento 2",
+          route: "/actividades-interactivas-2" + `#${name.Nombre}.`,
         },
         {
           name: "break"
         },
         {
-          name: "2. Exploración",
-          route: "/exploracion" + `#${name.Nombre}`,
+          name: "5. Video 3",
+          route: "/video?media=equivalente" + `#${name.Nombre}.`,
         },
         {
-          name: "3. Video 1",
-          route: "/video?media=exploracion" + `#${name.Nombre}`,
-        },
-        {
-          name: "4. Infografia 1",
-          route: "https://forms.gle/cCbNgCqT4yuzy2M26" + `#${name.Nombre}`,
+          name: "6. Infografía 3",
+          route: "https://forms.gle/XidpCMtQZ3j4nFFx7" + `#${name.Nombre}.`,
           target: '_blank'
         },
         {
-          name: "5. Entrenamiento 1",
-          route: "/actividades-interactivas" + `#${name.Nombre}`,
-        },
-        {
-          name: "6. ¿Qué tanto sabes de fracciones?",
-          route: "https://www.surveys.online/jfe/form/SV_24ukwgHNV2NYltc" + `#${name.Nombre}`,
-          target: '_blank'
+          name: "7. Entrenamiento 3",
+          route: "/actividades-interactivas" + `#${name.Nombre}.`,
         }
       ]
     }
@@ -173,14 +214,13 @@ function App() {
         {
           actualCombo.combo.length < 1 &&
           <p className="welcome-text">
-            ¡Hola!<br /><br />
-            <strong>¡Gracias por tu tiempo y actitud!</strong>
-            <br />
-            Te presentamos tu recorrido de aprendizaje en Mentu.
+            Haremos diferentes actividades en donde podrás aprender y jugar a través de <strong>videos, retos</strong> y <strong>lecturas</strong>.
             <br /><br />
-            Hemos creado diferentes actividades en donde podrás aprender y jugar a través de <strong>videos, retos y lecturas.</strong>
+            Una vez termines cada actividad podrás avanzar a la siguiente y al final <strong>podremos evaluar tus logros</strong>
             <br /><br />
-            Una vez termines cada actividad podrás avanzar a la siguiente y al final <strong>podremos evaluar tus logros.</strong>
+            Recuerda <strong>guardar la sesión</strong> cada vez que termines y antes de salir a descanso.
+            <br /><br />
+            A aprender!
           </p>
         }
 
