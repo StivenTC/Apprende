@@ -154,6 +154,41 @@ function App() {
 
   const combos = [
     {
+      combo: "Día 1 / Miércoles",
+      activities: [
+        {
+          name: "1. ¿Qué tanto sabes de comparar fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_b8wHHerVDfK9dEW" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "break"
+        },
+        {
+          name: "2. Exploración",
+          route: "/exploracion" + `#${name.Nombre}.`,
+        },
+        {
+          name: "3. Video 1",
+          route: "/video?media=exploracion" + `#${name.Nombre}.`,
+        },
+        {
+          name: "4. Infografia 1",
+          route: "https://forms.gle/cCbNgCqT4yuzy2M26" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "5. Entrenamiento 1",
+          route: "/actividades-interactivas" + `#${name.Nombre}.`,
+        },
+        {
+          name: "6. ¿Qué tanto sabes de fracciones?",
+          route: "https://www.surveys.online/jfe/form/SV_24ukwgHNV2NYltc" + `#${name.Nombre}.`,
+          target: '_blank'
+        }
+      ]
+    },
+    {
       combo: "Día 2 / Jueves",
       activities: [
         {
@@ -178,17 +213,17 @@ function App() {
           name: "break"
         },
         {
-          name: "5. Video 3",
+          name: "6. Video 3",
           route: "/video?media=equivalente" + `#${name.Nombre}.`,
         },
         {
-          name: "6. Infografía 3",
+          name: "7. Infografía 3",
           route: "https://forms.gle/XidpCMtQZ3j4nFFx7" + `#${name.Nombre}.`,
           target: '_blank'
         },
         {
-          name: "7. Entrenamiento 3",
-          route: "/actividades-interactivas" + `#${name.Nombre}.`,
+          name: "8. Entrenamiento 3",
+          route: "/actividades-interactivas-3" + `#${name.Nombre}.`,
         }
       ]
     }
@@ -231,7 +266,12 @@ function App() {
                 <a key={combo.name} href={combo.route} target={combo.target} className="link-activity">
                   <button className="go-btn">{combo.name}</button>
                 </a> :
-                <p className="break-text">¡Toma un descanso!</p>
+                <div>
+                  {actualCombo.combo.includes("Jueves") && <a href="https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq" target={combo.target} className="link-activity">
+                    <button className="go-btn">¡Danos tu opinión!</button>
+                  </a>}
+                  <p className="break-text">¡Toma un descanso!</p>
+                </div>
             ) :
             combos.map((combo) =>
               <a key={combo.combo} className="link-activity">
