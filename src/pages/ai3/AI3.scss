@@ -1,0 +1,81 @@
+.ai3-question {
+  &-7 {
+    header {
+      position: relative;
+      z-index: 1;
+    }
+
+    .presentation-ai {
+      background: url('../../assets/EFDA/valle.png') no-repeat center/100% 100%;
+
+      h1 {
+        color: #FfffFF;
+      }
+
+      p {
+        background: #F7FAFF;
+        border-radius: 20px;
+        max-width: 320px;
+        padding: 32px 28px;
+      }
+
+      img {
+        display: none
+      }
+    }
+
+    .llamas-activity {
+      &-scale {
+        >img {
+          width: 328px;
+          height: 200px;
+        }
+      }
+
+      &-card {
+        &-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .llamas-quarter {
+          margin: 0;
+        }
+
+        .card-llama {
+          right: auto;
+          width: 47px;
+          height: 84px;
+        }
+      }
+
+      .llamas-activity-scale .llamas-activity-card {
+        width: 60px;
+        height: 74px;
+
+        &:first-child {
+          left: 16px;
+        }
+
+        &:nth-child(2) {
+          left: 133px;
+        }
+
+        &:nth-child(3) {
+          right: 17px;
+        }
+      }
+
+    }
+
+    .btn-next {
+      margin-top: 24px;
+    }
+
+    .card-ghost .card-llama {
+      filter: grayscale(1);
+      opacity: 0.8;
+    }
+  }
+}
