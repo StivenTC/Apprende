@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+@mixin fix-height-header {
+  max-height: calc(100vh - 60px);
+
+  @media (max-width: $mobile) {
+    max-height: calc(100vh - 48px);
+  }
+}
+
 @mixin focus-anim-shadow {
   &:focus {
     -webkit-animation: anim-shadow 0.5s ease-in-out forwards;

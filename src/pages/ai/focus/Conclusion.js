@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import Altavoz from "../../../assets/altavoz.png"
-import { Header } from "../../../components/layout/Header/Header";
 
-export const FocusConclusion = ({ goView }) => {
+export const FocusConclusion = ({ nextActivity }) => {
   const [showSolution, setShowSolution] = useState(false);
 
   const Solution = () => {
@@ -164,18 +163,17 @@ export const FocusConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(0)
+      nextActivity(2)
     } else {
       setShowSolution(true)
     }
   }
 
   return (
-    <div className="focus-conclusion">
-      <Header goView={goView} actualView={3} />
+    <div className="focus-conclusion llamas-conclusion">
       {showSolution ?
         <Solution /> :
-        <div className="focus-conclusion-content">
+        <div className="focus-conclusion-content responsive-negative-top">
           <img src={Altavoz} alt="Una pista" />
           <h2>Ten en cuenta</h2>
           <svg width="321" height="1262" viewBox="0 0 321 1262" fill="none" xmlns="http://www.w3.org/2000/svg">

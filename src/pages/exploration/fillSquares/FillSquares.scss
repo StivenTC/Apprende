@@ -94,4 +94,15 @@
     max-width: 225px;
   }
 
+  @media (max-width: $mobile) {
+    &-activity {
+      margin: 48px 0 56px;
+
+      &-item {
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
 }

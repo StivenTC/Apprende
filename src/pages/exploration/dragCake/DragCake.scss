@@ -159,4 +159,33 @@
 
     }
   }
+
+  @media (max-width: $mobile) {
+    &-content {
+      &-text {
+        h2 {
+          font-size: 28px;
+        }
+
+        p {
+          margin-top: 0;
+          font-size: medium;
+        }
+      }
+    }
+
+    &-activity {
+      margin-top: 22px;
+
+      &-task {
+        width: 100%;
+        margin: 12px auto;
+      }
+    }
+
+    textarea {
+      margin: 0 0 18px;
+    }
+
+  }
 }

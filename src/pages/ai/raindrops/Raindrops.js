@@ -6,13 +6,15 @@ import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
 import { BsDropletFill } from "react-icons/bs";
 import TopCloud from "../../../assets/top-clouds.svg";
 import BottomWater from "../../../assets/bottom-water.svg";
+import saveActivity from "../../../helpers/saveActivity";
 
-export function Raindrops({ goView, saveUser, userData }) {
+export function Raindrops({ goView, setResult }) {
 
   const [selectedDrop, setSelectedDrop] = useState('');
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
   const [corrects, setCorrects] = useState([]);
+  const [dataAnswers, setDataAnswers] = useState([]);
 
   const quarters = ["3/4", "12/16", "3/8", "6/4", "18/24"];
   const clueTexts = [
@@ -51,13 +53,23 @@ export function Raindrops({ goView, saveUser, userData }) {
   const selectDrop = (id) => {
     let correctAnswers = [0, 1, 4];
     let okAnswers = corrects;
+    let ans = dataAnswers;
+    ans.push(quarters[id])
+    setDataAnswers(ans)
+
+    let data = {
+      'ENTRE1-Reto 4- Gotas': dataAnswers,
+      'ENTRE1-Reto 4 Veces': attempts - 1,
+    }
     setSelectedDrop(id);
     if (correctAnswers.includes(id)) {
       okAnswers.push(id);
       setCorrects(okAnswers);
       if (okAnswers.length >= 3) {
+        saveActivity(data)
         setFeedback('correct');
-        saveUser({ ...userData, rainDrop: true });
+        //saveUser({ ...userData, rainDrop: true });
+        setResult(true);
       }
     } else if (attempts < 3) {
       setTimeout(function () {
@@ -66,9 +78,12 @@ export function Raindrops({ goView, saveUser, userData }) {
         setAttempts(attempts + 1);
       }, 500);
     } else {
-      saveUser({ ...userData, rainDrop: false });
+      //saveUser({ ...userData, rainDrop: false });
+      setResult(false);
+      data['ENTRE1-Reto 4 Veces'] = attempts
+      saveActivity(data)
       setTimeout(function () {
-        goView(9);
+        goView(2);
       }, 500);
     }
   };
@@ -86,7 +101,6 @@ export function Raindrops({ goView, saveUser, userData }) {
 
   return (
     <div className="rain-drop">
-      <Header goView={goView} actualView={2} />
       <div className="rain-drop-body">
         <div className="rain-drop-header">
           <img src={TopCloud} alt="Nubes altas" />
@@ -122,7 +136,7 @@ export function Raindrops({ goView, saveUser, userData }) {
         </div>
       </div>
       <img src={BottomWater} alt="Piso de agua" className="bottom-water" />
-      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={10} />}
+      {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={3} />}
       {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
     </div>
   );

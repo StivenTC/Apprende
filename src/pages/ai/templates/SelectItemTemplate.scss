@@ -1,0 +1,79 @@
+.select-item {
+  position: relative;
+  height: 100%;
+
+  &-title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #53536E;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  &-description {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #53536E;
+    margin: 5px auto 28px;
+
+    strong {
+      font-weight: 900;
+    }
+  }
+
+  &-body {
+    max-width: 320px;
+    margin: auto;
+
+    .fraction2 {
+      opacity: 1;
+      background: none;
+
+      &:before {
+        width: 30px;
+        background: #000;
+      }
+
+      span {
+        font-size: 24px;
+        font-weight: 800;
+        color: #073B4C;
+      }
+    }
+
+    .fraction1 {
+      opacity: 1;
+      margin: auto;
+      background: #07A9F0;
+      border: 2px dashed #EDEDFB;
+      border-radius: 8px;
+      width: 64px;
+      height: 106px;
+
+      &:before {
+        width: 30px;
+        background: #ffffff;
+      }
+
+      span {
+        font-size: 28px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 32px auto 38px;
+  }
+
+  &-card {
+    width: 140px;
+    height: 140px;
+    @include flex-center;
+  }
+}

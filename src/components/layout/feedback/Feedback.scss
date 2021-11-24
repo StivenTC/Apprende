@@ -2,13 +2,15 @@
   @extend .slide-in-bottom;
   position: absolute;
   inset: 0;
-  top: 60px;
+  //top: 60px;
   z-index: 1;
 
   &-correct {
-    height: calc(100vh - 60px);
+    height: 100%;
+    //@include fix-height-header;
     background-color: #A1C74D;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -26,7 +28,8 @@
 
   &-clue {
     background: #F6FAFF;
-    height: calc(100vh - 60px);
+    //height: calc(100vh - 60px);
+    min-height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -40,7 +43,7 @@
     &-data {
       position: relative;
       padding: 16px 0;
-      margin-top: 20px;
+      margin: 20px auto;
 
       &:after,
       &:before {
@@ -63,8 +66,11 @@
     }
 
     &-content {
-      width: 287px;
-      height: 493px;
+      min-width: 287px;
+      width: 100%;
+      max-width: 300px;
+      min-height: 493px;
+      height: auto;
       background: #FF4F5B;
       border-radius: 20px;
       color: #ffffff;
@@ -89,12 +95,40 @@
     .btn-next {
       max-width: 260px;
       font-size: 21px;
+      padding: 12px 0;
       margin-top: 0;
+      margin-bottom: 24px;
     }
   }
 
   .btn-next {
     background-color: #37BCDA;
+    margin-top: 36px;
     width: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+
+    &-correct,
+    &-clue {
+      overflow: auto;
+      width: 100vw;
+      height: auto;
+      padding-bottom: 20px;
+    }
+
+    &-correct {
+      //height: calc(100vh - 45px);
+      height: 100%;
+
+      &-content {
+        margin-top: 60px;
+        margin-bottom: 80px;
+      }
+    }
   }
 }

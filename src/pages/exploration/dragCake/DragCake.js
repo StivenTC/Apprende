@@ -5,6 +5,7 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { TouchBackend } from "react-dnd-touch-backend";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 export const DragCake = ({ goView, saveUser, userData }) => {
 
@@ -89,7 +90,12 @@ export const DragCake = ({ goView, saveUser, userData }) => {
   }
 
   const nextView = () => {
+    let data = {
+      'EXPLOR-P2.1': textArea,
+    }
+    console.log(data)
     if (questionSolved) {
+      saveActivity(data)
       goView(5)
     } else if (textArea.length > 5) {
       setQuestionSolved(true)
@@ -131,12 +137,15 @@ export const DragCake = ({ goView, saveUser, userData }) => {
               </Column>
             </DndProvider>
           </div>
-          {!questionSolved && <div className="drag-cake-activity-conclusion">
+
+          {!questionSolved ? <div className="drag-cake-activity-conclusion">
             <div className="conclusion-answer">
               <textarea placeholder="Respuesta:" rows="3" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
               {textArea.length > 250 && <span>{textArea.length}/300</span>}
             </div>
-          </div>}
+          </div> :
+            <><br /><br /></>
+          }
           <button className={`btn-next ${validate() ? "" : "disabled"}`} onClick={() => nextView()}>
             Siguiente
             <BiRightArrowAlt />

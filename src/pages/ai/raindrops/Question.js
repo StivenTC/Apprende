@@ -3,16 +3,25 @@ import { BiRightArrowAlt } from "react-icons/bi"
 import { Header } from "../../../components/layout/Header/Header";
 import robot from "../../../assets/Saludo.png";
 import llama from "../../../assets/llama-view.png";
+import saveActivity from "../../../helpers/saveActivity";
 
-export function RaindropQuestion({ goView, userData }) {
+export function RaindropQuestion({ nextActivity, result }) {
   const [textArea, setTextArea] = useState("");
 
+  const nextView = () => {
+    let data = {
+      'ENTRE1-Reto 4 - M1': textArea,
+    }
+    if (textArea.length > 5) {
+      saveActivity(data)
+      nextActivity(5)
+    }
+  }
   return (
     <div className="rain-drop-question">
-      <Header goView={goView} actualView={10} />
       <div className="rain-drop-question-content">
         <img src={robot} alt="robot" />
-        <p>{userData.rainDrop ?
+        <p>{result ?
           "Cuéntale al Robot cómo llegaste a la respuesta correcta."
           :
           "¿Qué puedes hacer para encontrar la respuesta correcta?"
@@ -21,9 +30,7 @@ export function RaindropQuestion({ goView, userData }) {
           <textarea placeholder="Respuesta:" rows="5" value={textArea} onChange={(e) => setTextArea(e.target.value)} maxLength="300" />
           {textArea.length > 250 && <span>{textArea.length}/300</span>}
         </div>
-        <button
-          className="btn-next"
-          onClick={() => goView(0)}>
+        <button className={`btn-next ${textArea.length > 5 ? "" : "disabled"}`} onClick={() => nextView()}>
           ¡Siguiente!
           <BiRightArrowAlt />
         </button>

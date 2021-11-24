@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { Header } from "../../../components/layout/Header/Header";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function QuestionOptions({ goView, saveUser, userData }) {
   const [actualView, setActualView] = useState(0);
   const [selectedOption, setSelectedOption] = useState();
+  const [answers, setAnswers] = useState([]);
 
   const questions = [
     "<strong>1. Utilizo distintas estrategias para encontrar fracciones equivalentes</strong>",
     "<strong>2. Comparo fracciones utilizando la recta numérica</strong>",
-    "<strong>3.</strong> Comparo y ordeno fracciones que tienen el <strong>mismo denominador</strong>",
-    "<strong>4.</strong> Comparo y ordeno fracciones que tienen <strong>diferentes denominadores</strong>",
+    "<strong>3. Comparo y ordeno fracciones que tienen el mismo denominador</strong>",
+    "<strong>4. Comparo y ordeno fracciones que tienen diferentes denominadores</strong>",
   ];
   const options = [
     "Puedo hacer esto si veo un ejemplo",
@@ -33,13 +35,22 @@ export function QuestionOptions({ goView, saveUser, userData }) {
     }
     return r;
   };
-
   const nextView = () => {
+    let ans = answers
+    ans.push(String.fromCharCode(65 + selectedOption))
+    setAnswers(ans)
     if (validate) {
       if (actualView < (questions.length - 1)) {
         setSelectedOption();
         setActualView(actualView + 1);
       } else {
+        let data = {
+          'META-P1': answers[0],
+          'META-P2': answers[1],
+          'META-P3': answers[2],
+          'META-P4': answers[3],
+        }
+        saveActivity(data)
         saveUser({ ...userData, metacognition: true })
         goView(0);
       }
@@ -56,7 +67,7 @@ export function QuestionOptions({ goView, saveUser, userData }) {
           {actualView ?
             <br />
             :
-            <p>Para cada una de las opciones <strong>seleciona la opción</strong> en la casilla que consideres más apropiada.</p>
+            <p>Para cada una de las opciones <strong>selecciona la opción</strong> en la casilla que consideres más apropiada.</p>
           }
           <p dangerouslySetInnerHTML={{ __html: questions[actualView] }} />
         </div>

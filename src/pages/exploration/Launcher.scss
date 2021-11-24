@@ -16,6 +16,21 @@
     color: #ffffff;
   }
 
+  &-btn-back {
+    margin-top: 24px;
+    text-decoration: none;
+    border-bottom: solid 2px #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  .launcher-top-logo {
+    margin: 31px auto 0;
+    height: 38px;
+    object-fit: cover;
+  }
+
   &-activities {
     margin-top: 30px;
 
@@ -57,7 +72,11 @@
   }
 
   &-metacognition {
-    margin-top: 70px;
+    margin-top: 33px;
+
+    >h1 {
+      margin-top: 0;
+    }
   }
 
   .ai-button {
@@ -70,6 +89,7 @@
 
     &.challenge {
       &-complete {
+        pointer-events: none;
         color: #ffffff;
         background-color: #A1C74D;
         border: 2px solid #A1C74D;
@@ -84,6 +104,7 @@
       }
 
       &-failed {
+        pointer-events: none;
         color: #ffffff;
         background: #FF4F5B;
         border: 2px solid #FF4F5B;
@@ -111,6 +132,33 @@
           display: block;
         }
       }
+    }
+
+    &.challenge-failed {
+      p {
+        margin-left: 0;
+      }
+
+      svg,
+      p span {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    h1 {
+      margin-top: 60px;
+      margin-bottom: 28px;
+    }
+
+    a>img {
+      width: 120px;
+    }
+
+    div[role="button"] {
+      max-width: 260px;
+      height: 64px;
     }
   }
 }

@@ -1,0 +1,73 @@
+.efda-bridge {
+
+  &-wrapper {
+    position: relative;
+    width: 320px;
+    margin: auto;
+    margin-top: 55px;
+  }
+
+  &-table {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-header {
+    text-align: center;
+    border-radius: 12px;
+    padding: 11px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #53536E;
+    margin: 17px 20px 0;
+  }
+
+  &-person {
+    position: absolute;
+    margin-top: -60px;
+    z-index: 2;
+    margin-left: 205px;
+  }
+
+  &-line1 {
+    position: absolute;
+    left: 0;
+    margin-top: 82px;
+    text-align: center;
+  }
+
+  &-line2 {
+    position: absolute;
+    right: 0;
+    margin-top: 82px;
+    text-align: center;
+  }
+
+  &-numberline {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 30px;
+  }
+
+  &-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 18px;
+    justify-content: center;
+    border: 2px dashed #EDEDFB;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: #FFFFFF;
+    align-items: center;
+    width: 31px;
+    height: 57px;
+  }
+
+  &-hr {
+    border: none;
+    border-top: 2px solid #073B4C;
+    width: 20px;
+  }
+}

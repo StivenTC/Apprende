@@ -63,6 +63,8 @@
 
     &-items {
       margin-top: 71px;
+      touch-action: none;
+
 
       .content-slider {
         margin-bottom: 35px;
@@ -116,6 +118,7 @@
         }
 
         &-handle {
+          touch-action: none;
           width: 22px;
           height: 22px;
           background: #37BCDA;
@@ -246,6 +249,39 @@
         width: 100%;
         padding: 12px 25px;
         margin: 25px 0;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-content {
+      margin: 18px 22px;
+
+      &-text {
+        font-size: medium;
+      }
+    }
+
+    &-activity {
+      max-width: 260px;
+
+      &-fraction {
+        margin-top: 25px;
+      }
+    }
+
+    &-conclusion {
+      >p {
+        font-size: medium;
+      }
+
+      svg {
+        margin: 12px auto;
+        width: 260px;
+      }
+
+      .compare-charts-answer {
+        margin-top: -25px;
       }
     }
   }

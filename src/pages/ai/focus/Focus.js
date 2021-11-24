@@ -1,19 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Header } from "../../../components/layout/Header/Header";
 import createPie from "../../../components/shapes/CeatePie";
 import totem from "../../../assets/mascaraInca.png"
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FeedbackCorrect } from "../../../components/layout/feedback/Feedback";
 import { FeedbackClue } from "../../../components/layout/feedback/FeedbackClue";
+import saveActivity from "../../../helpers/saveActivity";
 
-export const Focus = ({ goView, saveUser, userData }) => {
+export const Focus = ({ goView, nextActivity, setResult }) => {
   const [selectedCard, setSelectedCard] = useState();
   const [showOptions, setShowOptions] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [showFeedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(1);
   const [answers, setAnswers] = useState([]);
+  const [dataAnswers, setDataAnswers] = useState([]);
 
   const pieColors = ['#FFE69B', '#EDEDFB']
   const cards = [
@@ -123,10 +124,21 @@ export const Focus = ({ goView, saveUser, userData }) => {
   }
 
   const nextView = () => {
+    let ans = dataAnswers;
+    ans.push(selectedAnswers.join(';'))
+    setDataAnswers(ans)
+    let data = {
+      'ENTRE1-Reto 1- Intento 1': dataAnswers[0],
+      'ENTRE1-Reto 1- Intento 2': dataAnswers[1],
+      'ENTRE1-Reto 1- Intento 3': dataAnswers[2],
+      'ENTRE1-Reto 1 Veces': attempts - 1,
+    }
     let completeQuest = answers.every(Boolean)
     if (completeQuest) {
+      saveActivity(data)
       setFeedback('correct')
-      saveUser({ ...userData, focus: true })
+      setResult(true)
+      //saveUser({ ...userData, focus: true })
     } else if (attempts < 3) {
       setSelectedAnswers([])
       setAnswers([])
@@ -135,8 +147,11 @@ export const Focus = ({ goView, saveUser, userData }) => {
       setSelectedCard()
       setAttempts(attempts + 1)
     } else {
-      saveUser({ ...userData, focus: false })
-      goView(3)
+      data['ENTRE1-Reto 1 Veces'] = attempts
+      saveActivity(data)
+      setResult(false)
+      //saveUser({ ...userData, focus: false })
+      goView(2)
     }
   }
 
@@ -150,7 +165,6 @@ export const Focus = ({ goView, saveUser, userData }) => {
   }
   return (
     <div className="focus">
-      <Header goView={goView} actualView={2} />
       <div className="focus-body">
         <p>Arma 3 parejas de gráficos de fracciones equivalentes.</p>
         <div className={`focus-list ${showOptions ? "show-options" : ""}`}>
@@ -170,7 +184,7 @@ export const Focus = ({ goView, saveUser, userData }) => {
           <BiRightArrowAlt />
         </button>
 
-        {showFeedback === 'correct' && <FeedbackCorrect goView={goView} view={0} />}
+        {showFeedback === 'correct' && <FeedbackCorrect goView={nextActivity} view={2} />}
         {showFeedback === 'clue' && <FeedbackClue goView={setFeedback} attempt={attempts} message={clueTexts} />}
       </div>
     </div>

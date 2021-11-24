@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
+import { formatDate } from '../../../helpers/dates';
 
 export const Register = () => {
   let history = useHistory();
@@ -8,7 +9,9 @@ export const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = data => {
+    let fecha = new Date();
     console.log(data);
+    data.Fecha = formatDate(fecha)
     localStorage.setItem("userData", JSON.stringify(data));
     history.push("/");
   }
@@ -18,10 +21,30 @@ export const Register = () => {
     <div className="register">
       <h1>Regístrate</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Nombre" {...register("Nombre", { required: "Campo obligatorio", maxLength: 20 })} />
-        <input type="number" placeholder="Edad" {...register("Edad", { required: "Campo obligatorio", maxLength: 20 })} />
-        <input type="text" readOnly placeholder="Colegio" {...register("Colegio", { required: "Campo obligatorio", maxLength: 200 })} value="Unidad Pedagógica" />
-        <input type="number" placeholder="Curso" {...register("Curso", { required: "Campo obligatorio", maxLength: 20 })} />
+        <label>
+          <span>Nombres y apellidos:
+            {errors.Nombre && <span className="form-error">{errors.Nombre.message}</span>}
+          </span>
+          <input type="text" placeholder="Nombre" {...register("Nombre", { required: "Campo obligatorio", maxLength: { value: 36, message: 'Nombre demasiado largo' } })} />
+        </label>
+        <label>
+          <span>Edad:
+            {errors.Edad && <span className="form-error">{errors.Edad.message}</span>}
+          </span>
+          <input type="number" placeholder="Edad" {...register("Edad", { required: "Campo obligatorio", maxLength: { value: 2, message: 'Edad demasiado alto' } })} />
+        </label>
+        <label>
+          <span>Colegio:
+            {errors.Colegio && <span className="form-error">{errors.Colegio.message}</span>}
+          </span>
+          <input type="text" readOnly placeholder="Colegio" {...register("Colegio", { required: "Campo obligatorio", maxLength: 200 })} value="Colegio Argelia" />
+        </label>
+        <label>
+          <span>Curso:
+            {errors.Curso && <span className="form-error">{errors.Curso.message}</span>}
+          </span>
+          <input type="number" placeholder="Curso" {...register("Curso", { required: "Campo obligatorio", maxLength: { value: 2, message: 'Curso no válido' } })} />
+        </label>
         <input type="submit" value="Siguiente" />
       </form>
     </div>

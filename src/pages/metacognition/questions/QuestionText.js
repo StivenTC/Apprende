@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { Header } from "../../../components/layout/Header/Header";
+import saveActivity from "../../../helpers/saveActivity";
 
 export function QuestionText({ goView }) {
   const [actualView, setActualView] = useState(0)
   const [textArea, setTextArea] = useState("");
   const [textArea2, setTextArea2] = useState("");
+  const [oldTextArea, setOldTextArea] = useState("");
 
   const questions = [
     {
-      quest: "Escribe tus 2 aprendizajes más grandes sobre comparar fracciones y fracciones equivalentes",
+      quest: "<strong>¿Qué aprendiste con estas actividades?<br/>Escribe tus 2 aprendizajes más grandes  </strong>",
       fields: ["Aprendizaje 1", "Aprendizaje 2"]
     },
     {
-      quest: "Escribe un ejemplo de cómo podrías utilizar lo que sabes sobre comparar fracciones y fracciones equivalentes en un ejemplo de tu vida.",
+      quest: "<strong>Escribe un ejemplo de cómo podrías utilizar lo que sabes sobre comparar fracciones y fracciones equivalentes en un ejemplo de tu vida.</strong>",
       fields: ["Respuesta", ""]
     }
   ]
@@ -28,10 +30,17 @@ export function QuestionText({ goView }) {
   }
 
   const nextView = () => {
+    let data = {
+      'META-Aprendizaje 1': oldTextArea,
+      'META-Aprendizaje 2': textArea2,
+      'META-Reflexión': textArea,
+    }
     if (validate) {
       if (actualView) {
+        saveActivity(data)
         goView(2)
       } else {
+        setOldTextArea(textArea)
         setActualView(1)
         setTextArea("")
       }
@@ -43,7 +52,7 @@ export function QuestionText({ goView }) {
       <div className="question-text">
         <div className="question-text-header">
           <h2>Reflexión</h2>
-          <p>{questions[actualView].quest}</p>
+          <p dangerouslySetInnerHTML={{ __html: questions[actualView].quest }} />
         </div>
         <div className="question-text-activity">
           <div className="question-answer">

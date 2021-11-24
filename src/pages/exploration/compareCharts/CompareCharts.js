@@ -4,6 +4,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 
 export const CompareCharts = ({ goView, saveUser, userData }) => {
@@ -202,10 +203,17 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
   }
 
   const nextActivity = () => {
+    let data = {
+      'EXPLOR-P2.5': `${Math.round(answers[0].answer * 8)}/8`,
+      'EXPLOR-P2.6': `${Math.round(answers[1].answer * 6)}/6`,
+      'EXPLOR-P2.7': textArea
+    }
+
     if (currentView < quests.length - 1) {
       setCurrentView(currentView + 1)
       setCurrentScale(currentScale + 1)
     } else if (textArea.length > 5) {
+      saveActivity(data)
       saveUser({ ...userData, complete: 2 })
       goView(0)
     }
@@ -229,6 +237,7 @@ export const CompareCharts = ({ goView, saveUser, userData }) => {
             {currentView < quests.length - 1 ? scales.map((scale, i) =>
               currentView === i && <div
                 role="button"
+                key={scale.steps}
                 className={`content-slider ${currentView === 1 ? "slider-yellow" : ""}`}
                 onClick={() => setCurrentScale(i)}>
                 <Slider min={0} max={1}

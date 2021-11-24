@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Launcher } from './Launcher';
-import { Presentation } from './focus/Presentation';
-import { Focus } from './focus/Focus';
-import { FocusConclusion } from './focus/Conclusion';
-import { SelectQuarterPresentation } from './selectQuarter/Presentation';
-import { SelectQuarter } from './selectQuarter/SelectQuarter';
-import { SelectQuarterConclusion } from './selectQuarter/Conclusion';
-import { RaindropPresentation } from './raindrops/Presentation';
-import { Raindrops } from './raindrops/Raindrops';
-import { RaindropConclusion } from './raindrops/Conclusion';
-import { RaindropQuestion } from './raindrops/Question';
-
+import FocusCaster from './focus/Caster';
+import SelectQuarterCaster from './selectQuarter/Caster';
+import Question3Caster from './question3/Caster';
+import RaindropsCaster from './raindrops/Caster';
+import Question6Caster from './question6/Caster';
+import Question7Caster from './question7/Caster';
+import Question8Caster from './question8/Caster';
+import Question9Caster from './question9/Caster';
+import Question5Caster from './question-5/Caster';
+import { Redirect } from 'react-router-dom'
 
 function CasterAI() {
   const [actualView, setActualView] = useState(0)
@@ -20,30 +19,29 @@ function CasterAI() {
   useEffect(() => {
     const changeView = (view) => {
       switch (view) {
+        default:
         case 0:
           return <Launcher goView={setActualView} userData={userData} />;
         case 1:
-          return <Presentation goView={setActualView} saveUser={saveUserData} />;
+          return <FocusCaster setActualView={setActualView} userData={userData} />;
         case 2:
-          return <Focus goView={setActualView} saveUser={saveUserData} userData={userData} />;
+          return <SelectQuarterCaster setActualView={setActualView} userData={userData} />;
         case 3:
-          return <FocusConclusion goView={setActualView} saveUser={saveUserData} />;
+          return <Question3Caster setActualView={setActualView} userData={userData} />;
         case 4:
-          return <SelectQuarterPresentation goView={setActualView} saveUser={saveUserData} />;
+          return <RaindropsCaster setActualView={setActualView} userData={userData} />;
         case 5:
-          return <SelectQuarter goView={setActualView} saveUser={saveUserData} userData={userData} />;
+          return <Question5Caster setActualView={setActualView} userData={userData} />;
         case 6:
-          return <SelectQuarterConclusion goView={setActualView} saveUser={saveUserData} />;
+          return <Question6Caster setActualView={setActualView} userData={userData} />;
         case 7:
-          return <RaindropPresentation goView={setActualView} saveUser={saveUserData} />;
+          return <Question7Caster setActualView={setActualView} userData={userData} />;
         case 8:
-          return <Raindrops goView={setActualView} saveUser={saveUserData} userData={userData} />;
+          return <Question8Caster setActualView={setActualView} userData={userData} />;
         case 9:
-          return <RaindropConclusion goView={setActualView} saveUser={saveUserData} />;
+          return <Question9Caster setActualView={setActualView} userData={userData} />;
         case 10:
-          return <RaindropQuestion goView={setActualView} userData={userData} />;
-        default:
-          return <h1>Gotas</h1>;
+          return <Redirect to='/' />
       }
     }
 

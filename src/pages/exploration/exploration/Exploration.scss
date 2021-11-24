@@ -71,7 +71,7 @@
         text-align: center;
 
         &:last-child {
-          transform: rotate(180deg);
+          transform: scaleY(-1);
         }
 
         svg {
@@ -127,6 +127,7 @@
 
           &:nth-child(2) {
             transform: rotate(90deg);
+            transform: scaleX(-1);
           }
 
           &:nth-child(3) {
@@ -136,6 +137,16 @@
           &:nth-child(4) {
             transform: rotate(180deg);
           }
+        }
+      }
+
+      &.circle-3,
+      &.circle-4 {
+        transform: scale(1.1);
+
+        svg {
+          width: 160px;
+          height: 160px;
         }
       }
     }
@@ -158,5 +169,50 @@
     font-size: 25px;
     line-height: 30px;
     color: #9F9FB5;
+  }
+
+  @media (max-width: $mobile) {
+    &-text {
+      margin: 24px auto 18px;
+    }
+
+    &-activity {
+      margin-bottom: 48px;
+    }
+
+    .activity {
+      &-circle {
+        height: 128px;
+        width: 128px;
+        transform: scale(0.8);
+
+        &.circle-2 {
+          margin-top: 8px;
+          transform: scale(0.9);
+
+          >div {
+            width: 64px;
+            height: 64px;
+          }
+
+          svg {
+            width: 64px;
+            height: 64px;
+          }
+        }
+
+        &.circle-3 {
+          margin-left: -12px;
+          transform: scale(0.9);
+        }
+
+        &.circle-4 {
+          transform: scale(0.9);
+          margin-right: 22px;
+        }
+
+      }
+    }
+
   }
 }

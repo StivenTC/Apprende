@@ -1,6 +1,12 @@
 .presentation {
   overflow: auto;
   height: 100%;
+  max-height: calc(100vh - 60px);
+
+  @media (max-width: $mobile) {
+    max-height: calc(100vh - 48px);
+  }
+
   text-align: center;
   padding: 32px 46px;
 

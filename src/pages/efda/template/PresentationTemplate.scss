@@ -1,0 +1,36 @@
+.presentation-efda {
+  height: 100%;
+  max-height: calc(#{$max-height} - 60px);
+  position: relative;
+  overflow: hidden;
+
+  &-intro {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 22px 15px;
+    max-width: 320px;
+    height: auto;
+    position: relative;
+    margin: 20px auto 100px;
+  }
+
+  &-title {
+    margin-bottom: .5em;
+  }
+
+  &-description {
+    font-size: 18px;
+    line-height: 25px;
+    color: #53536E;
+
+    .justify {
+      text-align: justify;
+    }
+  }
+
+  &-person {
+    position: absolute;
+    right: -70px;
+    bottom: -50px;
+  }
+}

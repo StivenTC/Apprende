@@ -1,0 +1,356 @@
+.efda {
+  height: 100%;
+
+  .highlight-blue {
+    color: #0079DE;
+    font-weight: bold;
+  }
+
+  &-question-1 {
+    display: block;
+    height: 100%;
+    background: #F6FAFF;
+
+    .select-4-options-card {
+      img:not(.card-bkg) {
+        margin-top: 12px;
+        margin-left: 6px;
+        z-index: 1;
+        position: relative;
+      }
+    }
+  }
+
+  &-question-2 {
+    display: block;
+    height: 100%;
+    background: #F6FAFF;
+
+    .select-4-options-list {
+      justify-content: space-between;
+    }
+
+    .select-4-options-card {
+      background: transparent;
+      border: none;
+
+      .card-bkg {
+        top: auto;
+        width: 130px;
+        height: 130px;
+      }
+
+      .scales-fractions {
+        opacity: 1;
+        background: transparent;
+        height: auto;
+
+        span {
+          color: #073B4C;
+          font-size: 24px;
+          line-height: normal;
+        }
+
+        &:before {
+          background-color: #073B4C;
+          width: 32px;
+        }
+      }
+
+      &.selected {
+        border: none;
+      }
+    }
+  }
+
+  &-question-4 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        width: 94px;
+        height: 100px;
+        background: #504F81;
+        border: 2px solid #EDEDFB;
+        border-radius: 8px;
+        margin-bottom: 42px;
+
+        label {
+          bottom: -24px;
+        }
+      }
+    }
+  }
+
+  &-question-5 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .card-bkg {
+          position: relative;
+          order: 2;
+        }
+
+        label {
+          bottom: 8px;
+        }
+
+        .scales-fractions {
+          order: 1;
+          opacity: 1;
+          background: transparent;
+          height: auto;
+
+          span {
+            color: #073B4C;
+            font-size: 24px;
+            line-height: normal;
+          }
+
+          &:before {
+            background-color: #073B4C;
+            width: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  &-question-9 {
+    background: url("../../assets/EFDA/lava-cave.png") no-repeat center/100% 100%;
+    text-align: center;
+
+    .btn-next {
+      margin-top: 48px;
+    }
+
+    &-data {
+      max-width: 320px;
+      margin: 16px auto 48px;
+
+      p {
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+
+        &:first-child {
+          font-weight: bold;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    .efda-sort {
+      &-list {
+        position: relative;
+        width: 320px;
+        height: 60px;
+        margin: auto;
+        margin-bottom: 21px;
+
+        &-bkg {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          width: 320px;
+          height: auto;
+          opacity: 0.3;
+        }
+      }
+
+      &-cards {
+        position: relative;
+        display: flex;
+        height: 60px;
+        max-width: 320px;
+      }
+
+      &-card {
+        position: absolute;
+        @include flex-center;
+        height: 59px;
+        width: 59px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        //border: 3px solid #FF820F;
+        border: 3px solid #ffffff;
+
+        &.pie-4 {
+          right: 0;
+        }
+
+        &.pie-2 {
+          left: 85px;
+        }
+
+        &.pie-3 {
+          right: 92px;
+        }
+      }
+
+      &-scale {
+        position: relative;
+        width: 320px;
+        margin: auto;
+
+        >img {
+          position: absolute;
+          inset: 0;
+          width: 320px;
+          height: 177px;
+        }
+
+        &-droppable {
+          width: 320px;
+          height: 177px;
+
+          .efda-sort-card {
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            height: 121px;
+            justify-content: space-between;
+
+            >img {
+              margin-top: 5px;
+            }
+
+            >div:last-child {
+              position: relative;
+              @include flex-center;
+              background: #FF820F;
+              box-shadow: 0px 0px 12px 1px rgba(122, 150, 185, 0.24);
+              border-radius: 8px;
+              height: 49px;
+              width: 49px;
+              margin-left: 2px;
+              font-size: 25px;
+              color: #FFFFFF;
+              font-weight: bold;
+            }
+
+            &:nth-child(4) {
+              right: 1px;
+            }
+
+            &:nth-child(2) {
+              left: 87px;
+            }
+
+            &:nth-child(3) {
+              right: 90px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  &-question-10 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        align-items: flex-start;
+
+        img:not(.card-bkg) {
+          margin-top: 1em;
+          width: 80px;
+          max-height: 84px;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+
+        label {
+          bottom: 8px;
+        }
+      }
+    }
+  }
+
+  &-question-11 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        width: 127px;
+        height: 135px;
+        align-items: flex-start;
+        border-color: #EDEDFB;
+
+        img:not(.card-bkg) {
+          margin-top: 1em;
+          width: 110px;
+          max-height: 94px;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  &-question-12 {
+    .select-4-options {
+      &-list {
+        justify-content: space-evenly;
+      }
+
+      &-card {
+        align-items: flex-start;
+        border-color: #EDEDFB;
+
+        img:not(.card-bkg) {
+          width: 87px;
+          height: 70px;
+          margin-top: 1em;
+          object-fit: scale-down;
+          z-index: 1;
+          position: relative;
+        }
+
+        label {
+          bottom: 9px;
+        }
+      }
+    }
+  }
+
+  &-finish {
+    height: 100%;
+    text-align: center;
+
+    img {
+      margin: 84px auto 32px;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 31px;
+      line-height: 42px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .btn-next {
+      margin-top: 62px;
+    }
+  }
+}

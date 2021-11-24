@@ -3,12 +3,13 @@ import HappyEmoji from "../../assets/happyEmoji.png";
 import SadEmoji from "../../assets/sadEmoji.png";
 import { RiArrowRightLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 export function Launcher({ goView, userData }) {
 
   const getClasses = (challenge) => {
     let clases = "";
-    if (typeof userData.focus === 'undefined') {
+    if (!validateUndefined(userData.focus)) {
       if (challenge !== "focus") {
         clases += " disabled"
       }
@@ -17,22 +18,29 @@ export function Launcher({ goView, userData }) {
         clases += userData.focus ? " challenge-complete" : " challenge-failed"
       }
       if (challenge === "selectQuarter") {
-        if (typeof userData.selectQuarter !== 'undefined') {
+        if (validateUndefined(userData.selectQuarter)) {
           clases += userData.selectQuarter ? " challenge-complete" : " challenge-failed"
-        } else if (typeof userData.focus === 'undefined') {
+        } else if (!validateUndefined(userData.focus)) {
           clases += " disabled"
         }
       }
       if (challenge === "rainDrop") {
-        if (typeof userData.rainDrop !== 'undefined') {
+        if (validateUndefined(userData.rainDrop)) {
           clases += userData.rainDrop ? " challenge-complete" : " challenge-failed"
-        } else if (typeof userData.selectQuarter === 'undefined') {
+        } else if (!validateUndefined(userData.selectQuarter)) {
           clases += " disabled"
         }
       }
     }
     return clases;
   };
+  const validateUndefined = (value) => {
+    return (typeof value !== 'undefined')
+  }
+  const validateActivities = () => {
+    let activities = validateUndefined(userData.focus) && validateUndefined(userData.selectQuarter) && validateUndefined(userData.rainDrop);
+    return activities
+  }
   return (
     <div className="launcher">
       <h1>Entrenamiento</h1>
@@ -40,30 +48,12 @@ export function Launcher({ goView, userData }) {
         <img src={robot} alt='robot' />
       </Link>
       <div className="launcher-activities">
-        <div role="button" className={`ai-button ${getClasses("focus")}`} onClick={() => goView(1)}>
-          <p>Reto 1
-            <span><br />Volver a intentarlo</span>
-          </p>
-          <img className="img-complete" src={HappyEmoji} alt='Challenge complete' />
-          <img className="img-failed" src={SadEmoji} alt='Challenge failed' />
-          <RiArrowRightLine />
-        </div>
-        <div role="button" className={`ai-button ${getClasses("selectQuarter")}`} onClick={() => goView(4)}>
-          <p>Reto 2
-            <span><br />Volver a intentarlo</span>
-          </p>
-          <img className="img-complete" src={HappyEmoji} alt='Challenge complete' />
-          <img className="img-failed" src={SadEmoji} alt='Challenge failed' />
-          <RiArrowRightLine />
-        </div>
-        <div role="button" className={`ai-button ${getClasses("rainDrop")}`} onClick={() => goView(7)}>
-          <p>Reto 3
-            <span><br />Volver a intentarlo</span>
-          </p>
-          <img className="img-complete" src={HappyEmoji} alt='Challenge complete' />
-          <img className="img-failed" src={SadEmoji} alt='Challenge failed' />
-          <RiArrowRightLine />
-        </div>
+        <button
+          className="btn-next"
+          onClick={() => goView(1)}>
+          Comenzar
+          <BiRightArrowAlt />
+        </button>
       </div>
     </div>
   );

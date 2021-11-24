@@ -51,14 +51,13 @@ export const RaindropConclusion = ({ goView }) => {
 
   const nextView = () => {
     if (showSolution) {
-      goView(10)
+      goView(3)
     } else {
       setShowSolution(true)
     }
   }
   return (
-    <div className={`focus-conclusion ${showSolution ? "rain-drop" : ""}`}>
-      <Header goView={goView} actualView={3} />
+    <div className={`focus-conclusion llamas-conclusion ${showSolution ? "rain-drop" : ""}`}>
       {showSolution ?
         <Solution /> : <div className="focus-conclusion-content">
           <img src={Altavoz} alt="Una pista" />

@@ -1,0 +1,310 @@
+.llamas {
+  position: relative;
+  background: #35bfa5;
+  overflow: auto;
+  padding-bottom: 64px;
+  height: 100%;
+  max-height: calc(100vh - 60px);
+
+  &-body {
+    max-width: 320px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+
+    p {
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #ffffff;
+      margin: 16px auto 28px;
+
+      strong {
+        font-weight: 900;
+      }
+    }
+  }
+
+  &-activity {
+    &-card-content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      user-select: none;
+      pointer-events: none;
+      overflow: hidden;
+
+      .card-llama {
+        position: absolute;
+        bottom: 8px;
+        user-select: none;
+        right: 8px;
+      }
+    }
+
+    &-list {
+      position: relative;
+      width: 320px;
+      height: 164px;
+    }
+
+    &-cards {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+      height: 164px;
+    }
+
+    &-card {
+      position: absolute;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      width: 96px;
+      height: 164px;
+      cursor: pointer;
+      border: 2px solid #ededfb;
+      box-sizing: border-box;
+      border-radius: 8px;
+      z-index: 1;
+
+      &.card-ghost {
+        position: relative;
+        opacity: 0.5;
+      }
+    }
+
+    .card {
+      &-02 {
+        left: 112px;
+      }
+
+      &-03 {
+        left: 224px;
+      }
+    }
+
+    &-scale {
+      margin-top: 46px;
+      width: 328px;
+      height: 200px;
+
+      &-droppable {
+        position: relative;
+        width: 328px;
+        height: 200px;
+      }
+
+      .llamas-activity-card {
+        width: 56px;
+        height: 72px;
+        filter: none;
+        @include flex-center;
+
+        .llamas-quarter {
+          font-size: 28px;
+          line-height: 32px;
+          margin: auto;
+        }
+
+        &:first-child {
+          left: 28px;
+        }
+
+        &:nth-child(2) {
+          left: 96px;
+        }
+
+        &:nth-child(3) {
+          right: 41px;
+        }
+
+        &.question-2-dad {
+          &:first-child {
+            left: 30px;
+          }
+  
+          &:nth-child(2) {
+            left: 106px;
+          }
+  
+          &:nth-child(3) {
+            right: 52px;
+          }
+        }
+
+        &.question-3-dad {
+          &:first-child {
+            left: 25px;
+          }
+  
+          &:nth-child(2) {
+            left: 133px;
+          }
+  
+          &:nth-child(3) {
+            right: 73px;
+          }
+        }
+      }
+
+      >img {
+        position: absolute;
+      }
+    }
+  }
+
+  &-quarter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 25px;
+    margin-right: 8px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50%-2px);
+      background-color: #ffffff;
+      height: 2px;
+      width: 32px;
+      border-radius: 10px;
+    }
+  }
+
+  .bottom-bkg {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 510px;
+  }
+
+  &.focus-conclusion {
+    height: 100vh;
+    margin-bottom: 0;
+
+    h2 {
+      color: #ffffff;
+    }
+
+    .btn-next {
+      margin-top: 20%;
+    }
+
+    .focus-conclusion-content,
+    .btn-next {
+      z-index: 1;
+      position: relative;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    max-height: calc(100vh - 48px);
+
+    &-presentation {
+      padding: 32px 16px;
+
+      >h1 {
+        margin-bottom: 18px;
+      }
+
+      >p {
+        margin: 0 auto 16px;
+      }
+    }
+
+    &-body {
+      p {
+        margin: 18px auto 16px;
+      }
+    }
+
+    &-activity {
+      &-card {
+        transform: scale(0.8);
+      }
+
+      &-scale {
+        width: 320px;
+
+        .llamas-activity-card {
+          transform: none;
+
+          &:first-child {
+            left: 28px;
+          }
+
+          &:nth-child(2) {
+            left: 93px;
+          }
+
+          &:nth-child(3) {
+            right: 38px;
+          }
+
+          &.question-2-dad {
+            &:first-child {
+              left: 30px;
+            }
+  
+            &:nth-child(2) {
+              left: 106px;
+            }
+  
+            &:nth-child(3) {
+              right: 52px;
+            }
+          }
+
+          &.question-3-dad {
+            &:first-child {
+              left: 25px;
+            }
+    
+            &:nth-child(2) {
+              left: 133px;
+            }
+    
+            &:nth-child(3) {
+              right: 73px;
+            }
+          }
+        }
+
+        &-droppable,
+        >img {
+          width: 320px;
+        }
+      }
+    }
+
+    &-conclusion {
+      .focus-conclusion-content {
+        h2 {
+          margin: 16px 0 0;
+        }
+
+        svg {
+          margin: auto;
+          max-width: 280px;
+        }
+
+        &.responsive-negative-top {
+          svg {
+            margin-top: -50px;
+          }
+        }
+      }
+
+      .bottom-bkg {
+        bottom: -32px;
+      }
+    }
+  }
+}

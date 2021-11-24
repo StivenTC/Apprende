@@ -4,10 +4,12 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import saveActivity from "../../../helpers/saveActivity";
 
 
 export const Scales = ({ goView, saveUser, userData }) => {
   const [currentScale, setCurrentScale] = useState(0);
+  const [lastScale, setLastScale] = useState();
   const [conclusion, goConclusion] = useState(false);
   const [textArea, setTextArea] = useState("");
 
@@ -79,21 +81,16 @@ export const Scales = ({ goView, saveUser, userData }) => {
   ]
 
 
-  function handle(value) {
+  function handle(value, scale) {
     let currentAnswer = answers;
-    let nextScale = currentScale;
-    currentAnswer[currentScale < 4 ? currentScale : 0].answer = String(value);
-    setAnswers(currentAnswer)
-    console.log(nextScale)
-    console.log(currentAnswer)
-    console.log("===============")
-    if (nextScale < 4) {
-      nextScale += 1
-      setCurrentScale(nextScale)
-    } else {
-      setCurrentScale(0)
+    currentAnswer[scale < 4 ? scale : 0].answer = String(value);
+    if (currentScale < 4 && lastScale != scale) {
+      console.log(value, scale)
+      console.log(currentScale, "lo")
+      setLastScale(scale)
+      setCurrentScale(currentScale + 1)
     }
-    console.log(nextScale)
+    setAnswers(currentAnswer)
   }
 
   const validate = () => {
@@ -104,14 +101,23 @@ export const Scales = ({ goView, saveUser, userData }) => {
     } else {
       res = a.length === answers.length
     }
-
     return res
   }
 
   const nextActivity = () => {
-    saveUser({ ...userData, scales: answers, complete: 1 })
+    let data = {
+      'EXPLOR-P1.4': [
+        `${Math.round(answers[0].answer * 2)}/2`,
+        `${Math.round(answers[1].answer * 4)}/4`,
+        `${Math.round(answers[2].answer * 6)}/6`,
+        `${Math.round(answers[3].answer * 8)}/8`,
+      ],
+      'EXPLOR-P1.5': textArea
+    }
 
     if (conclusion) {
+      saveUser({ ...userData, scales: answers, complete: 1 })
+      saveActivity(data)
       goView(0)
     } else {
       goConclusion(true)
@@ -129,7 +135,7 @@ export const Scales = ({ goView, saveUser, userData }) => {
             {answers.map((item, i) =>
               <div key={item.quest} role="button"
                 onClick={() => setCurrentScale(i)}
-                className={`scales-fractions ${item.answer.length > 0 ? "complete" : ""} ${currentScale === i ? "" : ""}`}>
+                className={`scales-fractions ${(currentScale > i) ? "complete" : ""}`}>
                 <span>{item.quest.charAt()}</span>
                 <span>{item.quest.charAt(2)}</span>
               </div>
@@ -139,13 +145,12 @@ export const Scales = ({ goView, saveUser, userData }) => {
             {scales.map((scale, i) =>
               <div
                 key={scale.steps}
-                role="button"
                 className="content-slider">
                 <Slider min={0} max={1}
                   marks={scale.marks}
                   step={scale.steps}
                   defaultValue={0}
-                  onAfterChange={handle}
+                  onAfterChange={value => handle(value, i)}
                   className={`selected`} />
               </div>
             )
