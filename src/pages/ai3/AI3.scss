@@ -78,4 +78,20 @@
       opacity: 0.8;
     }
   }
+
+  &-8 {
+    .presentation-ai {
+      background: url('../../assets/soccerBkg.png') no-repeat center/100% 100%;
+      position: relative;
+
+      h1 {
+        margin-bottom: 12px;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
 }
