@@ -1,0 +1,318 @@
+.birds {
+  padding: 20px;
+  background-color: linear-gradient(360deg, #25527B 2.24%, rgba(0, 121, 222, 0) 93.15%);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: url("../../../assets/birdsBkg.png") no-repeat center/100% 100%;
+  @include fix-height-header;
+
+  &-body {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-description {
+    margin: 24px auto;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    width: 320px;
+    color: #073B4C;
+  }
+
+  &-title {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #073B4C;
+    font-weight: bold;
+  }
+
+  &-header {
+    position: relative;
+    z-index: 1;
+
+    h2 {
+      color: #ffffff;
+    }
+
+    &-quest {
+      position: relative;
+
+      .scales-fractions {
+        opacity: 1;
+        margin: auto;
+        background: #07A9F0;
+        border: 2px dashed #EDEDFB;
+        border-radius: 8px;
+        width: 64px;
+        height: 106px;
+
+        &:before {
+          width: 30px;
+          background: #ffffff;
+        }
+
+        span {
+          font-size: 28px;
+          color: #ffffff;
+        }
+      }
+
+      &.conclusion {
+        .scales-fractions {
+          background: #A1C74D;
+        }
+      }
+
+      &-drops {
+        position: absolute;
+        right: calc(50% - 110px);
+        top: calc(50% - 20px);
+        width: 85px;
+        height: 42px;
+        background: #F7FAFF;
+        border-radius: 8px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        svg {
+          fill: #37BCDA;
+          font-size: 21px;
+        }
+      }
+
+      .fill-mini-drop {
+        svg {
+          fill: #83B836;
+        }
+      }
+    }
+  }
+
+  &-activity {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 280px;
+    margin: auto;
+
+
+    &-drop {
+      cursor: pointer;
+      position: relative;
+      height: fit-content;
+      @include flex-center;
+      height: 138px;
+      width: 100px;
+
+      &:first-child {
+        background-image: url("../../../assets/bird_1.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../../../assets/bird_1.png");
+      }
+
+      &:nth-child(3) {
+        background-image: url("../../../assets/bird_2.png");
+
+        &.answered {
+          .water-drop {
+            display: block;
+            margin-right: 60px;
+            margin-left: 0;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        background-image: url("../../../assets/bird_2.png");
+
+        &.answered {
+          .water-drop {
+            display: block;
+            margin-right: 60px;
+            margin-left: 0;
+          }
+        }
+      }
+
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: auto;
+
+      path {
+        transition: all .5s ease;
+      }
+
+      &:not(:first-child) {
+        &:nth-child(even) {
+          margin-top: 50px;
+        }
+
+      }
+
+      &:focus {
+        background-color: red;
+      }
+
+      .drop-splash {
+        position: absolute;
+        top: 38px;
+        right: 0;
+        display: none;
+        transition: all .5s ease;
+      }
+
+      &.show-splash {
+        .drop-splash {
+          display: block;
+        }
+      }
+
+      .scales-fractions {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 16px;
+        margin: auto;
+        opacity: 1;
+        background: transparent;
+
+        &:before {
+          width: 45px;
+          background-color: #ffffff;
+        }
+
+        span {
+          font-size: 32px;
+          color: #ffffff;
+        }
+      }
+
+      .water-drop {
+        display: none;
+        transition: all .5s ease-in;
+      }
+
+      &.answered {
+        pointer-events: none;
+        border: 1px dashed #68C4D3;
+
+        .water-drop {
+          display: block;
+          margin-left: 65px;
+        }
+
+        .drop-splash {
+          display: none;
+        }
+
+        .scales-fractions span {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+
+  &-question {
+    position: relative;
+    height: calc(100vh - 60px);
+
+    &-content {
+      max-width: 310px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #53536E;
+      }
+
+      img {
+        margin: 17px auto;
+      }
+    }
+
+    &-answer {
+      position: relative;
+      width: 100%;
+
+      span {
+        position: absolute;
+        right: 1rem;
+        bottom: 2rem;
+        font-size: x-small;
+        background: #FFFFFF;
+        color: #9F9FB5;
+      }
+    }
+
+    textarea {
+      resize: none;
+      font-size: 16px;
+      line-height: 25px;
+      color: #073B4C;
+      background: #FFFFFF;
+      border: 2px solid #9F9FB5;
+      box-sizing: border-box;
+      border-radius: 8px;
+      width: 100%;
+      padding: 12px 25px;
+      margin: 25px 0;
+    }
+
+    .llama-view {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-header {
+      >p {
+        top: 18px;
+      }
+    }
+
+    .bottom-water {
+      bottom: -40px;
+    }
+
+    &-question-content {
+      max-width: 280px;
+      z-index: 1;
+      position: relative;
+    }
+
+    &.llamas-conclusion {
+      overflow: auto;
+      padding-bottom: 20px;
+
+      &.focus-conclusion {
+        p {
+          top: 48px;
+        }
+
+        h2 {
+          top: 12px;
+          margin-top: 0;
+        }
+
+        .rain-drop-header-quest {
+          margin-top: -36px;
+        }
+      }
+    }
+  }
+}

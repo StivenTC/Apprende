@@ -101,7 +101,7 @@ export function Question9({ goView, setResult }) {
     <div className="fishes">
       <div className="fishes-body">
         <div className="fishes-header">
-          <p>Selecciona los <strong>tres globos</strong> que tienen fracciones equivalentes a <strong><sup>6</sup>/<sub>10</sub></strong></p>
+          <p>Selecciona los <strong>dos peces</strong> que tienen fracciones menores a la que aparece en el tablero.</p>
           <div className="fishes-header-quest">
             <div className="fishes-header-quest-drops">
               {[...Array(2)].map((item, i) => <div key={i}
