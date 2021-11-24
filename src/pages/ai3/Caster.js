@@ -7,6 +7,7 @@ import Question2Caster from './question2/Caster';
 import Question3Caster from './question3/Caster';
 import Question4Caster from './question4/Caster';
 import Question5Caster from './question5/Caster';
+import Question6Caster from './question6/Caster';
 import { Header } from '../../components/layout/Header/Header';
 
 function CasterAI3() {
@@ -30,6 +31,8 @@ function CasterAI3() {
           return <Question4Caster setActualView={setActualView} userData={userData} />;
         case 5:
           return <Question5Caster setActualView={setActualView} userData={userData} />;
+        case 6:
+          return <Question6Caster setActualView={setActualView} userData={userData} />;
       }
     }
 

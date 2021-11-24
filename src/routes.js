@@ -14,9 +14,10 @@ import { Question2 } from './pages/ai2/question2/Question2';
 import { Question3 } from './pages/ai2/question3/Question3';
 import { Llamas } from './pages/ai2/llamas/Llamas';
 import CasterAI3 from './pages/ai3/Caster';
-import { Question9 } from './pages/ai/question9/Question9';
+import { Question9 } from './pages/ai2/question9/Question9';
 import { Ballons } from './pages/ai/question-5/Balloons';
 import { Question5 } from './pages/ai3/question5/Question5';
+import { Question6 } from './pages/ai3/question6/Question6';
 // import { Header } from './components/layout/Header/header';
 
 export default function AppRoutes() {
@@ -42,6 +43,7 @@ export default function AppRoutes() {
         <Route exact path="/question-9" component={Question9} />
         <Route exact path="/question-5" component={Ballons} />
         <Route exact path="/question-5-ai3" component={Question5} />
+        <Route exact path="/question-6" component={Question6} />
       </Switch>
     </Router>
   );
