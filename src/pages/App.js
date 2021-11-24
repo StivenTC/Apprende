@@ -267,7 +267,7 @@ function App() {
                   <button className="go-btn">{combo.name}</button>
                 </a> :
                 <div>
-                  {actualCombo.combo.includes("Jueves") && <a href="https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq" target={combo.target} className="link-activity">
+                  {actualCombo.combo.includes("Jueves") && <a href="https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq" target="_blank" className="link-activity">
                     <button className="go-btn">¡Danos tu opinión!</button>
                   </a>}
                   <p className="break-text">¡Toma un descanso!</p>
