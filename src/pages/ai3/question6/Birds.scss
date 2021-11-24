@@ -1,11 +1,9 @@
 .birds {
   padding: 20px;
   background-color: linear-gradient(360deg, #25527B 2.24%, rgba(0, 121, 222, 0) 93.15%);
-  height: 100%;
   overflow: hidden;
   position: relative;
   background: url("../../../assets/birdsBkg.png") no-repeat center/100% 100%;
-  @include fix-height-header;
 
   &-body {
     position: relative;
