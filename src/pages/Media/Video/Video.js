@@ -20,8 +20,6 @@ export default function VideoFraccion() {
 
   const returnVideo = () => {
     let src = ""
-    console.log(currentVideo, "jashhjadshjdas")
-
 
     if (currentVideo.includes("exploracion")) {
       src = VideoAngela;
@@ -37,7 +35,6 @@ export default function VideoFraccion() {
     }
     return src
   }
-  console.log(currentVideo)
   return (
     <div className="launcher">
       <br />

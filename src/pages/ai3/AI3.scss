@@ -24,6 +24,14 @@
       }
     }
 
+    .llamas {
+      max-height: fit-content;
+
+      &.focus-conclusion {
+        height: auto;
+      }
+    }
+
     .llamas-activity {
       &-scale {
         >img {
@@ -90,6 +98,14 @@
 
       p {
         margin-top: 0;
+      }
+    }
+
+    .llamas {
+      max-height: fit-content;
+
+      &.focus-conclusion {
+        height: auto;
       }
     }
   }
