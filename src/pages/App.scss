@@ -48,6 +48,8 @@
   }
 
   .link-activity {
+
+    &.visited,
     &:visited {
       .go-btn {
         background: #FFBC0F;

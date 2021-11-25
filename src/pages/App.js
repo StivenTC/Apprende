@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { Link, useHistory } from 'react-router-dom';
 import Logo from "../assets/Apprende blanco.png";
+import saveDatainSheets from '../helpers/saveData';
 
 function App() {
   let history = useHistory();
@@ -239,7 +240,22 @@ function App() {
     localStorage.setItem("combo", JSON.stringify(currentCombo));
     setActualCombo(currentCombo)
   }
-  console.log(actualCombo)
+  const [savingData, setSavingData] = useState(false);
+
+  const goBreakInterview = () => {
+    setSavingData(true)
+    let appData = JSON.parse(localStorage.getItem('appData'));
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    let combo = JSON.parse(localStorage.getItem('combo')) || {};
+    let dataOrganized = { ...appData, ...userData, Combo: combo.combo }
+
+    saveDatainSheets(dataOrganized).then(() => {
+      localStorage.removeItem("appData");
+      // window.open("https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq", "_blank");
+      setSavingData(false)
+    }
+    )
+  }
   return (
     <div className="App">
       <div>
@@ -267,8 +283,8 @@ function App() {
                   <button className="go-btn">{combo.name}</button>
                 </a> :
                 <div>
-                  {actualCombo.combo.includes("Jueves") && <a href="https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq" target="_blank" className="link-activity">
-                    <button className="go-btn">¡Danos tu opinión!</button>
+                  {actualCombo.combo.includes("Jueves") && <a onClick={() => goBreakInterview()} href="https://www.surveys.online/jfe/form/SV_4OV4STDPz3Nj3Qq" target="_blank" className="link-activity">
+                    <button className="go-btn">{savingData ? 'Guardando sesión...' : '¡Danos tu opinión!'}</button>
                   </a>}
                   <p className="break-text">¡Toma un descanso!</p>
                 </div>
@@ -292,7 +308,7 @@ function App() {
 
         }
       </div>
-    </div>
+    </div >
 
   );
 }
