@@ -229,7 +229,7 @@ function App() {
       ]
     },
     {
-      combo: "Día 3 / Viernes",
+      combo: "Día 3 / ¡Viernes!",
       activities: [
         {
           name: "1. ¿Qué tanto sabes de operaciones?",
@@ -237,7 +237,7 @@ function App() {
           target: '_blank'
         },
         {
-          name: "2. Evaluación",
+          name: "2. Reto de la semana",
           route: "/evaluacion-formal" + `#${name.Nombre}.`
         },
         {

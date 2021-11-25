@@ -18,7 +18,7 @@ export function Finish({ goView, userData }) {
 
         <button
           className="btn-next"
-          onClick={() => history.push("/gracias")}>
+          onClick={() => history.push("/")}>
           Siguiente
           <BiRightArrowAlt />
         </button>
