@@ -227,6 +227,33 @@ function App() {
           route: "/actividades-interactivas-3" + `#${name.Nombre}.`,
         }
       ]
+    },
+    {
+      combo: "Día 3 / Viernes",
+      activities: [
+        {
+          name: "1. ¿Qué tanto sabes de operaciones?",
+          route: "https://www.surveys.online/jfe/form/SV_3sgO3Dnz2ITVdbg" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "2. Evaluación",
+          route: "/evaluacion-formal" + `#${name.Nombre}.`
+        },
+        {
+          name: "break"
+        },
+        {
+          name: "3. ¿Qué tanto aprendiste?",
+          route: "https://www.surveys.online/jfe/form/SV_7TFRIKOimRfACZ8" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+        {
+          name: "4. ¿Qué piensas de nuestros videos",
+          route: "https://www.surveys.online/jfe/form/SV_0NajUT0i349phjM" + `#${name.Nombre}.`,
+          target: '_blank'
+        },
+      ]
     }
   ]
   useEffect(() => {
