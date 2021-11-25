@@ -15,7 +15,7 @@ export const Question10 = ({ goView }) => {
     id: "EFDA-10",
     title: "Pregunta 10",
     description:
-      'Debes retirar el <strong>número de piedras por el que dividirías</strong> tanto <strong>14</strong> como <strong>35</strong> para llegar a la <strong>fracción equivalente a 2/5</strong>”. ¿Cuántas piedras debes retirar?',
+      'Debes retirar el <strong>número de piedras por el que dividirías</strong> tanto <strong>14</strong> como <strong>35</strong> para llegar a la <strong>fracción equivalente a 2/5</strong>. ¿Cuántas piedras debes retirar?',
     submit: {
       label: "Enviar",
     },
