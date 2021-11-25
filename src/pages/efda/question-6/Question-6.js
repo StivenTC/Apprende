@@ -12,26 +12,26 @@ export const Question6 = ({ goView }) => {
     id: "EFDA-6",
     title: "Pregunta 6",
     description:
-      `Selecciona la barca que tenga una <strong>fracción que puedes usar para encontrar una fracción equivalente a</strong> <span class="highlighted-blue">3/8</span>.<br/>¿Cuál de las barcas debes escoger para cruzar el río?`,
+      `Tú recogiste 4/3 kilos de fruta y le pides a Loki que él recolecte una <strong>fracción equivalente de nueces</strong>. ¿Cuánto debe recoger Loki?`,
     submit: {
       label: "Enviar",
     },
     options: [
       {
         optionBkg: Nuts,
-        option: <div className="scales-fractions"><span>3</span><span>8</span></div>
+        option: <div className="scales-fractions"><span>8</span><span>9</span></div>
       },
       {
         optionBkg: Nuts,
-        option: <div className="scales-fractions"><span>3</span><span>1</span></div>
+        option: <div className="scales-fractions"><span>16</span><span>12</span></div>
       },
       {
         optionBkg: Nuts,
-        option: <div className="scales-fractions"><span>1</span><span>3</span></div>
+        option: <div className="scales-fractions"><span>2</span><span>6</span></div>
       },
       {
         optionBkg: Nuts,
-        option: <div className="scales-fractions"><span>8</span><span>8</span></div>
+        option: <div className="scales-fractions"><span>2</span><span>3</span></div>
       }
     ]
   };

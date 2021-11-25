@@ -15,7 +15,7 @@ export const Question3 = ({ goView }) => {
     id: "EFDA-3",
     title: "Pregunta 3",
     description:
-      'Hay tres caminos posibles. El primero tiene una distancia de <span class="text-bold color-blue">8/10</span class="text-bold color-blue"> km, el segundo de <span class="text-bold color-blue">3/5</span> km y el tercero de <span>6/12</span> km. Necesitan el <span class="text-bold">más corto</span>, ¿Por dónde deben ir?',
+      'Hay tres caminos posibles. El primero tiene una distancia de <span class="text-bold color-blue">8/10</span class="text-bold color-blue"> km, el segundo de <span class="text-bold color-blue">3/5</span> km y el tercero de <span class="text-bold color-blue">6/12</span> km. Necesitan el <span class="text-bold">más corto</span>, ¿Por dónde deben ir?',
     imagePosition: "MIDDLE",
     submit: {
       label: "Enviar",

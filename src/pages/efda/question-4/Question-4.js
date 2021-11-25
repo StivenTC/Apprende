@@ -16,7 +16,7 @@ export const Question4 = ({ goView }) => {
     id: "EFDA-4",
     title: "Pregunta 4",
     description:
-      '¿Cuál de las siguientes figuras representa una <strong>fracción equivalente a la altura de la alpaca</strong>',
+      '¿Cuál de las siguientes figuras representa una <strong>fracción equivalente a la altura de la alpaca</strong>?',
     explication: <img src={ExplicationImg} alt="Altura de la alpaca 12/15" />,
     submit: {
       label: "Enviar",
@@ -44,7 +44,7 @@ export const Question4 = ({ goView }) => {
     backgroundImage: SabioLLama,
     title: 'Pregunta 4',
     description: {
-      value: `La brújula se ha dañado por un golpe. Loki y tú se encuentran con un sabio Inca que les promete guiarlos en la dirección correcta si resuelven un acertijo. El sabio les dice que su alpaca favorita mide <strong>15/12</strong> metros. Ustedes dos deben decir cuál de las siguientes figuras que representan fracciones muestra una <strong>fracción equivalente a la altura de la alpaca</strong> y así recibir la ayuda del sabio:`
+      value: `Loki y tú se encuentran con un sabio Inca que les promete guiarlos si resuelven un acertijo. El sabio les dice que su alpaca favorita mide <strong>12/15</strong> metros. Deben decir cuál de las siguientes figuras que representan fracciones muestra una <strong>fracción equivalente a la altura de la alpaca</strong>.`
     },
     image: '',
     submit: {

@@ -16,7 +16,7 @@ export const Question1 = ({ goView }) => {
     id: "EFDA-1",
     title: "Pregunta 1",
     description:
-      'Si necesitas llevarte el barril con agua que tiene una figura de una <strong>fracción equivalente</strong> a <span class="highlight-blue">3/4</span> km<br/>¿cúal barril deberás elegir?',
+      'Si necesitas llevarte el barril con agua que tiene una figura de una <strong>fracción equivalente</strong> a <span class="highlight-blue">3/4</span><br/>¿cúal barril deberás elegir?',
     submit: {
       label: "Enviar",
     },
@@ -44,7 +44,7 @@ export const Question1 = ({ goView }) => {
     title: 'Contexto',
     description: {
       value: `Estás en <strong>Perú</strong> y debes rescatar a <strong>Mor</strong> que cayó en una trampa de Lévitas en una cueva en el Valle Sagrado. Para rescatarlo contarás con la ayuda de Loki y <strong>deberás completar unos retos</strong> con fracciones.
-      <br/><br/>ntes de salir necesitas recolectar agua para el largo viaje. Si necesitas llevarte el barril con agua que tiene una figura de una <strong>fracción equivalente a 3/4</strong>, ¿cuál barril deberás elegir?`
+      <br/><br/>Antes de salir, necesitas recolectar varias cosas. ¡Buena suerte en la aventura!`
     },
     image: '',
     submit: {

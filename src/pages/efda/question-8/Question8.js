@@ -78,10 +78,10 @@ export const Question8 = ({ goView }) => {
   };
 
   const selectTable = (pos) => {
-    if (selectedOptions.length < 3) {
-      setSelectedOptions((prevState) => {
-        return [...prevState, pos];
-      });
+    if (selectedOptions.includes(pos)) {
+      setSelectedOptions((prevState) => prevState.filter((prevPos, i) => prevPos !== pos));
+    } else if (selectedOptions.length < 3) {
+      setSelectedOptions((prevState) => [...prevState, pos]);
     }
   };
 
@@ -122,6 +122,7 @@ export const Question8 = ({ goView }) => {
               {
                 arrayPositions.map((pos, index) =>
                   <img
+                    key={`image${pos}`}
                     className="efda-bridge-table"
                     src={getUrlImage(pos)}
                     style={getStylePosition(index)}

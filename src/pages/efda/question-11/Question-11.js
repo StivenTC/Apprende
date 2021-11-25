@@ -22,7 +22,7 @@ export const Question11 = ({ goView }) => {
     options: [
       {
         optionBkg: '',
-        option: <img src={OptionA} alt="Opción 1/10" />
+        option: <img src={OptionD} alt="Opción 7/10" />
       },
       {
         optionBkg: '',
@@ -30,12 +30,12 @@ export const Question11 = ({ goView }) => {
       },
       {
         optionBkg: '',
-        option: <img src={OptionC} alt="Opción 5/10" />
+        option: <img src={OptionA} alt="Opción 1/10" />
       },
       {
         optionBkg: '',
-        option: <img src={OptionD} alt="Opción 7/10" />
-      }
+        option: <img src={OptionC} alt="Opción 5/10" />
+      },
     ]
   };
   const presentation = {

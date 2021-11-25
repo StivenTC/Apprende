@@ -15,7 +15,7 @@ export const Question2 = ({ goView }) => {
     id: "EFDA-2",
     title: "Pregunta 2",
     description:
-      `Sabes que la mejor brújula para la misión es la que tiene una <strong>fracción equivalente</strong> a <span class="highlight-blue">5/7</span>.<br/>
+      `La mejor brújula para la misión es la que tiene una <strong>fracción equivalente</strong> a <span class="highlight-blue">5/7</span>.<br/>
       ¿Cuál brújula debes elegir?`,
     submit: {
       label: "Enviar",
@@ -43,8 +43,8 @@ export const Question2 = ({ goView }) => {
     backgroundImage: CompassBKG,
     title: 'Pregunta 2',
     description: {
-      value: `Es muy importante tener una brújula para ir a rescatar a Mor. Antes de iniciar el viaje debes contar con la mejor brújula posible.<br/><br/>
-      Loki te presenta cuatro opciones de brújulas y cada una de ellas tiene grabada una fracción. Sabes que la mejor brújula es la que tiene una <strong>fracción equivalente a 5/7</strong>. ¿Cuál brújula debes elegir?`
+      value: `Antes de iniciar el viaje debes contar con la mejor brújula posible.<br/><br/>
+      Loki te presenta cuatro opciones de brújulas y cada una de ellas tiene grabada una fracción. La mejor brújula es la que tiene una <strong>fracción equivalente a 5/7</strong>. ¿Cuál brújula debes elegir?`
     },
     image: '',
     submit: {
