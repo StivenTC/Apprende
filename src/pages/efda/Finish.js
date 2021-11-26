@@ -12,7 +12,7 @@ export function Finish({ goView, userData }) {
   const [results] = useState(() => {
     const lsData = "appData";
     let correctData = ["D", "C", "C", "C", "D", "B", "B", [2, 5, 6], ["3/10", "2/5", "1/4", "2/2"], "D", "A", "C"]
-    let answers = [];
+    let answers = []
     let corrects = 0
     // getting stored value
     const saved = localStorage.getItem(lsData);
@@ -21,9 +21,9 @@ export function Finish({ goView, userData }) {
     for (var i in jsonAnswers) {
       answers.push(jsonAnswers[i])
     }
-    // corrects = answers.map((t, i) => t === correctData[i])
+
     for (let [index, val] of answers.entries()) {
-      if (val === correctData[index]) {
+      if (JSON.stringify(val) === JSON.stringify(correctData[index])) {
         corrects++
       }
     }
