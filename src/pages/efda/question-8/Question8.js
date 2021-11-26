@@ -95,7 +95,7 @@ export const Question8 = ({ goView }) => {
 
   const nextActivity = () => {
     let data = {
-      [questionTemplate.id]: selectedOptions,
+      [questionTemplate.id]: selectedOptions.sort(),
     }
 
     if (validate()) {

@@ -18,22 +18,22 @@ export const Question9 = ({ goView }) => {
   const AISortCards = [
     {
       id: "pie-1",
-      chart: <img src={OptionA} alt="Opción 2/3" />,
+      chart: <img src={OptionA} alt="Opción 1/4" />,
       quarter: "1/4"
     },
     {
       id: "pie-2",
-      chart: <img src={OptionB} alt="Opción 2/3" />,
+      chart: <img src={OptionB} alt="Opción 3/10" />,
       quarter: "3/10"
     },
     {
       id: "pie-3",
-      chart: <img src={OptionC} alt="Opción 2/3" />,
+      chart: <img src={OptionC} alt="Opción 2/5" />,
       quarter: "2/5"
     },
     {
       id: "pie-4",
-      chart: <img src={OptionD} alt="Opción 2/3" />,
+      chart: <img src={OptionD} alt="Opción 2/2" />,
       quarter: "2/2"
     }
   ];

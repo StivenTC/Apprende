@@ -21,7 +21,6 @@ export function Finish({ goView, userData }) {
     for (var i in jsonAnswers) {
       answers.push(jsonAnswers[i])
     }
-
     for (let [index, val] of answers.entries()) {
       if (JSON.stringify(val) === JSON.stringify(correctData[index])) {
         corrects++
